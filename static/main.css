@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+.not-found:before {
+    position: absolute;
+    top: 0;
+    content: "";
+    display: block;
+    background: no-repeat center/cover url("https://static.pexels.com/photos/60013/desert-drought-dehydrated-clay-soil-60013.jpeg");
+    filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+.not-found {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.not-found .empty {
+    color: #fefefe;
+    background-color: unset;
+    /* background-color: rgba(1,1,1,0.5); */
+}
+
+/* ================== Nav ================ */
+.sidebar {
+    height: 100vh;
+}
+.sidebar ul {
+    min-width: 0;
+}
+.sidebar .toplevel{
+    font-weight: bold;
+}
+
+/* ================== Main ================ */
+main {
+    height: 100vh;
+}
+.exchange-main {
+    padding: 1.5rem;
+}
+.empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.avatar-xxl {
+    height: 6rem;
+    width: 6rem;
+}
+.account {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tree {
+    overflow: hidden;
+}
+.tree-nav {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #fefefe;
+}

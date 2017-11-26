@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SkillTree</title>
+        {{ template "header" }}
+        <!-- custom css -->
+        <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="columns">
+                {{ template "sidebar" "tree" }}
+                <main class="column col-10 col-gapless container tree">
+                    <header class="navbar tree-nav">
+                        <section class="navbar-section"></section>
+                        <section class="navbar-section">
+                            <a href="#" class="btn btn-link">Delete</a>
+                            <a href="#" class="btn btn-primary">Share</a>
+                        </section>
+                    </header>
+                    <img class="img-responsive" src="https://i.pinimg.com/originals/02/cd/d4/02cdd4bffc89dd48759fcd0b66bedd2c.jpg">
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

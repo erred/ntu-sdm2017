@@ -1,0 +1,59 @@
+{{ define "sidebar" }}
+<nav class="column col-2 col-gapless sidebar bg-dark text-light">
+    <ul class="menu bg-dark text-light">
+        <li class="menu-item">
+            <a>SkillTree</a>
+        </li>
+        <li class="divider"></li>
+        <div class="accordion">
+            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden {{ if eq . "tree" }} checked {{ end }}>
+            <label class="accordion-header c-hand toplevel" for="accordion-1">
+                <i class="icon icon-arrow-right mr-1"></i>
+                Your Trees
+            </label>
+            <div class="accordion-body">
+                <ul class="menu menu-nav">
+                    <li class="menu-item">
+                        <a href="/tree">A Tree</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/tree-empty">No Tree</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/tree-new">Add New Tree</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion">
+            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden {{ if eq . "exchange" }} checked {{ end }}>
+            <label class="accordion-header c-hand toplevel" for="accordion-2">
+                <i class="icon icon-arrow-right mr-1"></i>
+                Exchange
+            </label>
+            <div class="accordion-body">
+                <ul class="menu menu-nav">
+                    <li class="menu-item">
+                        <a href="/exchange-status">Status</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/exchange-status-empty">Status Empty</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/exchange-browse">Browse</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/exchange-browse-empty">Browse Empty</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <li class="menu-item toplevel">
+            <a href="/account">Account</a>
+        </li>
+        <li class="menu-item toplevel">
+            <a>Logout</a>
+        </li>
+    </ul>
+</nav>
+{{ end }}

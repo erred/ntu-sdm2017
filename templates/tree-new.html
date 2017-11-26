@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SkillTree</title>
+        {{ template "header" }}
+        <!-- custom css -->
+        <link rel="stylesheet" href="/static/main.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="columns">
+                {{ template "sidebar" "tree" }}
+                <main class="column col-10 col-gapless">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column col-12">
+                                <input class="form-input" type="text" id="input-example-1" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="columns">
+                            {{ range slice 9 }}
+                                {{ template "tree-card"}}
+                            {{ end }}
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
