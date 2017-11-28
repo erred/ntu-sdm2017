@@ -23,31 +23,7 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         </script>
-        <script>
-            function statusChangeCallback(response) {
-                switch(response.status){
-                    case 'connected':
-                        // TODO change login to 'continue to app
-                        response.authResponse.accessToken;
-                        response.authResponse.userID;
-                        break;
-                    case 'not_authorized':
-                    case 'unkown':
-                    default:
-                        // TODO reset login button
-                        break;
-                }
-            }
-
-            function checkLoginState() {
-                FB.getLoginStatus(function(response) {
-                    statusChangeCallback(response);
-                });
-            }
-            FB.getLoginStatus(function(response) {
-                statusChangeCallback(response);
-            });
-        </script>
+        <script src="/static/fb.js"></script>
 
     </head>
     <body>
