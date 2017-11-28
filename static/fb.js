@@ -5,9 +5,9 @@ function statusChangeCallback(response) {
     console.log('connected!');
     console.log(response);
 
-    document.querySelector('.fb-login-button')[0].style.display = "none";
-    document.querySelector('.login-spinner')[0].style.display = "none";
-    document.querySelector('.login-continue')[0].style.display = "block";
+    document.querySelector('.fb-login-button').style.display = "none";
+    document.querySelector('.login-spinner').style.display = "none";
+    document.querySelector('.login-continue').style.display = "block";
     // response.authResponse.accessToken;
     // response.authResponse.userID;
     // TODO if on landing page:
@@ -19,9 +19,9 @@ function statusChangeCallback(response) {
   default:
     console.log('not connected');
     console.log(response);
-    document.querySelector('.fb-login-button')[0].style.display = "block";
-    document.querySelector('.login-spinner')[0].style.display = "none";
-    document.querySelector('.login-continue')[0].style.display = "none";
+    document.querySelector('.fb-login-button').style.display = "block";
+    document.querySelector('.login-spinner').style.display = "none";
+    document.querySelector('.login-continue').style.display = "none";
     // TODO if on landing page:
     // TODO reset login button and spinner
     // TODO if not on landing page:
