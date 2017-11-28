@@ -44,7 +44,7 @@ h1, h2 {
     display: flex;
     justify-content: center;
 }
-.login-spinner {
+.login-spinner, .login-continue {
     display: none;
 }
 
