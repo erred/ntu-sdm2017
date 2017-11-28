@@ -1,3 +1,4 @@
+// ================== Load SDK ======================
 window.fbAsyncInit = function() {
   FB.init({
     appId : '367804320339821',
@@ -19,14 +20,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function logout() {
-  FB.logout(function(response) {
-    window.location.replace("/");
-    // TODO revoke session cookie
-    // TODO Notify serve of logout
-  });
-}
-
+// ================== StatusChange Handler ======================
 function statusChangeCallback(response) {
   switch (response.status) {
   case 'connected':
@@ -34,6 +28,7 @@ function statusChangeCallback(response) {
     console.log(response);
     // response.authResponse.accessToken;
     // response.authResponse.userID;
+    // TODO if on landing page:
     // TODO change login to 'continue to app'
     // TODO send id to server, set session cookie
     break;
@@ -42,12 +37,27 @@ function statusChangeCallback(response) {
   default:
     console.log('not connected');
     console.log(response);
+    // TODO if on landing page:
     // TODO reset login button and spinner
+    // TODO if not on landing page:
+    //
     break;
   }
 }
 
+// ================== Logout Handlers ======================
+function cleanLogout() {
+  // TODO revoke session cookie
+  // TODO Notify serve of logout
+  window.location.replace("/");
+}
+function logout() {
+  FB.logout(function(response) { cleanLogout(); });
+}
+
+// ================== Login Handlers ======================
 function checkLoginState() {
   FB.getLoginStatus(function(response) { statusChangeCallback(response); });
 }
 
+FB.getLoginStatus(function(response) { statusChangeCallback(response); });
