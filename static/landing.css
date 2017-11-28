@@ -46,6 +46,11 @@ h1, h2 {
 }
 .login-spinner, .login-continue {
     display: none;
+    width: 100%;
+}
+.login-continue {
+    display: flex;
+    justify-content: center;
 }
 
 /* =================== Showcase ================ */
