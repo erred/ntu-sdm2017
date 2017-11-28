@@ -40,6 +40,10 @@ h1, h2 {
 .login .container {
     margin-top: 20vh;
 }
+.fb-login-container {
+    display: flex;
+    justify-content: center;
+}
 
 /* =================== Showcase ================ */
 .showcase:before {
