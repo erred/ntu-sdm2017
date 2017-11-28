@@ -5,6 +5,13 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/landing.css">
+    <script>
+        function switchSpinner() {
+            document.querySelector('.fb-login-button')[0].style.display= "none";
+            document.querySelector('.login-spinner')[0].style.display= "block";
+            document.querySelector('.login-continue')[0].style.display= "none";
+        }
+        </script>
     </head>
     <body>
         <section class="hero">
@@ -18,7 +25,10 @@
                 </div>
                 <div class="columns">
                     <div class="column col-2 col-mx-auto fb-login-container">
-                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email,user_friends" onlogin="checkLoginState();"></div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email,user_friends" onlogin="checkLoginState();" onclick="switchSpinner();"></div>
+                        <div class="loading loading-lg login-spinner"></div>
+                        <button class="btn btn-primary btn-lg login-continue">Continue to App</button>
+
                     </div>
                     <!-- TODO add spinner`g -->
                     <!-- <div class="col-2 col-ml-auto"> -->
