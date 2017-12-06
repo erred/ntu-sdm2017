@@ -9,27 +9,53 @@
     <body>
         <div class="container">
             <div class="columns">
-                {{ template "sidebar" "exchange" }}
+                {{ template "sidebar" .Page }}
+                {{ if not .Items }}
+                <main class="column col-10 col-gapless empty">
+                    <p class="empty-title h5">
+                        Hmm, we can't find any trees
+                    </p>
+                    <p class="empty-subtitle">
+                        Maybe check back later?
+                    </p>
+                </main>
+                {{ else }}
                 <main class="column col-10 col-gapless exchange-main">
                     <div class="container">
+                        <!-- <div class="columns"> -->
+                        <!--     <div class="column col-12"> -->
+                        <!--         <input class="form-input" type="text" id="input-example-1" placeholder="Name"> -->
+                        <!--     </div> -->
+                        <!-- </div> -->
                         <div class="columns">
-                            <div class="column col-12">
-                                <input class="form-input" type="text" id="input-example-1" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column col-12">
-                                <div class="loading loading-lg"></div>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            {{ range slice 9 }}
-                                {{ template "exchange-card"}}
+                            {{ range $idx, $it := .Items }}
+
+<div class="card column col-3">
+    <div class="card-image">
+        {{ $it.TreeData.Svg }}
+        {{ $it.TreeData.State }}
+    </div>
+    <div class="card-header">
+        {{ $it.Liked }}
+        {{ $it.Likes }}
+<!-- async to /exchange/like/{{ $it.User }}/{{ $it.TreeData.Treeid }}/1/ -->
+        <button class="btn float-right">Like</button>
+<!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->
+        <button class="btn btn-link float-right">Exchange</button>
+        <div class="card-title h5">
+        {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
+        </div>
+        <div class="card-subtitle text-gray">{{ $it.Name }}</div>
+    </div>
+</div>
+
                             {{ end }}
                         </div>
                     </div>
                 </main>
+                {{ end }}
             </div>
         </div>
+        {{ template "footer" }}
     </body>
 </html>

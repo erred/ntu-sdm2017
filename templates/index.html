@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SkillTree</title>
+        {{ template "header" }}
+        <!-- custom css -->
+        <link rel="stylesheet" href="/static/landing.css">
+    <script>
+        function switchSpinner() {
+            document.querySelector('.login-spinner').style.display= "block";
+            document.querySelector('.fb-login-button').style.display= "none";
+        }
+        </script>
+    </head>
+    <body>
+        <section class="hero">
+            <div class="container">
+                <div class="columns hero-pad-top"></div>
+                <div class="columns">
+                    <h1 class="column col-4 col-mx-auto">SkillTree</h1>
+                </div>
+                <div class="columns">
+                    {{ if .En }}
+                    <h2 class="column col-4 col-mx-auto">Here goes a tagline</h2>
+                    {{ else  }}
+                    <h2 class="column col-4 col-mx-auto">Here goes a tagline in Chinese</h2>
+                    {{ end }}
+                </div>
+                <div class="columns">
+                    <div class="column col-2 col-mx-auto fb-login-container">
+                        <!-- show on initial page load -->
+                        <!-- hide on statusChangeCallback -->
+                        <!-- show on login attempt -->
+                        <!-- hide on statusChangeCallback -->
+                        <div class="loading loading-lg login-spinner"></div>
+
+                        <!-- hide on initial page load -->
+                        <!-- show on statusChangeCallback fail-->
+                        <!-- hide on login attempt -->
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email,user_friends" onlogin="checkLoginState();" onclick="switchSpinner();"></div>
+
+                        <!-- hide on initial page load -->
+                        <!-- show on statusChangeCallback success-->
+                        <a class="login-continue" href="/tree">
+                            <button class="btn btn-primary btn-lg continue-btn">Continue to App</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="login"> -->
+        <!--     <div class="container"> -->
+        <!--         <div class="columns"> -->
+        <!--             <h1 class="column col-4 col-mx-auto">SkillTree</h1> -->
+        <!--         </div> -->
+        <!--         <div class="columns"> -->
+        <!--             <div class="column col-4 col-mx-auto fb-login-container"> -->
+        <!--                 <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+        <!--                 <1!-- <button class="btn btn-primary btn-block">Connect with Facebook</button> --1> -->
+        <!--             </div> -->
+        <!--         </div> -->
+        <!--         <div class="column col-4 col-mx-auto"> -->
+        <!--             <div class="divider text-center" data-content="OR"></div> -->
+        <!--         </div> -->
+        <!--         <div class="columns"> -->
+        <!--             <div class="column col-3 col-ml-auto"> -->
+        <!--                 <form> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label" for="input-example-1">Email</label> -->
+        <!--                         <input class="form-input" type="text" id="input-example-1" placeholder="name@example.com"> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label" for="input-example-1">Password</label> -->
+        <!--                         <input class="form-input" type="password" id="input-example-1" placeholder="passwd"> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-checkbox"> -->
+        <!--                             <input type="checkbox"> -->
+        <!--                             <i class="form-icon"></i> Remember me -->
+        <!--                         </label> -->
+        <!--                     </div> -->
+        <!--                     <button class="btn btn-primary btn-block">Sign In</button> -->
+        <!--                 </form> -->
+        <!--             </div> -->
+        <!--             <div class="column col-1"> -->
+        <!--                 <div class="divider-vert"></div> -->
+        <!--             </div> -->
+        <!--             <div class="column col-3 col-mr-auto"> -->
+        <!--                 <form> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label" for="input-example-1">Username</label> -->
+        <!--                         <input class="form-input" type="text" id="input-example-1" placeholder="Hello, world"> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label" for="input-example-1">Email</label> -->
+        <!--                         <input class="form-input" type="text" id="input-example-1" placeholder="name@example.com"> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label" for="input-example-1">Password</label> -->
+        <!--                         <input class="form-input" type="password" id="input-example-1" placeholder="passwd"> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-label">Gender</label> -->
+        <!--                         <label class="form-radio"> -->
+        <!--                             <input type="radio" name="gender" checked> -->
+        <!--                             <i class="form-icon"></i> Male -->
+        <!--                         </label> -->
+        <!--                         <label class="form-radio"> -->
+        <!--                             <input type="radio" name="gender"> -->
+        <!--                             <i class="form-icon"></i> Female -->
+        <!--                         </label> -->
+        <!--                         <label class="form-radio"> -->
+        <!--                             <input type="radio" name="gender"> -->
+        <!--                             <i class="form-icon"></i> Other -->
+        <!--                         </label> -->
+        <!--                     </div> -->
+        <!--                     <div class="form-group"> -->
+        <!--                         <label class="form-switch"> -->
+        <!--                             <input type="checkbox"> -->
+        <!--                             <i class="form-icon"></i> Send me emails with news and tips -->
+        <!--                         </label> -->
+        <!--                     </div> -->
+        <!--                     <button class="btn btn-primary btn-block">Sign Up</button> -->
+        <!--                     <button class="btn btn-link btn-block">Learn More</button> -->
+        <!--                 </form> -->
+        <!--             </div> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!-- </section> -->
+        <section class="showcase">
+            <!-- example tree -->
+            <div class="container">
+                <div class="columns banner">
+                    <h2 class="column col-4">Grow your own tree</h2>
+                    <div class="column col-4 col-mr-auto">
+                        <ul>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="exchange">
+            <!-- exchange? -->
+            <div class="container">
+                <div class="columns banner">
+                    <div class="column col-4 col-ml-auto">
+                        <ul>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>This is a short description of something. I don't know, just something.</li>
+                        </ul>
+                    </div>
+                    <h2 class="column col-4">Something...Exchange</h2>
+                </div>
+            </div>
+        </section>
+        <section class="team">
+            <!-- meet the team -->
+            <div class="container">
+                <div class="columns banner">
+                    <!-- <div class="column col-4 col-ml-auto"> -->
+                    <!--     <ul> -->
+                    <!--         <li>This is a short description of something. I don't know, just something.</li> -->
+                    <!--         <li>This is a short description of something. I don't know, just something.</li> -->
+                    <!--         <li>This is a short description of something. I don't know, just something.</li> -->
+                    <!--     </ul> -->
+                    <!-- </div> -->
+                    <h2 class="column col-4">Meet the Team</h2>
+                </div>
+                <div class="columns">
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                    <div class="column col-4 person">
+                        <figure class="avatar avatar-xxl">
+                            <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
+                        </figure>
+                        <h4 class="name">A person</h4>
+                        <p class="job">I do something</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="container">
+            <div class="columns">
+                <h2 class="column col-4">SkillTree</h2>
+            </div>
+            <div class="columns">
+                <div class="column col-2"></div>
+                <div class="column col-4">
+                    <ul>
+                        <li>A List item</li>
+                        <li>A List item</li>
+                        <li>A List item</li>
+                    </ul>
+                </div>
+                <div class="column col-4">
+                    <ul>
+                        <li>A List item</li>
+                        <li>A List item</li>
+                        <li>A List item</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        {{ template "footer" }}
+    </body>
+</html>

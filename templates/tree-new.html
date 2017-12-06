@@ -9,22 +9,55 @@
     <body>
         <div class="container">
             <div class="columns">
-                {{ template "sidebar" "tree" }}
+                {{ template "sidebar" .Page }}
+                {{ if not .Trees }}
+                <main class="column col-10 col-gapless empty">
+                    <p class="empty-title h5">
+                        Hmm, we can't find any trees
+                    </p>
+                    <p class="empty-subtitle">
+                        Maybe check back later?
+                    </p>
+                </main>
+                {{ else }}
                 <main class="column col-10 col-gapless">
                     <div class="container">
+                        <!-- <div class="columns"> -->
+                        <!--     <div class="column col-12"> -->
+                        <!--         <input class="form-input" type="text" id="input-example-1" placeholder="Name"> -->
+                        <!--     </div> -->
+                        <!-- </div> -->
                         <div class="columns">
-                            <div class="column col-12">
-                                <input class="form-input" type="text" id="input-example-1" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="columns">
-                            {{ range slice 9 }}
-                                {{ template "tree-card"}}
+                            {{ range $idx, $tree := .Trees }}
+
+<div class="card column col-4">
+    <div class="card-image">
+        {{ $tree.Svg }}
+        {{ $tree.State }}
+    </div>
+    <div class="card-header">
+        <div class="card-title h5">
+            {{ $tree.Name }}
+            {{ $tree.Cname }}
+        </div>
+    </div>
+    <div class="card-body">
+        {{ $tree.Desc }}
+    </div>
+    <div class="card-footer">
+        <a href="/tree/new/{{ $tree.Treeid }}">
+            <button class="btn btn-primary float-right">Add</button>
+        </a>
+    </div>
+</div>
+
                             {{ end }}
                         </div>
                     </div>
                 </main>
+                {{ end }}
             </div>
         </div>
+        {{ template "footer" }}
     </body>
 </html>

@@ -9,23 +9,19 @@
     <body>
         <div class="container">
             <div class="columns">
-                {{ template "sidebar" "account" }}
+                {{ template "sidebar" .Page }}
                 <main class="column col-10 col-gapless container">
                     <div class="columns">
                         <div class="column col-6 col-mx-auto account">
                             <figure class="avatar avatar-xxl">
                                 <img src="http://i0.wp.com/cdn.techgyd.com/save-whatsapp-profile-picture-image3.jpg?resize=337%2C337">
                             </figure>
-                            <h2>Your Name</h2>
+                            <h2>{{ .Account.Name }}</h2>
                             <div class="divider"></div>
                             <table class="table">
                                 <tr>
-                                    <td>Something</td>
-                                    <td>Value</td>
-                                </tr>
-                                <tr>
-                                    <td>Something</td>
-                                    <td>Value</td>
+                                    <td>Email</td>
+                                    <td>{{ .Account.Email }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -33,5 +29,6 @@
                 </main>
             </div>
         </div>
+        {{ template "footer" }}
     </body>
 </html>

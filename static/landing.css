@@ -45,12 +45,15 @@ h1, h2 {
     justify-content: center;
 }
 .login-spinner, .login-continue {
-    display: none;
     width: 100%;
 }
 .login-continue {
-    display: flex;
-    justify-content: center;
+    display: none;
+    margin: auto
+}
+
+.continue-btn {
+    margin: auto
 }
 
 /* =================== Showcase ================ */
