@@ -61,81 +61,88 @@ function getCookie(name) {
 
 //     // ================== Cookie ======================
 //     setCookie(100, "id", response.authResponse.userID);
-//     document.cookie =
-//         tokenCookie(response.authResponse.expiresIn / (24 * 60 * 60),
-//         "token",
-//                     response.authResponse.accessToken);
-//     email = getCookie("email");
-//     if (email == "") {
-//       FB.api('/me',
-//              {locale : 'en_US', fields : 'name, email, friends', limit :
-//              100}, function(response) {
-//                document.cookie = setCookie(100, "email", response.email);
-//                document.cookie = setCookie(100, "name", response.name);
-//              });
-//     }
+//     setCookie(response.authResponse.expiresIn / (24 * 60 * 60), "token",
+          response.authResponse.accessToken);
+          //     email = getCookie("email");
+          //     if (email == "") {
+          //       FB.api('/me',
+          //              {locale : 'en_US', fields : 'name, email, friends',
+          //              limit : 100}, function(response) {
+          //                document.cookie = setCookie(100, "email",
+          //                response.email); document.cookie = setCookie(100,
+          //                "name", response.name);
+          //              });
+          //     }
 
-//     // ================== UI Button ======================
-//     if (window.location.pathname == "/") {
-//       document.querySelector('.fb-login-button').style.display = "none";
-//       document.querySelector('.login-spinner').style.display = "none";
-//       document.querySelector('.login-continue').style.display = "block";
-//     }
-//     // ================== UI Button ======================
-//     if (window.location.pathname == "/account/") {
-//       crawlFriends(FB);
-//     }
-//     break;
-//   case 'not_authorized':
-//   case 'unkown':
-//   default:
-//     console.log('not connected');
-//     console.log(response);
-//     document.cookie = setCookie(-100, "id", "");
-//     document.cookie = setCookie(-100, "token", "");
-//     if (window.location.pathname == "/") {
-//       document.querySelector('.login-spinner').style.display = "none";
-//       document.querySelector('.fb-login-button').style.display = "block";
-//     } else {
-//       window.location.replace("/");
-//     }
+          //     // ================== UI Button ======================
+          //     if (window.location.pathname == "/") {
+          //       document.querySelector('.fb-login-button').style.display =
+          //       "none";
+          //       document.querySelector('.login-spinner').style.display =
+          //       "none";
+          //       document.querySelector('.login-continue').style.display =
+          //       "block";
+          //     }
+          //     // ================== UI Button ======================
+          //     if (window.location.pathname == "/account/") {
+          //       crawlFriends(FB);
+          //     }
+          //     break;
+          //   case 'not_authorized':
+          //   case 'unkown':
+          //   default:
+          //     console.log('not connected');
+          //     console.log(response);
+          //     document.cookie = setCookie(-100, "id", "");
+          //     document.cookie = setCookie(-100, "token", "");
+          //     if (window.location.pathname == "/") {
+          //       document.querySelector('.login-spinner').style.display =
+          //       "none";
+          //       document.querySelector('.fb-login-button').style.display =
+          //       "block";
+          //     } else {
+          //       window.location.replace("/");
+          //     }
 
-//     break;
-//   }
-// }
+          //     break;
+          //   }
+          // }
 
-// // ================== Logout Handlers ======================
-// function logout() {
-//   FB.logout(function(response) { statusChangeCallback(response); });
-// }
-function logout() { window.location.replace("/"); }
+          // // ================== Logout Handlers ======================
+          // function logout() {
+          //   FB.logout(function(response) { statusChangeCallback(response);
+          //   });
+          // }
+          function logout() { window.location.replace("/"); }
 
-// // ================== Login Handlers ======================
-// function checkLoginState() {
-//   FB.getLoginStatus(function(response) { statusChangeCallback(response);
-//   });
-// }
+          // // ================== Login Handlers ======================
+          // function checkLoginState() {
+          //   FB.getLoginStatus(function(response) {
+          //   statusChangeCallback(response);
+          //   });
+          // }
 
-// // ================== Load SDK ======================
-// window.fbAsyncInit = function() {
-//   FB.init({
-//     appId : '367804320339821',
-//     cookie : true,
-//     xfbml : true,
-//     version : 'v2.11'
-//   });
-//   FB.AppEvents.logPageView();
-//   FB.getLoginStatus(function(response) { statusChangeCallback(response);
-//   });
-// };
+          // // ================== Load SDK ======================
+          // window.fbAsyncInit = function() {
+          //   FB.init({
+          //     appId : '367804320339821',
+          //     cookie : true,
+          //     xfbml : true,
+          //     version : 'v2.11'
+          //   });
+          //   FB.AppEvents.logPageView();
+          //   FB.getLoginStatus(function(response) {
+          //   statusChangeCallback(response);
+          //   });
+          // };
 
-// (function(d, s, id) {
-//   var js, fjs = d.getElementsByTagName(s)[0];
-//   if (d.getElementById(id)) {
-//     return;
-//   }
-//   js = d.createElement(s);
-//   js.id = id;
-//   js.src = "https://connect.facebook.net/en_US/sdk.js";
-//   fjs.parentNode.insertBefore(js, fjs);
-// }(document, 'script', 'facebook-jssdk'));
+          // (function(d, s, id) {
+          //   var js, fjs = d.getElementsByTagName(s)[0];
+          //   if (d.getElementById(id)) {
+          //     return;
+          //   }
+          //   js = d.createElement(s);
+          //   js.id = id;
+          //   js.src = "https://connect.facebook.net/en_US/sdk.js";
+          //   fjs.parentNode.insertBefore(js, fjs);
+          // }(document, 'script', 'facebook-jssdk'));
