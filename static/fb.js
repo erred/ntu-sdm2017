@@ -80,9 +80,9 @@ function statusChangeCallback(response) {
       document.querySelector('.login-continue').style.display = "block";
     }
     // ================== UI Button ======================
-    if (window.location.pathname == "/account/") {
-      crawlFriends(FB);
-    }
+    // if (window.location.pathname == "/account/") {
+    //   crawlFriends(FB);
+    // }
     break;
   case 'not_authorized':
   case 'unkown':
