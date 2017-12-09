@@ -1,3 +1,19 @@
+function setCookie(exdays, key, value) {
+  var userid = key + "=" + value;
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "; expires=" + d.toUTCString();
+  var path = "; path=/";
+  document.cookie = userid + expires + path
+}
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2)
+    return parts.pop().split(";").shift();
+  return ""
+}
+
 function toggleShow(parent){parent.children.forEach(function(child) {
   child.classList.toggle('show');
 })}

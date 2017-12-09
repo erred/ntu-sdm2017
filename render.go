@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -22,9 +23,9 @@ type Page struct {
 }
 
 type SidebarTree struct {
-	Name   string //Page name
-	Cname  string // zh name
-	Treeid string //url to link to
+	Name   string       //Page name
+	Cname  string       // zh name
+	Treeid template.URL //url to link to
 }
 
 func getPage(r *http.Request) (Page, error) {
@@ -32,11 +33,13 @@ func getPage(r *http.Request) (Page, error) {
 
 	user, err := getUser(r)
 	if err != nil {
+		log.Println("getPage/getUser failed")
 		return page, err
 	}
 
 	sidebar, err := getSidebar(user)
 	if err != nil {
+		log.Println("getPage/getSidebar failed")
 		return page, err
 	}
 
@@ -53,6 +56,7 @@ func getPage(r *http.Request) (Page, error) {
 func getUser(r *http.Request) (string, error) {
 	userCk, err := r.Cookie(CkUser)
 	if err != nil {
+		log.Println("getUser/userCk failed")
 		return "", err
 	}
 	return userCk.Value, nil
@@ -61,26 +65,28 @@ func getUser(r *http.Request) (string, error) {
 func getSidebar(user string) ([]SidebarTree, error) {
 	var sidebar []SidebarTree
 
-	rows, err := DB.Query("SELECT tree, ctree FROM treeTemplate WHERE treeid IN (SELECT treeid FROM tree WHERE user=?)", user)
+	rows, err := DB.Query("SELECT treeid, tree, ctree FROM treeTemplate WHERE treeid IN (SELECT treeid FROM tree WHERE user=?)", user)
 	if err != nil {
-		if err != sql.ErrNoRows {
-			return sidebar, err
+		if err == sql.ErrNoRows {
+			return sidebar, nil
 		}
+		log.Println("getSidebar/Query failed")
+		return sidebar, err
 	}
 	defer rows.Close()
 
 	for rows.Next() {
 		var tree SidebarTree
-		err = rows.Scan(&tree.Name, &tree.Cname)
+		err = rows.Scan(&tree.Treeid, &tree.Name, &tree.Cname)
 		if err != nil {
+			log.Println("getSidebar/Scan failed")
 			return sidebar, err
 		}
 		sidebar = append(sidebar, tree)
 	}
 	if err = rows.Err(); err != nil {
-		if err != sql.ErrNoRows {
-			return sidebar, err
-		}
+		log.Println("getSidebar/Next failed")
+		return sidebar, err
 	}
 	return sidebar, nil
 }

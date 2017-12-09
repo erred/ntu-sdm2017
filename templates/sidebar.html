@@ -19,11 +19,11 @@
                 <ul class="menu menu-nav">
                 {{ range $idx, $tree := .Sidebar }}
                     <li class="menu-item">
-                        <a href="/tree/{{ $tree.Treeid }}/">{{ if .En }}{{ $tree.Name }}{{ else }}{{ $tree.Cname }}{{ end }}</a>
+                        <a href="/tree/{{ $tree.Treeid }}/">{{ if $.En }}{{ $tree.Name }}{{ else }}{{ $tree.Cname }}{{ end }}</a>
                     </li>
                 {{ end }}
                     <li class="menu-item">
-                        <a href="/tree/new/">{{ if .En }}Add New Tree{{ else }}Chinese{{ end }}</a>
+                        <a href="/tree/new/">{{ if $.En }}Add New Tree{{ else }}Chinese{{ end }}</a>
                     </li>
                 </ul>
             </div>

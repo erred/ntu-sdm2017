@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"html/template"
 	"log"
 	"net/http"
 	"strings"
@@ -26,10 +27,10 @@ type ExItem struct {
 }
 
 type ExUser struct {
-	User  string
-	Tree  string
-	Skill string
-	State string
+	User  template.URL
+	Tree  template.URL
+	Skill template.URL
+	State template.URL
 	Name  string
 }
 
@@ -93,11 +94,16 @@ func getExchangeData(user string) (ExchangeList, error) {
 	var myname string
 	err := DB.QueryRow("SELECT name FROM user where user=?", user).Scan(&myname)
 	if err != nil {
+		log.Println("getExchangeData/getUser failed")
 		return exList, err
 	}
 
 	rows, err := DB.Query("SELECT * FROM exchange WHERE u1=? OR u2=?", user, user)
 	if err != nil {
+		if err == sql.ErrNoRows {
+			return exList, nil
+		}
+		log.Println("getExchangeData/getExchanges failed")
 		return exList, err
 	}
 	defer rows.Close()
@@ -107,6 +113,7 @@ func getExchangeData(user string) (ExchangeList, error) {
 		var u1, u2 ExUser
 		err = rows.Scan(&id, &u1.User, &u1.Tree, &u1.Skill, &u1.State, &u2.User, &u2.Tree, &u2.Skill, &u2.State)
 		if err != nil {
+			log.Println("getExchangeData/Scan failed")
 			return exList, err
 		}
 
@@ -119,9 +126,8 @@ func getExchangeData(user string) (ExchangeList, error) {
 		it.U1.Name = myname
 		err = DB.QueryRow("SELECT name FROM user where name=?", it.U2.User).Scan(&it.U2.Name)
 		if err != nil {
-			if err != sql.ErrNoRows {
-				return exList, err
-			}
+			log.Println("getExchangeData/getU2Name failed")
+			return exList, err
 		}
 
 		switch it.U1.State {
@@ -142,9 +148,8 @@ func getExchangeData(user string) (ExchangeList, error) {
 		}
 	}
 	if err := rows.Err(); err != nil {
-		if err != sql.ErrNoRows {
-			return exList, err
-		}
+		log.Println("getExchangeData/Next failed")
+		return exList, err
 	}
 	return exList, nil
 }
@@ -157,6 +162,7 @@ func exchangeDone(user string, id string) error {
 	var u1, u2 string
 	err := DB.QueryRow("SELECT u1, u2 FROM exchange WHERE exid=?", id).Scan(&u1, &u2)
 	if err != nil {
+		log.Println("exchangeDone/getUser failed")
 		return err
 	}
 

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 )
 
@@ -24,11 +25,13 @@ func accountHandler(w http.ResponseWriter, r *http.Request) {
 
 	page, err := getPage(r)
 	if err != nil {
+		log.Println("accountHandler/getPage failed")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 	account, err := getAccount(page.user)
 	if err != nil {
+		log.Println("accountHandler/getAccount failed")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
@@ -47,16 +50,19 @@ func createAccount(r *http.Request) error {
 	userCk, err := r.Cookie(CkUser)
 	user := userCk.Value
 	if err != nil {
+		log.Println("createAccount/userCk failed")
 		return err
 	}
 	unameCk, err := r.Cookie(CkName)
 	uname := unameCk.Value
 	if err != nil {
+		log.Println("createAccount/unameCk failed")
 		return err
 	}
 	emailCk, err := r.Cookie(CkEmail)
 	email := emailCk.Value
 	if err != nil {
+		log.Println("createAccount/emailCk failed")
 		return err
 	}
 
@@ -75,6 +81,7 @@ func deleteAccount(user string) error {
 	for _, q := range qs {
 		_, err := DB.Exec(q, user)
 		if err != nil {
+			log.Println("deleteAccount/DB.Exec failed")
 			return err
 		}
 	}

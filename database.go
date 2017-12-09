@@ -16,6 +16,7 @@ func initDb() error {
 	for _, t := range tables {
 		_, err := DB.Exec(dropTable + t)
 		if err != nil {
+			log.Println("initDb/droptable failed: ", t)
 			return err
 		}
 	}
@@ -79,6 +80,7 @@ func initDb() error {
 	for _, t := range newTables {
 		_, err := DB.Exec(t)
 		if err != nil {
+			log.Println("initDb/createTable failed: ", t)
 			return err
 		}
 	}

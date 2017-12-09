@@ -2,7 +2,9 @@ package main
 
 import (
 	"database/sql"
+	"html/template"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"strings"
 )
@@ -20,8 +22,8 @@ type PageAvailTree struct {
 type TreeData struct {
 	Name   string
 	Cname  string
-	Treeid string
-	Svg    string
+	Treeid template.URL
+	Svg    template.HTML
 	State  string
 	Liked  int
 	Desc   string
@@ -46,11 +48,12 @@ func treeHandler(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/tree/new/", http.StatusFound)
 			return
 		}
-		http.Redirect(w, r, "/tree/"+page.Sidebar[0].Treeid+"/", http.StatusFound)
+		http.Redirect(w, r, "/tree/"+string(page.Sidebar[0].Treeid)+"/", http.StatusFound)
 	case 4:
 		// /tree/atree/
 		tree, err := getTree(page.user, paths[2])
 		if err != nil {
+			log.Println("treeHandler/getPage failed")
 			http.Redirect(w, r, "/tree/new/"+paths[2]+"/", http.StatusFound)
 			return
 		}
@@ -109,6 +112,7 @@ func updateTreeHandler(w http.ResponseWriter, r *http.Request) {
 	// /tree/update/atree/
 	b, err := ioutil.ReadAll(r.Body)
 	if err != nil {
+		log.Println("updateTreeHandler/readall failed")
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
@@ -137,18 +141,19 @@ func deleteTreeHandler(w http.ResponseWriter, r *http.Request) {
 
 // ============================ Operations ===========================
 func updateTree(user string, tree string, treeState string) error {
-	_, err := DB.Exec("UPDATE tree SET state=? WHERE user=? AND tree=id?", treeState, user, tree)
+	_, err := DB.Exec("UPDATE tree SET state=? WHERE user=? AND treeid=?", treeState, user, tree)
 	return err
 }
 func deleteTree(user string, tree string) error {
-	_, err := DB.Exec("DELETE FROM tree WHERE user=? AND tree=id?", user, tree)
+	_, err := DB.Exec("DELETE FROM tree WHERE user=? AND treeid=?", user, tree)
 	return err
 }
 
 func addTree(user string, tree string) error {
 	var zeroState string
-	err := DB.QueryRow("SELECT zeroState FROM treeTemplate WHERE treeid = ?").Scan(&zeroState)
+	err := DB.QueryRow("SELECT zeroState FROM treeTemplate WHERE treeid = ?", tree).Scan(&zeroState)
 	if err != nil {
+		log.Println("addTree/getZeroState failed")
 		return err
 	}
 
@@ -158,18 +163,19 @@ func addTree(user string, tree string) error {
 
 func getTree(user string, tree string) (TreeData, error) {
 	var td TreeData
-	td.Treeid = tree
+	td.Treeid = template.URL(tree)
 
 	err := DB.QueryRow("SELECT state FROM tree WHERE user=? AND treeid=?", user, tree).Scan(&td.State)
 	if err != nil {
+		log.Println("getTree/getState failed")
 		return td, err
 	}
 
-	err = DB.QueryRow("SELECT tree, ctree, svg FROM treeTemplate WHERE tree = ?", tree).Scan(&td.Name, &td.Cname, &td.Svg)
+	err = DB.QueryRow("SELECT tree, ctree, svg FROM treeTemplate WHERE treeid = ?", tree).Scan(&td.Name, &td.Cname, &td.Svg)
 	if err != nil {
+		log.Println("getTree/getTree failed")
 		return td, err
 	}
-
 	return td, nil
 }
 
@@ -178,9 +184,11 @@ func getAvailableTrees(user string) ([]TreeData, error) {
 
 	rows, err := DB.Query("SELECT treeid, tree, ctree, svg, zeroState, desc FROM treeTemplate WHERE treeid NOT IN (SELECT treeid FROM tree WHERE user = ?)", user)
 	if err != nil {
-		if err != sql.ErrNoRows {
-			return treeList, err
+		if err == sql.ErrNoRows {
+			return treeList, nil
 		}
+		log.Println("getAvailTree/getTree failed")
+		return treeList, err
 	}
 	defer rows.Close()
 
@@ -188,14 +196,14 @@ func getAvailableTrees(user string) ([]TreeData, error) {
 		var td TreeData
 		err = rows.Scan(&td.Treeid, &td.Name, &td.Cname, &td.Svg, &td.State, &td.Desc)
 		if err != nil {
+			log.Println("getAvailTree/Scan failed")
 			return treeList, err
 		}
 		treeList = append(treeList, td)
 	}
 	if err = rows.Err(); err != nil {
-		if err != sql.ErrNoRows {
-			return treeList, err
-		}
+		log.Println("getAvailTree/Next failed")
+		return treeList, err
 	}
 	return treeList, nil
 }
@@ -206,8 +214,10 @@ func getAllTrees(user string) ([]TreeData, error) {
 	rows, err := DB.Query("SELECT treeid, state FROM tree WHERE user=?", user)
 	if err != nil {
 		if err != sql.ErrNoRows {
-			return treeList, err
+			return treeList, nil
 		}
+		log.Println("getAllTree/Query failed")
+		return treeList, err
 	}
 	defer rows.Close()
 
@@ -215,21 +225,20 @@ func getAllTrees(user string) ([]TreeData, error) {
 		var td TreeData
 		err = rows.Scan(&td.Treeid, &td.State)
 		if err != nil {
+			log.Println("getAllTree/Scan failed")
 			return treeList, err
 		}
 
 		err = DB.QueryRow("SELECT tree, ctree, svg FROM treeTemplate WHERE treeid=?", td.Treeid).Scan(&td.Name, &td.Cname, &td.Svg)
 		if err != nil {
-			if err != sql.ErrNoRows {
-				return treeList, err
-			}
+			log.Println("getalltree/gettree failed")
+			return treeList, err
 		}
 		treeList = append(treeList, td)
 	}
 	if err = rows.Err(); err != nil {
-		if err != sql.ErrNoRows {
-			return treeList, err
-		}
+		log.Println("getalltree/Next failed")
+		return treeList, err
 	}
 	return treeList, nil
 }

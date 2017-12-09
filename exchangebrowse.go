@@ -4,6 +4,8 @@ import (
 	"crypto/md5"
 	"database/sql"
 	"encoding/hex"
+	"html/template"
+	"log"
 	"net/http"
 	"strings"
 )
@@ -15,7 +17,7 @@ type PageBrowse struct {
 
 type BrowseItem struct {
 	TreeData
-	User  string
+	User  template.URL
 	Name  string
 	Liked bool
 	Likes int
@@ -110,32 +112,40 @@ func exchangeRequest(me string, mytree string, myskill string, user string, user
 func browseTrees(user string) ([]BrowseItem, error) {
 	var items []BrowseItem
 
-	rows, err := DB.Query("SELECT user, treeid FROM tree WHERE user <> ?", user)
+	rows, err := DB.Query("SELECT user, treeid FROM tree WHERE user IS NOT ?", user)
 	if err != nil {
+		if err == sql.ErrNoRows {
+			return items, nil
+		}
+		log.Println("browseTrees/DB.Query failed")
 		return items, err
 	}
 	defer rows.Close()
-
 	for rows.Next() {
 		var bi BrowseItem
 		var tid string
 		err = rows.Scan(&bi.User, &tid)
 		if err != nil {
+			log.Println("browseTrees/rows.Scan failed")
 			return items, err
 		}
 
-		bi.TreeData, err = getTree(bi.User, tid)
+		bi.TreeData, err = getTree(string(bi.User), tid)
 		if err != nil {
+			log.Print(bi.TreeData)
+			log.Println("browseTrees/getTree failed")
 			return items, err
 		}
 
 		err = DB.QueryRow("SELECT name FROM user WHERE user=?", bi.User).Scan(&bi.Name)
 		if err != nil {
+			log.Println("browseTrees/getName failed")
 			return items, err
 		}
 
 		err = DB.QueryRow("SELECT count(*) FROM likes WHERE owner=? AND treeid=?", bi.User, bi.Treeid).Scan(&bi.Likes)
 		if err != nil {
+			log.Println("browseTrees/countlikes failed")
 			return items, err
 		}
 
@@ -144,11 +154,16 @@ func browseTrees(user string) ([]BrowseItem, error) {
 		if err == sql.ErrNoRows {
 			bi.Liked = false
 		} else if err != nil {
+			log.Println("browseTrees/ifLiked failed")
 			return items, err
 		} else {
 			bi.Liked = true
 		}
 		items = append(items, bi)
+	}
+	if err = rows.Err(); err != nil {
+		log.Println("browseTrees/rows.Next failed")
+		return items, err
 	}
 	return items, nil
 }

@@ -35,6 +35,8 @@ func main() {
 	flag.IntVar(&port, "port", 8080, "port to serve on ( < 65535)")
 	var initDatabase bool
 	flag.BoolVar(&initDatabase, "initdb", false, "(re)initialize DB")
+	var fakeDB bool
+	flag.BoolVar(&fakeDB, "fakedb", false, "populates DB with fake data")
 	flag.Parse()
 
 	// ==================== DB ====================
@@ -45,9 +47,16 @@ func main() {
 
 	if initDatabase {
 		err = initDb()
+		if err != nil {
+			log.Fatal("init db failed: ", err)
+		}
 	}
-	if err != nil {
-		log.Fatal("init db failed: ", err)
+
+	if fakeDB {
+		err = fakeData()
+		if err != nil {
+			log.Fatal("faking db failed: ", err)
+		}
 	}
 
 	// ==================== Tree ====================
@@ -103,6 +112,7 @@ func (p precheck) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	user, err := getUser(r)
 	if err != nil {
+		log.Println("precheck/getUser failed")
 		http.Redirect(w, r, "/", http.StatusForbidden)
 		return
 	}
@@ -113,10 +123,12 @@ func (p precheck) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err == sql.ErrNoRows {
 		err = createAccount(r)
 		if err != nil {
+			log.Println("precheck/createAccount failed")
 			http.Redirect(w, r, "/", http.StatusForbidden)
 			return
 		}
 	} else if err != nil {
+		log.Println("precheck/checkUser failed")
 		http.Redirect(w, r, "/", http.StatusForbidden)
 		return
 	}
