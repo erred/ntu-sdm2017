@@ -22,9 +22,9 @@
 
             $(window).scroll(function(){
                 if ($(window).scrollTop() > skill_tree_top) {
-                    $("#brand_text").style.setProperty("color","#000","important");
+                    $("#brand_text").addClass("black_text");
                     if ($(window).scrollTop() > skill_exchange_top) {
-                        $("#brand_text").style.setProperty("color","#fff","important");
+                        $("#brand_text").removeClass("black_text");
                     }
                 }
             })

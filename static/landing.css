@@ -32,6 +32,9 @@ h1, h2 {
 .nav_text{
     color: #fff !important;
 }
+.black_text{
+    color: #000 !important;
+}
 
 /* =================== Hero ================ */
 .hero:before {
