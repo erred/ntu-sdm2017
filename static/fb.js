@@ -106,7 +106,6 @@ function statusChangeCallback(response) {
 function logout() {
   FB.logout(function(response) { statusChangeCallback(response); });
 }
-function logout() { window.location.replace("/"); }
 
 // ================== Login Handlers ======================
 function checkLoginState() {
