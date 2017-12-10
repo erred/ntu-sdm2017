@@ -23,7 +23,7 @@
             $(window).scroll(function(){
                 if ($(window).scrollTop() > skill_tree_top) {
                     $("#brand_text").css("color","#000");
-                    if (scroll_position > skill_exchange_top) {
+                    if ($(window).scrollTop() > skill_exchange_top) {
                         $("#brand_text").css("color","#fff");
                     }
                 }
