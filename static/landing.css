@@ -98,7 +98,11 @@ h1, h2 {
     z-index: -1;
 }
 .showcase .banner {
+    padding-top: 0rem;
     height: 100vh;
+}
+.showcase .inner_banner{
+    padding-top: 2rem;
     background-color: #fefefe;
 }
 .showcase h2 {
