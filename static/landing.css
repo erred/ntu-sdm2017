@@ -76,6 +76,13 @@ h1, h2 {
 .continue-btn {
     margin: auto
 }
+.continue_button{
+    background-color:transparent;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    font-weight: 200;
+    color:#fff;
+}
 
 /* =================== Showcase ================ */
 .showcase:before {
