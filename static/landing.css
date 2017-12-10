@@ -102,14 +102,15 @@ h1, h2 {
     height: 100vh;
 }
 .showcase .inner_banner{
-    padding-top: 2rem;
+    padding-top: 10rem;
     background-color: #fefefe;
 }
 .showcase h2 {
-    text-align: end;
+    /*text-align: end;*/
 }
 .showcase ul {
-    margin-left:100px;
+    margin-left: 60px;
+    margin-right: 30px;
     line-height: 30px;
 }
 
@@ -127,12 +128,22 @@ h1, h2 {
     z-index: -1;
 }
 .exchange .banner {
-    margin-top: 80vh;
+    /*margin-top: 80vh;*/
+    padding-top: 10rem;
+    background-color: #fefefe;
+}
+.exchange .inner_banner{
+    padding-top: 10rem;
+    background-color: #fefefe;
 }
 .exchange h2 {
     text-align: start;
 }
-
+.exchange ul {
+    margin-left: 30px;
+    margin-right: 60px;
+    line-height: 30px;
+}
 
 /* =================== Team ================ */
 .team .person {

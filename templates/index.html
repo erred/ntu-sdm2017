@@ -69,7 +69,8 @@
                 <div class="columns banner">
                     <div class="column col-4 inner_banner">
                         <h2 class="column col-12">{{ if $.En }}What is Skill Tree? {{ else }}關於技能樹  {{end}} </h2>
-                        <div class="column col-12 col-mr-auto">
+                        <!-- <div class="column col-12 col-mr-auto"> -->
+                        <div class="column col-12">
                             <ul>
                                 <li>{{ if $.En }}Transfer all the courses of each department to a RPG skill tree {{ else }}將大學四年的課程畫成一棵RPG職業技能樹 {{ end }} </li>
                                 <li>{{ if $.En }}With the personal "skill tree", users can easily run through all the courses, and get a big picture of the course map that he or she has explored {{ else }}透過個人的「技能樹」，使用者能看見各系所的課程脈絡，並完善自己的修課記錄 {{ end }} </li>
@@ -91,14 +92,18 @@
             <!-- exchange? -->
             <div class="container">
                 <div class="columns banner">
-                    <div class="column col-4 col-ml-auto">
-                        <ul>
-                            <li>{{ if $.En }}Take a look at others trees and send skill exchange invitations {{ else }}檢視他人的技能樹，並送出交換邀請 {{ end }} </li>
-                            <li>{{ if $.En }}Use your own skills to exchange with others skills {{ else }}利用自己擅長的領域與對方進行學習上的交流 {{ end }} </li>
-                            <li>{{ if $.En }}Set milestones for each other and get a mutually certification {{ else }}為對方設立學習進度，最終完成彼此認證 {{ end }} </li>
-                        </ul>
+                    <div class="column col-4 col-ml-auto inner_banner">
+                        <h2 class="column col-12">{{ if $.En }}How do I get a Skill Echange? {{ else }}該如何與他人技能交換？ {{ end }}</h2>
+                        <!-- <div class="column col-12 col-ml-auto"> -->
+                        <div class="column col-12">
+                            <ul>
+                                <li>{{ if $.En }}Take a look at others trees and send skill exchange invitations {{ else }}檢視他人的技能樹，並送出交換邀請 {{ end }} </li>
+                                <li>{{ if $.En }}Use your own skills to exchange with others skills {{ else }}利用自己擅長的領域與對方進行學習上的交流 {{ end }} </li>
+                                <li>{{ if $.En }}Set milestones for each other and get a mutually certification {{ else }}為對方設立學習進度，最終完成彼此認證 {{ end }} </li>
+                            </ul>
+                        </div>
+                    <!-- <h2 class="column col-4">{{ if $.En }}How do I get a Skill Echange? {{ else }}該如何與他人技能交換？ {{ end }}</h2> -->
                     </div>
-                    <h2 class="column col-4">{{ if $.En }}How do I get a Skill Echange? {{ else }}該如何與他人技能交換？ {{ end }}</h2>
                 </div>
             </div>
         </section>
