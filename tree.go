@@ -84,7 +84,7 @@ func newTreeHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		page.Page = "tree"
-		page.Page = "new"
+		page.Page2 = "new"
 		data := PageAvailTree{page, trees}
 		templates.ExecuteTemplate(w, "tree-new.html", data)
 	case 5:
