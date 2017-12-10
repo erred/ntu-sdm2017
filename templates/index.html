@@ -5,33 +5,29 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/landing.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script>
         function switchSpinner() {
             document.querySelector('.login-spinner').style.display= "block";
             document.querySelector('.fb-login-button').style.display= "none";
         }
 
-        window.onload = function (){
+		$(document).ready(function(){
             set_navbar();
-        }
+		});
         function set_navbar() {
-            alert("come!");
-            var brand_id = document.getElementById("brand_text");
-            var skill_tree = document.getElementById("skill_tree");
-            var skill_tree_top = skill_tree.offset().top;
-            var skill_exchange = document.getElementById("skill_exchange");
-            var skill_exchange_top = skill_exchange.offset().top;
 
-            var scroll_position = window.scrollY;
-            consol.log(scroll_position)
-            if (scroll_position > skill_tree_top) {
-                alert("come!");
-                brand_id.style.color = "#000";
-                if (scroll_position > skill_exchange_top) {
-                    brand_id.style.color = "#fff";
+            var skill_tree_top = $("#skill_tree").offset().top;
+            var skill_exchange_top = $("#skill_exchange").offset().top;
+
+            $("#brand_id").on("scroll",function(){
+                if ($(window).scrollTop() > skill_tree_top) {
+                    $("#brand_text").css("color","#000");
+                    if (scroll_position > skill_exchange_top) {
+                        $("#brand_text").css("color","#fff");
+                    }
                 }
-            }
-
+            });
         }
         </script>
     </head>
