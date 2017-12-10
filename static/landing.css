@@ -24,6 +24,14 @@ h1, h2 {
 .navbar_right{
     margin-right: 100px;
 }
+.navbar-brand{
+    font-size: 30px !important;
+    font-weight: bold !important;
+    letter-spacing: 5px
+}
+.nav_text{
+    color: #fff !important;
+}
 
 /* =================== Hero ================ */
 .hero:before {
@@ -32,7 +40,8 @@ h1, h2 {
     content: "";
     display: block;
     background: no-repeat center/cover url("/static/image/rawpixel-com-250087.jpg");
-    filter: blur(5px);
+    filter: brightness(0.5);
+    /*filter: blur(5px);*/
     width: 100vw;
     height: 100vh;
     z-index: -1;
@@ -75,7 +84,8 @@ h1, h2 {
     content: "";
     display: block;
     background: no-repeat center/cover url("/static/image/reza-shayestehpour-14231.jpg");
-    filter: blur(5px);
+    filter: brightness(0.5);
+    /*filter: blur(5px);*/
     width: 100vw;
     height: 100vh;
     z-index: -1;
@@ -93,7 +103,8 @@ h1, h2 {
     content: "";
     display: block;
     background: no-repeat center/cover url("/static/image/stefan-stefancik-257625.jpg");
-    filter: blur(5px);
+    filter: brightness(0.5);
+    /*filter: blur(5px);*/
     width: 100vw;
     height: 100vh;
     z-index: -1;
