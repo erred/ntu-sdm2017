@@ -33,8 +33,8 @@ h1, h2 {
 .nav_text{
     color: #fff !important;
 }
-.nav_text:hover,
-.navbar_right .black_text:hover{
+.nav_link_text:hover,
+.nav_link_text .black_text:hover{
     opacity: 0.5;
 }
 .black_text{
