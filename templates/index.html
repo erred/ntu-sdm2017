@@ -15,7 +15,7 @@
             set_navbar();
         }
         function set_navbar() {
-            alert("come!")
+            alert("come!");
             var brand_id = document.getElementById("brand_text");
             var skill_tree = document.getElementById("skill_tree");
             var skill_tree_top = skill_tree.offset().top;
@@ -23,7 +23,9 @@
             var skill_exchange_top = skill_exchange.offset().top;
 
             var scroll_position = window.scrollY;
+            consol.log(scroll_position)
             if (scroll_position > skill_tree_top) {
+                alert("come!");
                 brand_id.style.color = "#000";
                 if (scroll_position > skill_exchange_top) {
                     brand_id.style.color = "#fff";
