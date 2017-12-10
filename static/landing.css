@@ -1,4 +1,4 @@
-section {
+.main_section {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -12,6 +12,18 @@ h1, h2 {
     height: 20vh;
     padding-top: 2rem;
 }
+/* =================== Navbar ================ */
+.navbar{
+    height:60px;
+    width:100vw;
+    position:fixed;
+}
+.navbar_left{
+    margin-left: 100px;
+}
+.navbar_right{
+    margin-right: 100px;
+}
 
 /* =================== Hero ================ */
 .hero:before {
@@ -19,7 +31,7 @@ h1, h2 {
     position:  absolute;
     content: "";
     display: block;
-    background: no-repeat center/cover url("https://fthmb.tqn.com/9vUQ0-Rn77EqKyq2sU9JaChpWfs=/2060x1457/filters:no_upscale():fill(transparent,1)/545870805-57aa91713df78cf459ed615b.jpg");
+    background: no-repeat center/cover url("/static/image/rawpixel-com-250087.jpg");
     filter: blur(5px);
     width: 100vw;
     height: 100vh;
@@ -62,7 +74,7 @@ h1, h2 {
     position:  absolute;
     content: "";
     display: block;
-    background: no-repeat center/cover url("https://static.pexels.com/photos/56875/tree-dawn-nature-bucovina-56875.jpeg");
+    background: no-repeat center/cover url("/static/image/reza-shayestehpour-14231.jpg");
     filter: blur(5px);
     width: 100vw;
     height: 100vh;
@@ -80,7 +92,7 @@ h1, h2 {
     position:  absolute;
     content: "";
     display: block;
-    background: no-repeat center/cover url("http://videonitch.com/wp-content/uploads/2017/07/636096913775397104-1736597709_learning.jpg");
+    background: no-repeat center/cover url("/static/image/stefan-stefancik-257625.jpg");
     filter: blur(5px);
     width: 100vw;
     height: 100vh;

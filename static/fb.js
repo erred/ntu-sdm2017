@@ -94,6 +94,7 @@ function statusChangeCallback(response) {
     if (window.location.pathname == "/") {
       document.querySelector('.login-spinner').style.display = "none";
       document.querySelector('.fb-login-button').style.display = "block";
+      document.querySelector('.login-continue').style.display = "none";
     } else {
       window.location.replace("/");
     }
@@ -106,7 +107,6 @@ function statusChangeCallback(response) {
 function logout() {
   FB.logout(function(response) { statusChangeCallback(response); });
 }
-function logout() { window.location.replace("/"); }
 
 // ================== Login Handlers ======================
 function checkLoginState() {
