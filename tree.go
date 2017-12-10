@@ -57,6 +57,8 @@ func treeHandler(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/tree/new/"+paths[2]+"/", http.StatusFound)
 			return
 		}
+		page.Page = "tree"
+		page.Page2 = string(tree.Treeid)
 		data := PageTree{page, tree}
 		templates.ExecuteTemplate(w, "tree.html", data)
 	default:
@@ -81,6 +83,8 @@ func newTreeHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		page.Page = "tree"
+		page.Page = "new"
 		data := PageAvailTree{page, trees}
 		templates.ExecuteTemplate(w, "tree-new.html", data)
 	case 5:

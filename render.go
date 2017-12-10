@@ -16,9 +16,10 @@ func slice(n int) []int {
 }
 
 type Page struct {
-	En      bool          // language
-	user    string        // userid (internal)
-	Page    string        //which page it is (sidebar highlight)
+	En      bool   // language
+	user    string // userid (internal)
+	Page    string //which page it is (sidebar highlight)
+	Page2   string
 	Sidebar []SidebarTree //sidebar
 }
 

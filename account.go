@@ -35,6 +35,8 @@ func accountHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	page.Page = "account"
+	page.Page2 = "account"
 	data := PageAccount{page, account}
 	templates.ExecuteTemplate(w, "account.html", data)
 }

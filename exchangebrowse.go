@@ -46,7 +46,8 @@ func browseExchangeHandler(w http.ResponseWriter, r *http.Request) {
 	if errInternal(err, w) {
 		return
 	}
-
+	page.Page = "exchange"
+	page.Page2 = "browse"
 	data := PageBrowse{page, items}
 	templates.ExecuteTemplate(w, "exchange-browse.html", data)
 }
@@ -89,6 +90,8 @@ func newExchangeHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		page.Page = "exchange"
+		page.Page2 = "new"
 		data := PageNewExchange{page, dataMe, dataTarget}
 		templates.ExecuteTemplate(w, "exchange-new.html", data)
 		return

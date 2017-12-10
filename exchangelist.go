@@ -54,6 +54,8 @@ func statusExchangeHandler(w http.ResponseWriter, r *http.Request) {
 		log.Print("getex err")
 		return
 	}
+	page.Page = "exchange"
+	page.Page2 = "status"
 	data := PageExchange{page, exchange}
 	templates.ExecuteTemplate(w, "exchange-status.html", data)
 }

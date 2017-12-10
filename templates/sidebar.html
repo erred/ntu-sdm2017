@@ -10,7 +10,7 @@
         <li class="divider"></li>
 
         <div class="accordion">
-            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden {{ if eq $.Page "tree" }}checked{{ end }}>
             <label class="accordion-header c-hand toplevel" for="accordion-1">
                 <i class="icon icon-arrow-right mr-1"></i>
                 {{ if .En }}Your Trees{{ else }}Chinese{{ end }}
@@ -18,11 +18,11 @@
             <div class="accordion-body">
                 <ul class="menu menu-nav">
                 {{ range $idx, $tree := .Sidebar }}
-                    <li class="menu-item">
+                    <li class="menu-item {{ if eq $.Page2 $tree.Treeid }}active{{ end }}">
                         <a href="/tree/{{ $tree.Treeid }}/">{{ if $.En }}{{ $tree.Name }}{{ else }}{{ $tree.Cname }}{{ end }}</a>
                     </li>
                 {{ end }}
-                    <li class="menu-item">
+                    <li class="menu-item {{ if eq $.Page2 "new"}}active{{ end }}">
                         <a href="/tree/new/">{{ if $.En }}Add New Tree{{ else }}Chinese{{ end }}</a>
                     </li>
                 </ul>
@@ -30,24 +30,24 @@
         </div>
 
         <div class="accordion">
-            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
+            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden{{ if eq $.Page "exchange" }}checked{{ end }}>
             <label class="accordion-header c-hand toplevel" for="accordion-2">
                 <i class="icon icon-arrow-right mr-1"></i>
                 Exchange
             </label>
             <div class="accordion-body">
                 <ul class="menu menu-nav">
-                    <li class="menu-item">
+                    <li class="menu-item {{ if eq $.Page2 "status"}}active{{ end }}">
                         <a href="/exchange/status/">{{ if .En }}Status{{ else }}Chinese{{ end }}</a>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item {{ if eq $.Page2 "browse"}}active{{ end }}">
                         <a href="/exchange/browse/">{{ if .En }}Browse{{ else }}Chinese{{ end }}</a>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <li class="menu-item toplevel">
+        <li class="menu-item toplevel {{ if eq $.Page "account"}}active{{ end }}">
             <a href="/account/">{{ if .En }}Account{{ else }}Chinese{{ end }}</a>
         </li>
 
