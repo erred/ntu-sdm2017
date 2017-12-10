@@ -12,6 +12,13 @@ h1, h2 {
     height: 20vh;
     padding-top: 2rem;
 }
+/* =================== Navbar ================ */
+.navbar_left{
+    margin-left: 100px;
+}
+.navbar_right{
+    margin-right: 100px;
+}
 
 /* =================== Hero ================ */
 .hero:before {
