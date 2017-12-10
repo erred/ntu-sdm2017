@@ -25,25 +25,25 @@
                 if ($(window).scrollTop() >= skill_tree_top && $(window).scrollTop() < skill_exchange_top) {
                     $("#brand_text").addClass("black_text");
                 }
-                else{
-                    $("#brand_text").removeClass("black_text");
+                // else{
+                //     $("#brand_text").removeClass("black_text");
                 }
                 if ($(window).scrollTop() >= skill_exchange_top && $(window).scrollTop() < team_top){
                     $("#brand_text").removeClass("black_text");
                     $(".nav_link_text").addClass("black_text");
                 }
-                else{
-                    $("#brand_text").addClass("black_text");
-                    $(".nav_link_text").removeClass("black_text");
-                }
+                // else{
+                //     $("#brand_text").addClass("black_text");
+                //     $(".nav_link_text").removeClass("black_text");
+                // }
                 if ($(window).scrollTop() >= team_top){
                     $("#brand_text").addClass("black_text");
                     $(".nav_link_text").addClass("black_text");
                 }
-                else{
-                    $("#brand_text").removeClass("black_text");
-                    $(".nav_link_text").removeClass("black_text");
-                }
+                // else{
+                //     $("#brand_text").removeClass("black_text");
+                //     $(".nav_link_text").removeClass("black_text");
+                // }
             })
         }
         </script>
