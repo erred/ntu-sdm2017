@@ -9,8 +9,8 @@
 
         <li class="divider"></li>
 
-        <div class="accordion">
-            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden {{ if eq $.Page "tree" }}open{{ end }}>
+        <div class="accordion" {{ if eq $.Page "tree" }}open{{ end }}>
+            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
             <label class="accordion-header c-hand toplevel" for="accordion-1">
                 <i class="icon icon-arrow-right mr-1"></i>
                 {{ if .En }}Your Trees{{ else }}Chinese{{ end }}
@@ -29,8 +29,8 @@
             </div>
         </div>
 
-        <div class="accordion">
-            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden {{ if eq $.Page "exchange" }}open{{ end }}>
+        <div class="accordion" {{ if eq $.Page "exchange" }}open{{ end }}>
+            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
             <label class="accordion-header c-hand toplevel" for="accordion-2">
                 <i class="icon icon-arrow-right mr-1"></i>
                 Exchange
