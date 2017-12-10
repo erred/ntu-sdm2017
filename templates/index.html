@@ -5,17 +5,38 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/landing.css">
-    <script>
+        <script>
         function switchSpinner() {
             document.querySelector('.login-spinner').style.display= "block";
             document.querySelector('.fb-login-button').style.display= "none";
+        }
+
+        window.onload = function (){
+            set_navbar();
+        }
+        function set_navbar() {
+            alert("come!")
+            var brand_id = document.getElementById("brand_text");
+            var skill_tree = document.getElementById("skill_tree");
+            var skill_tree_top = skill_tree.offset().top;
+            var skill_exchange = document.getElementById("skill_exchange");
+            var skill_exchange_top = skill_exchange.offset().top;
+
+            var scroll_position = window.scrollY;
+            if (scroll_position > skill_tree_top) {
+                brand_id.style.color = "#000";
+                if (scroll_position > skill_exchange_top) {
+                    brand_id.style.color = "#fff";
+                }
+            }
+
         }
         </script>
     </head>
     <body>
         <header class="navbar">
             <section class="navbar-section navbar_left">
-                <a href="#" class="navbar-brand mr-2 nav_text">SKILL TREE</a>
+                <a href="#" id="brand_text" class="navbar-brand mr-2 nav_text">SKILL TREE</a>
 
             </section>
             <section class="navbar-section navbar_right">
