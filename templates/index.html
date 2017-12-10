@@ -132,12 +132,17 @@
             <!-- example tree -->
             <div class="container">
                 <div class="columns banner">
-                    <h2 class="column col-4">Grow your own tree</h2>
+                    <h2 class="column col-4">{{ if $.En }}What is Skill Tree? {{ else }}關於技能樹  {{end}} </h2>
                     <div class="column col-4 col-mr-auto">
                         <ul>
-                            <li>This is a short description of something. I don't know, just something.</li>
-                            <li>This is a short description of something. I don't know, just something.</li>
-                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>{{ if $.En }}Transfer all the courses of each department to a RPG skill tree {{ else }}將大學四年的課程畫成一棵RPG職業技能樹 {{ end }} </li>
+                            <li>{{ if $.En }}With the personal "skill tree", users can easily run through all the courses, and get a big picture of the course map that he or she has explored {{ else }}透過個人的「技能樹」，使用者能看見各系所的課程脈絡，並完善自己的修課記錄 {{ end }} </li>
+                        </ul>
+                    </div>
+                    <div class="column col-4 col-mr-auto">
+                        <ul>
+                            <li>{{ if $.En }}Users can not only view their own learning progress, understand the relationship between courses, but also see how each course can be linked to a future career path  {{ else }}檢視自我學習進度，了解所學之課程間的關聯，並與未來職業做連結 {{ end }} </li>
+                            <li>{{ if $.En }}Provide a "Skill Exchange" platform where users can share their own experiences with others {{ else }}提供學生與學生間的「技能交換」平台，利用互相交流來增進彼此的能力 {{ end }} </li>
                         </ul>
                     </div>
                 </div>
@@ -149,12 +154,12 @@
                 <div class="columns banner">
                     <div class="column col-4 col-ml-auto">
                         <ul>
-                            <li>This is a short description of something. I don't know, just something.</li>
-                            <li>This is a short description of something. I don't know, just something.</li>
-                            <li>This is a short description of something. I don't know, just something.</li>
+                            <li>{{ if $.En }}Take a look at others trees and send skill exchange invitations {{ else }}檢視他人的技能樹，並送出交換邀請 {{ end }} </li>
+                            <li>{{ if $.En }} {{ else }}利用自己擅長的領域與對方進行學習上的交流 {{ end }} </li>
+                            <li>{{ if $.En }} {{ else }}為對方設立學習進度，最終完成彼此認證 {{ end }} </li>
                         </ul>
                     </div>
-                    <h2 class="column col-4">Something...Exchange</h2>
+                    <h2 class="column col-4">{{ if $.En }}How do I get a Skill Echange? {{ else }}該如何與他人技能交換？ {{ end }}</h2>
                 </div>
             </div>
         </section>
@@ -176,21 +181,21 @@
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Kersee Huang {{ else }} 黃楷翔 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Victor Lee {{ else }} 李羽浩 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Jenny Hung {{ else }} 洪念綺 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                 </div>
@@ -199,21 +204,21 @@
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Kelly Hsieh {{ else }} 謝惠羽 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Sean Liao {{ else }} 廖寬璿 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="https://lh3.googleusercontent.com/AkTbUA_l8OICZ7xKGMY3-w0_kgCIRz_yEXMOYgHokTR9P_vszUvdp4udMP_o4VaCDkg=w300">
                         </figure>
-                        <h4 class="name">A person</h4>
+                        <h4 class="name">{{ if $.En }} Toto Ong {{ else }} 翁子衿 {{end}}</h4>
                         <p class="job">I do something</p>
                     </div>
                 </div>
