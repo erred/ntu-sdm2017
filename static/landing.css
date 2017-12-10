@@ -184,12 +184,17 @@ footer {
     color: #fefefe;
     padding-top: 3em;
 }
+footer ul{
+    list-style-type: none;
+}
 .footer_text{
     color: #fefefe !important;
     text-decoration: none;
 }
+.footer_text:hover{
+    text-decoration: none;
+}
 .footer_title{
-    border: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: #fefefe;
+    font-weight: 300;
+
 }
