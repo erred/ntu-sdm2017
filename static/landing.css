@@ -9,7 +9,7 @@ h1, h2 {
 
 .banner {
     /*background-color: #fefefe;*/
-    height: 20vh;
+    /*height: 20vh;*/
     padding-top: 2rem;
 }
 /* =================== Navbar ================ */
@@ -98,9 +98,15 @@ h1, h2 {
     z-index: -1;
 }
 .showcase .banner {
+    height: 100vh;
+    background-color: #fefefe;
 }
 .showcase h2 {
     text-align: end;
+}
+.showcase ul {
+    margin-left:100px;
+    line-height: 30px;
 }
 
 /* =================== exchange ================ */
