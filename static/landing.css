@@ -129,15 +129,15 @@ h1, h2 {
 }
 .exchange .banner {
     /*margin-top: 80vh;*/
-    padding-top: 10rem;
-    background-color: #fefefe;
+    padding-top: 0rem;
+    height: 100vh;
 }
 .exchange .inner_banner{
     padding-top: 10rem;
     background-color: #fefefe;
 }
 .exchange h2 {
-    text-align: start;
+    /*text-align: start;*/
 }
 .exchange ul {
     margin-left: 30px;
