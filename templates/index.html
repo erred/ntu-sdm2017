@@ -17,6 +17,7 @@
 		});
         function set_navbar() {
 
+            // set color
             var skill_tree_top = $("#skill_tree").offset().top;
             var skill_exchange_top = $("#skill_exchange").offset().top;
             var team_top = $("#our_team").offset().top;
@@ -38,7 +39,16 @@
                     $("#brand_text").removeClass("black_text");
                     $(".nav_link_text").removeClass("black_text");
                 }
-            })
+            });
+
+            //set scroll animate
+            $(".nav_link_text").on('click', 'a', function(event){
+				event.preventDefault();
+
+				$('html, body').animate({
+					scrollTop:$($.attr(this,'href')).offset().top
+				}, 500);
+			});
         }
         </script>
     </head>
