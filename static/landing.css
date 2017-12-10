@@ -167,6 +167,9 @@ h1, h2 {
     height: 6rem;
     width: 6rem;
 }
+.team .banner {
+    margin-top: 6em;
+}
 
 
 /* =================== Team ================ */
