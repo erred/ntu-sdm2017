@@ -13,7 +13,7 @@
             <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
             <label class="accordion-header c-hand toplevel" for="accordion-1">
                 <i class="icon icon-arrow-right mr-1"></i>
-                {{ if .En }}Your Skill Trees{{ else }}你的技能樹{{ end }}
+                {{ if $.En }}Your Skill Trees{{ else }}你的技能樹{{ end }}
             </label>
             <div class="accordion-body">
                 <ul class="menu menu-nav">
@@ -33,33 +33,34 @@
             <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
             <label class="accordion-header c-hand toplevel" for="accordion-2">
                 <i class="icon icon-arrow-right mr-1"></i>
-                {{ if .En }}
+                {{ if $.En }}
                 SKill Exchange
                 {{ else }}
                 技能交換
+                {{ end }}
             </label>
             <div class="accordion-body">
                 <ul class="menu menu-nav">
                     <li class="menu-item">
-                        <a class="{{ if eq $.Page2 "status"}}active{{ end }}" href="/exchange/status/">{{ if .En }}Status{{ else }}交換狀態{{ end }}</a>
+                        <a class="{{ if eq $.Page2 "status"}}active{{ end }}" href="/exchange/status/">{{ if $.En }}Status{{ else }}交換狀態{{ end }}</a>
                     </li>
                     <li class="menu-item">
-                        <a class="{{ if eq $.Page2 "browse"}}active{{ end }}" href="/exchange/browse/">{{ if .En }}Browse{{ else }}瀏覽他人{{ end }}</a>
+                        <a class="{{ if eq $.Page2 "browse"}}active{{ end }}" href="/exchange/browse/">{{ if $.En }}Browse{{ else }}瀏覽他人{{ end }}</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <li class="menu-item toplevel">
-            <a class="{{ if eq $.Page "account"}}active{{ end }}" href="/account/">{{ if .En }}Account{{ else }}帳戶{{ end }}</a>
+            <a class="{{ if eq $.Page "account"}}active{{ end }}" href="/account/">{{ if $.En }}Account{{ else }}帳戶{{ end }}</a>
         </li>
 
         <li class="menu-item toplevel">
-            <a href="#" onclick="languageSwitch();">{{ if .En }}中文版{{ else }}English Version{{ end }}</a>
+            <a href="#" onclick="languageSwitch();">{{ if $.En }}中文版{{ else }}English Version{{ end }}</a>
         </li>
 
         <li class="menu-item toplevel">
-            <a href="#" onclick="logout();">{{ if .En }}Logout{{ else }}登出{{ end }}</a>
+            <a href="#" onclick="logout();">{{ if $.En }}Logout{{ else }}登出{{ end }}</a>
         </li>
 
     </ul>
