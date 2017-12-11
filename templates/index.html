@@ -74,13 +74,13 @@
                 <div class="columns">
                     <h1 class="column col-4 col-mx-auto">SkillTree</h1>
                 </div>
-                <div class="columns">
-                    {{ if .En }}
+               <!--  <div class="columns">
+                    {{ if $.En }}
                     <h2 class="column col-4 col-mx-auto">Here goes a tagline</h2>
                     {{ else  }}
                     <h2 class="column col-4 col-mx-auto">Here goes a tagline in Chinese</h2>
                     {{ end }}
-                </div>
+                </div> -->
                 <div class="columns">
                     <div class="column col-2 col-mx-auto fb-login-container">
                         <!-- show on initial page load -->
@@ -97,7 +97,7 @@
                         <!-- hide on initial page load -->
                         <!-- show on statusChangeCallback success-->
                         <a class="login-continue" href="/tree">
-                            <button class="btn btn-primary btn-lg continue-btn continue_button">Continue to App</button>
+                            <button class="btn btn-primary btn-lg continue-btn continue_button">{{ if $.En }}Continue to App {{ else }} 前往技能樹 {{ end }} </button>
                         </a>
 
                     </div>
@@ -167,21 +167,21 @@
                             <img src="/static/image/team/Kersee.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Kersee Huang {{ else }} 黃楷翔 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B03705001</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="/static/image/team/Victor.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Victor Lee {{ else }} 李羽浩 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B03705011</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="/static/image/team/Jenny.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Jenny Hung {{ else }} 洪念綺 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B03705031</p>
                     </div>
                 </div>
                 <div class="columns">
@@ -190,21 +190,21 @@
                             <img src="/static/image/team/Kelly.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Kelly Hsieh {{ else }} 謝惠羽 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B03705035</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="/static/image/team/Sean.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Sean Liao {{ else }} 廖寬璿 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B03705049</p>
                     </div>
                     <div class="column col-4 person">
                         <figure class="avatar avatar-xxl">
                             <img src="/static/image/team/Clawdi.jpg">
                         </figure>
                         <h4 class="name">{{ if $.En }} Toto Ong {{ else }} 翁子衿 {{end}}</h4>
-                        <p class="job">I do something</p>
+                        <p class="job">B02204039</p>
                     </div>
                 </div>
             </div>
@@ -222,10 +222,12 @@
                     </ul>
                 </div>
                 <div class="column col-3 col-ml-auto">
+                    <h5 class="footer_title">{{ if $.En }} Contact Us {{else}} 聯絡我們 {{end}}</h5>
                     <ul>
-                        <li>A List item</li>
-                        <li>A List item</li>
-                        <li>A List item</li>
+                        <li><a href="#skill_tree" class="footer_text">service@skilltree.com</a></li>
+                        <li><a href="#skill_exchange" class="footer_text">www.facebook.com/skilltree </a></li>
+                        <li><a href="#our_team" class="footer_text">twitter.com/skilltree </a></li>
+                        <li><a href="#" onclick="languageSwitch();" class="footer_text">{{ if .En }}No.1, Sec. 4, Roosevelt Rd., Da’an Dist., Taipei City 106, Taiwan (R.O.C.){{ else }}台北市大安區羅斯福路四段一號{{ end }}</a></li>
                     </ul>
                 </div>
             </div>
