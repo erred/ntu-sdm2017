@@ -90,6 +90,7 @@ h1, h2 {
     border-radius: 30px;
     font-weight: 200;
     color:#fff;
+    text-decoration: none;
 
     display: block;
     margin: 0px auto;
@@ -97,6 +98,7 @@ h1, h2 {
 .continue_button:hover{
     background-color:#fff !important;
     color:#000 !important;
+    text-decoration: none;
 }
 
 /* =================== Showcase ================ */
