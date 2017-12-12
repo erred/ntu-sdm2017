@@ -5,6 +5,7 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -19,7 +20,7 @@
                             </p>
                         </section>
                         <section class="navbar-section">
-                            <a href="/tree/delete/{{ .TreeData.Treeid }}/" class="btn btn-link">Delete</a>
+                            <a href="/tree/delete/{{ .TreeData.Treeid }}/" class="btn btn-link delete_btn" onclick="return confirm_delete();">Delete</a>
                         </section>
                     </header>
 
@@ -32,3 +33,20 @@
         {{ template "footer" }}
     </body>
 </html>
+
+<script>
+
+    $(document).ready(function(){
+        // set_alert();
+    });
+    function set_alert() {
+        $(".delete_btn").on("click",function(){
+            var cancel = confirm("Are you sure to delete yout skill tree?");
+
+        });
+    }
+    function confirm_delete(){
+        var cancel = confirm("Are you sure to delete yout skill tree?");
+        return cancel;
+    }
+</script>
