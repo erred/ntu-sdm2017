@@ -73,3 +73,10 @@ main {
     padding: 0.5rem;
     background-color: #fefefe;
 }
+
+
+
+/* ================== Card ================ */
+.card-image svg{
+    margin-left: -50%;
+}

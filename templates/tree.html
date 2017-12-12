@@ -37,9 +37,21 @@
 <script>
 
     $(document).ready(function(){
-        // set_alert();
-        alert({{ .TreeData.Name }});
+        setup_tree({{ .TreeData.State }});
     });
+
+    function setup_tree(skill_tree_json){
+        var skill_tree = $.parseJSON(skill_tree_json);
+        // set_node(skill_tree);
+        // set_precourse(skill_tree);
+        alert(skill_tree["key"]);
+    }
+    function set_node(skill_tree){
+
+    }
+    function set_precourse(skill_tree){
+
+    }
 
     function confirm_delete(){
         var cancel = confirm("Are you sure to delete yout skill tree?");
