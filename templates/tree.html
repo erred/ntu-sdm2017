@@ -43,13 +43,86 @@
     function setup_tree(skill_tree_json){
         // var skill_tree = $.parseJSON(skill_tree_json);
         // set_node(skill_tree);
-        // set_precourse(skill_tree);
+        // modify_node(skill_tree);
     }
     function set_node(skill_tree){
+        for (var skill_id in skill_tree) {
 
+            // Add text
+            {{ if $.En }}
+            $("#"+skill_id+"_name").text(skill_id);
+            {{else}}
+            $("#"+skill_id+"_name").text(skill_tree[skill_id]["CName"]);
+            {{end}}
+
+            // Add learned skills
+            if (skill_tree[skill_id]["status"] == 1) {
+                $("#"+skill_id).addClass("learned_skill");
+                $("#"+skill_id+" path").style("fill","#878787");
+            }
+        }
     }
-    function set_precourse(skill_tree){
+    function modify_node(skill_tree){
+        $(".skill_node").on("click",function(){
+            var this_id = $("this").attr("id");
 
+            // Delete
+            if ($("this").hasClass("learned_skill")) {
+                var delete_node = confirm("Are you sure to delete the node?");
+                if (delete_node == 1) {
+
+                    // delete selected node
+                    $("this").removeClass("learned_skill");
+                    $("#"+this_id+" path").style("fill","#fff");
+                    skill_tree[this_id]["status"] = 0;
+                    for (var skill_id in skill_tree) {
+                        if (
+                            skill_tree[skill_id]["status"] == 1 &&
+                            skill_tree[skill_id]["pre_course"].includes(this_id)
+                        ) {
+
+                            // delete course after selected node
+                            $("this").removeClass("learned_skill");
+                            $("#"+skill_id+" path").style("fill","#fff");
+                            skill_tree[skill_id]["status"] = 0;
+                        }
+                    }
+                    send_json(skill_tree);
+                }
+            }
+
+            //Add
+            else{
+                // check if the node has pre_course
+                finish_pre_course = 1;
+                pre_course_str = "";
+                skill_tree[this_id]["pre_course"].forEach(function(pre_course){
+                    if (skill_tree[pre_course]["status"] == 0) {
+                        finish_pre_course = 0;
+                        pre_course_str += pre_course + " ";
+                    }
+                });
+
+                if (finish_pre_course == 0) {
+                    alert("You have to learn "+pre_course_str+"first!");
+                }
+                else {
+                    // add node
+                    $("this").addClass("learned_skill");
+                    $("#"+this_id+" path").style("fill","#878787");
+                    skill_tree[this_id]["status"] = 1;
+                    send_json(skill_tree);
+                }
+            }
+        })
+    }
+
+    function send_json(skill_tree) {
+
+        // send json back to db
+
+        // reload
+        location.reload();
     }
 
     function confirm_delete(){
