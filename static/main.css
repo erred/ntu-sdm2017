@@ -76,7 +76,15 @@ main {
 
 
 
-/* ================== Card ================ */
+/* ================== new tree ================ */
 .card-image svg{
     margin-left: -50%;
+}
+
+
+/* ================== tree ================ */
+#main_tree svg{
+    display: block;
+    margin: 0px auto;
+    overflow: scroll;
 }

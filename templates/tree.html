@@ -11,7 +11,7 @@
         <div class="container">
             <div class="columns">
                 {{ template "sidebar" .Page }}
-                <main class="column col-10 col-gapless container tree">
+                <main id="main_tree" class="column col-10 col-gapless container tree">
                     <header class="navbar tree-nav">
                         <section class="navbar-section">
                             <p>
@@ -41,10 +41,9 @@
     });
 
     function setup_tree(skill_tree_json){
-        var skill_tree = $.parseJSON(skill_tree_json);
+        // var skill_tree = $.parseJSON(skill_tree_json);
         // set_node(skill_tree);
         // set_precourse(skill_tree);
-        alert(skill_tree["key"]);
     }
     function set_node(skill_tree){
 
