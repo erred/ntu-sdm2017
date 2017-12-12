@@ -78,13 +78,16 @@ main {
 
 /* ================== new tree ================ */
 .card-image svg{
-    margin-left: -50%;
+    /*margin-left: -50%;*/
+    width: 100%;
 }
 
 
 /* ================== tree ================ */
+#main_tree{
+    overflow: scroll;
+}
 #main_tree svg{
     display: block;
     margin: 0px auto;
-    overflow: scroll;
 }
