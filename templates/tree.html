@@ -38,13 +38,9 @@
 
     $(document).ready(function(){
         // set_alert();
+        alert({{ .TreeData.Name }});
     });
-    function set_alert() {
-        $(".delete_btn").on("click",function(){
-            var cancel = confirm("Are you sure to delete yout skill tree?");
 
-        });
-    }
     function confirm_delete(){
         var cancel = confirm("Are you sure to delete yout skill tree?");
         return cancel;
