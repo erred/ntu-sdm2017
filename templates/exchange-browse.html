@@ -38,8 +38,8 @@
 
         <!-- {{ $it.TreeData.State }} -->
     </div>
-    <div class="card-header">
-        <span id="like_number">{{ $it.Likes }}</span>
+    <div class="card-header" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
+        <span class="like_number">{{ $it.Likes }}</span>
 
         {{ if $it.Liked }}
         <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
@@ -77,14 +77,17 @@
 
     function setup_like(){
         $(".like_icon").on("click",function(){
+            var user = $(this).parent().attr("data-user_id");
+            var tree_id = $(this).parent().attr("data-tree_id");
+
             if ($(this).hasClass("liked_tree")) {
                 $(this).removeClass("liked_tree");
                 $(this).addClass("unliked_tree");
 
                 $(this).removeClass("fa-heart");
                 $(this).addClass("fa-heart-o");
-                $("#like_number").text(parseInt($("#like_number").text())-1);
-                // update_likes_count(0);
+                $(this).parent().children(".like_number").text(parseInt($(".like_number").text())-1);
+                // update_likes_count(0,user,tree_id);
             }
             else{
                 $(this).removeClass("unliked_tree");
@@ -92,15 +95,15 @@
 
                 $(this).removeClass("fa-heart-o");
                 $(this).addClass("fa-heart");
-                $("#like_number").text(parseInt($("#like_number").text())+1);
-                // update_likes_count(1);
+                $(this).parent().children(".like_number").text(parseInt($(".like_number").text())+1);
+                // update_likes_count(1,user,tree_id);
             }
         });
     }
 
-    function update_likes_count(add_num){
+    function update_likes_count(add_num,user,tree_id){
 
-        fetch('/exchange/like/'+{{ $it.User }}+'/'+{{ $it.TreeData.Treeid }}+'/'+add_num+'/', {
+        fetch('/exchange/like/'+user+'/'+tree_id+'/'+add_num+'/', {
             method : 'get'
         });
     }
