@@ -116,7 +116,6 @@
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 $("#"+skill_id+"_circle").addClass("learned_skill");
-                // $("#"+skill_id+" path").style("fill","#878787");
             }
         }
     }
@@ -156,20 +155,35 @@
                 // check if the node has pre_course
                 finish_pre_course = 1;
                 pre_course_str = "";
+                alert_str = "";
+
+                {{ if $.En }}
                 skill_tree[this_id]["pre_course"].forEach(function(pre_course){
                     if (skill_tree[pre_course]["status"] == 0) {
                         finish_pre_course = 0;
                         pre_course_str += pre_course + " ";
                     }
                 });
+                alert_str = "You have to learn "+pre_course_str+"first!"
+
+                {{else}}
+                skill_tree[this_id]["pre_course"].forEach(function(pre_course){
+                    if (skill_tree[pre_course]["status"] == 0) {
+                        finish_pre_course = 0;
+                        pre_course_str += skill_tree[pre_course]["CName"] + " ";
+                    }
+                });
+                alert_str = "你要先修過 "+pre_course_str+"!"
+
+                {{end}}
 
                 if (finish_pre_course == 0) {
-                    alert("You have to learn "+pre_course_str+"first!");
+                    alert(alert_str);
                 }
                 else {
                     // add node
                     $("#"+this_circle_id).addClass("learned_skill");
-                    // $("#"+this_id+" path").style("fill","#878787");
+
                     skill_tree[this_id]["status"] = 1;
                     send_json(skill_tree);
                 }
@@ -180,19 +194,37 @@
     function send_json(skill_tree) {
 
         // send json back to db
+        send_json_to_db(skill_tree);
+
+        // reload
+        // location.reload();
+    }
+    function send_json_to_db(skill_tree) {
         // var json = JSON.stringify(skill_tree);
         // var request = xhr(); // xhr() 會建立非同步物件
         // request.onreadystatechange = handleStateChange; // handleStateChange 參考至函式
         // request.open('POST', "/tree/update/treeid/");
         // request.setRequestHeader('Content-Type', 'application/json');
         // request.send(json);
-
-        // reload
-        // location.reload();
     }
 
     function confirm_delete(){
+        {{ if $.En }}
         var cancel = confirm("Are you sure to delete yout skill tree?");
+
+        {{else}}
+        var cancel = confirm("你確定要刪除整棵樹？");
+
+        {{end}}
+
+        if(cancel){
+            for (var skill_id in skill_tree) {
+
+                // Delete learned skills
+                skill_tree[skill_id]["status"] == 0;
+            }
+            send_json_to_db(skill_tree);
+        }
         return cancel;
     }
 </script>
