@@ -15,14 +15,14 @@ function getCookie(name) {
   return ""
 }
 
-(function() {
-  if (window.location.pathname == "/") {
-    document.querySelector('.fb-login-button').style.display = "none";
-    document.querySelector('.login-spinner').style.display = "none";
-    document.querySelector('.login-continue').style.display = "block";
-  }
+// (function() {
+//   if (window.location.pathname == "/") {
+//     document.querySelector('.fb-login-button').style.display = "none";
+//     document.querySelector('.login-spinner').style.display = "none";
+//     document.querySelector('.login-continue').style.display = "block";
+//   }
 
-})();
+// })();
 
 function crawlFriends(FB) {
   friends = [];
