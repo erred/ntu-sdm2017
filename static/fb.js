@@ -94,6 +94,7 @@ function setEmailName(FB) {
          });
   if (getCookie("updateName") == "true") {
     updateAccountInfo(FB);
+    setCookie(100, "updateName", "false");
   }
 }
 
