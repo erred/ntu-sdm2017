@@ -104,7 +104,8 @@
     function update_likes_count(add_num,user,tree_id){
 
         fetch('/exchange/like/'+user+'/'+tree_id+'/'+add_num+'/', {
-            method : 'get'
+            method : 'get',
+            credentials : "include"
         });
     }
 
