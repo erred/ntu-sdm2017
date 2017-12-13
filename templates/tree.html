@@ -98,9 +98,9 @@
         // set_node(skill_tree);
         // modify_node(skill_tree);
 
-        console.log(skill_tree);
-        set_node(skill_tree);
-        modify_node(skill_tree);
+        console.log(skill_tree_json);
+        set_node(skill_tree_json);
+        modify_node(skill_tree_json);
     }
     function set_node(skill_tree){
         for (var skill_id in skill_tree) {
@@ -115,7 +115,7 @@
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 $("#"+skill_id).addClass("learned_skill");
-                $("#"+skill_id+" path").style("fill","#878787");
+                // $("#"+skill_id+" path").style("fill","#878787");
             }
         }
     }
@@ -132,7 +132,7 @@
 
                     // delete selected node
                     $("this").removeClass("learned_skill");
-                    $("#"+this_id+" path").style("fill","#fff");
+                    // $("#"+this_id+" path").style("fill","#fff");
                     skill_tree[this_id]["status"] = 0;
                     for (var skill_id in skill_tree) {
                         if (
@@ -142,7 +142,7 @@
 
                             // delete course after selected node
                             $("this").removeClass("learned_skill");
-                            $("#"+skill_id+" path").style("fill","#fff");
+                            // $("#"+skill_id+" path").style("fill","#fff");
                             skill_tree[skill_id]["status"] = 0;
                         }
                     }
@@ -168,7 +168,7 @@
                 else {
                     // add node
                     $("this").addClass("learned_skill");
-                    $("#"+this_id+" path").style("fill","#878787");
+                    // $("#"+this_id+" path").style("fill","#878787");
                     skill_tree[this_id]["status"] = 1;
                     send_json(skill_tree);
                 }

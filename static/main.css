@@ -93,7 +93,7 @@ main {
     margin: 0px auto;
 }
 .learned_skill{
-    background-color: #878787;
+    fill: #f8b245 !important;
 }
 circle{
     cursor: pointer;
