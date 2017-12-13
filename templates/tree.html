@@ -180,6 +180,13 @@
     function send_json(skill_tree) {
 
         // send json back to db
+        var json = JSON.stringify(skill_tree);
+        console.log(json);
+        // var request = xhr(); // xhr() 會建立非同步物件
+        // request.onreadystatechange = handleStateChange; // handleStateChange 參考至函式
+        // request.open('POST', "/tree/update/treeid/");
+        // request.setRequestHeader('Content-Type', 'application/json');
+        // request.send(json);
 
         // reload
         // location.reload();
