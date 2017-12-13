@@ -148,7 +148,7 @@
         send_json_to_db(skill_tree);
 
         // reload
-        location.reload();
+        // location.reload();
     }
     function send_json_to_db(skill_tree) {
         fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
@@ -159,7 +159,9 @@
           },
           credentials : "include",
           body : JSON.stringify(skill_tree)
-        })
+      }).then(function(){
+          location.reload();
+      })
     }
 
     function confirm_delete(){
