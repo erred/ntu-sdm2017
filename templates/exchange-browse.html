@@ -6,6 +6,7 @@
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
         <link rel="stylesheet" type="text/css" href="/static/font-awesome/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -77,9 +78,7 @@
     });
 
     function setup_tree(skill_tree){
-        {{ range $idx, $it := .Items }}
-        // set_node({{ $it.TreeData.State }},{{ $it.User }});
-        {{ end }}
+        // set_node( $it.TreeData.State , $it.User );
     }
     function set_node(skill_tree,user){
         for (var skill_id in skill_tree) {
@@ -100,10 +99,7 @@
     }
 
     function setup_like(){
-        alert("like");
         $(".like_icon").on("click",function(){
-            alert("yes");
-            alert($(this).attr("class"));
             if ($(this).hasClass("liked_tree")) {
                 $(this).removeClass("liked_tree");
                 $(this).addClass("unliked_tree");
