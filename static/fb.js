@@ -16,10 +16,6 @@ function getCookie(name) {
 }
 
 (function() {
-  setCookie(100, 'id', '000000000');
-  setCookie(100, 'name', 'A Name');
-  setCookie(100, 'email', 'Example@example.com');
-
   if (window.location.pathname == "/") {
     document.querySelector('.fb-login-button').style.display = "none";
     document.querySelector('.login-spinner').style.display = "none";
@@ -47,6 +43,7 @@ function crawlFriends(FB) {
       'Accept' : 'application/json, text/plain, */*',
       'Content-Type' : 'application/json'
     },
+    credentials : 'include',
     body : JSON.stringify(friends)
   })
       .then(function(res){return res.json()})
