@@ -88,6 +88,7 @@ main {
     overflow: scroll;
 }
 #main_tree svg{
+    width: 60vw;
     display: block;
     margin: 0px auto;
 }
