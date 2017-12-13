@@ -42,19 +42,65 @@
 
     $(document).ready(function(){
         // setup_tree({{ .TreeData.State }});
-        setup_tree("/static/test_skilltree.json");
+        var skill_tree = {
+        	PD:{"CName":"程式設計","pre_course":[],"status":0},
+        	DS_APD:{"CName":"資料結構與進階程式設計","pre_course":["PD"],"status":0},
+        	PL:{"CName":"程式語言","pre_course":["PD"],"status":0},
+        	ToC:{"CName":"計算理論","pre_course":["Algorithm"],"status":0},
+        	CN_A:{"CName":"網路技術與應用","pre_course":[],"status":0},
+        	IS:{"CName":"資訊安全","pre_course":["CN_A","OS"],"status":0},
+        	OS:{"CName":"作業系統","pre_course":[],"status":0},
+        	DB:{"CName":"資料庫管理","pre_course":["OS"],"status":0},
+        	COS:{"CName":"計算機組織與結構","pre_course":[],"status":0},
+        	SA:{"CName":"系統分析與設計","pre_course":[],"status":0},
+        	SDM:{"CName":"軟體開發方法","pre_course":["SA"],"status":0},
+        	SPM:{"CName":"軟體專案管理","pre_course":[],"status":0},
+        	IR:{"CName":"資訊檢索與文字探勘導論","pre_course":[],"status":0},
+        	BD_BA:{"CName":"大數據與商業分析","pre_course":[],"status":0},
+        	GD:{"CName":"遊戲設計","pre_course":[],"status":0},
+        	3DCIR:{"CName":"3D創作實際","pre_course":[],"status":0},
+        	3DP:{"CName":"3D程式設計","pre_course":[],"status":0},
+        	IE:{"CName":"資訊經濟","pre_course":[],"status":0},
+        	HCI:{"CName":"人機互動","pre_course":[],"status":0},
+            Algorithm:{"CName":"演算法","pre_course":["DS_APD"],"status":0},
+        	Calculus_a1:{"CName":"微積分甲上","pre_course":[],"status":0},
+        	Calculus_a2:{"CName":"微積分甲下","pre_course":["Calculus_a1"],"status":0},
+        	Statistics_I1:{"CName":"統計學一上","pre_course":[],"status":0},
+        	Statistics_I2:{"CName":"統計學一下","pre_course":["Statistics_I1"],"status":0},
+        	MM:{"CName":"管理數學","pre_course":[],"status":0},
+        	DM:{"CName":"離散數學","pre_course":[],"status":0},
+        	MSL_TP:{"CName":"統計學習初論","pre_course":["Calculus_a1","Calculus_a2","Statistics_I1","Statistics_I2","MM"],"status":0},
+        	Finance_1:{"CName":"會計學甲一上","pre_course":[],"status":0},
+        	Finance_2:{"CName":"會計學甲一下","pre_course":["Finance_1"],"status":0},
+        	Economics_1:{"CName":"經濟學一","pre_course":[],"status":0},
+        	Management:{"CName":"管理學","pre_course":[],"status":0},
+        	OR:{"CName":"作業研究","pre_course":[],"status":0},
+        	MIS:{"CName":"資訊管理導論","pre_course":[],"status":0},
+        	ISIM:{"CName":"資訊服務創新管理","pre_course":[],"status":0},
+        	FM:{"CName":"財務管理","pre_course":["Economics_1","Finance_1","Finance_2"],"status":0},
+        	SM:{"CName":"策略管理","pre_course":["Management"],"status":0},
+        	OB:{"CName":"組織行為","pre_course":["Management"],"status":0},
+        	MkM:{"CName":"行銷管理","pre_course":["Management"],"status":0},
+        	OM:{"CName":"作業管理","pre_course":["OR"],"status":0},
+        	IMFP:{"CName":"資管新生專題","pre_course":[],"status":0},
+        	PoIM_1:{"CName":"資管專題一","pre_course":[],"status":0},
+        	PoIM_2:{"CName":"資管專題二","pre_course":["PoIM_1"],"status":0},
+        	MPD_1:{"CName":"資管專題討論一","pre_course":[],"status":0},
+        	MPD_2:{"CName":"資管專題討論二","pre_course":[],"status":0},
+        	SILP:{"CName":"資訊法與資訊政策專題","pre_course":[],"status":0}
+        };
+
+        setup_tree(skill_tree);
     });
 
     function setup_tree(skill_tree_json){
         // var skill_tree = $.parseJSON(skill_tree_json);
         // set_node(skill_tree);
         // modify_node(skill_tree);
-        $.getJSON(skill_tree_json, function(skill_tree) {
-            // console.log(skill_tree);
-            console.log(skill_tree);
-            set_node(skill_tree);
-            modify_node(skill_tree);
-        });
+
+        console.log(skill_tree);
+        set_node(skill_tree);
+        modify_node(skill_tree);
     }
     function set_node(skill_tree){
         for (var skill_id in skill_tree) {
