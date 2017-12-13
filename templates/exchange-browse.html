@@ -30,7 +30,36 @@
                         <!--     </div> -->
                         <!-- </div> -->
                         <div class="columns">
-                            
+                            {{ range $idx, $it := .Items }}
+
+<div class="card column col-3">
+    <div class="card-image">
+        {{ $it.TreeData.Svg }}
+        <!-- {{ $it.TreeData.State }} -->
+    </div>
+    <div class="card-header">
+        <!-- show somw image -->
+        {{ $it.Likes }}
+
+<!-- async to /exchange/like/{{ $it.User }}/{{ $it.TreeData.Treeid }}/1/ -->
+        {{ if $it.Liked }}
+        <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
+        <!-- <button class="btn float-right">Like</button> -->
+        {{ else }}
+
+        <i class="fa fa-heart-o unliked_tree like_icon" aria-hidden="true"></i>
+        <!-- <button class="btn float-right">Like</button> -->
+        {{ end }}
+<!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->
+        <button class="btn btn-link float-right">Exchange</button>
+        <div class="card-title h5">
+        {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
+        </div>
+        <div class="card-subtitle text-gray">{{ $it.Name }}</div>
+    </div>
+</div>
+
+                            {{ end }}
                         </div>
                     </div>
                 </main>
@@ -44,13 +73,13 @@
 <script>
 
     $(document).ready(function(){
-        alert("yes");
+        console.log("yes");
         // setup_tree();
         setup_like();
     });
 
     function setup_tree(skill_tree){
-        // set_node( $it.TreeData.State , $it.User );
+        
     }
     function set_node(skill_tree,user){
         for (var skill_id in skill_tree) {
