@@ -94,3 +94,6 @@ main {
 .learned_skill{
     background-color: #878787;
 }
+circle{
+    cursor: pointer;
+}
