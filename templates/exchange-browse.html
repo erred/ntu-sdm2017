@@ -74,30 +74,8 @@
 
     $(document).ready(function(){
         console.log("yes");
-        // setup_tree();
         setup_like();
     });
-
-    function setup_tree(skill_tree){
-        
-    }
-    function set_node(skill_tree,user){
-        for (var skill_id in skill_tree) {
-            $("#"+skill_id+" text").text("");
-
-            // Add text
-            {{ if $.En }}
-            $("#"+skill_id+" text").text(skill_id);
-            {{else}}
-            $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
-            {{end}}
-
-            // Add learned skills
-            if (skill_tree[skill_id]["status"] == 1) {
-                $("#"+skill_id+"_circle").addClass("learned_skill");
-            }
-        }
-    }
 
     function setup_like(){
         alert("yes");
@@ -117,42 +95,5 @@
                 $(this).addClass("fa-heart");
             }
         });
-    }
-
-    function send_json(skill_tree) {
-
-        // send json back to db and reload
-        fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
-            method : 'post',
-            headers : {
-                'Accept' : 'application/json, text/plain, */*',
-                'Content-Type' : 'application/json'
-            },
-            credentials : "include",
-            body : JSON.stringify(skill_tree)
-        }).then(function(){
-            location.reload();
-        });
-    }
-
-
-    function confirm_delete(){
-        {{ if $.En }}
-        var cancel = confirm("Are you sure to delete yout skill tree?");
-
-        {{else}}
-        var cancel = confirm("你確定要刪除整棵樹？");
-
-        {{end}}
-
-        if(cancel){
-            for (var skill_id in skill_tree) {
-
-                // Delete learned skills
-                skill_tree[skill_id]["status"] == 0;
-            }
-            send_json_to_db(skill_tree);
-        }
-        return cancel;
     }
 </script>
