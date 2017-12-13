@@ -77,7 +77,7 @@
                 var delete_node = confirm("你確定要刪除這項技能？");
 
                 {{end}}
-                
+
                 if (delete_node == 1) {
 
                     // delete selected node
@@ -151,12 +151,15 @@
         // location.reload();
     }
     function send_json_to_db(skill_tree) {
-        // var json = JSON.stringify(skill_tree);
-        // var request = xhr(); // xhr() 會建立非同步物件
-        // request.onreadystatechange = handleStateChange; // handleStateChange 參考至函式
-        // request.open('POST', "/tree/update/treeid/");
-        // request.setRequestHeader('Content-Type', 'application/json');
-        // request.send(json);
+        fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
+          method : 'post',
+          headers : {
+            'Accept' : 'application/json, text/plain, */*',
+            'Content-Type' : 'application/json'
+          },
+          credencials : "include",
+          body : JSON.stringify(skill_tree)
+        })
     }
 
     function confirm_delete(){
