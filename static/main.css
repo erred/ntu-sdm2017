@@ -122,6 +122,8 @@ circle{
     cursor: pointer;
 }
 .exchange_button{
+    width: 100px;
+    margin-top: -10px;
     border: 1px solid #5755d9 !important;
     border-radius: 30px;
 }
