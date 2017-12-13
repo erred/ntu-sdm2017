@@ -38,10 +38,8 @@
         <!-- {{ $it.TreeData.State }} -->
     </div>
     <div class="card-header">
-        <!-- show somw image -->
-        {{ $it.Likes }}
+        <span id="like_number">{{ $it.Likes }}</span>
 
-<!-- async to /exchange/like/{{ $it.User }}/{{ $it.TreeData.Treeid }}/1/ -->
         {{ if $it.Liked }}
         <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
         <!-- <button class="btn float-right">Like</button> -->
@@ -73,12 +71,10 @@
 <script>
 
     $(document).ready(function(){
-        console.log("yes");
         setup_like();
     });
 
     function setup_like(){
-        alert("yes");
         $(".like_icon").on("click",function(){
             if ($(this).hasClass("liked_tree")) {
                 $(this).removeClass("liked_tree");
@@ -86,6 +82,8 @@
 
                 $(this).removeClass("fa-heart");
                 $(this).addClass("fa-heart-o");
+                $("#like_number").text(parseInt($("#like_number").text())-1);
+                // update_likes_count(0);
             }
             else{
                 $(this).removeClass("unliked_tree");
@@ -93,7 +91,18 @@
 
                 $(this).removeClass("fa-heart-o");
                 $(this).addClass("fa-heart");
+                $("#like_number").text(parseInt($("#like_number").text())+1);
+                // update_likes_count(1);
             }
         });
     }
+
+    function update_likes_count(add_num){
+
+        fetch('/exchange/like/'+{{ $it.User }}+'/'+{{ $it.TreeData.Treeid }}+'/'+add_num+'/', {
+            method : 'get'
+        });
+    }
+
+
 </script>
