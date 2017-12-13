@@ -1,5 +1,12 @@
 package main
 
+var tree01id = `tree01`
+
+var tree01name = `Dept. IM`
+var tree01cname = `資訊管理學系`
+
+var tree01desc = `This tree is for NTU IM`
+
 var tree01svg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800.66 784.49">
 <defs>

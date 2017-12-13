@@ -8,6 +8,8 @@ import (
 
 func fakeData() error {
 
+	// Create predifined users here
+	// userid , username, email
 	account := [][]string{
 		[]string{"0x000", "Winfred Royale", "x@example.com"},
 	}
@@ -19,8 +21,10 @@ func fakeData() error {
 		}
 	}
 
+	// create tree templates here
+	// treeid, english name, chinese name, svg, zerostate, desciption
 	template := [][]string{
-		[]string{"tree02", "Dept. IM", "資訊管理學系", tree01svg, tree01state, "Tree for ntuim"},
+		[]string{tree01id, tree01name, tree01cname, tree01svg, tree01state, tree01desc},
 	}
 	for _, t := range template {
 		_, err := DB.Exec("INSERT INTO treeTemplate (treeid, tree, ctree, svg, zeroState, desc) VALUES (?, ?, ?, ?, ?, ?)", t[0], t[1], t[2], t[3], t[4], t[5])
@@ -30,6 +34,8 @@ func fakeData() error {
 		}
 	}
 
+	// create trees owned by user here
+	// userid, treeid, state
 	tree := [][]string{
 		[]string{"0x000", "tree01", tree01state},
 	}
@@ -41,6 +47,8 @@ func fakeData() error {
 		}
 	}
 
+	// exchanges
+	// hash value, (userid, treeid, skill, state) * 2
 	ex := [][]string{
 	// []string{"hash1", "0x00", "tree03", "laze", "requested", "0x222", "tree01", "wondernes", "pending"},
 	}
@@ -52,6 +60,8 @@ func fakeData() error {
 		}
 	}
 
+	// likes
+	// userid, treeOwnerUserId, treeId
 	like := [][]string{
 	// []string{"0x000", "0x111", "tree03"},
 	}
