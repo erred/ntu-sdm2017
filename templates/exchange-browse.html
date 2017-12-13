@@ -99,6 +99,7 @@
     }
 
     function setup_like(){
+        alert("yes");
         $(".like_icon").on("click",function(){
             if ($(this).hasClass("liked_tree")) {
                 $(this).removeClass("liked_tree");
@@ -130,7 +131,7 @@
             body : JSON.stringify(skill_tree)
         }).then(function(){
             location.reload();
-        })
+        });
     }
 
 
