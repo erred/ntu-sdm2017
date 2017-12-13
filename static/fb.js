@@ -27,7 +27,9 @@ function getCookie(name) {
 function updateAccountInfo(FB) {
   FB.api('/me',
          {locale : 'en_US', fields : 'name, email, friends', limit : 100},
-         function(response){fetch('/account/update/', {
+         function(response) {
+           console.log(response);
+          fetch('/account/update/', {
            method : 'post',
            headers : {
              'Accept' : 'application/json, text/plain, */*',
@@ -35,8 +37,10 @@ function updateAccountInfo(FB) {
            },
            credentials : 'include',
            body : JSON.stringify(
-               {'name' : response.name, 'email' : response.email})
-         })});
+               {'name' : response.name, 'email' : response.email}))
+             .then(function(res){console.log(res)})
+         })
+         });
 }
 
 function crawlFriends(FB) {
@@ -94,7 +98,9 @@ function statusChangeCallback(response) {
     // ================== UI Button ======================
     if (window.location.pathname == "/account/") {
       var ascii = / ^[-~] + $ / ;
-      if (!ascii.test(getCookie('name'))) {
+      var name = getCookie('name');
+      console.log('got name: ' + name) if (!ascii.test(name)) {
+        console.log('triggered non ascii');
         updateAccountInfo(FB);
       }
     }
