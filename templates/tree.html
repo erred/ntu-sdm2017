@@ -122,10 +122,10 @@
     }
     function modify_node(skill_tree){
         // $(".skill_node").on("click",function(){
-        $("circle, text").on("click",function(){
+        $("circle").on("click",function(){
             var this_id = $(this).attr("id");
             var this_circle_id = this_id+"_circle";
-            alert(this_id);
+            alert(this_circle_id);
 
             // Delete
             if ($("#"+this_circle_id).hasClass("learned_skill")) {
