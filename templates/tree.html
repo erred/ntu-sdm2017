@@ -123,7 +123,7 @@
     function modify_node(skill_tree){
         // $(".skill_node").on("click",function(){
         $("circle").on("click",function(){
-            var this_id = $(this).parent.attr("id");
+            var this_id = $(this).parent().attr("id");
             var this_circle_id = $(this).attr("id");
             alert(this_id);
 
