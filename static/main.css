@@ -121,3 +121,11 @@ circle{
 .like_icon{
     cursor: pointer;
 }
+.exchange_button{
+    border: 1px solid;
+    border-radius: 30px;
+}
+.exchange_button:hover{
+    color: #fff;
+    background-color: #5755d9;
+}
