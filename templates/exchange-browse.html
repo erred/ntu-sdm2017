@@ -42,11 +42,11 @@
 
 <!-- async to /exchange/like/{{ $it.User }}/{{ $it.TreeData.Treeid }}/1/ -->
         {{ if $it.Liked }}
-        <i class="fa fa-heart" aria-hidden="true" class="liked_tree like_icon"></i>
+        <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
         <!-- <button class="btn float-right">Like</button> -->
         {{ else }}
 
-        <i class="fa fa-heart" aria-hidden="true" class="unliked_tree like_icon"></i>
+        <i class="fa fa-heart unliked_tree like_icon" aria-hidden="true"></i>
         <!-- <button class="btn float-right">Like</button> -->
         {{ end }}
 <!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->

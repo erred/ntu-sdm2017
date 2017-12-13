@@ -120,3 +120,6 @@ circle{
     color: #ed5c58;
     border: 1px solid #878787;
 }
+.like_icon{
+    cursor: pointer;
+}
