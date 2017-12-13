@@ -136,6 +136,7 @@ func updateAccount(r *http.Request) error {
 	if err != nil {
 		return err
 	}
+	log.Print(string(b), dat)
 	_, err = DB.Exec("UPDATE user SET name=?, email=? WHERE user=?", dat.name, dat.email, user)
 	if err != nil {
 		return err
