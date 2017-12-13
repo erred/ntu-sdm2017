@@ -109,7 +109,7 @@
             {{ if $.En }}
             $("#"+skill_id+"_name").text(skill_id);
             {{else}}
-            $("#"+skill_id+"_name").text(skill_tree[skill_id][CName]);
+            $("#"+skill_id+"_name").text(skill_tree[skill_id]["CName"]);
             {{end}}
 
             // Add learned skills
