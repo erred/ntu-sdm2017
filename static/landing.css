@@ -28,7 +28,7 @@ h1, h2 {
 .navbar-brand{
     font-size: 30px !important;
     font-weight: bold !important;
-    letter-spacing: 5px
+    letter-spacing: 5px;
 }
 .nav_text{
     color: #fff !important;
