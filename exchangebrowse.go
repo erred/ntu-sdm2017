@@ -177,7 +177,7 @@ func exchangeLike(user string, target string, targetTree string, like string) er
 	case "0":
 		_, err = DB.Exec("DELETE FROM likes WHERE user=? AND owner=? AND treeid=?", user, target, targetTree)
 	case "1":
-		_, err = DB.Exec("INSERT INTO likes VALUES (?, ?, ?) WHERE NOT EXISTS (SELECT 1 FROM LIKES WHERE user=? AND owner=? and treeid=?)", user, target, targetTree, user, target, targetTree)
+		_, err = DB.Exec("INSERT INTO likes SELECT ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM LIKES WHERE user=? AND owner=? and treeid=?)", user, target, targetTree, user, target, targetTree)
 	}
 	return err
 }
