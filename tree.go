@@ -24,7 +24,7 @@ type TreeData struct {
 	Cname  string
 	Treeid template.URL
 	Svg    template.HTML
-	State  string
+	State  template.JS
 	Liked  int
 	Desc   string
 	// Done map[string]bool
