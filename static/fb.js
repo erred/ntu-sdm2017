@@ -25,22 +25,23 @@ function getCookie(name) {
 // })();
 //
 function updateAccountInfo(FB) {
-  FB.api('/me',
-         {locale : 'en_US', fields : 'name, email, friends', limit : 100},
-         function(response) {
-           console.log(response);
-          fetch('/account/update/', {
-           method : 'post',
-           headers : {
-             'Accept' : 'application/json, text/plain, */*',
-             'Content-Type' : 'application/json'
-           },
-           credentials : 'include',
-           body : JSON.stringify(
-               {'name' : response.name, 'email' : response.email}))
-             .then(function(res){console.log(res)})
-         })
-         });
+  FB.api(
+      '/me', {locale : 'en_US', fields : 'name, email, friends', limit : 100},
+      function(response) {
+        console.log(response);
+        fetch('/account/update/', {
+          method : 'post',
+          headers : {
+            'Accept' : 'application/json, text/plain, */*',
+            'Content-Type' : 'application/json'
+          },
+          credentials : 'include',
+          body :
+              JSON.stringify({'name' : response.name, 'email' : response.email})
+
+        })
+            .then(function(res){console.log(res)});
+      });
 }
 
 function crawlFriends(FB) {
