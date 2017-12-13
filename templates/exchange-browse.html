@@ -43,12 +43,10 @@
 
         {{ if $it.Liked }}
         <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
-        <!-- <button class="btn float-right">Like</button> -->
         {{ else }}
-
         <i class="fa fa-heart-o unliked_tree like_icon" aria-hidden="true"></i>
-        <!-- <button class="btn float-right">Like</button> -->
         {{ end }}
+        
 <!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->
         <!-- <button class="btn btn-link float-right exchange_button">Exchange</button> -->
         <a href="/exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/" class="btn btn-link float-right exchange_button">Exchange</a>
