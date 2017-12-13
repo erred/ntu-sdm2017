@@ -77,7 +77,7 @@
                     // $("#"+this_id+" path").style("fill","#fff");
                     skill_tree[this_id]["status"] = 0;
                     for (var skill_id in skill_tree) {
-                        if(skill_tree[skill_id]["pre_course"].includes(str(this_id))){
+                        if(skill_tree[skill_id]["pre_course"].includes(this_id)){
                             console.log(skill_tree[skill_id]["pre_course"]);
                         }
                         // if (
