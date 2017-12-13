@@ -86,7 +86,7 @@
 
                 $(this).removeClass("fa-heart");
                 $(this).addClass("fa-heart-o");
-                $(this).sibilings(".like_number").text(parseInt($(".like_number").text())-1);
+                $(this).siblings(".like_number").text(parseInt($(".like_number").text())-1);
                 // update_likes_count(0,user,tree_id);
             }
             else{
@@ -95,7 +95,7 @@
 
                 $(this).removeClass("fa-heart-o");
                 $(this).addClass("fa-heart");
-                $(this).sibilings(".like_number").text(parseInt($(".like_number").text())+1);
+                $(this).siblings(".like_number").text(parseInt($(".like_number").text())+1);
                 // update_likes_count(1,user,tree_id);
             }
         });
