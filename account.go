@@ -1,6 +1,8 @@
 package main
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"net/http/httputil"
@@ -19,6 +21,14 @@ type Account struct {
 // ==================== Handlers ====================
 // shows the account page
 func accountHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/account/update" {
+		err := updateAccount(r)
+		if errInternal(err, w) {
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		return
+	}
 	if r.URL.Path != "/account/" {
 		http.Redirect(w, r, "/account/", http.StatusFound)
 		return
@@ -60,15 +70,19 @@ func createAccount(r *http.Request) error {
 	}
 	user := userCk.Value
 
+	var uname string
 	unameCk, err := r.Cookie(CkName)
 	if err != nil {
-		b, _ := httputil.DumpRequest(r, false)
-		log.Print(string(b))
+		// b, _ := httputil.DumpRequest(r, false)
+		// log.Print(string(b))
 		log.Println("createAccount/unameCk failed")
 		log.Println("no user name")
-		return err
+		// return err
+		uname = ""
+	} else {
+		uname = unameCk.Value
+
 	}
-	uname := unameCk.Value
 
 	var email string
 	emailCk, err := r.Cookie(CkEmail)
@@ -98,6 +112,32 @@ func deleteAccount(user string) error {
 			log.Println("deleteAccount/DB.Exec failed")
 			return err
 		}
+	}
+	return nil
+}
+
+type updateAccountStruct struct {
+	name  string
+	email string
+}
+
+func updateAccount(r *http.Request) error {
+	user, err := getUser(r)
+	if err != nil {
+		return err
+	}
+	b, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return err
+	}
+	var dat updateAccountStruct
+	err = json.Unmarshal(b, &dat)
+	if err != nil {
+		return err
+	}
+	_, err = DB.Exec("UPDATE user SET name=?, email=? WHERE user=?", dat.name, dat.email, user)
+	if err != nil {
+		return err
 	}
 	return nil
 }
