@@ -78,7 +78,7 @@
 
     function setup_tree(skill_tree){
         {{ range $idx, $it := .Items }}
-        set_node({{ $it.TreeData.State }},{{ $it.User }});
+        // set_node({{ $it.TreeData.State }},{{ $it.User }});
         {{ end }}
     }
     function set_node(skill_tree,user){
