@@ -101,18 +101,21 @@
 
     function setup_like(){
         $(".like_icon").on("click",function(){
-            if ($(this).hasClass("liked_tree")) {
-                $(this).removeClass("liked_tree");
-                $(this).removeClass("fa-heart");
-                $(this).addClass("unliked_tree");
-                $(this).addClass("fa-heart-o");
-            }
-            else{
-                $(this).removeClass("unliked_tree");
-                $(this).removeClass("fa-heart-o");
-                $(this).addClass("liked_tree");
-                $(this).addClass("fa-heart");
-            }
+            alert($(this).attr("class"));
+            // if ($(this).hasClass("liked_tree")) {
+            //     $(this).removeClass("liked_tree");
+            //     $(this).addClass("unliked_tree");
+            //
+            //     $(this).removeClass("fa-heart");
+            //     $(this).addClass("fa-heart-o");
+            // }
+            // else{
+            //     $(this).removeClass("unliked_tree");
+            //     $(this).addClass("liked_tree");
+            //
+            //     $(this).removeClass("fa-heart-o");
+            //     $(this).addClass("fa-heart");
+            // }
         });
     }
 
