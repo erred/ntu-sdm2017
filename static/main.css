@@ -79,7 +79,8 @@ main {
 /* ================== new tree ================ */
 .card-image svg{
     /*margin-left: -50%;*/
-    width: 100%;
+    width: 80%;
+    margin: 30px 0px 30px 0px;
 }
 
 
