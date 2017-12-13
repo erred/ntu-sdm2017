@@ -122,6 +122,7 @@ type updateAccountStruct struct {
 }
 
 func updateAccount(r *http.Request) error {
+	log.Println("updating account")
 	user, err := getUser(r)
 	if err != nil {
 		return err
@@ -139,5 +140,6 @@ func updateAccount(r *http.Request) error {
 	if err != nil {
 		return err
 	}
+	log.Println("account updated")
 	return nil
 }
