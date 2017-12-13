@@ -69,7 +69,15 @@
 
             // Delete
             if ($("#"+this_circle_id).hasClass("learned_skill")) {
+
+                {{ if $.En }}
                 var delete_node = confirm("Are you sure to delete the node?");
+
+                {{else}}
+                var delete_node = confirm("你確定要刪除這項技能？");
+
+                {{end}}
+                
                 if (delete_node == 1) {
 
                     // delete selected node
