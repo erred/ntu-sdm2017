@@ -117,8 +117,8 @@ func deleteAccount(user string) error {
 }
 
 type updateAccountStruct struct {
-	name  string
-	email string
+	Name  string
+	Email string
 }
 
 func updateAccount(r *http.Request) error {
@@ -137,7 +137,7 @@ func updateAccount(r *http.Request) error {
 		return err
 	}
 	log.Print(string(b), dat)
-	_, err = DB.Exec("UPDATE user SET name=?, email=? WHERE user=?", dat.name, dat.email, user)
+	_, err = DB.Exec("UPDATE user SET name=?, email=? WHERE user=?", dat.Name, dat.Email, user)
 	if err != nil {
 		return err
 	}
