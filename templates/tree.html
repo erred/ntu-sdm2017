@@ -151,14 +151,8 @@
             },
             credentials : "include",
             body : JSON.stringify(skill_tree)
-        }).then(function(){
-            location.reload();
         });
     }
-    function send_json_to_db(skill_tree) {
-
-    }
-
     function confirm_delete(){
         {{ if $.En }}
         var cancel = confirm("Are you sure to delete yout skill tree?");
