@@ -89,7 +89,7 @@
         	MPD_2:{CName:"資管專題討論二",pre_course:[],status:0},
         	SILP:{CName:"資訊法與資訊政策專題",pre_course:[],status:0}
         };
-        console.log(skill_tree);
+        console.log(skill_tree["PD"]["CName"]);
         setup_tree(skill_tree);
 
     });
@@ -105,7 +105,7 @@
     }
     function set_node(skill_tree){
         for (var skill_id in skill_tree) {
-
+            console.log("skill_id: ",skill_id);
             // Add text
             {{ if $.En }}
             $("#"+skill_id+"_name").text(skill_id);
