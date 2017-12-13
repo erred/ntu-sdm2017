@@ -89,7 +89,7 @@
         	MPD_2:{CName:"資管專題討論二",pre_course:[],status:0},
         	SILP:{CName:"資訊法與資訊政策專題",pre_course:[],status:0}
         };
-        console.log(skill_tree["PD"]["CName"]);
+
         setup_tree(skill_tree);
 
     });
@@ -99,13 +99,12 @@
         // set_node(skill_tree);
         // modify_node(skill_tree);
 
-        console.log("yes",skill_tree_json[0]);
         set_node(skill_tree_json);
         modify_node(skill_tree_json);
     }
     function set_node(skill_tree){
         for (var skill_id in skill_tree) {
-            console.log("skill_id: ",skill_id);
+
             // Add text
             {{ if $.En }}
             $("#"+skill_id+"_name").text(skill_id);
@@ -123,16 +122,16 @@
     function modify_node(skill_tree){
         // $(".skill_node").on("click",function(){
         $("circle").on("click",function(){
-            var this_id = $("this").attr("id");
+            var this_id = $(this).attr("id");
             alert(this_id);
 
             // Delete
-            if ($("this").hasClass("learned_skill")) {
+            if ($(this).hasClass("learned_skill")) {
                 var delete_node = confirm("Are you sure to delete the node?");
                 if (delete_node == 1) {
 
                     // delete selected node
-                    $("this").removeClass("learned_skill");
+                    $(this).removeClass("learned_skill");
                     // $("#"+this_id+" path").style("fill","#fff");
                     skill_tree[this_id]["status"] = 0;
                     for (var skill_id in skill_tree) {
@@ -142,7 +141,7 @@
                         ) {
 
                             // delete course after selected node
-                            $("this").removeClass("learned_skill");
+                            $(this).removeClass("learned_skill");
                             // $("#"+skill_id+" path").style("fill","#fff");
                             skill_tree[skill_id]["status"] = 0;
                         }
@@ -168,7 +167,7 @@
                 }
                 else {
                     // add node
-                    $("this").addClass("learned_skill");
+                    $(this).addClass("learned_skill");
                     // $("#"+this_id+" path").style("fill","#878787");
                     skill_tree[this_id]["status"] = 1;
                     send_json(skill_tree);
