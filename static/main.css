@@ -122,10 +122,10 @@ circle{
     cursor: pointer;
 }
 .exchange_button{
-    border: 1px solid;
+    border: 1px solid #5755d9;
     border-radius: 30px;
 }
 .exchange_button:hover{
-    color: #fff;
+    color: #fff !important;
     background-color: #5755d9;
 }
