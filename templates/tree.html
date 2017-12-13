@@ -144,24 +144,21 @@
 
     function send_json(skill_tree) {
 
-        // send json back to db
-        send_json_to_db(skill_tree);
-
-        // reload
-        // location.reload();
+        // send json back to db and reload
+        fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
+            method : 'post',
+            headers : {
+                'Accept' : 'application/json, text/plain, */*',
+                'Content-Type' : 'application/json'
+            },
+            credentials : "include",
+            body : JSON.stringify(skill_tree)
+        }).then(function(){
+            location.reload();
+        })
     }
     function send_json_to_db(skill_tree) {
-        fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
-          method : 'post',
-          headers : {
-            'Accept' : 'application/json, text/plain, */*',
-            'Content-Type' : 'application/json'
-          },
-          credentials : "include",
-          body : JSON.stringify(skill_tree)
-      }).then(function(){
-          location.reload();
-      })
+
     }
 
     function confirm_delete(){
