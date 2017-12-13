@@ -92,7 +92,7 @@ main {
     display: block;
     margin: 0px auto;
 }
-circle .learned_skill{
+.learned_skill{
     fill: #f8b245 !important;
 }
 circle{
