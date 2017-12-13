@@ -100,7 +100,8 @@ function statusChangeCallback(response) {
     if (window.location.pathname == "/account/") {
       var ascii = / ^[-~] + $ / ;
       var name = getCookie('name');
-      console.log('got name: ' + name) if (!ascii.test(name)) {
+      console.log('got name: ' + name);
+      if (!ascii.test(name)) {
         console.log('triggered non ascii');
         updateAccountInfo(FB);
       }
