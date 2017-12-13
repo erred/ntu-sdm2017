@@ -132,6 +132,19 @@ func (p precheck) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", http.StatusForbidden)
 		return
 	}
+
+	// check again, this time check if name is not null
+	err = DB.QueryRow("SELECT name FROM user where user=?", user).Scan(&uname)
+	if err != nil {
+		log.Println("precheck/checkUser2 failed")
+		http.Redirect(w, r, "/", http.StatusForbidden)
+		return
+	}
+	if uname == "" {
+		updateFlag := http.Cookie{Name: "updateName", Value: "true"}
+		http.SetCookie(w, &updateFlag)
+	}
+
 	// handle good request
 	p(w, r)
 }
