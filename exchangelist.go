@@ -27,11 +27,14 @@ type ExItem struct {
 }
 
 type ExUser struct {
-	User  template.URL
-	Tree  template.URL
-	Skill template.URL
-	State template.URL
-	Name  string
+	User          template.URL
+	Name          string
+	Tree          template.URL
+	TreeName      string
+	TreeCname     string
+	TreeZeroState template.JS
+	Skill         string
+	State         string
 }
 
 // ==================== Handlers ====================
@@ -129,6 +132,18 @@ func getExchangeData(user string) (ExchangeList, error) {
 		err = DB.QueryRow("SELECT name FROM user where name=?", it.U2.User).Scan(&it.U2.Name)
 		if err != nil {
 			log.Println("getExchangeData/getU2Name failed")
+			return exList, err
+		}
+
+		err = DB.QueryRow("SELECT tree, ctree, zeroState FROM treeTemplate WHERE treeid=?", it.U1.Tree).Scan(&it.U1.TreeName, &it.U1.TreeCname, &it.U1.TreeZeroState)
+		if err != nil {
+			log.Println("getExchangeData/getU1TreeName failed")
+			return exList, err
+		}
+
+		err = DB.QueryRow("SELECT tree, ctree, zeroState FROM treeTemplate WHERE treeid=?", it.U2.Tree).Scan(&it.U2.TreeName, &it.U2.TreeCname, &it.U2.TreeZeroState)
+		if err != nil {
+			log.Println("getExchangeData/getU2TreeName failed")
 			return exList, err
 		}
 
