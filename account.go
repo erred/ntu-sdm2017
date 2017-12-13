@@ -50,22 +50,29 @@ func deauthHandler(w http.ResponseWriter, r *http.Request) {
 
 func createAccount(r *http.Request) error {
 	userCk, err := r.Cookie(CkUser)
-	user := userCk.Value
 	if err != nil {
 		log.Println("createAccount/userCk failed")
+		log.Println("no user id")
 		return err
 	}
+	user := userCk.Value
+
 	unameCk, err := r.Cookie(CkName)
-	uname := unameCk.Value
 	if err != nil {
 		log.Println("createAccount/unameCk failed")
+		log.Println("no user name")
 		return err
 	}
+	uname := unameCk.Value
+
+	var email string
 	emailCk, err := r.Cookie(CkEmail)
-	email := emailCk.Value
 	if err != nil {
 		log.Println("createAccount/emailCk failed")
-		return err
+		// return err
+		email = ""
+	} else {
+		email = emailCk.Value
 	}
 
 	_, err = DB.Exec("INSERT INTO user (user, name, email) VALUES (?, ?, ?)", user, uname, email)
