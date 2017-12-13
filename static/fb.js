@@ -23,6 +23,21 @@ function getCookie(name) {
 //   }
 
 // })();
+//
+function updateAccountInfo(FB) {
+  FB.api('/me',
+         {locale : 'en_US', fields : 'name, email, friends', limit : 100},
+         function(response){fetch('/account/update/', {
+           method : 'post',
+           headers : {
+             'Accept' : 'application/json, text/plain, */*',
+             'Content-Type' : 'application/json'
+           },
+           credentials : 'include',
+           body : JSON.stringify(
+               {'name' : response.name, 'email' : response.email})
+         })});
+}
 
 function crawlFriends(FB) {
   friends = [];
@@ -77,9 +92,12 @@ function statusChangeCallback(response) {
       document.querySelector('.login-continue').style.display = "block";
     }
     // ================== UI Button ======================
-    // if (window.location.pathname == "/account/") {
-    //   crawlFriends(FB);
-    // }
+    if (window.location.pathname == "/account/") {
+      var ascii = / ^[-~] + $ / ;
+      if (!ascii.test(getCookie('name'))) {
+        updateAccountInfo(FB);
+      }
+    }
     break;
   case 'not_authorized':
   case 'unkown':
