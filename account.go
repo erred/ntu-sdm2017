@@ -21,7 +21,7 @@ type Account struct {
 // ==================== Handlers ====================
 // shows the account page
 func accountHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path == "/account/update" {
+	if r.URL.Path == "/account/update/" {
 		err := updateAccount(r)
 		if errInternal(err, w) {
 			return
