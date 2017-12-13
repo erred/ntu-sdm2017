@@ -46,7 +46,7 @@
         <!-- <button class="btn float-right">Like</button> -->
         {{ else }}
 
-        <i class="fa fa-heart unliked_tree like_icon" aria-hidden="true"></i>
+        <i class="fa fa-heart-o unliked_tree like_icon" aria-hidden="true"></i>
         <!-- <button class="btn float-right">Like</button> -->
         {{ end }}
 <!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->
@@ -99,7 +99,7 @@
         }
     }
 
-    setup_like(){
+    function setup_like(){
         $(".like_icon").on("click",function(){
             if ($(this).hasClass("liked_tree")) {
                 $(this).removeClass("liked_tree");
