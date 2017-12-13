@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"net/http/httputil"
 )
 
 type PageAccount struct {
@@ -51,6 +52,8 @@ func deauthHandler(w http.ResponseWriter, r *http.Request) {
 func createAccount(r *http.Request) error {
 	userCk, err := r.Cookie(CkUser)
 	if err != nil {
+		b, _ := httputil.DumpRequest(r, false)
+		log.Print(string(b))
 		log.Println("createAccount/userCk failed")
 		log.Println("no user id")
 		return err
@@ -59,6 +62,8 @@ func createAccount(r *http.Request) error {
 
 	unameCk, err := r.Cookie(CkName)
 	if err != nil {
+		b, _ := httputil.DumpRequest(r, false)
+		log.Print(string(b))
 		log.Println("createAccount/unameCk failed")
 		log.Println("no user name")
 		return err
