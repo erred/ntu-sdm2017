@@ -61,14 +61,14 @@ function statusChangeCallback(response) {
     setCookie(response.authResponse.expiresIn / (24 * 60 * 60), "token",
               response.authResponse.accessToken);
     email = getCookie("email");
-    if (email == "") {
-      FB.api('/me',
-             {locale : 'en_US', fields : 'name, email, friends', limit : 100},
-             function(response) {
-               document.cookie = setCookie(100, "email", response.email);
-               document.cookie = setCookie(100, "name", response.name);
-             });
-    }
+    // if (email == "") {
+    FB.api('/me',
+           {locale : 'en_US', fields : 'name, email, friends', limit : 100},
+           function(response) {
+             document.cookie = setCookie(100, "email", response.email);
+             document.cookie = setCookie(100, "name", response.name);
+           });
+    // }
 
     // ================== UI Button ======================
     if (window.location.pathname == "/") {
