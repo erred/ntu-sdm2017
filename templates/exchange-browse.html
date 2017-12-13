@@ -5,6 +5,7 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container">
@@ -36,10 +37,18 @@
         <!-- {{ $it.TreeData.State }} -->
     </div>
     <div class="card-header">
+        <!-- show somw image -->
         {{ $it.Liked }}
-        {{ $it.Likes }}
+
 <!-- async to /exchange/like/{{ $it.User }}/{{ $it.TreeData.Treeid }}/1/ -->
-        <button class="btn float-right">Like</button>
+        {{ if $it.Likes }}
+        <i class="fa fa-heart" aria-hidden="true" class="liked_tree"></i>
+        <!-- <button class="btn float-right">Like</button> -->
+        {{ else }}
+
+        <i class="fa fa-heart" aria-hidden="true" class="unliked_tree"></i>
+        <!-- <button class="btn float-right">Like</button> -->
+        {{ end }}
 <!-- redirect to /exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/ -->
         <button class="btn btn-link float-right">Exchange</button>
         <div class="card-title h5">
@@ -59,3 +68,71 @@
         {{ template "footer" }}
     </body>
 </html>
+
+<script>
+
+    $(document).ready(function(){
+        setup_tree();
+        setup_like();
+    });
+
+    function setup_tree(skill_tree){
+        {{ range $idx, $it := .Items }}
+        set_node({{ $it.TreeData.State }});
+        {{ end }}
+    }
+    function set_node(skill_tree){
+        for (var skill_id in skill_tree) {
+            $("#"+skill_id+" text").text("");
+
+            // Add text
+            {{ if $.En }}
+            $("#"+skill_id+" text").text(skill_id);
+            {{else}}
+            $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
+            {{end}}
+
+            // Add learned skills
+            if (skill_tree[skill_id]["status"] == 1) {
+                $("#"+skill_id+"_circle").addClass("learned_skill");
+            }
+        }
+    }
+
+    function send_json(skill_tree) {
+
+        // send json back to db and reload
+        fetch('/tree/update/'+{{ .TreeData.Treeid }}+'/', {
+            method : 'post',
+            headers : {
+                'Accept' : 'application/json, text/plain, */*',
+                'Content-Type' : 'application/json'
+            },
+            credentials : "include",
+            body : JSON.stringify(skill_tree)
+        }).then(function(){
+            location.reload();
+        })
+    }
+
+
+    function confirm_delete(){
+        {{ if $.En }}
+        var cancel = confirm("Are you sure to delete yout skill tree?");
+
+        {{else}}
+        var cancel = confirm("你確定要刪除整棵樹？");
+
+        {{end}}
+
+        if(cancel){
+            for (var skill_id in skill_tree) {
+
+                // Delete learned skills
+                skill_tree[skill_id]["status"] == 0;
+            }
+            send_json_to_db(skill_tree);
+        }
+        return cancel;
+    }
+</script>

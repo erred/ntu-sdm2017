@@ -109,3 +109,14 @@ main {
 circle{
     cursor: pointer;
 }
+
+
+/* ================== exchange ================ */
+.liked_tree{
+    color: #ed5c58;
+    border: 1px solid #ed5c58;
+}
+.unliked_tree{
+    color: #ed5c58;
+    border: 1px solid #878787;
+}
