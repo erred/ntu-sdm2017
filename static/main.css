@@ -36,7 +36,7 @@
 .sidebar .toplevel{
     font-weight: bold;
 }
-＃brand_text{
+#sidebar_brand_text{
     font-size: 30px !important;
     font-weight: bold !important;
     letter-spacing: 5px;
