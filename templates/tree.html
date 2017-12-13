@@ -51,6 +51,7 @@
         // set_node(skill_tree);
         // modify_node(skill_tree);
         $.getJSON(skill_tree_json, function(skill_tree) {
+            console.log(skill_tree);
             set_node(skill_tree);
             modify_node(skill_tree);
         });
@@ -73,8 +74,10 @@
         }
     }
     function modify_node(skill_tree){
-        $(".skill_node").on("click",function(){
+        // $(".skill_node").on("click",function(){
+        $("circle").on("click",function(){
             var this_id = $("this").attr("id");
+            alert(this_id);
 
             // Delete
             if ($("this").hasClass("learned_skill")) {
