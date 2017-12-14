@@ -57,6 +57,24 @@
         </div>
         <div class="card-subtitle text-gray">{{ $it.Name }}</div>
     </div>
+    <div class="modal">
+        <a href="#close" class="modal-overlay" aria-label="Close"></a>
+        <div class="modal-container">
+            <div class="modal-header">
+                <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+                <div class="modal-title h5">
+                    {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
+                    {{ $it.Name }}
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="content">
+                    {{ $it.TreeData.Svg }}
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
 </div>
 
                             {{ end }}
@@ -74,13 +92,21 @@
 
     $(document).ready(function(){
         set_tree_id();
+        set_resize_tree();
         setup_like();
     });
 
-    function set_tree_id(){
+    function set_tree_id() {
         $(".card").each(function(){
             var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
-            $(this).children(".card-image").children("svg").attr("id",id);
+            // $(this).children(".card-image").children("svg").attr("id",id);
+            // $(this).children(".modal").children("svg").attr("id",id);
+            $(this).find("svg").attr("id",id);
+        });
+    }
+    function set_resize_tree() {
+        $(".card").on("click",function(){
+            $(this).children(".modal").addClass("activate");
         });
     }
     function setup_like(){
