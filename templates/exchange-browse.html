@@ -32,7 +32,7 @@
                         <div class="columns">
                             {{ range $idx, $it := .Items }}
 
-<div class="card column col-3">
+<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
     <div class="card-image">
         {{ $it.TreeData.Svg }}
 
@@ -73,9 +73,16 @@
 <script>
 
     $(document).ready(function(){
+        set_tree_id();
         setup_like();
     });
 
+    function set_tree_id(){
+        $(".card").each(function(){
+            var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
+            $(this).children(".card-image").children("svg").attr("id",id);
+        });
+    }
     function setup_like(){
         $(".like_icon").on("click",function(){
             var user = $(this).parent().attr("data-user_id");
