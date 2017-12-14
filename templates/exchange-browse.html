@@ -108,6 +108,9 @@
         $(".card").on("click",function(){
             $(this).children(".modal").addClass("activate");
         });
+        $(".modal-overlay").on("click",function(){
+            $(this).parent(".modal").removeClass("activate");
+        });
     }
     function setup_like(){
         $(".like_icon").on("click",function(){
