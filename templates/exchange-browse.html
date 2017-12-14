@@ -61,7 +61,7 @@
         <a href="#close" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
-                <div  class="btn btn-clear float-right" aria-label="Close"></div>
+                <div  class="btn btn-clear float-right modal_close" aria-label="Close"></div>
                 <div class="modal-title h5">
                     {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
                     {{ $it.Name }}
@@ -108,8 +108,8 @@
         $(".card").on("click",function(){
             $(this).children(".modal").addClass("activate");
         });
-        $(".modal-overlay").on("click",function(){
-            $(this).parent(".modal").removeClass("activate");
+        $(".modal_close").on("click",function(){
+            $(this).parents(".modal").removeClass("activate");
         });
     }
     function setup_like(){
