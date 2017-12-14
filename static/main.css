@@ -131,6 +131,10 @@ circle{
     color: #fff !important;
     background-color: #5755d9;
 }
-.card-image svg{
+.card{
     cursor:pointer;
+}
+.activate{
+    opacity: 1 !important;
+    display: block !important;
 }
