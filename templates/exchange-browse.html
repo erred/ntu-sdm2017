@@ -138,13 +138,9 @@
     }
     function set_resize_tree() {
         $(".card-image").on("click",function(){
-            // $(this).children(".modal").addClass("active");
-            var temp_id = $(this).children(".modal").attr("id");
+            var temp_id = $(this).siblings(".modal").attr("id");
             window.location.href = "#"+temp_id;
         });
-        // $(".modal_close").on("click",function(){
-        //     $(".active").removeClass("active");
-        // });
     }
     function setup_like(){
         $(".like_icon").on("click",function(){
