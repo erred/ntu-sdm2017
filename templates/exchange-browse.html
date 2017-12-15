@@ -99,9 +99,8 @@
     function set_tree_id() {
         $(".card").each(function(){
             var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
-            // $(this).children(".card-image").children("svg").attr("id",id);
-            // $(this).children(".modal").children("svg").attr("id",id);
-            $(this).find("svg").attr("id",id);
+            $(this).children(".card-image").find("svg").attr("id","card_"+id);
+            $(this).children(".modal").find("svg").attr("id","modal_"+id);
         });
     }
     function set_resize_tree() {
