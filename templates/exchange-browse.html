@@ -57,7 +57,7 @@
         </div>
         <div class="card-subtitle text-gray">{{ $it.Name }}</div>
     </div>
-    <div class="modal" id="modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}">
+    <div class="modal modal-lg" id="modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}">
         <a href="#skill_exchange_section" class="modal-overlay" aria-label="Close"></a>
         <!-- <div  class="modal-overlay modal_close" aria-label="Close"></div> -->
         <div class="modal-container">
@@ -101,8 +101,14 @@
     function set_tree_id() {
         $(".card").each(function(){
             var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
+
+            //card svg
             $(this).children(".card-image").find("svg").attr("id","card_"+id);
+            $(this).children(".card-image").find("circle").attr("id","circle_"+id);
+
+            //full size svg
             // $(this).children(".modal").find("svg").attr("id","modal_"+id);
+            $(this).children(".modal").find("circle").attr("id","full_circle_"+id);
         });
     }
     function set_resize_tree() {
