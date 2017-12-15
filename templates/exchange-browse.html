@@ -9,7 +9,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div id="skill_exchange_section" class="container">
             <div class="columns">
                 {{ template "sidebar" .Page }}
                 {{ if not .Items }}
@@ -52,18 +52,19 @@
         <a href="/exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/" class="btn btn-link float-right exchange_button">
             {{ if $.En }}Exchange{{ else }}交換{{end}}
         </a>
+        <a href="#modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}" >yyyyy</a>
         <div class="card-title h5">
         {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
         </div>
         <div class="card-subtitle text-gray">{{ $it.Name }}</div>
     </div>
     <div class="modal" id="modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}">
-        <!-- <a href="#close" class="modal-overlay" aria-label="Close"></a> -->
-        <div  class="modal-overlay modal_close" aria-label="Close"></div>
+        <a href="#skill_exchange_section" class="modal-overlay" aria-label="Close"></a>
+        <!-- <div  class="modal-overlay modal_close" aria-label="Close"></div> -->
         <div class="modal-container">
             <div class="modal-header">
-                <!-- <a href="#close" class="btn btn-clear float-right modal_close" aria-label="Close"></a> -->
-                <div  class="btn btn-clear float-right modal_close" aria-label="Close"></div>
+                <a href="#skill_exchange_section" class="btn btn-clear float-right modal_close" aria-label="Close"></a>
+                <!-- <div  class="btn btn-clear float-right modal_close" aria-label="Close"></div> -->
                 <div class="modal-title h5">
                     {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
                     {{ $it.Name }}
@@ -94,7 +95,7 @@
 
     $(document).ready(function(){
         set_tree_id();
-        set_resize_tree();
+        // set_resize_tree();
         setup_like();
     });
 
