@@ -32,7 +32,7 @@
                         <div class="columns">
                             {{ range $idx, $it := .Items }}
 
-<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
+<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state={{ $it.TreeData.State }} >
     <div class="card-image">
         {{ $it.TreeData.Svg }}
 
@@ -105,15 +105,34 @@
             //card svg
             $(this).children(".card-image").find("svg").attr("id","card_"+id);
             $(this).children(".card-image").find("circle").each(function(){
-                $(this).attr("id","circle_"+$(this).attr("id")+"_"+id);
+                $(this).attr("id",$(this).attr("id")+"_"+id);
             });
 
             //full size svg
             // $(this).children(".modal").find("svg").attr("id","modal_"+id);
             $(this).children(".modal").find("circle").each(function(){
-                $(this).attr("id","full_circle_"+$(this).attr("id")+"_"+id);
+                $(this).attr("id","modal_"+$(this).attr("id")+"_"+id);
             });
+            set_node_color($(this).attr("data-state"));
         });
+    }
+    function set_node_color(skill_tree){
+        console.log(skill_tree);
+        // for (var skill_id in skill_tree) {
+        //     $("#"+skill_id+" text").text("");
+        //
+        //     // Add text
+        //     {{ if $.En }}
+        //     $("#"+skill_id+" text").text(skill_id);
+        //     {{else}}
+        //     $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
+        //     {{end}}
+        //
+        //     // Add learned skills
+        //     if (skill_tree[skill_id]["status"] == 1) {
+        //         $("#"+skill_id+"_circle").addClass("learned_skill");
+        //     }
+        // }
     }
     function set_resize_tree() {
         $(".card").on("click",function(){
