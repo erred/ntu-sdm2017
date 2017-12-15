@@ -22,7 +22,7 @@
                     </p>
                 </main>
                 {{ else }}
-                <main class="column col-10 col-gapless exchange-main right_main_section">
+                <main id="skill_exchange_section" class="column col-10 col-gapless exchange-main right_main_section">
                     <div class="container">
                         <!-- <div class="columns"> -->
                         <!--     <div class="column col-12"> -->
@@ -58,10 +58,10 @@
         <div class="card-subtitle text-gray">{{ $it.Name }}</div>
     </div>
     <div class="modal" id="modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}">
-        <a href="#close" class="modal-overlay" aria-label="Close"></a>
+        <a href="#skill_exchange_section" class="modal-overlay" aria-label="Close"></a>
         <div class="modal-container">
             <div class="modal-header">
-                <a href="#close" class="btn btn-clear float-right modal_close" aria-label="Close"></a>
+                <a href="#skill_exchange_section" class="btn btn-clear float-right" aria-label="Close"></a>
                 <!-- <div  class="btn btn-clear float-right modal_close" aria-label="Close"></div> -->
                 <div class="modal-title h5">
                     {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
@@ -108,12 +108,12 @@
         $(".card").on("click",function(){
             $(this).children(".modal").addClass("active");
         });
-        $(".modal_close").on("click",function(){
-            // var temp_id = $(this).parents().find(".card").attr("data-user_id") + "_" + $(this).parents().find(".card").attr("data-tree_id");
-            // console.log("#modal_"+temp_id);
-            console.log($(this));
-            $(".modal").removeClass("active");
-        });
+        // $(".modal_close").on("click",function(){
+        //     // var temp_id = $(this).parents().find(".card").attr("data-user_id") + "_" + $(this).parents().find(".card").attr("data-tree_id");
+        //     // console.log("#modal_"+temp_id);
+        //     console.log($(this));
+        //     $(".modal").removeClass("active");
+        // });
     }
     function setup_like(){
         $(".like_icon").on("click",function(){
