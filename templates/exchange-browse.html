@@ -121,6 +121,7 @@
     function set_node_color(skill_tree,id){
         for (var skill_id in skill_tree) {
             $("#"+skill_id+"_"+id+" text").text("");
+            $("#modal_"+skill_id+"_"+id+" text").text("");
 
             // Add text
             {{ if $.En }}
