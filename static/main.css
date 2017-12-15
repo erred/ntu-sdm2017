@@ -134,7 +134,3 @@ circle{
 .card{
     cursor:pointer;
 }
-.activate{
-    opacity: 1 !important;
-    display: block !important;
-}
