@@ -108,7 +108,8 @@
             $(this).children(".modal").addClass("activate");
         });
         $(".modal_close").on("click",function(){
-            var temp_id = $(this).parents().find(".card").attr("data-user_id") + "_" + $(this).attr("data-tree_id");
+            var temp_id = $(this).parents().find(".card").attr("data-user_id") + "_" + $(this).parents().find(".card").attr("data-tree_id");
+            console.log("#modal_"+temp_id);
             $("#modal_"+temp_id).removeClass("activate");
         });
     }
