@@ -52,7 +52,6 @@
         <a href="/exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/" class="btn btn-link float-right exchange_button">
             {{ if $.En }}Exchange{{ else }}交換{{end}}
         </a>
-        <a href="#modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}" >yyyyy</a>
         <div class="card-title h5">
         {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
         </div>
@@ -95,7 +94,7 @@
 
     $(document).ready(function(){
         set_tree_id();
-        // set_resize_tree();
+        set_resize_tree();
         setup_like();
     });
 
@@ -108,11 +107,13 @@
     }
     function set_resize_tree() {
         $(".card").on("click",function(){
-            $(this).children(".modal").addClass("active");
+            // $(this).children(".modal").addClass("active");
+            var temp_id = $(this).children(".modal").attr("id");
+            window.location.href = "#"+temp_id;
         });
-        $(".modal_close").on("click",function(){
-            $(".active").removeClass("active");
-        });
+        // $(".modal_close").on("click",function(){
+        //     $(".active").removeClass("active");
+        // });
     }
     function setup_like(){
         $(".like_icon").on("click",function(){
