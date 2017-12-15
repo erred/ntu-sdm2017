@@ -134,3 +134,6 @@ circle{
 .card{
     cursor:pointer;
 }
+.modal-container .modal-body{
+    max-height: 80vh !important;
+}
