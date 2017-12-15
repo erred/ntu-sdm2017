@@ -52,6 +52,7 @@
         <a href="/exchange/new/{{ $it.User }}/{{ $it.TreeData.Treeid }}/" class="btn btn-link float-right exchange_button">
             {{ if $.En }}Exchange{{ else }}交換{{end}}
         </a>
+        <a href="#modal_{{ $it.User }}_{{ $it.TreeData.Treeid }}" class="btn btn-primary">Open large size Modal</a>
         <div class="card-title h5">
         {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
         </div>
