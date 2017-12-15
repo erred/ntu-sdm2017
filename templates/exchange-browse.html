@@ -104,11 +104,15 @@
 
             //card svg
             $(this).children(".card-image").find("svg").attr("id","card_"+id);
-            $(this).children(".card-image").find("circle").attr("id","circle_"+id);
+            $(this).children(".card-image").find("circle").each(function(){
+                $(this).attr("id","circle_"+$(this).attr("id")+"_"+id);
+            });
 
             //full size svg
             // $(this).children(".modal").find("svg").attr("id","modal_"+id);
-            $(this).children(".modal").find("circle").attr("id","full_circle_"+id);
+            $(this).children(".modal").find("circle").each(function(){
+                $(this).attr("id","full_circle_"+$(this).attr("id")+"_"+id);
+            });
         });
     }
     function set_resize_tree() {
