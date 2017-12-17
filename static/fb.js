@@ -43,7 +43,7 @@ function updateAccountInfo(FB) {
   FB.api(
       '/me', {locale : 'en_US', fields : 'name, email, friends', limit : 100},
       function(response) {
-        // console.log(response);
+        console.log(response);
         fetch('/account/update/', {
           method : 'post',
           headers : {
@@ -54,8 +54,8 @@ function updateAccountInfo(FB) {
           body :
               JSON.stringify({'name' : response.name, 'email' : response.email})
 
-        });
-        // .then(function(res){console.log(res)});
+        })
+            .then(function(res){console.log(res)});
       });
 }
 
