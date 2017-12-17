@@ -58,11 +58,10 @@
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
 
-            $("#"+skill_id+"_circle").addClass("tooltip");
-            $("#"+skill_id+"_circle").setAttribute("title","RRRRRRRRRRRRRRRRR");
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 $("#"+skill_id+"_circle").addClass("learned_skill");
+                $("#"+skill_id+"_circle").addClass("tooltip");
             }
         }
     }
