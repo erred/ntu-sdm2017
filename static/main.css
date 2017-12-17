@@ -42,14 +42,14 @@
     letter-spacing: 2px;
     color: #fff;
 }
+#sidebar_brand_text:hover,
+#sidebar_brand_text:focus{
+    background-color: transparent !important;
+}
 .logo_image{
     width: 8vw;
     display: block;
     margin: 0px auto;
-}
-#sidebar_brand:hover,
-#sidebar_brand:focus{
-    background-color: transparent !important;
 }
 
 /* ================== Main ================ */
