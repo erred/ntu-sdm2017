@@ -37,6 +37,10 @@
 
     $(document).ready(function(){
         setup_tree({{ .TreeData.State }});
+        $('.tooltip').tooltipster({
+        theme: 'tooltipster-punk',
+        contentAsHTML: true
+        });
     });
 
     function setup_tree(skill_tree){
