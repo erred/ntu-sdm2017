@@ -92,10 +92,6 @@ function setEmailName(FB) {
            document.cookie = setCookie(100, "email", response.email);
            document.cookie = setCookie(100, "name", response.name);
          });
-  if (getCookie("updateName") == "true") {
-    updateAccountInfo(FB);
-    setCookie(100, "updateName", "false");
-  }
 }
 
 // ===================================== Main Dispatch
@@ -111,6 +107,10 @@ function statusChangeCallback(response) {
       document.querySelector('.fb-login-button').style.display = "none";
       document.querySelector('.login-spinner').style.display = "none";
       document.querySelector('.login-continue').style.display = "block";
+    }
+    if (getCookie("updateName") == "true") {
+      updateAccountInfo(FB);
+      setCookie(100, "updateName", "false");
     }
     break;
   case 'not_authorized':
