@@ -25,7 +25,7 @@ type TreeData struct {
 	Treeid template.URL
 	Svg    template.HTML
 	State  template.JS
-	Liked  int
+	Likes  int
 	Desc   string
 	// Done map[string]bool
 }
@@ -180,6 +180,12 @@ func getTree(user string, tree string) (TreeData, error) {
 		log.Println("getTree/getTree failed")
 		return td, err
 	}
+
+	err = DB.QueryRow("SELECT count(*) FROM likes WHERE owner=? AND treeid=?", user, tree).Scan(&td.Likes)
+	if err != nil {
+		log.Println("getTree/countLikes failed")
+		return td, err
+	}
 	return td, nil
 }
 
@@ -245,4 +251,11 @@ func getAllTrees(user string) ([]TreeData, error) {
 		return treeList, err
 	}
 	return treeList, nil
+}
+
+func countTrees(user string) (int, error) {
+	var count int
+
+	err := DB.QueryRow("SELECT count(*) FROM tree WHERE user=?", user).Scan(&count)
+	return count, err
 }
