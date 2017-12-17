@@ -27,7 +27,7 @@
 							</li>
 						</ul>
                 	</div>
-                	<div style="height:80vh;background-color:yellow">
+                	<div style="height:80vh">
                 	{{ range $idx, $it := .MyTrees }}
 <div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
     <div class="card-image">
@@ -38,6 +38,9 @@
         {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
         </div>
     </div>
+    <a href="" class="btn btn-link float-right">
+        {{ if $.En }}Choose{{ else }}選擇{{end}}
+    </a>
 </div>	
 					{{ end }}
                 	</div>
@@ -45,5 +48,6 @@
 				</main>
             </div>
         </div>
+        {{ template "footer" }}
     </body>
 </html>
