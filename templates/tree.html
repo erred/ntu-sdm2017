@@ -42,11 +42,15 @@
 
     $(document).ready(function(){
         setup_tree({{ .TreeData.State }});
+        setup_tooltip();
+    });
+
+    function setup_tooltip(){
         $('.tooltip').tooltipster({
             theme: 'tooltipster-punk',
             contentAsHTML: true
         });
-    });
+    }
 
     function setup_tree(skill_tree){
         set_node(skill_tree);
