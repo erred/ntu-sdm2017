@@ -27,6 +27,7 @@ type PageNewExchange struct {
 	Page
 	MyTrees    []TreeData
 	TargetTree TreeData
+	TargetName string
 }
 
 // ==================== Handlers ====================
@@ -89,18 +90,23 @@ func newExchangeHandler(w http.ResponseWriter, r *http.Request) {
 	switch len(paths) {
 	case 6:
 		// /exchange/new/user/atree/
-		dataTarget, err := getTree(paths[3], paths[4])
+		targetTree, err := getTree(paths[3], paths[4])
 		if errInternal(err, w) {
 			return
 		}
-		dataMe, err := getAllTrees(page.user)
+		myTrees, err := getAllTrees(page.user)
+		if errInternal(err, w) {
+			return
+		}
+
+		targetName, err := getName(paths[3])
 		if errInternal(err, w) {
 			return
 		}
 
 		page.Page = "exchange"
 		page.Page2 = "new"
-		data := PageNewExchange{page, dataMe, dataTarget}
+		data := PageNewExchange{page, myTrees, targetTree, targetName}
 		templates.ExecuteTemplate(w, "exchange-new.html", data)
 		return
 	case 9:
@@ -148,7 +154,7 @@ func browseTrees(user string) ([]BrowseItem, error) {
 			return items, err
 		}
 
-		err = DB.QueryRow("SELECT name FROM user WHERE user=?", bi.User).Scan(&bi.Name)
+		bi.Name, err = getName(string(bi.User))
 		if err != nil {
 			log.Println("browseTrees/getName failed")
 			return items, err
