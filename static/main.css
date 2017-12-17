@@ -47,6 +47,10 @@
     display: block;
     margin: 0px auto;
 }
+#sidebar_brand:hover,
+#sidebar_brand:focus{
+    background-color: transparent !important;
+}
 
 /* ================== Main ================ */
 main {
