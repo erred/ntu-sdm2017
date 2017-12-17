@@ -50,6 +50,8 @@
     width: 8vw;
     display: block;
     margin: 0px auto;
+    position:relative;
+    top:40vh;
 }
 
 /* ================== Main ================ */
