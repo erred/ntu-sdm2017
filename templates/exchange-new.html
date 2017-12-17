@@ -37,7 +37,7 @@
 						        <div class="card-title h5">
 						        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
 						        </div>
-						        <a href="#step2" class="btn btn-link exchange_button" style="margin:auto;" >
+						        <a href="#step2" class="btn btn-link exchange_button centered"  >
 						        {{ if $.En }}Choose{{ else }}選擇{{end}}
 						    	</a>
 						    </div>
@@ -46,12 +46,12 @@
 					{{ end }}
                 	</div>
                 	<script type="text/javascript">
-                		var tree_chosen = 0;
+                		var tree_chosen = "";
                 	</script>
                 	<div style="height:80vh" id="step2">
                 	{{ range $idx, $it := .Mytrees }}
                 	<script type="text/javascript">
-                		if ( {{ $it.Treeid }} == tree_chosen) {
+                		if ( {{ $it.Cname }} == tree_chosen) {
                 			document.write("{{ $it.Svg }}")
                 		}
                 	</script>
