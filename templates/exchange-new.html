@@ -11,44 +11,67 @@
             <div class="columns">
                 {{ template "sidebar" .Page }}
                 <main class="column col-10 col-gapless">
-                	<div style="height:20vh">
+                	<div style="height:20vh" style="position:fixed">
                 		<ul class="step" style="padding-top:40px">
 							<li class="step-item active">
-							    <a href="#" class="tooltip" data-tooltip="Step 1">Step 1</a>
+							    <a href="#step1" class="tooltip" data-tooltip="Step 1">Step 1</a>
 							</li>
 							<li class="step-item">
-							    <a href="#" class="tooltip" data-tooltip="Step 2">Step 2</a>
+							    <a href="#step2" class="tooltip" data-tooltip="Step 2">Step 2</a>
 							</li>
 							<li class="step-item">
-							    <a href="#" class="tooltip" data-tooltip="Step 3">Step 3</a>
+							    <a href="#step3" class="tooltip" data-tooltip="Step 3">Step 3</a>
 							</li>
 							<li class="step-item">
-							    <a href="#" class="tooltip" data-tooltip="Step 4">Step 4</a>
+							    <a href="#step4" class="tooltip" data-tooltip="Step 4">Step 4</a>
 							</li>
 						</ul>
                 	</div>
-                	<div style="height:80vh">
+                	<div style="height:80vh" id="step1" style="overflow-y:scroll">
                 	{{ range $idx, $it := .MyTrees }}
-<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
-    <div class="card-image">
-        {{ $it.Svg }}       
-    </div>
-    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
-        <div class="card-title h5">
-        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
-        </div>
-        <a href="" class="btn btn-link float-right exchange_button">
-        {{ if $.En }}Choose{{ else }}選擇{{end}}
-    	</a>
-    </div>
-    
-</div>	
+						<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
+						    <div class="card-image">
+						        {{ $it.Svg }}       
+						    </div>
+						    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+						        <div class="card-title h5">
+						        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
+						        </div>
+						        <a href="#step2" class="btn btn-link exchange_button centered"  >
+						        {{ if $.En }}Choose{{ else }}選擇{{end}}
+						    	</a>
+						    </div>
+						    
+						</div>	
 					{{ end }}
                 	</div>
+                	<script type="text/javascript">
+                		var tree_chosen = "";
+                	</script>
+                	<div style="height:80vh" id="step2" style="overflow-y:scroll">
+                	{{ range $idx, $it := .Mytrees }}
+                	<script type="text/javascript">
+                		if ( {{ $it.Cname }} == tree_chosen) {
+                			document.write("{{ $it.Svg }}")
+                		}
+                	</script>
+					{{ end }}
+                	</div>
+
 	                
 				</main>
             </div>
         </div>
         {{ template "footer" }}
     </body>
+    <script type="text/javascript">
+
+	   	$(".exchange_button").on("click", function(){
+	   		tree_id = $(this).parent().attr("data-tree_id");
+	   		console.log(tree_id);
+	   		tree_chosen = tree_id;
+
+	   	});
+	    
+    </script>
 </html>

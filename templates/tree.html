@@ -37,6 +37,10 @@
 
     $(document).ready(function(){
         setup_tree({{ .TreeData.State }});
+        $('.tooltip').tooltipster({
+        theme: 'tooltipster-punk',
+        contentAsHTML: true
+        });
     });
 
     function setup_tree(skill_tree){
@@ -57,6 +61,8 @@
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 $("#"+skill_id+"_circle").addClass("learned_skill");
+                $("#"+skill_id+"_circle").addClass("tooltip");
+                
             }
         }
     }
