@@ -24,20 +24,28 @@
 
             $(window).scroll(function(){
                 if ($(window).scrollTop() >= skill_tree_top && $(window).scrollTop() < skill_exchange_top) {
-                    $("#brand_text").addClass("black_text");
+                    // $("#brand_text").addClass("black_text");
                     $(".nav_link_text").removeClass("black_text");
+                    $("#logo_white").css("display","none");
+                    $("#logo_black").css("display","block");
                 }
                 else if ($(window).scrollTop() >= skill_exchange_top && $(window).scrollTop() < team_top){
-                    $("#brand_text").removeClass("black_text");
+                    // $("#brand_text").removeClass("black_text");
                     $(".nav_link_text").addClass("black_text");
+                    $("#logo_white").css("display","block");
+                    $("#logo_black").css("display","none");
                 }
                 else if ($(window).scrollTop() >= team_top){
-                    $("#brand_text").addClass("black_text");
+                    // $("#brand_text").addClass("black_text");
                     $(".nav_link_text").addClass("black_text");
+                    $("#logo_white").css("display","none");
+                    $("#logo_black").css("display","block");
                 }
                 else{
                     $("#brand_text").removeClass("black_text");
                     $(".nav_link_text").removeClass("black_text");
+                    $("#logo_white").css("display","block");
+                    $("#logo_black").css("display","none");
                 }
             });
 
@@ -55,8 +63,11 @@
     <body>
         <header class="navbar">
             <section class="navbar-section navbar_left">
-                <a href="#main" id="brand_text" class="navbar-brand mr-2 nav_text">SKILL TREE</a>
-
+                <!-- <a href="#main" id="brand_text" class="navbar-brand mr-2 nav_text">SKILL TREE</a> -->
+                <a href="#main" id="brand_text" class="navbar-brand mr-2 nav_text">
+                    <img src="/static/image/logo_text_white.png" id="logo_white" style="display: block;"></img>
+                    <img src="/static/image/logo_text_black.png" id="logo_black" style="display: none;"></img>
+                </a>
             </section>
             <section class="navbar-section navbar_right">
                 <div class="input-group input-inline">
