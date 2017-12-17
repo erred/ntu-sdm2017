@@ -29,16 +29,14 @@
                 	</div>
                 	<div style="height:80vh;background-color:yellow">
                 	{{ range $idx, $it := .MyTrees }}
-                	{{ $it.Name }}
-<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state="{{ $it.TreeData.State }}" >
+<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
     <div class="card-image">
-        {{ $it.TreeData.Svg }}       
+        {{ $it.Svg }}       
     </div>
-    <div class="card-header" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
+    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
         <div class="card-title h5">
-        {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
+        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
         </div>
-        <div class="card-subtitle text-gray">{{ $it.Name }}</div>
     </div>
 </div>	
 					{{ end }}
