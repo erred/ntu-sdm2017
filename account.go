@@ -144,3 +144,9 @@ func updateAccount(r *http.Request) error {
 	log.Println("account updated")
 	return nil
 }
+
+func getName(user string) (string, error) {
+	var name string
+	err := DB.QueryRow("SELECT name FROM user WHERE user=?", user).Scan(&name)
+	return name, err
+}
