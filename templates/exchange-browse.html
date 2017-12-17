@@ -32,7 +32,7 @@
                         <div class="columns">
                             {{ range $idx, $it := .Items }}
 
-<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state={{ $it.TreeData.State }} >
+<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state="{{ $it.TreeData.State }}" >
     <div class="card-image">
         {{ $it.TreeData.Svg }}
 
@@ -93,7 +93,7 @@
 <script>
 
     $(document).ready(function(){
-        set_tree_id();
+        // set_tree_id();
         set_resize_tree();
         setup_like();
     });
