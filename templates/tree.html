@@ -37,10 +37,7 @@
 
     $(document).ready(function(){
         setup_tree({{ .TreeData.State }});
-        $('.tooltip').tooltipster({
-        theme: 'tooltipster-punk',
-        contentAsHTML: true
-        });
+        
     });
 
     function setup_tree(skill_tree){
@@ -57,7 +54,7 @@
             {{else}}
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
-            $("#"+skill_id+"_circle").addClass("tooltip");
+            $("#"+skill_id).append("<div id='"+skill_id+"_div'></div>")
             //$("#"+skill_id+"_circle").title = "RRRR";
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
