@@ -12,7 +12,8 @@ import (
 
 type PageBrowse struct {
 	Page
-	Items []BrowseItem
+	Items         []BrowseItem
+	AllowExchange bool
 }
 
 type BrowseItem struct {
@@ -20,7 +21,6 @@ type BrowseItem struct {
 	User  template.URL
 	Name  string
 	Liked bool
-	Likes int
 }
 
 type PageNewExchange struct {
@@ -46,9 +46,17 @@ func browseExchangeHandler(w http.ResponseWriter, r *http.Request) {
 	if errInternal(err, w) {
 		return
 	}
+	myTreeCount, err := countTrees(page.user)
+	if errInternal(err, w) {
+		return
+	}
+	AllowExchange := true
+	if myTreeCount == 0 {
+		AllowExchange = false
+	}
 	page.Page = "exchange"
 	page.Page2 = "browse"
-	data := PageBrowse{page, items}
+	data := PageBrowse{page, items, AllowExchange}
 	templates.ExecuteTemplate(w, "exchange-browse.html", data)
 }
 
@@ -143,12 +151,6 @@ func browseTrees(user string) ([]BrowseItem, error) {
 		err = DB.QueryRow("SELECT name FROM user WHERE user=?", bi.User).Scan(&bi.Name)
 		if err != nil {
 			log.Println("browseTrees/getName failed")
-			return items, err
-		}
-
-		err = DB.QueryRow("SELECT count(*) FROM likes WHERE owner=? AND treeid=?", bi.User, bi.Treeid).Scan(&bi.Likes)
-		if err != nil {
-			log.Println("browseTrees/countlikes failed")
 			return items, err
 		}
 
