@@ -27,36 +27,39 @@
 							</li>
 						</ul>
                 	</div>
-                	<div style="height:80vh; overflow-y:scroll" id="step1">
-                	{{ range $idx, $it := .MyTrees }}
-						<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
-						    <div class="card-image">
-						        {{ $it.Svg }}       
-						    </div>
-						    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
-						        <div class="card-title h5">
-						        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
-						        </div>
-						        <a href="#step2" class="btn btn-link exchange_button centered"  >
-						        {{ if $.En }}Choose{{ else }}選擇{{end}}
-						    	</a>
-						    </div>
-						    
-						</div>	
-					{{ end }}
+                	<div style="height:80vh; overflow-y:scroll">
+                		<div style="height:80vh" id="step1">
+	                	{{ range $idx, $it := .MyTrees }}
+							<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
+							    <div class="card-image">
+							        {{ $it.Svg }}       
+							    </div>
+							    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+							        <div class="card-title h5">
+							        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
+							        </div>
+							        <a href="#step2" class="btn btn-link exchange_button centered"  >
+							        {{ if $.En }}Choose{{ else }}選擇{{end}}
+							    	</a>
+							    </div>
+							    
+							</div>	
+						{{ end }}
+	                	</div>
+	                	<script type="text/javascript">
+	                		var tree_chosen = "";
+	                	</script>
+	                	<div style="height:80vh; overflow-y:scroll" id="step2">
+	                	{{ range $idx, $it := .Mytrees }}
+	                	<script type="text/javascript">
+	                		if ( {{ $it.Cname }} == tree_chosen) {
+	                			document.write("{{ $it.Svg }}")
+	                		}
+	                	</script>
+						{{ end }}
+	                	</div>
                 	</div>
-                	<script type="text/javascript">
-                		var tree_chosen = "";
-                	</script>
-                	<div style="height:80vh; overflow-y:scroll" id="step2">
-                	{{ range $idx, $it := .Mytrees }}
-                	<script type="text/javascript">
-                		if ( {{ $it.Cname }} == tree_chosen) {
-                			document.write("{{ $it.Svg }}")
-                		}
-                	</script>
-					{{ end }}
-                	</div>
+                	
 
 	                
 				</main>
