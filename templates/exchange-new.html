@@ -12,7 +12,7 @@
                 {{ template "sidebar" .Page }}
                 <main class="column col-10 col-gapless">
                 	<div style="height:20vh;background-color:red">
-                		<ul class="step">
+                		<ul class="step" style="padding-top:20px">
 							<li class="step-item active">
 							    <a href="#" class="tooltip" data-tooltip="Step 1">Step 1</a>
 							</li>
@@ -26,6 +26,21 @@
 							    <a href="#" class="tooltip" data-tooltip="Step 4">Step 4</a>
 							</li>
 						</ul>
+                	</div>
+                	<div style="height:80vh">
+                	{{ range $idx, $it := .DataMe }}
+<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state="{{ $it.TreeData.State }}" >
+    <div class="card-image">
+        {{ $it.TreeData.Svg }}       
+    </div>
+    <div class="card-header" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
+        <div class="card-title h5">
+        {{ if $.Page.En }}{{ $it.TreeData.Name }}{{ else }}{{ $it.TreeData.Cname }}{{ end }}
+        </div>
+        <div class="card-subtitle text-gray">{{ $it.Name }}</div>
+    </div>
+</div>	
+					{{ end }}
                 	</div>
 	                
 				</main>
