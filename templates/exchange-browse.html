@@ -32,7 +32,7 @@
                         <div class="columns">
                             {{ range $idx, $it := .Items }}
 
-<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state={{ $it.TreeData.State }} >
+<div class="card column col-3" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state="{{ $it.TreeData.State }}" >
     <div class="card-image">
         {{ $it.TreeData.Svg }}
 
@@ -104,24 +104,24 @@
 
             //card svg
             $(this).children(".card-image").find("svg").attr("id","card_"+id);
-            $(this).children(".card-image").find("circle").each(function(){
+            $(this).children(".card-image").find("circle[id]").each(function(){
                 $(this).attr("id",$(this).attr("id")+"_"+id);
                 $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
             });
 
             //full size svg
             // $(this).children(".modal").find("svg").attr("id","modal_"+id);
-            $(this).children(".modal").find("circle").each(function(){
+            $(this).children(".modal").find("circle[id]").each(function(){
                 $(this).attr("id","modal_"+$(this).attr("id")+"_"+id);
                 $(this).parent().attr("id","modal_"+$(this).parent().attr("id")+"_"+id);
             });
-            // set_node_color($(this).attr("data-state"),id);
+            set_node_color($(this).attr("data-state"),id);
         });
     }
     function set_node_color(skill_tree,id){
         for (var skill_id in skill_tree) {
-            $("#"+skill_id+"_"+id+" text").text("");
-            $("#modal_"+skill_id+"_"+id+" text").text("");
+            $("#"+skill_id+id+" text").text("");
+            $("#modal_"+skill_id+id+" text").text("");
 
             // Add text
             {{ if $.En }}
@@ -132,7 +132,8 @@
 
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
-                $("#"+skill_id+"_"+id+"_circle").addClass("learned_skill");
+                $("#"+skill_id+"_circle_"+id).addClass("learned_skill");
+                $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill");
             }
         }
     }
