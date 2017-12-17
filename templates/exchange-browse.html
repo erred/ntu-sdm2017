@@ -95,6 +95,7 @@
     $(document).ready(function(){
         set_tree_id();
         set_resize_tree();
+        setup_allow_exchange();
         setup_like();
     });
 
@@ -143,6 +144,13 @@
             window.location.href = "#"+temp_id;
         });
     }
+    function setup_allow_exchange() {
+
+        {{ if not $.allowExchange }}
+        $(".exchange_button").attr("disabled","true");
+        {{end}}
+    }
+
     function setup_like(){
         $(".like_icon").on("click",function(){
             var user = $(this).parent().attr("data-user_id");
