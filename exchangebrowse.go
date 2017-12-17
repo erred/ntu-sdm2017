@@ -79,7 +79,7 @@ func newExchangeHandler(w http.ResponseWriter, r *http.Request) {
 
 	paths := strings.Split(r.URL.Path, "/")
 	switch len(paths) {
-	case 5:
+	case 6:
 		// /exchange/new/user/atree/
 		dataTarget, err := getTree(paths[3], paths[4])
 		if errInternal(err, w) {
@@ -95,7 +95,7 @@ func newExchangeHandler(w http.ResponseWriter, r *http.Request) {
 		data := PageNewExchange{page, dataMe, dataTarget}
 		templates.ExecuteTemplate(w, "exchange-new.html", data)
 		return
-	case 8:
+	case 9:
 		// /exchange/new/user/atree/askill/mytree/myskill/
 		exchangeRequest(page.user, paths[6], paths[7], paths[3], paths[4], paths[5])
 	}
