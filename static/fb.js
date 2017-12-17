@@ -43,7 +43,7 @@ function updateAccountInfo(FB) {
   FB.api(
       '/me', {locale : 'en_US', fields : 'name, email, friends', limit : 100},
       function(response) {
-        // console.log(response);
+        console.log(response);
         fetch('/account/update/', {
           method : 'post',
           headers : {
@@ -54,8 +54,8 @@ function updateAccountInfo(FB) {
           body :
               JSON.stringify({'name' : response.name, 'email' : response.email})
 
-        });
-        // .then(function(res){console.log(res)});
+        })
+            .then(function(res){console.log(res)});
       });
 }
 
@@ -92,10 +92,6 @@ function setEmailName(FB) {
            document.cookie = setCookie(100, "email", response.email);
            document.cookie = setCookie(100, "name", response.name);
          });
-  if (getCookie("updateName") == "true") {
-    updateAccountInfo(FB);
-    setCookie(100, "updateName", "false");
-  }
 }
 
 // ===================================== Main Dispatch
@@ -111,6 +107,10 @@ function statusChangeCallback(response) {
       document.querySelector('.fb-login-button').style.display = "none";
       document.querySelector('.login-spinner').style.display = "none";
       document.querySelector('.login-continue').style.display = "block";
+    }
+    if (getCookie("updateName") == "true") {
+      updateAccountInfo(FB);
+      setCookie(100, "updateName", "false");
     }
     break;
   case 'not_authorized':
