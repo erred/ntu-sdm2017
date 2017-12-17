@@ -93,7 +93,7 @@
 <script>
 
     $(document).ready(function(){
-        // set_tree_id();
+        set_tree_id();
         set_resize_tree();
         setup_like();
     });
@@ -103,12 +103,12 @@
             var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
 
             //card svg
-            if ($(this).children(".card-image").find("svg").attr("id") != "undefined") {
+            if ($(this).children(".card-image").find("svg").attr("id") != "") {
                 $(this).children(".card-image").find("svg").attr("id","card_"+id);
             }
 
             $(this).children(".card-image").find("circle").each(function(){
-                if ($(this).attr("id") != "undefined") {
+                if ($(this).attr("id") != "") {
                     $(this).attr("id",$(this).attr("id")+"_"+id);
                     $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
                 }
@@ -117,7 +117,7 @@
             //full size svg
             // $(this).children(".modal").find("svg").attr("id","modal_"+id);
             $(this).children(".modal").find("circle").each(function(){
-                if ($(this).attr("id") != "undefined") {
+                if ($(this).attr("id") != "") {
                     $(this).attr("id","modal_"+$(this).attr("id")+"_"+id);
                     $(this).parent().attr("id","modal_"+$(this).parent().attr("id")+"_"+id);
                 }
