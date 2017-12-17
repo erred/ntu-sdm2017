@@ -106,6 +106,7 @@
             //card svg
             $(this).children(".card-image").find("svg").attr("id","card_"+id);
             $(this).children(".card-image").find("circle").each(function(){
+                console.log($(this).attr("id"));
                 if ($(this).attr("id") != 'undefined') {
                     $(this).attr("id",$(this).attr("id")+"_"+id);
                     $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);

@@ -42,6 +42,10 @@
     letter-spacing: 2px;
     color: #fff;
 }
+.logo_image{
+    display: block;
+    margin: 0px auto;
+}
 
 /* ================== Main ================ */
 main {
