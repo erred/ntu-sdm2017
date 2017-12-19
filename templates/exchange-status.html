@@ -294,8 +294,8 @@
                 credentials : "include"
             });
             // $(this).siblings(".delete_exchange_button").detach();
-            // $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
-            // $(this).parent().empty();
+            $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
+            $(this).parent().empty();
         });
     }
 
