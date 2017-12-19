@@ -266,7 +266,7 @@
                 credentials : "include"
             });
 
-            $(this).parrent().empty();
+            $(this).parent().empty();
         });
     }
     function set_accept_exchange() {
@@ -277,8 +277,8 @@
                 credentials : "include"
             });
         });
-        $("#table-inprogress tbody").append($(this).parrent().html());
-        $(this).parrent().empty();
+        $("#table-inprogress tbody").append($(this).parent().html());
+        $(this).parent().empty();
     }
     function set_done_exchange() {
         $(".done_exchange_button").on("click",function(){
@@ -289,8 +289,8 @@
             });
         });
 
-        $("#table-complete tbody").append($(this).parrent().html());
-        $(this).parrent().empty();
+        $("#table-complete tbody").append($(this).parent().html());
+        $(this).parent().empty();
     }
 
 </script>
