@@ -208,6 +208,7 @@
             $(this).addClass("selected_skill");
 
             // Add data to new_exchange_data
+            new_exchange_data["user"] = {{ $.Target }};
             new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
             new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.CName}} {{ end }};
             new_exchange_data["askill"] = $(this).parent().attr("id");
@@ -225,7 +226,7 @@
     function set_send_exchange_message() {
 
         $("#final_exchange_button").on("click",function(){
-            var tmp_user = {{ $.Target }};
+            var tmp_user = new_exchange_data["user"];
             var tmp_atree = new_exchange_data["atree"];
             var tmp_askill = new_exchange_data["askill"];
             var tmp_mytree = new_exchange_data["mytree"];
@@ -234,9 +235,8 @@
                 typeof(tmp_atree) !== "undefined" &&
                 typeof(tmp_askill) !== "undefined" &&
                 typeof(tmp_mytree) !== "undefined" &&
-                typeof(tmp_myskill) !== "undefined" 
+                typeof(tmp_myskill) !== "undefined"
             ) {
-                alert("yes");
                 // fetch('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/', {
                 //     method : 'get',
                 //     credentials : "include"

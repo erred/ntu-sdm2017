@@ -188,7 +188,8 @@ svg circle:focus{
 #final_exchange_button{
     border-radius: 30px;
     width: 100px;
-    margin: 0xp auto;
+    display: block;
+    margin: 0px auto;
 }
 #final_exchange_button:hover{
     color: #fff !important;
