@@ -156,6 +156,8 @@
         //My skill
         $("#step2 svg circle").on("click", function(){
 
+            $(this).addClass("selected_skill");
+
             // Add data to new_exchange_data
             new_exchange_data["myskill"] = $(this).parent().attr("id");
 
@@ -167,6 +169,8 @@
 
         //New skill
         $("#step3 svg circle").on("click", function(){
+
+            $(this).addClass("selected_skill");
 
             // Add data to new_exchange_data
             new_exchange_data["atree"] = {{$.TargetTree.Treeid}};

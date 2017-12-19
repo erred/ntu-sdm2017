@@ -177,3 +177,6 @@ svg circle:focus{
     text-align: left;
     color: #acb3c2;
 }
+.selected_skill{
+    stroke: #5a5a5a;
+}
