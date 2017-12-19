@@ -54,21 +54,25 @@
             </div>
         </div>
 
-        <li class="menu-item toplevel">
-            <a class="{{ if eq $.Page "account"}}active{{ end }}" href="/account/">{{ if $.En }}Account{{ else }}帳戶{{ end }}</a>
-        </li>
+        <li class="divider subdivider"></li>
 
         <li class="menu-item toplevel">
-            <a href="#" onclick="languageSwitch();">{{ if $.En }}中文版{{ else }}English Version{{ end }}</a>
+            <a class="{{ if eq $.Page "account"}}active{{ end }}" href="/account/">{{ if $.En }}Account{{ else }}帳戶{{ end }}</a>
         </li>
 
         <li class="menu-item toplevel">
             <a href="#" onclick="logout();">{{ if $.En }}Logout{{ else }}登出{{ end }}</a>
         </li>
 
+        <li class="divider subdivider"></li>
+
+        <li class="menu-item toplevel">
+            <a href="#" onclick="languageSwitch();">{{ if $.En }}中文版{{ else }}English Version{{ end }}</a>
+        </li>
+
     </ul>
     <div class="menu-item" id="logo_image_div">
-        <img src="/static/image/logo_white.png" class="logo_image"></img>
+        <img src="/static/image/logo_all_white.png" class="logo_image"></img>
     </div>
 </nav>
 {{ end }}

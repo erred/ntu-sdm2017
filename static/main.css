@@ -57,6 +57,9 @@
     bottom:30px;
     left: 4%;
 }
+.subdivider{
+    border-color: #b2b3b6;
+}
 
 /* ================== Main ================ */
 main {
