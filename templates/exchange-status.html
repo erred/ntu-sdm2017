@@ -293,7 +293,8 @@
                 method : 'get',
                 credentials : "include"
             });
-            $(this).siblings(".done_exchange_button, .delete_exchange_button").detach();
+            $(this).siblings(".delete_exchange_button").detach();
+            $(this).detach();
             $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
             $(this).parent().empty();
         });
