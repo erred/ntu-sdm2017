@@ -129,7 +129,7 @@ func getExchangeData(user string) (ExchangeList, error) {
 		}
 
 		it.U1.Name = myname
-		err = DB.QueryRow("SELECT name FROM user where name=?", it.U2.User).Scan(&it.U2.Name)
+		err = DB.QueryRow("SELECT name FROM user where user=?", it.U2.User).Scan(&it.U2.Name)
 		if err != nil {
 			log.Println("getExchangeData/getU2Name failed")
 			return exList, err
