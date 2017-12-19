@@ -5,6 +5,7 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -28,7 +29,7 @@
                             {{ end }}
                         </label>
                         <div class="accordion-body">
-                            <table class="table">
+                            <table id="table-requests" class="table">
                                 <thead>
                                     <tr>
                                         <td>Me</td>
@@ -60,7 +61,7 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td><a href="/exchange/delete/{{ $r.Id }}/">Cancel</a></td>
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Cancel</td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -86,7 +87,7 @@
                             {{ end }}
                         </label>
                         <div class="accordion-body">
-                            <table class="table">
+                            <table id="table-pending" class="table">
                                 <thead>
                                     <tr>
                                         <td>Me</td>
@@ -119,8 +120,8 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td><a href="/exchange/accept/{{ $r.Id }}/">Accept</a></td>
-    <td><a href="/exchange/delete/{{ $r.Id }}/">Reject</a></td>
+    <td class="accept_exchange_button" data-accept_id="{{ $r.Id }}">Accept</td>
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Reject</td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -146,7 +147,7 @@
                             {{ end }}
                         </label>
                         <div class="accordion-body">
-                            <table class="table">
+                            <table  id="table-inprogress" class="table">
                                 <thead>
                                     <tr>
                                         <td>Me</td>
@@ -179,8 +180,8 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td><a href="/exchange/done/{{ $r.Id }}/">Done</a></td>
-    <td><a href="/exchange/delete/{{ $r.Id }}/">Reject</a></td>
+    <td class="done_exchange_button" data-done_id="{{ $r.Id }}">Done</td>
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Reject</td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -204,7 +205,7 @@
                             {{ end }}
                         </label>
                         <div class="accordion-body">
-                            <table class="table">
+                            <table id="table-complete" class="table">
                                 <thead>
                                     <tr>
                                         <td>Me</td>
@@ -249,3 +250,47 @@
         {{ template "footer" }}
     </body>
 </html>
+<script>
+
+    $(document).ready(function(){
+        set_cancel_exchange();
+        set_accept_exchange();
+        set_done_exchange();
+    });
+
+    function set_cancel_exchange() {
+        $(".delete_exchange_button").on("click",function(){
+            var delete_id = $(this).attr("data-delete_id");
+            fetch('/exchange/delete/'+delete_id+'/', {
+                method : 'get',
+                credentials : "include"
+            });
+
+            $(this).parrent().empty();
+        });
+    }
+    function set_accept_exchange() {
+        $(".accept_exchange_button").on("click",function(){
+            var accept_id = $(this).attr("data-accept_id");
+            fetch('/exchange/accept/'+accept_id+'/', {
+                method : 'get',
+                credentials : "include"
+            });
+        });
+        $("#table-inprogress tbody").append($(this).parrent().html());
+        $(this).parrent().empty();
+    }
+    function set_done_exchange() {
+        $(".done_exchange_button").on("click",function(){
+            var done_id = $(this).attr("data-done_id");
+            fetch('/exchange/done/'+done_id+'/', {
+                method : 'get',
+                credentials : "include"
+            });
+        });
+
+        $("#table-complete tbody").append($(this).parrent().html());
+        $(this).parrent().empty();
+    }
+
+</script>
