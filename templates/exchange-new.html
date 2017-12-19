@@ -105,6 +105,7 @@
             $("#step2").append($(this).parent().siblings(".card-image").html());
 
             //Active the step item
+            $(".step-item").removeClass("active");
             $(".step-item").eq(1).addClass("active");
         });
 
