@@ -13,7 +13,7 @@
             <div class="columns">
                 {{ template "sidebar" .Page }}
                 <main class="column col-10 col-gapless">
-                	<div style="height:20vh;">
+                	<div style="height:15vh;">
                 		<ul class="step" style="padding-top:40px">
 							<li class="step-item active">
 							    <a href="#step1" class="tooltip" data-tooltip="Step 1">Step 1</a>
@@ -29,7 +29,7 @@
 							</li>
 						</ul>
                 	</div>
-                	<div id="exchange_step" style="height:80vh; overflow-y:scroll">
+                	<div id="exchange_step" style="height:85vh; overflow-y:scroll">
                 		<div id="step1" class="each_exchange_step">
                         	<h2 class="step_title">
                                  {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹。{{end}}
@@ -66,7 +66,7 @@
                             </h2>
                             <h4 class="step_subtitle">
                                 {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
-                                {{ $.TargetName }}
+                                 - {{ $.TargetName }}
                             </h4>
                             <div class="select_skill">
                                 {{ $.TargetTree.Svg }}
@@ -92,6 +92,7 @@
     var new_exchange_data = [];
 
     $(document).ready(function(){
+        set_tree_id();
         // set_scroll_animate();
         set_step_active();
         set_selected_exchange_data();
@@ -102,7 +103,6 @@
         //     tree_chosen = tree_id;
         //
         // });
-
     });
 
     function set_scroll_animate() {
@@ -145,6 +145,18 @@
             //Active the step item
             $(".step-item").removeClass("active");
             $(".step-item").eq(1).addClass("active");
+        });
+
+        //My skill
+        $("#h2 svg circle").on("click", function(){
+
+            // Add data to new_exchange_data
+            // new_exchange_data["mytree"] = $(this).parent().attr("id");
+            new_exchange_data["mytree"] = $(this).attr("text");
+
+            //Active the step item
+            $(".step-item").removeClass("active");
+            $(".step-item").eq(2).addClass("active");
         });
 
 
