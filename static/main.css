@@ -49,11 +49,12 @@
 .logo_image{
     width: 120px;
     display: block;
-    margin: 0px auto;
+    /* margin: 0px auto; */
+    margin-left: 40%;
 }
 #logo_image_div{
     position:fixed;
-    top:40vh;
+    top:30px;
 }
 
 /* ================== Main ================ */
