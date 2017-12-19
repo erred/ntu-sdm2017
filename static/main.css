@@ -57,9 +57,6 @@
     bottom:30px;
     left: 4%;
 }
-.subdivider{
-    border-color: #b2b3b6;
-}
 
 /* ================== Main ================ */
 main {
@@ -199,6 +196,19 @@ svg circle:focus{
     margin: 0px auto;
 }
 #final_exchange_button:hover{
+    color: #fff !important;
+    background-color: #5755d9;
+}
+
+/* ================== exchange status================ */
+
+.statuspage_button{
+    width: 200px;
+    margin-top: -15px;
+    border: 1px solid #5755d9 !important;
+    border-radius: 30px;
+}
+.statuspage_button:hover{
     color: #fff !important;
     background-color: #5755d9;
 }
