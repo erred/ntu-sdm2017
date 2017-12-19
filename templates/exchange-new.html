@@ -64,44 +64,45 @@
         </div>
         {{ template "footer" }}
     </body>
-    <script type="text/javascript">
-
-        //全域變數
-        var new_exchange_data = [];
-
-        $(document).ready(function(){
-            set_selected_exchange_data();
-
-            // $(".exchange_button").on("click", function(){
-            //     tree_id = $(this).parent().attr("data-tree_id");
-            //     console.log(tree_id);
-            //     tree_chosen = tree_id;
-            //
-            // });
-        });
-
-
-
-        function set_selected_exchange_data() {
-
-            //My tree
-            $(".new_exchange_mytree_button").on("click", function(){
-
-                // Add data to new_exchange_data
-                $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
-                // $(this).addClass("selected_new_exchange_mytree");
-                new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
-
-                // Append svg tree to step 2
-                // var my_tree_id = $(this).parent().attr("data-tree_id");
-                $("#step2").html("");
-                $("#step2").append($(this).parent().siblings("card-image").find("svg").html());
-
-                //Active the step item
-                $(".step-item").eq(1).addClass("active");
-            });
-        }
-
-
-    </script>
 </html>
+
+<script>
+
+    //全域變數
+    var new_exchange_data = [];
+
+    $(document).ready(function(){
+        set_selected_exchange_data();
+
+        // $(".exchange_button").on("click", function(){
+        //     tree_id = $(this).parent().attr("data-tree_id");
+        //     console.log(tree_id);
+        //     tree_chosen = tree_id;
+        //
+        // });
+    });
+
+
+
+    function set_selected_exchange_data() {
+
+        //My tree
+        $(".new_exchange_mytree_button").on("click", function(){
+
+            // Add data to new_exchange_data
+            $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
+            // $(this).addClass("selected_new_exchange_mytree");
+            new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
+
+            // Append svg tree to step 2
+            // var my_tree_id = $(this).parent().attr("data-tree_id");
+            $("#step2").html("");
+            $("#step2").append($(this).parent().siblings("card-image").find("svg").html());
+
+            //Active the step item
+            $(".step-item").eq(1).addClass("active");
+        });
+    }
+
+
+</script>
