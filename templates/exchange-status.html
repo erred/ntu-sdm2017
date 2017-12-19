@@ -260,14 +260,12 @@
 
     function set_cancel_exchange() {
         $(".delete_exchange_button").on("click",function(){
-            // var delete_id = $(this).attr("data-delete_id");
-            // fetch('/exchange/delete/'+delete_id+'/', {
-            //     method : 'get',
-            //     credentials : "include"
-            // });
-            console.log($(this).parent().html());
+            var delete_id = $(this).attr("data-delete_id");
+            fetch('/exchange/delete/'+delete_id+'/', {
+                method : 'get',
+                credentials : "include"
+            });
             $(this).parent().empty();
-
         });
     }
     function set_accept_exchange() {
@@ -278,7 +276,7 @@
                 credentials : "include"
             });
         });
-        $("#table-inprogress tbody").append($(this).parent().html());
+        $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
         $(this).parent().empty();
     }
     function set_done_exchange() {
@@ -290,7 +288,7 @@
             });
         });
 
-        $("#table-complete tbody").append($(this).parent().html());
+        $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
         $(this).parent().empty();
     }
 
