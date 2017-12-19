@@ -65,8 +65,8 @@
                                  {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能{{end}}
                             </h2>
                             <h3 class="step_subtitle">
-                                {{ if $.Page.En }} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.CName}} {{end}}
-                                {{$.TargetName}}
+                                {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
+                                {{ $.TargetName }}
                             </h3>
                             <div class="select_skill">
                                 {{ $.TargetTree.Svg }}
@@ -132,7 +132,7 @@
         $(".new_exchange_mytree_button").on("click", function(){
 
             // Add data to new_exchange_data
-            $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
+            // $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
 
@@ -140,7 +140,7 @@
             // var my_tree_id = $(this).parent().attr("data-tree_id");
             $("#step2 .select_skill").empty();
             $("#step2 .select_skill").append($(this).parent().siblings(".card-image").html());
-            $("#step2 h3").append($(this).siblings(".card-title").text()+{{$.Account.Name}})
+            $("#step2 h3").append($(this).siblings(".card-title").text());
 
             //Active the step item
             $(".step-item").removeClass("active");
