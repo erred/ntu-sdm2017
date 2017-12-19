@@ -65,7 +65,8 @@
                                  {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能。{{end}}
                             </h2>
                             <h4 class="step_subtitle">
-                                {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}} - {{ $.TargetName }}
+                                {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
+                                 - {{ $.TargetName }}
                             </h4>
                             <div class="select_skill">
                                 {{ $.TargetTree.Svg }}
@@ -238,9 +239,9 @@
             ) {
                 fetch('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/', {
                     method : 'get',
-                    credentials : "include"
+                    credentials : 'include'
                 });
-                window.location.href = "/exchange/status/";
+                // window.location.href = "#step4";
             }
             else {
                 alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}請確認上面木揍皆已完成。{{end}})
