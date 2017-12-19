@@ -145,7 +145,11 @@
             //Active the step item
             $(".step-item").removeClass("active");
             $(".step-item").eq(1).addClass("active");
+
+            set_selected_skills();
         });
+    }
+    function set_selected_skills() {
 
         //My skill
         $("#step2 svg circle").on("click", function(){
@@ -171,11 +175,7 @@
             $(".step-item").eq(3).addClass("active");
             window.location.href = "#step4";
         });
-
-
-
     }
-
 
 
 
