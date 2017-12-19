@@ -166,6 +166,9 @@ circle{
     display: block;
     margin: 0px auto;
 }
+svg circle:hover{
+    stroke: #5a5a5a;
+}
 .step_title{
     text-align: left;
 }
