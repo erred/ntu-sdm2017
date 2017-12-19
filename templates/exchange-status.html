@@ -60,7 +60,7 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td>Cancel {{ $r.Id }}</td>
+    <td><a href="/exchange/delete/{{ $r.Id }}/">Cancel</a></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -119,8 +119,8 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td>Accept </td>
-    <td>Reject </td>
+    <td><a href="/exchange/accept/{{ $r.Id }}/">Accept</a></td>
+    <td><a href="/exchange/delete/{{ $r.Id }}/">Reject</a></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -179,8 +179,8 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td>Done </td>
-    <td>Reject </td>
+    <td><a href="/exchange/done/{{ $r.Id }}/">Done</a></td>
+    <td><a href="/exchange/delete/{{ $r.Id }}/">Reject</a></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
