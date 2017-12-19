@@ -106,6 +106,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <button id="final_exchange_button" class="btn">{{ if $.Page.En }}Exchange!{{ else }}交換！{{end}}</button>
 	                	</div>
                 	</div>
 
@@ -121,13 +122,14 @@
 <script>
 
     //全域變數
-    var new_exchange_data = [];
+    var new_exchange_data = {};
 
     $(document).ready(function(){
         // set_tree_id();
         // set_scroll_animate();
         set_step_active();
         set_selected_exchange_data();
+        set_send_exchange_message();
 
         // $(".exchange_button").on("click", function(){
         //     tree_id = $(this).parent().attr("data-tree_id");
@@ -219,9 +221,34 @@
             window.location.href = "#step4";
         });
 
-
     }
+    function set_send_exchange_message() {
 
+        $("#final_exchange_button").on("click",function(){
+            var tmp_user = {{ $.TargetName }};
+            var tmp_atree = new_exchange_data["atree"];
+            var tmp_askill = new_exchange_data["askill"];
+            var tmp_mytree = new_exchange_data["mytree"];
+            var tmp_myskill = new_exchange_data["myskill"];
+            if (
+                typeof(tmp_atree) !== "undefined" &&
+                typeof(tmp_askill) !== "undefined" &&
+                typeof(tmp_mytree) !== "undefined" &&
+                typeof(tmp_myskill) !== "undefined" &&
+            ) {
+                alert("yes");
+                // fetch('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/', {
+                //     method : 'get',
+                //     credentials : "include"
+                // });
+            }
+            else {
+                alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}請確認上面木揍皆已完成。{{end}})
+            }
+
+            console.log(new_exchange_data);
+        })
+    }
 
 
 </script>
