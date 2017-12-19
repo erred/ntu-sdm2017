@@ -76,6 +76,26 @@
                             <h2 class="step_title">
                                 {{ if $.Page.En }}Confirm your skill-exchange information!!!{{ else }}確認您的技能交換資訊。{{end}}
                             </h2>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>{{ if $.Page.En }}Your tree{{ else }}你的樹{{end}}</th>
+                                        <th>{{ if $.Page.En }}Your skill{{ else }}你的技能{{end}}</th>
+                                        <th>{{ if $.Page.En }}Exchange user{{ else }}交換的人{{end}}</th>
+                                        <th>{{ if $.Page.En }}Exchange tree{{ else }}交換的樹{{end}}</th>
+                                        <th>{{ if $.Page.En }}Exchange skill{{ else }}交換的技能{{end}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="active">
+                                        <td id="table_mytree"></td>
+                                        <td id="table_myskill"></td>
+                                        <td id="table_user"></td>
+                                        <td id="table_atree"></td>
+                                        <td id="table_askill"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
 	                	</div>
                 	</div>
 
@@ -138,6 +158,7 @@
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
             new_exchange_data["mytree_name"] = $(this).siblings(".card-title").text();
+            $("#table_mytree").text(new_exchange_data["mytree_name"]);
 
             // Append svg tree to step 2
             // var my_tree_id = $(this).parent().attr("data-tree_id");
@@ -161,6 +182,7 @@
 
             // Add data to new_exchange_data
             new_exchange_data["myskill"] = $(this).parent().attr("id");
+            $("#table_myskill").text(new_exchange_data["myskill"]);
 
             //Active the step item
             $(".step-item").removeClass("active");
@@ -177,12 +199,17 @@
             new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
             new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.CName}} {{ end }};
             new_exchange_data["askill"] = $(this).parent().attr("id");
+            $("#table_user").text({{ $.TargetName }});
+            $("#table_atree").text(new_exchange_data["atree_name"]);
+            $("#table_askill").text(new_exchange_data["askill"]);
 
             //Active the step item
             $(".step-item").removeClass("active");
             $(".step-item").eq(3).addClass("active");
             window.location.href = "#step4";
         });
+
+
     }
 
 

@@ -158,7 +158,7 @@ circle{
     padding: 1.5rem;
 }
 .each_exchange_step{
-    height: 85vh;
+    height: 84vh;
     overflow-y: scroll;
 }
 #step2 svg, #step3 svg{
