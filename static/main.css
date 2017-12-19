@@ -185,3 +185,10 @@ svg circle:focus{
     margin-bottom: 60px;
     text-align: center;
 }
+#final_exchange_button{
+    border-radius: 30px;
+}
+#final_exchange_button:hover{
+    color: #fff !important;
+    background-color: #5755d9;
+}
