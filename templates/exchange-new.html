@@ -84,6 +84,9 @@
         // });
         $(".step-item").on("click",function(){
 
+            //Active the step item
+            $(".step-item").removeClass("active");
+            $(this).addClass("active");
         });
     });
 
