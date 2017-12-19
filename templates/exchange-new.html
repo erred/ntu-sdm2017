@@ -83,7 +83,7 @@
         //
         // });
         $(".step-item").on("click",function(){
-            
+
         });
     });
 
@@ -102,14 +102,17 @@
             // Append svg tree to step 2
             // var my_tree_id = $(this).parent().attr("data-tree_id");
             $("#step2").empty();
-            console.log($(this).parent().siblings("card-image").find("svg").html());
+            console.log($(this).parent().siblings("card-image").find("svg"));
             $("#step2").append($(this).parent().siblings("card-image").find("svg").html());
 
             //Active the step item
             $(".step-item").eq(1).addClass("active");
+
+
+            console.log(new_exchange_data);
         });
 
-        console.log(new_exchange_data);
+
 
     }
 
