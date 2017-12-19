@@ -34,7 +34,7 @@
                         	<h2 class="step_title">
                                  {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹。{{end}}
                             </h2>
-                            <h3 class="step_subtitle">$.Account.Name</h3>
+                            <h3 class="step_subtitle">{{$.Account.Name}}</h3>
 	                	{{ range $idx, $it := .MyTrees }}
 							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
 							    <div class="card-image">
