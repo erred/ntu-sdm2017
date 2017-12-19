@@ -123,7 +123,7 @@ func getExchangeData(user string) (ExchangeList, error) {
 		}
 
 		it := ExItem{id, u1, u2}
-		if user != u1.Name {
+		if user != string(u1.User) {
 			it.U1 = u2
 			it.U2 = u1
 		}
