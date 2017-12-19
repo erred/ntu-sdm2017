@@ -31,6 +31,9 @@
                 	</div>
                 	<div id="exchange_step" style="height:80vh; overflow-y:scroll">
                 		<div id="step1" class="each_exchange_step">
+                        	<h2 class="step_title">
+                                 {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹。{{end}}
+                            </h2>
 	                	{{ range $idx, $it := .MyTrees }}
 							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
 							    <div class="card-image">
@@ -41,7 +44,7 @@
 							        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
 							        </div>
 							        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
-							        {{ if $.En }}Choose{{ else }}選擇{{end}}
+							        {{ if $.Page.En }}Choose{{ else }}選擇{{end}}
 							    	</a>
 							    </div>
 
@@ -49,10 +52,19 @@
 						{{ end }}
 	                	</div>
 	                	<div id="step2" class="each_exchange_step">
-
+                            <h2 class="step_title">
+                                 {{ if $.Page.En }}Choose the skill you have!!!{{ else }}選擇你想交換的技能。{{end}}
+                            </h2>
+                            <div class="select_skill">
+                            </div>
 	                	</div>
                         <div id="step3" class="each_exchange_step">
-
+                            <h2 class="step_title">
+                                 {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能{{end}}
+                            </h2>
+                            <div class="select_skill">
+                                 {{ $.TargetTree.Svg }}
+                            </div>
 	                	</div>
                         <div id="step4" class="each_exchange_step">
 
@@ -74,7 +86,7 @@
     var new_exchange_data = [];
 
     $(document).ready(function(){
-        set_scroll_animate();
+        // set_scroll_animate();
         set_step_active();
         set_selected_exchange_data();
 
@@ -120,8 +132,8 @@
 
             // Append svg tree to step 2
             // var my_tree_id = $(this).parent().attr("data-tree_id");
-            $("#step2").empty();
-            $("#step2").append($(this).parent().siblings(".card-image").html());
+            $("#step2 .select_skill").empty();
+            $("#step2 .select_skill").append($(this).parent().siblings(".card-image").html());
 
             //Active the step item
             $(".step-item").removeClass("active");
