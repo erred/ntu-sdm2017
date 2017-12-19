@@ -154,6 +154,7 @@ circle{
 }
 .delete_exchange_button,.accept_exchange_button,.done_exchange_button{
     cursor: pointer;
+    text-align: center;
 }
 
 /* ================== new exchange ================ */
