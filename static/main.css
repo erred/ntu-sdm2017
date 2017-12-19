@@ -152,6 +152,9 @@ circle{
 .modal-container .modal-body{
     max-height: 80vh !important;
 }
+.delete_exchange_button,.accept_exchange_button,.done_exchange_button{
+    cursor: pointer;
+}
 
 /* ================== new exchange ================ */
 #exchange_step{
