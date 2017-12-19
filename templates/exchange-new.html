@@ -237,10 +237,10 @@
                 typeof(tmp_mytree) !== "undefined" &&
                 typeof(tmp_myskill) !== "undefined"
             ) {
-                // fetch('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/', {
-                //     method : 'get',
-                //     credentials : "include"
-                // });
+                fetch('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/', {
+                    method : 'get',
+                    credentials : "include"
+                });
             }
             else {
                 alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}請確認上面木揍皆已完成。{{end}})
