@@ -281,9 +281,10 @@
                 method : 'get',
                 credentials : "include"
             });
+
+            $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
+            $(this).parent().empty();
         });
-        $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
-        $(this).parent().empty();
     }
     function set_done_exchange() {
         $(".done_exchange_button").on("click",function(){
@@ -292,10 +293,10 @@
                 method : 'get',
                 credentials : "include"
             });
-        });
 
-        $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
-        $(this).parent().empty();
+            $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
+            $(this).parent().empty();
+        });
     }
 
 </script>
