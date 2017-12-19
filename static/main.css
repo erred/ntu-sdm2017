@@ -161,7 +161,7 @@ circle{
     height: 80vh;
     overflow-y: scroll;
 }
-.select_skill svg{
+#step2 svg, #stemp3 svg{
     width: 50%;
     display: block;
     margin: 0px auto;
