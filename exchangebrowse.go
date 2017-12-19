@@ -28,6 +28,7 @@ type PageNewExchange struct {
 	MyTrees    []TreeData
 	TargetTree TreeData
 	TargetName string
+	Target     template.URL
 }
 
 // ==================== Handlers ====================
@@ -106,7 +107,7 @@ func newExchangeHandler(w http.ResponseWriter, r *http.Request) {
 
 		page.Page = "exchange"
 		page.Page2 = "new"
-		data := PageNewExchange{page, myTrees, targetTree, targetName}
+		data := PageNewExchange{page, myTrees, targetTree, targetName, template.URL(paths[3])}
 		templates.ExecuteTemplate(w, "exchange-new.html", data)
 		return
 	case 9:
