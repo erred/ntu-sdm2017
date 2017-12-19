@@ -166,7 +166,8 @@ circle{
     display: block;
     margin: 0px auto;
 }
-svg circle:hover{
+svg circle:hover,
+svg circle:focus{
     stroke: #5a5a5a;
 }
 .step_title{
