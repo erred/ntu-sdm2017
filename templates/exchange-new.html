@@ -137,6 +137,7 @@
             // $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
+            new_exchange_data["mytree_name"] = $(this).siblings(".card-title").text();
 
             // Append svg tree to step 2
             // var my_tree_id = $(this).parent().attr("data-tree_id");
@@ -174,6 +175,7 @@
 
             // Add data to new_exchange_data
             new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
+            new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.CName}} {{ end }};
             new_exchange_data["askill"] = $(this).parent().attr("id");
 
             //Active the step item
