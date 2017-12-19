@@ -76,43 +76,42 @@
         <!-- accept: /exchange/accept/{{ $it.Id }}/ -->
         <!-- reject: /exchange/delete/{{ $it.Id }}/ -->
 */}}
-        <div class="accordion">
-            <input type="checkbox" id="table-1" name="accordion-checkbox" hidden checked>
-            <label class="accordion-header c-hand" for="table-1">
-                {{ if .Page.En }}
-                <h2><i class="icon icon-arrow-right mr-1"></i>Pending</h2>
-                {{ else }}
-                <h2><i class="icon icon-arrow-right mr-1"></i>收到的邀請</h2>
-                {{ end }}
-            </label>
-            <div class="accordion-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>Me</td>
-                            <td>MyTree</td>
-                            <td>MySkill</td>
-                            <td>target</td>
-                            <td>targetTree</td>
-                            <td>targetSkill</td>
-                            <td>targetSkill</td>
-                            <td>accept</td>
-                            <td>reject</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{ if not .ExchangeList.Pending }}
-                        <tr>
-                            <td colspan="10">
-                                <div class="empty">
-                                    <p class="empty-title">
-                                        Nothing here, Get working!
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                        {{ else }}
-                        {{ range $idx, $r := .ExchangeList.Pending }}
+                    <div class="accordion">
+                        <input type="checkbox" id="table-1" name="accordion-checkbox" hidden checked>
+                        <label class="accordion-header c-hand" for="table-1">
+                            {{ if .Page.En }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>Pending</h2>
+                            {{ else }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>收到的邀請</h2>
+                            {{ end }}
+                        </label>
+                        <div class="accordion-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Me</td>
+                                        <td>MyTree</td>
+                                        <td>MySkill</td>
+                                        <td>target</td>
+                                        <td>targetTree</td>
+                                        <td>targetSkill</td>
+                                        <td>accept</td>
+                                        <td>reject</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{ if not .ExchangeList.Pending }}
+                                    <tr>
+                                        <td colspan="10">
+                                            <div class="empty">
+                                                <p class="empty-title">
+                                                    Nothing here, Get working!
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {{ else }}
+                                    {{ range $idx, $r := .ExchangeList.Pending }}
 <tr>
     <td>{{ $r.U1.Name }}</td>
     <td>{{ $r.U1.Tree }}</td>
@@ -120,15 +119,15 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td>Accept {{ $r.Id }}</td>
-    <td>Reject {{ $r.Id }}</td>
+    <td>Accept </td>
+    <td>Reject </td>
 </tr>
-                        {{ end }}
-                        {{ end }}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                                    {{ end }}
+                                    {{ end }}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
 {{/*
 	<!-- Inprogress-->
@@ -137,12 +136,112 @@
         <!-- mark other person done: /exchange/done/{{ $it.Id }}/ -->
         <!-- reject: /exchange/delete/{{ $it.Id }}/ -->
 */}}
+                    <div class="accordion">
+                        <input type="checkbox" id="table-1" name="accordion-checkbox" hidden checked>
+                        <label class="accordion-header c-hand" for="table-1">
+                            {{ if .Page.En }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>Inprogress</h2>
+                            {{ else }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>交換進行中</h2>
+                            {{ end }}
+                        </label>
+                        <div class="accordion-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Me</td>
+                                        <td>MyTree</td>
+                                        <td>MySkill</td>
+                                        <td>target</td>
+                                        <td>targetTree</td>
+                                        <td>targetSkill</td>
+                                        <td>done</td>
+                                        <td>reject</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{ if not .ExchangeList.Inprogress }}
+                                    <tr>
+                                        <td colspan="10">
+                                            <div class="empty">
+                                                <p class="empty-title">
+                                                    Nothing here, Get working!
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {{ else }}
+                                    {{ range $idx, $r := .ExchangeList.Inprogress }}
+<tr>
+    <td>{{ $r.U1.Name }}</td>
+    <td>{{ $r.U1.Tree }}</td>
+    <td>{{ $r.U1.Skill }}</td>
+    <td>{{ $r.U2.Name }}</td>
+    <td>{{ $r.U2.Tree }}</td>
+    <td>{{ $r.U2.Skill }}</td>
+    <td>Done </td>
+    <td>Reject </td>
+</tr>
+                                    {{ end }}
+                                    {{ end }}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
 {{/*
 	<!-- Complete-->
         <!-- {{ range $idx, $it := range .ExchangeList.Complete }} -->
         <!-- Exchanges that have been completed between you (U1) and other person (U2) -->
 */}}
-
+                    <div class="accordion">
+                        <input type="checkbox" id="table-1" name="accordion-checkbox" hidden checked>
+                        <label class="accordion-header c-hand" for="table-1">
+                            {{ if .Page.En }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>Complete</h2>
+                            {{ else }}
+                            <h2><i class="icon icon-arrow-right mr-1"></i>已完成的交換</h2>
+                            {{ end }}
+                        </label>
+                        <div class="accordion-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>Me</td>
+                                        <td>MyTree</td>
+                                        <td>MySkill</td>
+                                        <td>target</td>
+                                        <td>targetTree</td>
+                                        <td>targetSkill</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{ if not .ExchangeList.Complete }}
+                                    <tr>
+                                        <td colspan="10">
+                                            <div class="empty">
+                                                <p class="empty-title">
+                                                    Nothing here, Get working!
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {{ else }}
+                                    {{ range $idx, $r := .ExchangeList.Complete }}
+<tr>
+    <td>{{ $r.U1.Name }}</td>
+    <td>{{ $r.U1.Tree }}</td>
+    <td>{{ $r.U1.Skill }}</td>
+    <td>{{ $r.U2.Name }}</td>
+    <td>{{ $r.U2.Tree }}</td>
+    <td>{{ $r.U2.Skill }}</td>
+</tr>
+                                    {{ end }}
+                                    {{ end }}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </main>
             </div>
