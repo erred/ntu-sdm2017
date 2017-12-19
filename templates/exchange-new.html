@@ -244,10 +244,8 @@
                 window.location.href = "/exchange/status/";
             }
             else {
-                alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}"請確認上面步驟皆已完成。"{{end}})
+                alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}"請確認上面步驟皆已完成。"{{end}});
             }
-            console.log('/exchange/new/'+tmp_user+'/'+tmp_atree+'/'+tmp_askill+'/'+tmp_mytree+'/'+tmp_myskill+'/');
-            console.log(new_exchange_data);
         })
     }
 
