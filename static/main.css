@@ -169,3 +169,7 @@ circle{
 .step_title{
     text-align: left;
 }
+.step_subtitle{
+    text-align: left;
+    color: #acb3c2;
+}

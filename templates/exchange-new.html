@@ -34,7 +34,7 @@
                         	<h2 class="step_title">
                                  {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹。{{end}}
                             </h2>
-                            <!-- <h3 class="step_subtitle"></h3> -->
+                            <!-- <h4 class="step_subtitle"></h4> -->
 	                	{{ range $idx, $it := .MyTrees }}
 							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
 							    <div class="card-image">
@@ -56,7 +56,7 @@
                             <h2 class="step_title">
                                  {{ if $.Page.En }}Choose the skill you have!!!{{ else }}選擇你想交換的技能。{{end}}
                             </h2>
-                            <h3 class="step_subtitle"></h3>
+                            <h4 class="step_subtitle"></h4>
                             <div class="select_skill">
                             </div>
 	                	</div>
@@ -64,10 +64,10 @@
                             <h2 class="step_title">
                                  {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能{{end}}
                             </h2>
-                            <h3 class="step_subtitle">
+                            <h4 class="step_subtitle">
                                 {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
                                 {{ $.TargetName }}
-                            </h3>
+                            </h4>
                             <div class="select_skill">
                                 {{ $.TargetTree.Svg }}
                             </div>
@@ -140,7 +140,7 @@
             // var my_tree_id = $(this).parent().attr("data-tree_id");
             $("#step2 .select_skill").empty();
             $("#step2 .select_skill").append($(this).parent().siblings(".card-image").html());
-            $("#step2 h3").append($(this).siblings(".card-title").text());
+            $("#step2 h4").append($(this).siblings(".card-title").text());
 
             //Active the step item
             $(".step-item").removeClass("active");
