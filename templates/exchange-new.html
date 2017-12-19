@@ -27,41 +27,38 @@
 							</li>
 						</ul>
                 	</div>
-                	<div style="height:80vh; overflow-y:scroll">
-                		<div style="height:80vh" id="step1">
+                	<div id="exchange_step" style="height:80vh; overflow-y:scroll">
+                		<div id="step1" class="each_exchange_step">
 	                	{{ range $idx, $it := .MyTrees }}
-							<div class="card column col-3" data-tree_id="{{ $it.Treeid }}">
+							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
 							    <div class="card-image">
-							        {{ $it.Svg }}       
+							        {{ $it.Svg }}
 							    </div>
 							    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
 							        <div class="card-title h5">
 							        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
 							        </div>
-							        <a href="#step2" class="btn btn-link exchange_button centered"  >
+							        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
 							        {{ if $.En }}Choose{{ else }}選擇{{end}}
 							    	</a>
 							    </div>
-							    
-							</div>	
+
+							</div>
 						{{ end }}
 	                	</div>
-	                	<script type="text/javascript">
-	                		var tree_chosen = "";
-	                	</script>
-	                	<div style="height:80vh; overflow-y:scroll" id="step2">
-	                	{{ range $idx, $it := .Mytrees }}
-	                	<script type="text/javascript">
-	                		if ( {{ $it.Cname }} == tree_chosen) {
-	                			document.write("{{ $it.Svg }}")
-	                		}
-	                	</script>
-						{{ end }}
+	                	<div id="step2" class="each_exchange_step">
+
+	                	</div>
+                        <div id="step3" class="each_exchange_step">
+
+	                	</div>
+                        <div id="step4" class="each_exchange_step">
+
 	                	</div>
                 	</div>
-                	
 
-	                
+
+
 				</main>
             </div>
         </div>
@@ -69,12 +66,42 @@
     </body>
     <script type="text/javascript">
 
-	   	$(".exchange_button").on("click", function(){
-	   		tree_id = $(this).parent().attr("data-tree_id");
-	   		console.log(tree_id);
-	   		tree_chosen = tree_id;
+        //全域變數
+        var new_exchange_data = [];
 
-	   	});
-	    
+        $(document).ready(function(){
+            set_selected_exchange_data();
+
+            // $(".exchange_button").on("click", function(){
+            //     tree_id = $(this).parent().attr("data-tree_id");
+            //     console.log(tree_id);
+            //     tree_chosen = tree_id;
+            //
+            // });
+        });
+
+
+
+        function set_selected_exchange_data() {
+
+            //My tree
+            $(".new_exchange_mytree_button").on("click", function(){
+
+                // Add data to new_exchange_data
+                $(".new_exchange_mytree_button").removeClass("selected_new_exchange_mytree");
+                // $(this).addClass("selected_new_exchange_mytree");
+                new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
+
+                // Append svg tree to step 2
+                // var my_tree_id = $(this).parent().attr("data-tree_id");
+                $("#step2").html("");
+                $("#step2").append($(this).parent().siblings("card-image").find("svg").html());
+
+                //Active the step item
+                $(".step-item").eq(1).addClass("active");
+            });
+        }
+
+
     </script>
 </html>

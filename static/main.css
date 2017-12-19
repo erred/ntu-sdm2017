@@ -152,3 +152,12 @@ circle{
 .modal-container .modal-body{
     max-height: 80vh !important;
 }
+
+/* ================== new exchange ================ */
+#exchange_step{
+    padding: 1.5rem;
+}
+.each_exchange_step{
+    height: 80vh;
+    overflow-y: scroll;
+}
