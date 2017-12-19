@@ -5,6 +5,7 @@
         {{ template "header" }}
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" type="text/css" href="/static/font-awesome/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </head>
     <body>
@@ -61,7 +62,8 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Cancel</td>
+    <!-- cancel -->
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -120,8 +122,10 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td class="accept_exchange_button" data-accept_id="{{ $r.Id }}">Accept</td>
-    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Reject</td>
+    <!-- accept -->
+    <td class="accept_exchange_button" data-accept_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
+    <!-- reject -->
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
@@ -180,8 +184,10 @@
     <td>{{ $r.U2.Name }}</td>
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
-    <td class="done_exchange_button" data-done_id="{{ $r.Id }}">Done</td>
-    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}">Reject</td>
+    <!-- done -->
+    <td class="done_exchange_button" data-done_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
+    <!-- reject -->
+    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
 </tr>
                                     {{ end }}
                                     {{ end }}
