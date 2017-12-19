@@ -151,12 +151,25 @@
         $("#h2 svg circle").on("click", function(){
 
             // Add data to new_exchange_data
-            new_exchange_data["mytree"] = $(this).parent().attr("id");
+            new_exchange_data["myskill"] = $(this).parent().attr("id");
 
             //Active the step item
             $(".step-item").removeClass("active");
             $(".step-item").eq(2).addClass("active");
             window.location.href = "#step3";
+        });
+
+        //New skill
+        $("#h3 svg circle").on("click", function(){
+
+            // Add data to new_exchange_data
+            new_exchange_data["atree"] = {{$.TargetTree.Name}};
+            new_exchange_data["askill"] = $(this).parent().attr("id");
+
+            //Active the step item
+            $(".step-item").removeClass("active");
+            $(".step-item").eq(3).addClass("active");
+            window.location.href = "#step4";
         });
 
 
