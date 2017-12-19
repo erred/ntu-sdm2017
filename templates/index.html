@@ -6,59 +6,6 @@
         <!-- custom css -->
         <link rel="stylesheet" href="/static/landing.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-        function switchSpinner() {
-            document.querySelector('.login-spinner').style.display= "block";
-            document.querySelector('.fb-login-button').style.display= "none";
-        }
-
-		$(document).ready(function(){
-            set_navbar();
-		});
-        function set_navbar() {
-
-            // set color
-            var skill_tree_top = $("#skill_tree").offset().top;
-            var skill_exchange_top = $("#skill_exchange").offset().top;
-            var team_top = $("#our_team").offset().top;
-
-            $(window).scroll(function(){
-                if ($(window).scrollTop() >= skill_tree_top && $(window).scrollTop() < skill_exchange_top) {
-                    // $("#brand_text").addClass("black_text");
-                    $(".nav_link_text").removeClass("black_text");
-                    $("#logo_white").css("display","none");
-                    $("#logo_black").css("display","block");
-                }
-                else if ($(window).scrollTop() >= skill_exchange_top && $(window).scrollTop() < team_top){
-                    // $("#brand_text").removeClass("black_text");
-                    $(".nav_link_text").addClass("black_text");
-                    $("#logo_white").css("display","block");
-                    $("#logo_black").css("display","none");
-                }
-                else if ($(window).scrollTop() >= team_top){
-                    // $("#brand_text").addClass("black_text");
-                    $(".nav_link_text").addClass("black_text");
-                    $("#logo_white").css("display","none");
-                    $("#logo_black").css("display","block");
-                }
-                else{
-                    $("#brand_text").removeClass("black_text");
-                    $(".nav_link_text").removeClass("black_text");
-                    $("#logo_white").css("display","block");
-                    $("#logo_black").css("display","none");
-                }
-            });
-
-            //set scroll animate
-            $(".nav_text, .footer_text").on('click', function(event){
-				event.preventDefault();
-
-				$('html, body').animate({
-					scrollTop:$($.attr(this,'href')).offset().top
-				}, 500);
-			});
-        }
-        </script>
     </head>
     <body>
         <header class="navbar">
@@ -257,3 +204,56 @@
         {{ template "footer" }}
     </body>
 </html>
+<script>
+function switchSpinner() {
+    document.querySelector('.login-spinner').style.display= "block";
+    document.querySelector('.fb-login-button').style.display= "none";
+}
+
+$(document).ready(function(){
+    set_navbar();
+});
+function set_navbar() {
+
+    // set color
+    var skill_tree_top = $("#skill_tree").offset().top;
+    var skill_exchange_top = $("#skill_exchange").offset().top;
+    var team_top = $("#our_team").offset().top;
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= skill_tree_top && $(window).scrollTop() < skill_exchange_top) {
+            // $("#brand_text").addClass("black_text");
+            $(".nav_link_text").removeClass("black_text");
+            $("#logo_white").css("display","none");
+            $("#logo_black").css("display","block");
+        }
+        else if ($(window).scrollTop() >= skill_exchange_top && $(window).scrollTop() < team_top){
+            // $("#brand_text").removeClass("black_text");
+            $(".nav_link_text").addClass("black_text");
+            $("#logo_white").css("display","block");
+            $("#logo_black").css("display","none");
+        }
+        else if ($(window).scrollTop() >= team_top){
+            // $("#brand_text").addClass("black_text");
+            $(".nav_link_text").addClass("black_text");
+            $("#logo_white").css("display","none");
+            $("#logo_black").css("display","block");
+        }
+        else{
+            $("#brand_text").removeClass("black_text");
+            $(".nav_link_text").removeClass("black_text");
+            $("#logo_white").css("display","block");
+            $("#logo_black").css("display","none");
+        }
+    });
+
+    //set scroll animate
+    $(".nav_text, .footer_text").on('click', function(event){
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop:$($.attr(this,'href')).offset().top
+        }, 500);
+    });
+}
+</script>

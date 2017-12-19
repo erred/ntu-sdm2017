@@ -74,6 +74,8 @@
     var new_exchange_data = [];
 
     $(document).ready(function(){
+        set_scroll_animate();
+        set_step_active();
         set_selected_exchange_data();
 
         // $(".exchange_button").on("click", function(){
@@ -82,15 +84,29 @@
         //     tree_chosen = tree_id;
         //
         // });
+
+    });
+
+    function set_scroll_animate() {
+
+        //set scroll animate
+        $(".step-item a, .each_exchange_step a").on('click', function(event){
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop:$($.attr(this,'href')).offset().top
+            }, 500);
+        });
+    }
+
+    function set_step_active() {
         $(".step-item").on("click",function(){
 
             //Active the step item
             $(".step-item").removeClass("active");
             $(this).addClass("active");
         });
-    });
-
-
+    }
 
     function set_selected_exchange_data() {
 
@@ -115,6 +131,8 @@
 
 
     }
+
+
 
 
 </script>
