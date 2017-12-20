@@ -16,7 +16,7 @@
             <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
             <label class="accordion-header c-hand toplevel" for="accordion-1">
                 <i class="icon icon-arrow-right mr-1"></i>
-                {{ if $.En }}Your Skill Trees{{ else }}你的技能樹{{ end }}
+                {{ if $.En }}My Skill Trees{{ else }}你的技能樹{{ end }}
             </label>
             <div class="accordion-body">
                 <ul class="menu menu-nav">
@@ -26,7 +26,7 @@
                     </li>
                 {{ end }}
                     <li class="menu-item">
-                        <a class="{{ if eq $.Page2 "new" }}active{{ end }}" href="/tree/new/">{{ if $.En }}Add New Tree{{ else }}新增技能樹{{ end }}</a>
+                        <a class="{{ if eq $.Page2 "new" }}active{{ end }}" href="/tree/new/">{{ if $.En }}Add a New Tree{{ else }}新增技能樹{{ end }}</a>
                     </li>
                 </ul>
             </div>

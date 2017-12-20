@@ -13,29 +13,14 @@
             <div class="columns">
                 {{ template "sidebar" .Page }}
                 <main class="column col-10 col-gapless">
-                	<div style="height:15vh;">
-                		<ul class="step" style="padding-top:40px">
-							<li class="step-item active">
-							    <a href="#step1" class="tooltip" data-tooltip="Step 1">Step 1</a>
-							</li>
-							<li class="step-item">
-							    <a href="#step2" class="tooltip" data-tooltip="Step 2">Step 2</a>
-							</li>
-							<li class="step-item">
-							    <a href="#step3" class="tooltip" data-tooltip="Step 3">Step 3</a>
-							</li>
-							<li class="step-item">
-							    <a href="#step4" class="tooltip" data-tooltip="Step 4">Step 4</a>
-							</li>
-						</ul>
-                	</div>
-                	<div id="exchange_step" style="height:85vh; overflow-y:scroll">
-                		<div id="step1" class="each_exchange_step">
-                        	<h2 class="step_title">
-                                 {{ if $.En }}My tree!!!{{ else }}我的樹。{{end}}
-                            </h2>
-                            <!-- <h4 class="step_subtitle"></h4> -->
-                                {{ range $idx, $it := .Trees }}
+
+                	<div id="all_tree" >
+
+                    	<h2 class="step_title">
+                             {{ if $.En }}My tree!!!{{ else }}我的樹。{{end}}
+                        </h2>
+
+                        {{ range $idx, $it := .Trees }}
 <div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
     <div class="card-image">
         {{ $it.Svg }}
@@ -44,14 +29,22 @@
         <div class="card-title h5">
         {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
         </div>
+
+        <span class="like_number">{{ $it.Likes }}</span>
+        {{ if eq $it.Likes 0 }}
+        <i class="fa fa-heart-o unliked_tree like_icon" aria-hidden="true"></i>
+        {{ else }}
+        <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
+        {{ end }}
+
         <a href="#step2" class="btn btn-link float-right check_button"  >
         {{ if $.Page.En }}Check{{ else }}查看{{end}}
     	</a>
     </div>
 
 </div>
-                                {{ end }}
-	                	</div>
+                        {{ end }}
+
                 	</div>
 
 				</main>
