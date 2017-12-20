@@ -21,12 +21,12 @@
             <div class="accordion-body">
                 <ul class="menu menu-nav">
                 {{ range $idx, $tree := .Sidebar }}
-                    <li class="menu-item">
+                    <li class="menu-item menu_subitem">
                         <a class="{{ if eq $.Page2 $tree.Treeid }}active{{ end }}" href="/tree/{{ $tree.Treeid }}/">{{ if $.En }}{{ $tree.Name }}{{ else }}{{ $tree.Cname }}{{ end }}</a>
                     </li>
                 {{ end }}
-                    <li class="menu-item">
-                        <a class="{{ if eq $.Page2 "new" }}active{{ end }}" href="/tree/new/">{{ if $.En }}Add a New Tree{{ else }}新增技能樹{{ end }}</a>
+                    <li class="menu-item menu_subitem">
+                        <a class="{{ if eq $.Page2 "new" }}active{{ end }}" href="/tree/new/">{{ if $.En }}＋Add a New Tree{{ else }}＋新增技能樹{{ end }}</a>
                     </li>
                 </ul>
             </div>
@@ -44,10 +44,10 @@
             </label>
             <div class="accordion-body">
                 <ul class="menu menu-nav">
-                    <li class="menu-item">
+                    <li class="menu-item menu_subitem">
                         <a class="{{ if eq $.Page2 "status"}}active{{ end }}" href="/exchange/status/">{{ if $.En }}Status{{ else }}交換狀態{{ end }}</a>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item menu_subitem">
                         <a class="{{ if eq $.Page2 "browse"}}active{{ end }}" href="/exchange/browse/">{{ if $.En }}Browse{{ else }}瀏覽他人{{ end }}</a>
                     </li>
                 </ul>
