@@ -134,6 +134,7 @@ main {
 /* ================== tree ================ */
 #main_tree{
     overflow: scroll;
+    padding: 1.5rem;
 }
 #main_tree svg{
     width: 60vw;
