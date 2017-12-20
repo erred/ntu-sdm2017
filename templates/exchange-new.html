@@ -32,7 +32,7 @@
                 	<div id="exchange_step" style="height:85vh; overflow-y:scroll">
                 		<div id="step1" class="each_exchange_step">
                         	<h2 class="step_title">
-                                 {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹。{{end}}
+                                 {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹{{end}}
                             </h2>
                             <!-- <h4 class="step_subtitle"></h4> -->
 	                	{{ range $idx, $it := .MyTrees }}
@@ -54,7 +54,7 @@
 	                	</div>
 	                	<div id="step2" class="each_exchange_step">
                             <h2 class="step_title">
-                                 {{ if $.Page.En }}Choose the skill you have!!!{{ else }}選擇你想交換的技能。{{end}}
+                                 {{ if $.Page.En }}Choose the skill you have!!!{{ else }}選擇你想交換的技能{{end}}
                             </h2>
                             <h4 class="step_subtitle"></h4>
                             <div class="select_skill">
@@ -62,7 +62,7 @@
 	                	</div>
                         <div id="step3" class="each_exchange_step">
                             <h2 class="step_title">
-                                 {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能。{{end}}
+                                 {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能{{end}}
                             </h2>
                             <h4 class="step_subtitle">
                                 {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
@@ -74,7 +74,7 @@
 	                	</div>
                         <div id="step4" class="each_exchange_step">
                             <h2 class="step_title">
-                                {{ if $.Page.En }}Confirm your skill-exchange information!!!{{ else }}確認您的技能交換資訊。{{end}}
+                                {{ if $.Page.En }}Confirm your skill-exchange information!!!{{ else }}確認您的技能交換資訊{{end}}
                             </h2>
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -244,7 +244,7 @@
                 window.location.href = "/exchange/status/";
             }
             else {
-                alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}"請確認上面步驟皆已完成。"{{end}});
+                alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}"請確認上面步驟皆已完成"{{end}});
             }
         })
     }
