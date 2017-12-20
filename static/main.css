@@ -60,6 +60,10 @@
 .menu_subitem{
     padding-left: 30px !important;
 }
+.title_icon{
+    font-size: 20px;
+    margin-right: 20px;
+}
 
 /* ================== Main ================ */
 main {
@@ -230,4 +234,7 @@ svg circle:focus{
 .statuspage_button:hover{
     color: #fff !important;
     background-color: #5755d9;
+}
+thead td{
+    background-color:#e7e9ed;
 }
