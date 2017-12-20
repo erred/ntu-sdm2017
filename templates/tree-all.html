@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SkillTree</title>
+        {{ template "header" }}
+        <!-- custom css -->
+        <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" type="text/css" href="/static/font-awesome/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    	<div class="container">
+            <div class="columns">
+                {{ template "sidebar" .Page }}
+                <main class="column col-10 col-gapless">
+                	<div style="height:15vh;">
+                		<ul class="step" style="padding-top:40px">
+							<li class="step-item active">
+							    <a href="#step1" class="tooltip" data-tooltip="Step 1">Step 1</a>
+							</li>
+							<li class="step-item">
+							    <a href="#step2" class="tooltip" data-tooltip="Step 2">Step 2</a>
+							</li>
+							<li class="step-item">
+							    <a href="#step3" class="tooltip" data-tooltip="Step 3">Step 3</a>
+							</li>
+							<li class="step-item">
+							    <a href="#step4" class="tooltip" data-tooltip="Step 4">Step 4</a>
+							</li>
+						</ul>
+                	</div>
+                	<div id="exchange_step" style="height:85vh; overflow-y:scroll">
+                		<div id="step1" class="each_exchange_step">
+                        	<h2 class="step_title">
+                                 {{ if $.En }}My tree!!!{{ else }}我的樹。{{end}}
+                            </h2>
+                            <!-- <h4 class="step_subtitle"></h4> -->
+                                {{ range $idx, $it := .Trees }}
+<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
+    <div class="card-image">
+        {{ $it.Svg }}
+    </div>
+    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+        <div class="card-title h5">
+        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
+        </div>
+        <a href="#step2" class="btn btn-link float-right check_button"  >
+        {{ if $.Page.En }}Check{{ else }}查看{{end}}
+    	</a>
+    </div>
+
+</div>
+                                {{ end }}
+	                	</div>
+                	</div>
+
+				</main>
+            </div>
+        </div>
+        {{ template "footer" }}
+    </body>
+</html>
+
+<script>
+
+    $(document).ready(function(){
+        // set_tree_id();
+        // set_scroll_animate();
+    });
+
+    function set_scroll_animate() {
+
+        //set scroll animate
+        $(".step-item a, .each_exchange_step a").on('click', function(event){
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop:$($.attr(this,'href')).offset().top
+            }, 500);
+        });
+    }
+
+</script>

@@ -108,6 +108,21 @@ main {
     margin-bottom: 60px;
 }
 
+/* ================== all tree ================ */
+.check_button{
+    width: 100px;
+    margin-top: -15px;
+    border: 1px solid #5755d9 !important;
+    border-radius: 30px;
+}
+.check_button:hover{
+    color: #fff !important;
+    background-color: #5755d9;
+}
+#all_tree{
+    padding: 1.5rem;
+}
+
 
 /* ================== tree ================ */
 #main_tree{
@@ -124,6 +139,7 @@ main {
 circle{
     cursor: pointer;
 }
+
 
 
 /* ================== exchange ================ */
