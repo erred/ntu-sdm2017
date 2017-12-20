@@ -180,6 +180,29 @@ h1, h2 {
 .team .banner {
     margin-top: 6em;
 }
+.team_avatar{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#kersee_img{
+    background-image: url("/static/image/team/Kersee.jpg");
+}
+#victor_img{
+    background-image: url("/static/image/team/Victor.jpg");
+}
+#jenny_img{
+    background-image: url("/static/image/team/Jenny.jpg");
+}
+#kelly_img{
+    background-image: url("/static/image/team/Kelly.jpg");
+}
+#sean_img{
+    background-image: url("/static/image/team/Sean.jpg");
+}
+#clawdi_img{
+    background-image: url("/static/image/team/Clawdi.jpg");
+}
 
 
 /* =================== Team ================ */
