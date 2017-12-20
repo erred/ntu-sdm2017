@@ -7,7 +7,7 @@
         <!-- custom css -->
         <link rel="stylesheet" href="/static/main.css">
           <link rel="stylesheet" type="text/css" href="/static/tooltipster-master/dist/css/tooltipster.bundle.min.css"/>
-          <link rel="stylesheet" type="text/css" href="/static/tooltipster-master/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css"/>    
+          <link rel="stylesheet" type="text/css" href="/static/tooltipster-master/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="/static/tooltipster-master/dist/js/tooltipster.bundle.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
@@ -19,10 +19,13 @@
                 <main id="main_tree" class="column col-10 col-gapless container tree">
                     <header class="navbar tree-nav">
                         <section class="navbar-section">
-                            <p>
-                                {{ .TreeData.Name }}
-                                {{ .TreeData.Cname }}
-                            </p>
+                            <h2>
+                                {{ if $.En }}
+                                    {{ .TreeData.Name }}
+                                {{ else }}
+                                    {{ .TreeData.Cname }}
+                                {{ end }}
+                            </h2>
                         </section>
                         <section class="navbar-section">
                             <a href="/tree/delete/{{ .TreeData.Treeid }}/" class="btn btn-link delete_btn" onclick="return confirm_delete();">Delete</a>
@@ -70,7 +73,7 @@
             $("#"+skill_id+"_circle").attr("title",skill_id);
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
-                $("#"+skill_id+"_circle").addClass("learned_skill");              
+                $("#"+skill_id+"_circle").addClass("learned_skill");
             }
         }
     }
