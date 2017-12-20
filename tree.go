@@ -14,7 +14,8 @@ type PageTree struct {
 	Page
 	TreeData
 }
-type PageAvailTree struct {
+
+type PageMultipleTree struct {
 	Page
 	Trees []TreeData
 }
@@ -44,11 +45,16 @@ func treeHandler(w http.ResponseWriter, r *http.Request) {
 	switch len(paths) {
 	case 3:
 		// /tree/
-		if len(page.Sidebar) == 0 {
-			http.Redirect(w, r, "/tree/new/", http.StatusFound)
+
+		trees, err := getAllTrees(page.user)
+		if errInternal(err, w) {
+			log.Println("treeHandler/getAllTrees failed")
 			return
 		}
-		http.Redirect(w, r, "/tree/"+string(page.Sidebar[0].Treeid)+"/", http.StatusFound)
+
+		data := PageMultipleTree{page, trees}
+		templates.ExecuteTemplate(w, "tree-all.html", data)
+
 	case 4:
 		// /tree/atree/
 		tree, err := getTree(page.user, paths[2])
@@ -85,7 +91,7 @@ func newTreeHandler(w http.ResponseWriter, r *http.Request) {
 
 		page.Page = "tree"
 		page.Page2 = "new"
-		data := PageAvailTree{page, trees}
+		data := PageMultipleTree{page, trees}
 		templates.ExecuteTemplate(w, "tree-new.html", data)
 	case 5:
 		// /tree/new/atree/
