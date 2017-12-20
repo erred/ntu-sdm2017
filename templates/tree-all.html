@@ -32,9 +32,9 @@
 
         <span class="like_number">{{ $it.Likes }}</span>
         {{ if eq $it.Likes 0 }}
-        <i class="fa fa-heart-o unliked_tree like_icon" aria-hidden="true"></i>
+        <i class="fa fa-heart-o unliked_tree" aria-hidden="true"></i>
         {{ else }}
-        <i class="fa fa-heart liked_tree like_icon" aria-hidden="true"></i>
+        <i class="fa fa-heart liked_tree" aria-hidden="true"></i>
         {{ end }}
 
         <a href="/tree/{{ $it.Treeid }}/" class="btn btn-link float-right check_button"  >
