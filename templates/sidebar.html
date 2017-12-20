@@ -21,7 +21,7 @@
             <div class="accordion-body">
                 <ul class="menu menu-nav">
                     <li class="menu-item menu_subitem">
-                        <a class="{{ if eq $.Page2 "new" }}active{{ end }}" href="/tree/">{{ if $.En }}All My Tree{{ else }}所有的樹{{ end }}</a>
+                        <a class="{{ if eq $.Page2 "" }}active{{ end }}" href="/tree/">{{ if $.En }}All My Tree{{ else }}所有的樹{{ end }}</a>
                     </li>
                 {{ range $idx, $tree := .Sidebar }}
                     <li class="menu-item menu_subitem">
