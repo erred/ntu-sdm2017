@@ -25,6 +25,7 @@ func fakeData() error {
 	// treeid, english name, chinese name, svg, zerostate, desciption
 	template := [][]string{
 		[]string{tree01id, tree01name, tree01cname, tree01svg, tree01state, tree01desc},
+		[]string{tree02id, tree02name, tree02cname, tree02svg, tree02state, tree02desc},
 	}
 	for _, t := range template {
 		_, err := DB.Exec("INSERT INTO treeTemplate (treeid, tree, ctree, svg, zeroState, desc) VALUES (?, ?, ?, ?, ?, ?)", t[0], t[1], t[2], t[3], t[4], t[5])
