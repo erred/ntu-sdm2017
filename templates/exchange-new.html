@@ -36,20 +36,23 @@
                             </h2>
                             <!-- <h4 class="step_subtitle"></h4> -->
 	                	{{ range $idx, $it := .MyTrees }}
-							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
-							    <div class="card-image">
-							        {{ $it.Svg }}
-							    </div>
-							    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
-							        <div class="card-title h5">
-							        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
-							        </div>
-							        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
-							        {{ if $.Page.En }}Choose{{ else }}選擇{{end}}
-							    	</a>
-							    </div>
+	                		<div class="row">
+	                			<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
+								    <div class="card-image">
+								        {{ $it.Svg }}
+								    </div>
+								    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+								        <div class="card-title h5">
+								        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
+								        </div>
+								        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
+								        {{ if $.Page.En }}Choose{{ else }}選擇{{end}}
+								    	</a>
+								    </div>
 
-							</div>
+								</div>
+	                		</div>
+							
 						{{ end }}
 	                	</div>
 	                	<div id="step2" class="each_exchange_step">
