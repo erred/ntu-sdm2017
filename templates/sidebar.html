@@ -12,8 +12,8 @@
 
         <li class="divider"></li>
 
-        <div class="accordion" open>
-            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+        <div class="accordion">
+            <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden checked>
             <label class="accordion-header c-hand toplevel" for="accordion-1">
                 <i class="icon icon-arrow-right mr-1"></i>
                 {{ if $.En }}My Skill Trees{{ else }}你的技能樹{{ end }}
@@ -21,7 +21,7 @@
             <div class="accordion-body">
                 <ul class="menu menu-nav">
                     <li class="menu-item menu_subitem">
-                        <a class="{{ if eq $.Page2 "" }}active{{ end }}" href="/tree/">{{ if $.En }}All My Tree{{ else }}所有的樹{{ end }}</a>
+                        <a class="{{ if eq $.Page2 "" }}active{{ end }}" href="/tree/"><strong>{{ if $.En }}All My Tree{{ else }}所有的樹{{ end }}</strong></a>
                     </li>
                 {{ range $idx, $tree := .Sidebar }}
                     <li class="menu-item menu_subitem">
@@ -35,8 +35,8 @@
             </div>
         </div>
 
-        <div class="accordion" open>
-            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden>
+        <div class="accordion">
+            <input type="checkbox" id="accordion-2" name="accordion-checkbox" hidden checked>
             <label class="accordion-header c-hand toplevel" for="accordion-2">
                 <i class="icon icon-arrow-right mr-1"></i>
                 {{ if $.En }}
