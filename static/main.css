@@ -137,7 +137,7 @@ main {
     padding: 1.5rem;
 }
 #main_tree svg{
-    /* width: 60vw; */
+    width: 60vw;
     display: block;
     margin: 0px auto;
 }
@@ -159,7 +159,9 @@ main {
 circle{
     cursor: pointer;
 }
-
+svg text{
+    pointer-events: none;
+}
 
 
 /* ================== exchange ================ */

@@ -30,27 +30,30 @@
 						</ul>
                 	</div>
                 	<div id="exchange_step" style="height:85vh; overflow-y:scroll">
-                		<div id="step1" class="each_exchange_step">
+                		<div id="step1" class="each_exchange_step container">
                         	<h2 class="step_title">
                                  {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹{{end}}
                             </h2>
                             <!-- <h4 class="step_subtitle"></h4> -->
-	                	{{ range $idx, $it := .MyTrees }}
-							<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
-							    <div class="card-image">
-							        {{ $it.Svg }}
-							    </div>
-							    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
-							        <div class="card-title h5">
-							        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
-							        </div>
-							        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
-							        {{ if $.Page.En }}Choose{{ else }}選擇{{end}}
-							    	</a>
-							    </div>
 
-							</div>
-						{{ end }}
+                            <div class="columns">
+                            {{ range $idx, $it := .MyTrees }}
+<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
+    <div class="card-image">
+        {{ $it.Svg }}
+    </div>
+    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+        <div class="card-title h5">
+        {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
+        </div>
+        <a href="#step2" class="btn btn-link exchange_button float-right new_exchange_mytree_button"  >
+        {{ if $.Page.En }}Choose{{ else }}選擇{{end}}
+    	</a>
+    </div>
+
+</div>
+                            {{ end }}
+                            </div>
 	                	</div>
 	                	<div id="step2" class="each_exchange_step">
                             <h2 class="step_title">
