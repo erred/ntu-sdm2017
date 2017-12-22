@@ -35,8 +35,9 @@
                                  {{ if $.En }}Choose your tree!!!{{ else }}選擇你的樹{{end}}
                             </h2>
                             <!-- <h4 class="step_subtitle"></h4> -->
+                            <div class="row">
 	                	{{ range $idx, $it := .MyTrees }}
-	                		<div class="row">
+	                		
 	                			<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
 								    <div class="card-image">
 								        {{ $it.Svg }}
@@ -51,9 +52,10 @@
 								    </div>
 
 								</div>
-	                		</div>
+	                		
 							
 						{{ end }}
+							</div>
 	                	</div>
 	                	<div id="step2" class="each_exchange_step">
                             <h2 class="step_title">
