@@ -159,7 +159,9 @@ main {
 circle{
     cursor: pointer;
 }
-
+svg text{
+    pointer-events: none;
+}
 
 
 /* ================== exchange ================ */
