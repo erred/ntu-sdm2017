@@ -126,7 +126,7 @@
                 alert_str = "";
 
                 {{ if $.En }}
-                if (len(skill_tree[this_id]["pre_course"]) > 0) {
+                if (skill_tree[this_id]["pre_course"].length() > 0) {
                     skill_tree[this_id]["pre_course"].forEach(function(pre_course){
                         if (skill_tree[pre_course]["status"] == 0) {
                             finish_pre_course = 0;
@@ -137,7 +137,7 @@
                 }
 
                 {{else}}
-                if (len(skill_tree[this_id]["pre_course"]) > 0) {
+                if (skill_tree[this_id]["pre_course"].length() > 0) {
                     skill_tree[this_id]["pre_course"].forEach(function(pre_course){
                         if (skill_tree[pre_course]["status"] == 0) {
                             finish_pre_course = 0;
