@@ -137,12 +137,24 @@ main {
     padding: 1.5rem;
 }
 #main_tree svg{
-    width: 60vw;
+    /* width: 60vw; */
     display: block;
     margin: 0px auto;
 }
 .learned_skill{
     fill: #f8b245 !important;
+}
+.learned_skill_tree02_yellow{
+    fill: #ff9933 !important;
+}
+.learned_skill_tree02_green{
+    fill: #008490 !important;
+}
+.learned_skill_tree02_blue{
+    fill: #006699 !important;
+}
+.learned_skill_tree02_red{
+    fill: #cc3333 !important;
 }
 circle{
     cursor: pointer;
