@@ -141,7 +141,7 @@ func (p precheck) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if uname == "" {
-		updateFlag := http.Cookie{Name: "updateName", Value: "true"}
+		updateFlag := http.Cookie{Name: "updateName", Value: "true", Path: "/"}
 		http.SetCookie(w, &updateFlag)
 	}
 
