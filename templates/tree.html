@@ -38,6 +38,11 @@
             </div>
         </div>
         {{ template "footer" }}
+        <div class="tooltip_templates">
+            <span id="tooltip_content">
+                <a href="http://iamceege.github.io/tooltipster/#getting-started"> <strong>This is the content of my tooltip!</strong></a>
+            </span>
+        </div>
     </body>
 </html>
 
@@ -70,7 +75,7 @@
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
             $("#"+skill_id+"_circle").addClass("tooltip");
-            $("#"+skill_id+"_circle").attr("data-tooltip-content","<a href='http://iamceege.github.io/tooltipster/#getting-started'>link</a>");
+            $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content");
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 var tree_id = {{.TreeData.Treeid}};
