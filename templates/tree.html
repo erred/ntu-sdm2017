@@ -71,21 +71,24 @@
 
             // Add text
             {{ if $.En }}
-            $("#"+skill_id+" text").text(skill_id);
+            $("#"+skill_id+" text").text(skill_tree[skill_id]["EName"]);
             {{else}}
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
             $("#"+skill_id+"_circle").addClass("tooltip");
             $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content");
+
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
                 var tree_id = {{.TreeData.Treeid}};
 
                 $("#"+skill_id+"_circle").addClass("learned_skill");
+                $("#"+skill_id+"_circle").addClass("learned_skill_"+tree_id+skill_tree[skill_id]["color"]);
             }
         }
     }
     function modify_node(skill_tree){
+        var tree_id = {{.TreeData.Treeid}};
         $("circle").on("click",function(){
             var this_id = $(this).parent().attr("id");
             var this_circle_id = $(this).attr("id");
@@ -105,7 +108,7 @@
 
                     // delete selected node
                     $("#"+this_circle_id).removeClass("learned_skill");
-                    // $("#"+this_id+" path").style("fill","#fff");
+                    $("#"+this_circle_id).removeClass("learned_skill_"+tree_id+skill_tree[this_id]["color"]);
                     skill_tree[this_id]["status"] = 0;
                     for (var skill_id in skill_tree) {
                         if (
@@ -116,7 +119,7 @@
 
                             // delete course after selected node
                             $("#"+skill_id+"_circle").removeClass("learned_skill");
-                            // $("#"+skill_id+" path").style("fill","#fff");
+                            $("#"+skill_id+"_circle").removeClass("learned_skill_"+tree_id+skill_tree[skill_id]["color"]);
                             skill_tree[skill_id]["status"] = 0;
                         }
                     }
@@ -160,6 +163,7 @@
                 else {
                     // add node
                     $("#"+this_circle_id).addClass("learned_skill");
+                    $("#"+this_circle_id).addClass("learned_skill_"+tree_id+skill_tree[this_id]["color"]);
 
                     skill_tree[this_id]["status"] = 1;
                     send_json(skill_tree);
