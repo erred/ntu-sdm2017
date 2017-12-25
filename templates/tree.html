@@ -83,7 +83,7 @@
                 var tree_id = {{.TreeData.Treeid}};
 
                 $("#"+skill_id+"_circle").addClass("learned_skill");
-                $("#"+skill_id+"_circle").addClass("learned_skill_"+tree_id+skill_tree[skill_id]["color"]);
+                $("#"+skill_id+"_circle").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
             }
         }
     }
@@ -108,7 +108,7 @@
 
                     // delete selected node
                     $("#"+this_circle_id).removeClass("learned_skill");
-                    $("#"+this_circle_id).removeClass("learned_skill_"+tree_id+skill_tree[this_id]["color"]);
+                    $("#"+this_circle_id).removeClass("learned_skill_"+tree_id+"_"+skill_tree[this_id]["color"]);
                     skill_tree[this_id]["status"] = 0;
                     for (var skill_id in skill_tree) {
                         if (
@@ -119,7 +119,7 @@
 
                             // delete course after selected node
                             $("#"+skill_id+"_circle").removeClass("learned_skill");
-                            $("#"+skill_id+"_circle").removeClass("learned_skill_"+tree_id+skill_tree[skill_id]["color"]);
+                            $("#"+skill_id+"_circle").removeClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
                             skill_tree[skill_id]["status"] = 0;
                         }
                     }
@@ -163,7 +163,7 @@
                 else {
                     // add node
                     $("#"+this_circle_id).addClass("learned_skill");
-                    $("#"+this_circle_id).addClass("learned_skill_"+tree_id+skill_tree[this_id]["color"]);
+                    $("#"+this_circle_id).addClass("learned_skill_"+tree_id+"_"+skill_tree[this_id]["color"]);
 
                     skill_tree[this_id]["status"] = 1;
                     send_json(skill_tree);
