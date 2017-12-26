@@ -227,7 +227,7 @@ func getAvailableTrees(user string) ([]TreeData, error) {
 func getAllTrees(user string) ([]TreeData, error) {
 	var treeList []TreeData
 
-	rows, err := DB.Query("SELECT treeid, state FROM tree WHERE user=?", user)
+	rows, err := DB.Query("SELECT treeid FROM tree WHERE user=?", user)
 	if err != nil {
 		if err != sql.ErrNoRows {
 			return treeList, nil
@@ -238,18 +238,19 @@ func getAllTrees(user string) ([]TreeData, error) {
 	defer rows.Close()
 
 	for rows.Next() {
-		var td TreeData
-		err = rows.Scan(&td.Treeid, &td.State)
+		var tid string
+		err = rows.Scan(&tid)
 		if err != nil {
 			log.Println("getAllTree/Scan failed")
 			return treeList, err
 		}
 
-		err = DB.QueryRow("SELECT tree, ctree, svg FROM treeTemplate WHERE treeid=?", td.Treeid).Scan(&td.Name, &td.Cname, &td.Svg)
+		td, err := getTree(user, tid)
 		if err != nil {
-			log.Println("getalltree/gettree failed")
+			log.Println("getAllTree/getTree failed")
 			return treeList, err
 		}
+
 		treeList = append(treeList, td)
 	}
 	if err = rows.Err(); err != nil {
