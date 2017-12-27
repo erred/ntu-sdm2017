@@ -157,7 +157,7 @@
         <!-- mark other person done: /exchange/done/{{ $it.Id }}/ -->
         <!-- reject: /exchange/delete/{{ $it.Id }}/ -->
 */}}
-                    <div class="accordion">
+                    <div id="inprogress_section" class="accordion">
                         <input type="checkbox" id="table-3" name="accordion-checkbox" hidden {{ if .ExchangeList.Inprogress }}checked{{ end }}>
                         <label class="accordion-header c-hand" for="table-3">
                             {{ if .Page.En }}
@@ -213,7 +213,7 @@
     <!-- reject -->
     <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
     <td colspan="8" class="message_td">
-        
+
         <!-- normal input group with button -->
         <div class="input-group">
             <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
