@@ -224,9 +224,18 @@
             <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.Id}}>Submit</button>
         </div>
     </td>
-            {{ range $idx, $m := $r.Messages }}
-    <td>{{ $m.Text }}</td>
-            {{ end }}
+    <td>
+        <table  id="table-inprogress" class="table">
+                    {{ range $idx, $m := $r.Messages }}
+                        {{if $m.SenderIsMe}}
+            <tr><td colspan="3" class="my_message message_text">{{ $m.Text }}</td></tr>
+                        {{else}}
+            <tr><td colspan="3" class="recieved_message message_text">{{ $m.Text }}</td></tr>
+                        {{end}}
+                    {{ end }}
+        </table>
+    </td>
+
 </tr>
                                     {{ end }}
                                     {{ end }}

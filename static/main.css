@@ -294,9 +294,13 @@ svg circle:focus{
 thead td{
     background-color:#e7e9ed;
 }
-/* #inprogress_section .inprogress_tr {
-  display: block;
+.message_text{
+    border: 1px solid #878787;
+    border-radius: 30px;
 }
-#inprogress_section td .message_td{
-    float: left;
-} */
+.my_message{
+    text-align: right;
+}
+.recieved_message{
+
+}
