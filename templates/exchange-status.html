@@ -457,6 +457,8 @@
             // location.reload();
             $("#message_text_"+this_element.attr("data-id")).append('<div class="my_message message_text">'+message+'</div>');
             this_element.siblings("input").val("");
+            var text_div = document.getElementById("message_text_"+this_element.attr("data-id"));
+            text_div.scrollTop = text_div.scrollHeight;
         }
     }
 
