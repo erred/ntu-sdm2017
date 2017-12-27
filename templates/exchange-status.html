@@ -221,15 +221,19 @@
         <td colspan="8">
             <table class="table">
                         {{ range $idx, $m := $r.Messages }}
+
+                <tr><td height="80">
                             {{if $m.SenderIsMe}}
-                <tr><td>
                     <div class="my_message message_text">{{ $m.Text }}</div>
-                </td></tr>
                             {{else}}
-                <tr><td>
                     <div class="recieved_message message_text">{{ $m.Text }}</div>
-                </td></tr>
                             {{end}}
+                </td></tr>
+
+                <!-- <tr><td>
+
+                </td></tr> -->
+
                         {{ end }}
                 <tr>
                     <td colspan="8">
