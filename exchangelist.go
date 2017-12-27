@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"encoding/json"
 	"html/template"
 	"log"
 	"net/http"
@@ -118,13 +119,27 @@ func messageExchangeHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	message := r.FormValue("m")
+	if message != "" {
+		err = saveMessage(paths[3], user, message)
+		if errInternal(err, w) {
+			return
+		}
 
-	err = saveMessage(paths[3], user, message)
-	if errInternal(err, w) {
-		return
+		w.WriteHeader(http.StatusOK)
+	} else {
+		messages, err := getMessages(paths[3], user)
+		if errInternal(err, w) {
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(messages)
 	}
+}
 
-	w.WriteHeader(http.StatusOK)
+// /exchange/messages/exid/
+func messageApiHandler(w http.ResponseWriter, r *http.Request) {
+
 }
 
 // ==================== Operations ====================
