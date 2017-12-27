@@ -410,16 +410,15 @@
             alert("hihi");
             console.log($(this).next());
             if ($(this).next().hasClass("hide_message")) {
-                // $(this).next().removeClass("hide_message");
-                // $(this).next().fadeIn(4000);
                 $(this).next().slideDown(4000);
+                $(this).next().removeClass("hide_message");
 
                 var text_div = document.getElementById($(this).next().find(".message_text_section").attr("id"));
                 text_div.scrollTop = text_div.scrollHeight;
             }
             else{
                 $(this).next().addClass("hide_message");
-                // $(this).next().fadeOut( "slow" );
+                $(this).next().slideOut(4000);
             }
         });
     }
