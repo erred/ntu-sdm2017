@@ -336,7 +336,7 @@
             // $(this).siblings(".delete_exchange_button").detach();
             $("#table-complete tbody").append("<tr>");
             for (var i = 0; i < 6; i++) {
-                $("#table-complete tbody").append($(this).siblings().eq(i).html());
+                $("#table-complete tbody").append("<td>"+$(this).siblings().eq(i).html()+"</td>");
             }
             $("#table-complete tbody").append("</tr>");
 

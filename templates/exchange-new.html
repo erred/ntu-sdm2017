@@ -281,22 +281,30 @@
         //New skill
         $("#step3 svg circle").on("click", function(){
 
-            skill_tree = JSON.parse(new_exchange_data["atree_state"]);
-            $(this).addClass("selected_skill");
 
-            // Add data to new_exchange_data
-            new_exchange_data["user"] = {{ $.Target }};
-            new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
-            new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.Cname}} {{ end }};
-            new_exchange_data["askill"] = {{ if $.Page.En}} skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] {{ else }}  skill_tree[$(this).parent().attr("id").split("_")[0]]["CFullName"] {{end}};
-            $("#table_user").text({{ $.TargetName }});
-            $("#table_atree").text(new_exchange_data["atree_name"]);
-            $("#table_askill").text(new_exchange_data["askill"]);
+            if ( $(this).hasClass("learned_skill") ){
+                 skill_tree = JSON.parse(new_exchange_data["atree_state"]);
+                $(this).addClass("selected_skill");
 
-            //Active the step item
-            $(".step-item").removeClass("active");
-            $(".step-item").eq(3).addClass("active");
-            window.location.href = "#step4";
+                // Add data to new_exchange_data
+                new_exchange_data["user"] = {{ $.Target }};
+                new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
+                new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.Cname}} {{ end }};
+                new_exchange_data["askill"] = {{ if $.Page.En}} skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] {{ else }}  skill_tree[$(this).parent().attr("id").split("_")[0]]["CFullName"] {{end}};
+                $("#table_user").text({{ $.TargetName }});
+                $("#table_atree").text(new_exchange_data["atree_name"]);
+                $("#table_askill").text(new_exchange_data["askill"]);
+
+                //Active the step item
+                $(".step-item").removeClass("active");
+                $(".step-item").eq(3).addClass("active");
+                window.location.href = "#step4";
+            }
+            else{
+                alert({{ if $.Page.En }}"Please make sure he or she has learned this skill."{{ else }}"請確認對方已習得該課程"{{end}});
+            }            
+
+           
         });
 
     }
