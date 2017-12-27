@@ -82,8 +82,6 @@ var tree01svg = `
             <line class="cls-9" x1="266.72" y1="134.18" x2="304.56" y2="171.75"/>
             <line class="cls-9" x1="239.14" y1="55.44" x2="265.28" y2="132.75"/>
             <line class="cls-9" x1="183.97" y1="105.17" x2="264.58" y2="134.18"/>
-            <text class="cls-10" transform="translate(321.18 317.59)">Jen<tspan class="cls-11" x="68.07" y="0">n</tspan>
-            <tspan x="92.41" y="0">y Hung</tspan>
         </text>
         <line class="cls-8" x1="658.64" y1="315.02" x2="608.25" y2="304.1"/>
         <line class="cls-8" x1="486.88" y1="83.02" x2="464" y2="140.37"/>
