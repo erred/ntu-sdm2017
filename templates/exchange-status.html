@@ -330,6 +330,7 @@
         set_cancel_exchange();
         set_accept_exchange();
         set_done_exchange();
+        set_message();
         set_submit_message();
     });
 
@@ -381,6 +382,9 @@
 
             $(this).parent().empty();
         });
+    }
+    function set_message() {
+        $(".message_text_section").scrollTop = $(".message_text_section").scrollHeight;
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){

@@ -304,7 +304,7 @@ thead td{
 
     clear: both;
     border: 1px solid #878787;
-    border-radius: 30px;
+    border-radius: 10px;
     word-wrap: break-word;
 }
 .my_message{
@@ -318,5 +318,6 @@ thead td{
 }
 .message_text_section{
     height:120px;
+    display: block;
     overflow-y: scroll;
 }
