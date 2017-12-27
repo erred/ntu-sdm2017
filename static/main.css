@@ -294,3 +294,6 @@ svg circle:focus{
 thead td{
     background-color:#e7e9ed;
 }
+.message_td{
+    display: block;
+}
