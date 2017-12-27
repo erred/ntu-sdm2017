@@ -381,16 +381,16 @@
         });
     }
     function set_message() {
-        {{ range $idx, $r := .ExchangeList.Inprogress }}
-        var text_div = document.getElementById('message_text_{{ $r.Id }}');
-        text_div.scrollTop = text_div.scrollHeight;
-        {{end}}
-
         $(".inprogress_tr").on("click",function() {
+            {{ range $idx, $r := .ExchangeList.Inprogress }}
+            var text_div = document.getElementById('message_text_{{ $r.Id }}');
+            text_div.scrollTop = text_div.scrollHeight;
+            {{end}}
+
             if ($(this).next().hasClass("hide_message")) {
                 // $(this).next().removeClass("hide_message");
-                // $(this).next().fadeIn( "slow" );
-                $(this).next().slideDown(1000);
+                $(this).next().fadeIn(4000);
+                // $(this).next().slideDown(1000);
             }
             else{
                 $(this).next().addClass("hide_message");
