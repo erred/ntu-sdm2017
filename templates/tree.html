@@ -88,12 +88,16 @@
             $(".tooltip_content").attr("id", "tooltip_content_"+skill_id);
             $("#"+skill_id+"_circle").addClass("tooltip");
             $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content_"+skill_id);
+            console.log(skill_id);
+
             
 
             {{ if $.En }}
             $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["EName"]);
+            console.log(skill_tree[skill_id]["EName"])
             {{ else }}
             $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["CName"]);
+            console.log(skill_tree[skill_id]["CName"])
             {{end}}
 
             // Add learned skills
