@@ -324,6 +324,7 @@
     function set_done_exchange() {
         $(".done_exchange_button").on("click",function(){
             var done_id = $(this).attr("data-done_id");
+            console.log(done_id);
             fetch('/exchange/done/'+done_id+'/', {
                 method : 'get',
                 credentials : "include"
