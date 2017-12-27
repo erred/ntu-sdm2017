@@ -297,9 +297,12 @@ thead td{
 .message_text{
     border: 1px solid #878787;
     border-radius: 30px;
+    width: 30%;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .my_message{
-    text-align: right;
+    float: right;
 }
 .recieved_message{
 

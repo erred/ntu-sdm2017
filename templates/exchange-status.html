@@ -220,6 +220,17 @@
     <tr class="message_td">
         <td colspan="8">
             <table class="table">
+                        {{ range $idx, $m := $r.Messages }}
+                            {{if $m.SenderIsMe}}
+                <tr><td>
+                    <div class="my_message message_text">{{ $m.Text }}</div>
+                </td></tr>
+                            {{else}}
+                <tr><td>
+                    <div class="recieved_message message_text">{{ $m.Text }}</div>
+                </td></tr>
+                            {{end}}
+                        {{ end }}
                 <tr>
                     <td colspan="8">
                         <!-- normal input group with button -->
@@ -229,13 +240,6 @@
                         </div>
                     </td>
                 </tr>
-                        {{ range $idx, $m := $r.Messages }}
-                            {{if $m.SenderIsMe}}
-                <tr><td colspan="3" class="my_message message_text">{{ $m.Text }}</td></tr>
-                            {{else}}
-                <tr><td colspan="3" class="recieved_message message_text">{{ $m.Text }}</td></tr>
-                            {{end}}
-                        {{ end }}
             </table>
         </td>
     </tr>
