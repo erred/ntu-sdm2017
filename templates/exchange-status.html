@@ -407,7 +407,8 @@
 
         $(".inprogress_tr").on("click",function() {
 
-
+            alert("hihi");
+            console.log($(this).next());
             if ($(this).next().hasClass("hide_message")) {
                 // $(this).next().removeClass("hide_message");
                 // $(this).next().fadeIn(4000);
@@ -417,8 +418,8 @@
                 text_div.scrollTop = text_div.scrollHeight;
             }
             else{
-                // $(this).next().addClass("hide_message");
-                $(this).next().fadeOut( "slow" );
+                $(this).next().addClass("hide_message");
+                // $(this).next().fadeOut( "slow" );
             }
         });
     }
