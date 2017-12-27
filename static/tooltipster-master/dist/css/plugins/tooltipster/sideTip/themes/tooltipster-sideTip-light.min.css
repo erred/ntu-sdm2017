@@ -1,7 +1,7 @@
 .tooltipster-sidetip.tooltipster-light .tooltipster-box {
     border-radius: 3px;
     border: 0px solid;
-    background: #AAD3A9;
+    background: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light .tooltipster-content {
     color: #666;
@@ -10,6 +10,7 @@
     height: 9px;
     margin-left: -9px;
     width: 18px;
+    background: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-left .tooltipster-arrow, .tooltipster-sidetip.tooltipster-light.tooltipster-right .tooltipster-arrow {
     height: 18px;
