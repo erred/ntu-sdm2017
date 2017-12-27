@@ -415,7 +415,7 @@
             {{end}}
         {{end}}
 
-        $(".inprogress_tr,complete_tr").on("click",function() {
+        $(".inprogress_tr,.complete_tr").on("click",function() {
 
             console.log($(this).next());
             if ($(this).next().hasClass("hide_message")) {
