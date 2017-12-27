@@ -325,3 +325,7 @@ thead td{
 .hide_message{
     display: none;
 }
+.inprogress_tr td,
+.complete_tr td{
+    cursor: pointer;
+}
