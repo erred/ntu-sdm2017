@@ -85,9 +85,10 @@
             {{else}}
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
+            $(".tooltip_content").attr("id", "tooltip_content_"+skill_id);
             $("#"+skill_id+"_circle").addClass("tooltip");
             $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content_"+skill_id);
-            $(".tooltip_content").attr("id", "tooltip_content_"+skill_id);
+            
 
             {{ if $.En }}
             $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["EName"]);
