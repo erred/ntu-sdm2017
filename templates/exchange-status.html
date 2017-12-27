@@ -217,7 +217,7 @@
 
         </td>
     </tr>
-    <tr class="message_td">
+    <tr class="message_td hide_message">
         <td colspan="8">
             <table class="table">
 
@@ -385,6 +385,18 @@
         var text_div = document.getElementById('message_text_{{ $r.Id }}');
         text_div.scrollTop = text_div.scrollHeight;
         {{end}}
+
+        $(".inprogress_tr").on("click",function() {
+            if ($(this).next().hasClass("hide_message")) {
+                // $(this).next().removeClass("hide_message");
+                // $(this).next().fadeIn( "slow" );
+                $(this).next().slideDown( "slow" );
+            }
+            else{
+                // $(this).next().addClass("hide_message");
+                $(this).next().hide();
+            }
+        });
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){

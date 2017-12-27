@@ -322,3 +322,6 @@ thead td{
     display: inline-block;
     overflow-y: scroll;
 }
+.hide_message{
+    display: none;
+}
