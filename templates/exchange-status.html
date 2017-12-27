@@ -306,6 +306,23 @@
     <td>{{ $r.U2.Tree }}</td>
     <td>{{ $r.U2.Skill }}</td>
 </tr>
+<tr class="message_td hide_message">
+    <td colspan="8">
+        <table class="table">
+
+
+            <tr><td id="done_message_text_{{ $r.Id }}" class="message_text_section">
+                    {{ range $idx, $m := $r.Messages }}
+                        {{if $m.SenderIsMe}}
+                <div class="my_message message_text">{{ $m.Text }}</div>
+                        {{else}}
+                <div class="recieved_message message_text">{{ $m.Text }}</div>
+                        {{end}}
+                    {{ end }}
+            </td></tr>
+        </table>
+    </td>
+</tr>
                                     {{ end }}
                                     {{ end }}
                                 </tbody>
@@ -381,16 +398,23 @@
         });
     }
     function set_message() {
+        // {{ range $idx, $r := .ExchangeList.Inprogress }}
+        // var text_div = document.getElementById('message_text_{{ $r.Id }}');
+        // var done_text_div = document.getElementById('done_message_text_{{ $r.Id }}');
+        // text_div.scrollTop = text_div.scrollHeight;
+        // done_text_div.scrollTop = done_text_div.scrollHeight;
+        // {{end}}
+
         $(".inprogress_tr").on("click",function() {
-            {{ range $idx, $r := .ExchangeList.Inprogress }}
-            var text_div = document.getElementById('message_text_{{ $r.Id }}');
-            text_div.scrollTop = text_div.scrollHeight;
-            {{end}}
+
 
             if ($(this).next().hasClass("hide_message")) {
                 // $(this).next().removeClass("hide_message");
-                $(this).next().fadeIn(4000);
-                // $(this).next().slideDown(1000);
+                // $(this).next().fadeIn(4000);
+                $(this).next().slideDown(4000);
+
+                var text_div = document.getElementById($(this).next().find("message_text_section").attr("id"));
+                text_div.scrollTop = text_div.scrollHeight;
             }
             else{
                 $(this).next().addClass("hide_message");
