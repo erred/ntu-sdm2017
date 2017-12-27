@@ -409,7 +409,7 @@
 
             console.log($(this).next());
             if ($(this).next().hasClass("hide_message")) {
-                $(this).next().slideDown(4000);
+                $(this).next().slideDown(500);
                 $(this).next().removeClass("hide_message");
 
                 var text_div = document.getElementById($(this).next().find(".message_text_section").attr("id"));
