@@ -172,6 +172,7 @@ svg text{
     border: 2.5px solid #70A372 !important;
     border-radius: 6px;
     color: #70A372 !important;
+    vertical-align: center !important;
 }
 .tooltip_button:hover{
     color: #fff !important;
