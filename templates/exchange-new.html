@@ -129,7 +129,7 @@
     var new_exchange_data = {};
 
     $(document).ready(function(){
-        set_scroll_animate();
+        // set_scroll_animate();
         set_tree_id();
         set_step_active();
         set_selected_exchange_data();
@@ -280,9 +280,10 @@
                 $(".step-item").eq(2).addClass("active");
 
                 //Scroll to step3
-                $('main').animate({
-                    scrollTop:$("#step3").offset().top
-                }, 500);
+                window.location.href("#step3");
+                // $('main').animate({
+                //     scrollTop:$("#step3").offset().top
+                // }, 500);
             }
             else {
                 alert({{ if $.Page.En }}"Please make sure you have learned this skill."{{ else }}"請確認你已習得該課程"{{end}});
@@ -313,12 +314,13 @@
                 $(".step-item").eq(3).addClass("active");
 
                 //Scroll to step4
-                $('main').animate({
-                    scrollTop:$("#step4").offset().top
-                }, 500);
+                window.location.href("#step4");
+                // $('main').animate({
+                //     scrollTop:$("#step4").offset().top
+                // }, 500);
             }
             else{
-                alert({{ if $.Page.En }}"Please make sure he or she has learned this skill and it's different fromyour skill."{{ else }}"請確認對方已習得該課程且交換之課程不得相同"{{end}});
+                alert({{ if $.Page.En }}"Please make sure he or she has learned this skill and it's different from your skill."{{ else }}"請確認對方已習得該課程且交換之課程不得相同"{{end}});
             }
         });
 
