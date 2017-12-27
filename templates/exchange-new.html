@@ -129,12 +129,22 @@
     var new_exchange_data = {};
 
     $(document).ready(function(){
+        set_scroll_animate();
         set_tree_id();
         set_step_active();
         set_selected_exchange_data();
         set_send_exchange_message();
     });
 
+    function set_scroll_animate() {
+        $(".new_exchange_mytree_button").on('click', function(event){
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop:$($.attr(this,'href')).offset().top
+            }, 500);
+        });
+    }
     function set_tree_id() {
         set_step1_tree_id();
         set_step2_tree_id();
@@ -268,21 +278,24 @@
                 //Active the step item
                 $(".step-item").removeClass("active");
                 $(".step-item").eq(2).addClass("active");
-                window.location.href = "#step3";
+
+                //Scroll to step3
+                $('html, body').animate({
+                    scrollTop:$("#step3").offset().top
+                }, 500);
             }
             else {
                 alert({{ if $.Page.En }}"Please make sure you have learned this skill."{{ else }}"請確認你已習得該課程"{{end}});
             }
-            
-
-            
         });
 
         //New skill
         $("#step3 svg circle").on("click", function(){
 
-
-            if ( $(this).hasClass("learned_skill") ){
+            if (
+                $(this).hasClass("learned_skill") &&
+                $(this).parent().attr("id").split("_")[0] != new_exchange_data["myskill"]
+            ){
                  skill_tree = JSON.parse(new_exchange_data["atree_state"]);
                 $(this).addClass("selected_skill");
 
@@ -298,13 +311,15 @@
                 //Active the step item
                 $(".step-item").removeClass("active");
                 $(".step-item").eq(3).addClass("active");
-                window.location.href = "#step4";
+
+                //Scroll to step4
+                $('html, body').animate({
+                    scrollTop:$("#step4").offset().top
+                }, 500);
             }
             else{
-                alert({{ if $.Page.En }}"Please make sure he or she has learned this skill."{{ else }}"請確認對方已習得該課程"{{end}});
-            }            
-
-           
+                alert({{ if $.Page.En }}"Please make sure he or she has learned this skill and it's different fromyour skill."{{ else }}"請確認對方已習得該課程且交換之課程不得相同"{{end}});
+            }
         });
 
     }
