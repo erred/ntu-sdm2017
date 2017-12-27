@@ -307,3 +307,6 @@ thead td{
 .recieved_message{
 
 }
+.message_td table td{
+    border-bottom: 0px;
+}
