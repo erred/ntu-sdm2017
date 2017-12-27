@@ -37,7 +37,7 @@
                             <!-- <h4 class="step_subtitle"></h4> -->
 
                             <div class="columns">
-                            {{ range $it := .MyTrees }}
+                            {{ range $idx, $it := .MyTrees }}
 
 <div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}" data-state="{{ $.it.State }}">
     <div class="card-image">
