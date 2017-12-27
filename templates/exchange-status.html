@@ -221,7 +221,7 @@
         <!-- normal input group with button -->
         <div class="input-group">
             <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
-            <button class="btn btn-primary input-group-btn">Submit</button>
+            <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.id}}>Submit</button>
         </div>
     </td>
             {{ range $idx, $m := $r.Messages }}
@@ -308,6 +308,7 @@
         set_cancel_exchange();
         set_accept_exchange();
         set_done_exchange();
+        set_submit_message();
     });
 
     function set_cancel_exchange() {
@@ -357,6 +358,16 @@
             $("#table-complete tbody").append("</tr>");
 
             $(this).parent().empty();
+        });
+    }
+    function set_submit_message() {
+        $(".submit_button").on("click",function(){
+
+            var message = $(this).siblings("input").value;
+            fetch('/exchange/message/'+$(this).attr("data-id")+'/?' + $.param({m: message}), {
+                method : 'get',
+                credentials : 'include'
+            });
         });
     }
 
