@@ -176,6 +176,9 @@ svg text{
 }
 .tooltip_div{
     background-color: #3C3C3C;
+    margin: 0px 0px 0px 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
