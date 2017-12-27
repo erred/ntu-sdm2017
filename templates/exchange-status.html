@@ -222,7 +222,7 @@
             <table class="table">
 
 
-                <tr><td class="message_text_section">
+                <tr><td id="message_text_{{ $r.Id }}" class="message_text_section">
                         {{ range $idx, $m := $r.Messages }}
                             {{if $m.SenderIsMe}}
                     <div class="my_message message_text">{{ $m.Text }}</div>
@@ -231,12 +231,6 @@
                             {{end}}
                         {{ end }}
                 </td></tr>
-
-                <!-- <tr><td>
-
-                </td></tr> -->
-
-
                 <tr>
                     <td colspan="8">
                         <!-- normal input group with button -->
@@ -387,9 +381,10 @@
         });
     }
     function set_message() {
-        // var text_div = document.querySelector('.message_text_section');
-        // text_div.scrollTop = text_div.scrollHeight;
-        $(".message_text_section").prop('scrollHeight');
+        {{ range $idx, $r := .ExchangeList.Inprogress }}
+        var text_div = document.getElementById('message_text_{{ $r.Id }}');
+        text_div.scrollTop = text_div.scrollHeight;
+        {{end}}
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){
