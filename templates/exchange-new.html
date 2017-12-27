@@ -294,7 +294,7 @@
 
             if (
                 $(this).hasClass("learned_skill") &&
-                $(this).parent().attr("id").split("_")[0] != new_exchange_data["myskill"]
+                skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] != new_exchange_data["myskill"]
             ){
                  skill_tree = JSON.parse(new_exchange_data["atree_state"]);
                 $(this).addClass("selected_skill");
