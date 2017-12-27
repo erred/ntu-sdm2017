@@ -398,12 +398,12 @@
         });
     }
     function set_message() {
-        // {{ range $idx, $r := .ExchangeList.Inprogress }}
-        // var text_div = document.getElementById('message_text_{{ $r.Id }}');
-        // var done_text_div = document.getElementById('done_message_text_{{ $r.Id }}');
-        // text_div.scrollTop = text_div.scrollHeight;
-        // done_text_div.scrollTop = done_text_div.scrollHeight;
-        // {{end}}
+        {{ range $idx, $r := .ExchangeList.Inprogress }}
+        var text_div = document.getElementById('message_text_{{ $r.Id }}');
+        var done_text_div = document.getElementById('done_message_text_{{ $r.Id }}');
+        text_div.scrollTop = text_div.scrollHeight;
+        done_text_div.scrollTop = done_text_div.scrollHeight;
+        {{end}}
 
         $(".inprogress_tr").on("click",function() {
 
