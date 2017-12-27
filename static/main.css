@@ -168,6 +168,7 @@ svg text{
     margin-top: -15px;
     border: 1px solid #008490 !important;
     border-radius: 30px;
+    color: #008490;
 }
 .tooltip_button:hover{
     color: #fff !important;
