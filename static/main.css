@@ -167,6 +167,8 @@ svg text{
     width: 150px;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding-top:5px;
+    padding-bottom:5px;
     border: 2px solid #70A372 !important;
     border-radius: 6px;
     color: #70A372 !important;
@@ -178,8 +180,7 @@ svg text{
 .tooltip_div{
     background-color: #5B5B5B;
     margin: 0px 0px 0px 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 10px 10px 10px;
     color: #FFFFFF;
 }
 
