@@ -165,14 +165,14 @@ svg text{
 
 .tooltip_button{
     width: 150px;
+    height: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
-/*    padding-top:20px !important; 
-    padding-bottom:20px !important;*/
+    padding-top:20px !important; 
+    padding-bottom:20px !important;
     border: 2.5px solid #70A372 !important;
     border-radius: 6px;
     color: #70A372 !important;
-    display:flex;
     align-items: center;
 
 }
