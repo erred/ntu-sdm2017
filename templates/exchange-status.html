@@ -313,6 +313,10 @@
                 credentials : "include"
             });
 
+            {{ if not .ExchangeList.Inprogress }}
+            $("#table-inprogress tbody").empty();
+            {{end}}
+
             $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
             $(this).parent().empty();
         });
@@ -324,8 +328,18 @@
                 method : 'get',
                 credentials : "include"
             });
+
+            {{ if not .ExchangeList.Complete }}
+            $("#table-complete tbody").empty();
+            {{end}}
+
             // $(this).siblings(".delete_exchange_button").detach();
-            $("#table-complete tbody").append("<tr>"+$(this).parent().html()+"</tr>");
+            $("#table-complete tbody").append("<tr>");
+            for (var i = 0; i < 6; i++) {
+                $("#table-complete tbody").append($(this).siblings().eq(i).html());
+            }
+            $("#table-complete tbody").append("</tr>");
+
             $(this).parent().empty();
         });
     }
