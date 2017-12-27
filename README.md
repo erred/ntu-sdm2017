@@ -3,7 +3,6 @@
 run server:
 
 ```
-
 ./server [-port 8080] [-initdb] [-h]
     -port
         port to run on (default 8080)
