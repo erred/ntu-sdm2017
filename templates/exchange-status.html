@@ -390,11 +390,11 @@
             if ($(this).next().hasClass("hide_message")) {
                 // $(this).next().removeClass("hide_message");
                 // $(this).next().fadeIn( "slow" );
-                $(this).next().slideDown( "slow" );
+                $(this).next().slideDown(1000);
             }
             else{
-                // $(this).next().addClass("hide_message");
-                $(this).next().hide();
+                $(this).next().addClass("hide_message");
+                // $(this).next().hide();
             }
         });
     }
