@@ -39,18 +39,7 @@
         </div>
         {{ template "footer" }}
         <div class="tooltip_templates">
-            <span class="tooltip_content" style="text-align:center;">
-                <div class="tooltip_div">
-                    <h4>blablabla</h4>
-                    <pre>description description description<br>description description description</pre>
-                </div>
-                <div align="center">
-                    <button class="btn btn-link tooltip_button" style="margin-left:10px">No, I can't :(</button>
-                    <button class="btn btn-link tooltip_button">I got this!</button>
-                    <button class="btn btn-link tooltip_button" style="margin-right:10px">Write something</button>
-                </div>
-                
-            </span>
+
         </div>
     </body>
 </html>
@@ -85,20 +74,32 @@
             {{else}}
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
-            $(".tooltip_content").attr("id", "tooltip_content_"+skill_id);
+
+            $(".tooltip_templates").append(
+                `<span class="tooltip_content" style="text-align:center;" id="tooltip_content_` + skill_id+`">
+                <div class="tooltip_div">
+                    <h4>`+ {{if $.En}}skill_tree[skill_id]["EName"]{{else}}skill_tree[skill_id]["CName"]{{end}}+`</h4>
+                    <pre>description description description<br>description description description</pre>
+                </div>
+                <div align="center">
+                    <button class="btn btn-link tooltip_button" style="margin-left:10px">No, I can't :(</button>
+                    <button class="btn btn-link tooltip_button">I got this!</button>
+                    <button class="btn btn-link tooltip_button" style="margin-right:10px">Write something</button>
+                </div> 
+                </span>`);
             $("#"+skill_id+"_circle").addClass("tooltip");
             $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content_"+skill_id);
             console.log(skill_id);
 
             
 
-            {{ if $.En }}
-            $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["EName"]);
-            console.log(skill_tree[skill_id]["EName"])
-            {{ else }}
-            $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["CName"]);
-            console.log(skill_tree[skill_id]["CName"])
-            {{end}}
+            // {{ if $.En }}
+            // $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["EName"]);
+            // console.log(skill_tree[skill_id]["EName"])
+            // {{ else }}
+            // $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["CName"]);
+            // console.log(skill_tree[skill_id]["CName"])
+            // {{end}}
 
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
