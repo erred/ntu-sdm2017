@@ -21,7 +21,7 @@
 */}}
 
                     <div class="accordion">
-                        <input type="checkbox" id="table-1" name="accordion-checkbox" hidden checked>
+                        <input type="checkbox" id="table-1" name="accordion-checkbox" hidden {{ if .ExchangeList.Requests }}checked{{ end }}>
                         <label class="accordion-header c-hand" for="table-1">
                             {{ if .Page.En }}
                             <h2><i class="icon icon-arrow-right mr-1 title_icon"></i>Requests</h2>
@@ -88,7 +88,7 @@
         <!-- reject: /exchange/delete/{{ $it.Id }}/ -->
 */}}
                     <div class="accordion">
-                        <input type="checkbox" id="table-2" name="accordion-checkbox" hidden>
+                        <input type="checkbox" id="table-2" name="accordion-checkbox" hidden {{ if .ExchangeList.Pending }}checked{{ end }}>
                         <label class="accordion-header c-hand" for="table-2">
                             {{ if .Page.En }}
                             <h2><i class="icon icon-arrow-right mr-1 title_icon"></i>Pending</h2>
@@ -158,7 +158,7 @@
         <!-- reject: /exchange/delete/{{ $it.Id }}/ -->
 */}}
                     <div class="accordion">
-                        <input type="checkbox" id="table-3" name="accordion-checkbox" hidden>
+                        <input type="checkbox" id="table-3" name="accordion-checkbox" hidden {{ if .ExchangeList.Inprogress }}checked{{ end }}>
                         <label class="accordion-header c-hand" for="table-3">
                             {{ if .Page.En }}
                             <h2><i class="icon icon-arrow-right mr-1 title_icon"></i>Inprogress</h2>
@@ -226,7 +226,7 @@
         <!-- Exchanges that have been completed between you (U1) and other person (U2) -->
 */}}
                     <div class="accordion">
-                        <input type="checkbox" id="table-4" name="accordion-checkbox" hidden>
+                        <input type="checkbox" id="table-4" name="accordion-checkbox" hidden {{ if .ExchangeList.Complete }}checked{{ end }}>
                         <label class="accordion-header c-hand" for="table-4">
                             {{ if .Page.En }}
                             <h2><i class="icon icon-arrow-right mr-1 title_icon"></i>Complete</h2>
