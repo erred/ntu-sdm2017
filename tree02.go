@@ -8,238 +8,362 @@ var tree02cname = `資訊管理學系`
 var tree02desc = `This tree is for NTU IM`
 
 var tree02svg = `
-<svg xmlns="http://www.w3.org/2000/svg" id="Object" viewBox="0 0 1280 800">
-<defs>
-    <style>.cls-1{fill:#9acace;}.cls-10,.cls-2,.cls-3,.cls-8{font-size:15px;fill:#fff;font-family:Scada-Regular, Scada;}.cls-2,.cls-4{letter-spacing:0.05em;}.cls-3{letter-spacing:0.03em;}.cls-5{fill:#99acbb;}.cls-6{fill:#f99;}.cls-7{letter-spacing:0.02em;}.cls-8{letter-spacing:0.01em;}.cls-9{letter-spacing:0.03em;}.cls-11{fill:#f8da9e;}.cls-12{fill:#c33;}.cls-12,.cls-13,.cls-14,.cls-15{stroke:#fff;stroke-miterlimit:10;stroke-width:5px;}.cls-13{fill:#008490;}.cls-14{fill:#f93;}.cls-15{fill:#069;}</style>
-</defs>
-<title>SkillTree_UI_NTU IM tree_20171221</title>
-<g id="Green">
-    <g id="MSLTP">
-        <polygon class="cls-1" points="513 636 660 733 656 740 507 644 513 636"/>
-        <path class="cls-1" d="M543,581,660,726s-4,9-6,7S537,584,537,584Z"/>
-        <polygon class="cls-1" points="696 600 660 733 654 733 683 598 696 600"/>
-        <polygon class="cls-1" points="621 550 666 743 656 740 612 550 621 550"/>
-        <polygon class="cls-1" points="762 575 670 736 660 733 752 572 762 575"/>
-        <circle id="MSLTP_circle" class="cls-1" cx="660.5" cy="735.5" r="22.5"/>
-        <text class="cls-2" transform="translate(645.93 733.22) rotate(-0.9)"></text>
-    </g>
-    <g id="Ccl2">
-        <circle id="Ccl2_circle" class="cls-1" cx="684.5" cy="600.5" r="22.5"/>
-        <text class="cls-3" transform="translate(674.69 598.15) rotate(-0.9)"></text>
-    </g>
-    <g id="Ccl1">
-        <polygon id="edge" class="cls-1" points="619.82 544.71 626 474 620 472 611.95 543.65 619.82 544.71"/>
-        <circle id="Ccl1_circle" class="cls-1" cx="615.5" cy="549.5" r="22.5"/>
-        <text class="cls-3" transform="translate(605.69 547.15) rotate(-0.9)"></text>
-    </g>
-    <g id="Stat2">
-        <circle id="Stat2_circle" class="cls-1" cx="506.5" cy="638.5" r="22.5"/>
-        <text class="cls-2" transform="translate(491.71 636.23) rotate(-0.9)"></text>
-    </g>
-    <g id="Stat1">
-        <polygon id="edge-2" data-name="edge" class="cls-1" points="543.35 581.08 604 471 600 468 536.63 576.84 543.35 581.08"/>
-        <circle id="Stat1_circle" class="cls-1" cx="537.43" cy="583.64" r="22.5"/>
-        <text class="cls-2" transform="translate(522.82 581.06) rotate(1.71)"></text>
-    </g>
-    <g id="MM">
-        <polygon id="edge-3" data-name="edge" class="cls-1" points="754.23 563.52 673.99 466.78 669.73 469.4 747.82 568.21 754.23 563.52"/>
-        <circle id="MM_circle" class="cls-1" cx="754.44" cy="569.96" r="22.5"/>
-        <text class="cls-2" transform="translate(741.27 575.12) rotate(0.92)"></text>
-    </g>
-    <g id="DM">
-        <polygon id="edge-4" data-name="edge" class="cls-1" points="675.27 536.46 650.46 469.95 644.18 470.72 667.7 538.88 675.27 536.46"/>
-        <circle id="DM_circle" class="cls-1" cx="673.42" cy="542.64" r="22.5"/>
-        <text class="cls-2" transform="translate(662.47 548.17) rotate(-2.45)"></text>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 755.2 800" enable-background="new 0 0 755.2 800" xml:space="preserve">
+    <font horiz-adv-x="1000">
+        <!-- Scada is a trademark of Jovanny Lemonad. -->
+        <!-- Copyright: Copyright 2017 Adobe System Incorporated. All rights reserved. -->
+        <font-face font-family="Scada-Regular" units-per-em="1000" underline-position="-75" underline-thickness="50"/>
+        <missing-glyph horiz-adv-x="270"/>
+        <glyph unicode=" " horiz-adv-x="290"/>
+        <glyph unicode="A" horiz-adv-x="570" d="M15,0l205,700l130,0l205,-700l-100,0l-55,180l-230,0l-55,-180M380,250l-80,275C297,532 295,541 294,551C292,560 291,567 290,572l-3,23l-4,0l-3,-24C275,548 272,533 270,525l-80,-275z"/>
+        <glyph unicode="B" horiz-adv-x="575" d="M90,700l190,0C350,700 404,684 443,652C481,619 500,577 500,525C500,472 481,430 442,399C424,386 405,376 385,370C410,364 433,353 455,338C502,302 525,253 525,190C525,131 505,84 465,51C424,17 363,0 280,0l-190,0M280,400C318,400 348,410 369,431C390,451 400,479 400,515C400,551 390,579 369,600C348,620 318,630 280,630l-90,0l0,-230M280,70C377,70 425,113 425,200C425,287 377,330 280,330l-90,0l0,-260z"/>
+        <glyph unicode="C" horiz-adv-x="515" d="M55,350C55,475 77,566 121,624C165,681 226,710 305,710C352,710 395,701 434,682C453,673 468,664 480,655l-35,-60l-10,0C425,602 414,610 401,617C372,632 343,640 315,640C208,640 155,543 155,350C155,246 170,172 200,127C229,82 271,60 325,60C354,60 383,67 411,82C425,90 436,98 445,105l10,0l35,-60C479,36 463,26 444,17C407,-1 364,-10 315,-10C232,-10 168,19 123,76C78,133 55,225 55,350z"/>
+        <glyph unicode="D" horiz-adv-x="585" d="M90,700l150,0C337,700 410,672 458,617C506,562 530,473 530,350C530,227 506,138 458,83C410,28 337,0 240,0l-150,0M240,70C303,70 351,91 383,134C414,177 430,249 430,350C430,451 414,523 383,566C351,609 303,630 240,630l-50,0l0,-560z"/>
+        <glyph unicode="E" horiz-adv-x="510" d="M90,0l0,700l390,0l0,-70l-290,0l0,-230l230,0l0,-70l-230,0l0,-260l290,0l0,-70z"/>
+        <glyph unicode="F" horiz-adv-x="500" d="M90,0l0,700l390,0l0,-70l-290,0l0,-240l230,0l0,-70l-230,0l0,-320z"/>
+        <glyph unicode="G" horiz-adv-x="565" d="M55,350C55,431 66,498 88,552C109,606 139,646 177,672C214,697 257,710 305,710C352,710 395,701 434,682C453,673 468,664 480,655l-35,-60l-10,0C425,602 414,610 401,617C372,632 343,640 315,640C208,640 155,543 155,350C155,246 170,172 200,127C229,82 271,60 325,60C337,60 349,62 360,65C371,68 380,71 387,74C394,77 398,79 400,80l0,230l-115,0l0,70l185,0l30,-30l0,-305C487,34 470,25 451,17C412,-1 367,-10 315,-10C236,-10 173,20 126,80C79,139 55,229 55,350z"/>
+        <glyph unicode="H" horiz-adv-x="630" d="M90,0l0,700l100,0l0,-310l250,0l0,310l100,0l0,-700l-100,0l0,320l-250,0l0,-320z"/>
+        <glyph unicode="I" horiz-adv-x="280" d="M90,0l0,700l100,0l0,-700z"/>
+        <glyph unicode="L" horiz-adv-x="490" d="M90,0l0,700l100,0l0,-630l290,0l0,-70z"/>
+        <glyph unicode="M" horiz-adv-x="840" d="M90,700l100,0l210,-425C405,266 410,256 413,244C416,234 417,228 418,225l4,0C423,228 424,234 427,244C430,256 435,266 440,275l210,425l100,0l0,-700l-100,0l0,440C650,451 651,469 652,494l2,31l-4,0l-9,-31C639,489 636,480 632,469C628,457 624,447 620,440l-160,-315l-80,0l-160,315C216,447 212,457 208,469C204,480 201,489 199,494l-9,31l-4,0l2,-31C189,469 190,451 190,440l0,-440l-100,0z"/>
+        <glyph unicode="N" horiz-adv-x="630" d="M90,700l110,0l210,-465C413,230 415,225 417,220C418,215 420,210 421,206l9,-25C432,175 434,169 436,164C437,159 439,154 440,150l4,0l-2,31C441,204 440,222 440,235l0,465l100,0l0,-700l-110,0l-210,465C214,478 207,496 200,519C199,523 197,528 196,533C194,538 192,544 190,550l-4,0l2,-31C189,494 190,476 190,465l0,-465l-100,0z"/>
+        <glyph unicode="O" horiz-adv-x="600" d="M55,350C55,475 77,566 120,624C163,681 223,710 300,710C377,710 437,681 480,624C523,566 545,475 545,350C545,225 523,134 480,77C437,19 377,-10 300,-10C223,-10 163,19 120,77C77,134 55,225 55,350M445,350C445,452 431,526 404,572C377,617 342,640 300,640C258,640 223,617 196,572C169,526 155,452 155,350C155,248 169,174 196,129C223,83 258,60 300,60C342,60 377,83 404,129C431,174 445,248 445,350z"/>
+        <glyph unicode="P" horiz-adv-x="565" d="M90,700l180,0C355,700 418,681 459,642C500,603 520,546 520,470C520,394 500,337 459,298C418,259 355,240 270,240l-80,0l0,-240l-100,0M270,310C321,310 358,323 383,349C408,375 420,415 420,470C420,525 408,565 383,591C358,617 321,630 270,630l-80,0l0,-320z"/>
+        <glyph unicode="R" horiz-adv-x="575" d="M90,700l170,0C344,700 407,681 448,644C489,607 510,552 510,480C510,373 464,305 373,275l167,-275l-115,0l-155,260l-80,0l0,-260l-100,0M260,330C360,330 410,380 410,480C410,580 360,630 260,630l-70,0l0,-300z"/>
+        <glyph unicode="S" horiz-adv-x="505" d="M89,17C67,26 49,35 35,45l35,60l10,0C89,98 103,91 121,82C157,67 193,60 230,60C275,60 309,71 334,93C358,114 370,143 370,180C370,203 364,223 351,240C338,256 323,269 304,280C285,291 260,304 227,319C188,336 156,353 132,368C108,383 88,403 71,428C54,453 45,483 45,520C45,557 54,589 71,618C88,647 112,669 144,686C175,702 212,710 255,710C311,710 360,701 401,682C419,675 435,666 450,655l-35,-60l-10,0C396,602 384,610 369,617C336,632 301,640 265,640C231,640 203,629 180,608C157,586 145,560 145,530C145,507 151,487 164,471C177,454 192,441 211,430C230,419 255,406 288,391C327,374 359,358 383,343C407,328 428,308 445,283C462,258 470,227 470,190C470,129 450,80 410,44C370,8 313,-10 240,-10C181,-10 131,-1 89,17z"/>
+        <glyph unicode="T" horiz-adv-x="480" d="M190,0l0,630l-180,0l0,70l460,0l0,-70l-180,0l0,-630z"/>
+        <glyph unicode="a" horiz-adv-x="510" d="M45,145C45,192 62,229 97,256C131,282 185,295 260,295l80,0l0,25C340,359 331,389 313,410C294,430 268,440 235,440C211,440 185,432 157,417C143,409 132,402 125,395l-10,0l-35,60C93,465 108,474 125,482C161,501 201,510 245,510C283,510 317,502 346,486C375,469 398,447 415,418C432,389 440,356 440,320l0,-320l-70,0l-10,60l-5,0C346,47 334,35 320,25C291,2 254,-10 210,-10C158,-10 118,4 89,32C60,59 45,97 45,145M310,95C321,104 331,114 340,125l0,100l-80,0C222,225 193,218 174,203C155,188 145,169 145,145C145,119 153,99 168,86C183,72 205,65 235,65C260,65 285,75 310,95z"/>
+        <glyph unicode="c" horiz-adv-x="455" d="M50,250C50,335 69,400 107,444C144,488 195,510 260,510C304,510 344,501 380,482C397,474 412,465 425,455l-35,-60l-10,0C371,402 360,409 347,417C319,432 293,440 270,440C233,440 203,425 182,395C161,365 150,317 150,250C150,183 161,134 184,105C206,75 238,60 280,60C305,60 330,67 357,82C371,90 382,98 390,105l10,0l35,-60C423,35 408,26 390,17C355,-1 315,-10 270,-10C201,-10 147,12 108,56C69,100 50,165 50,250z"/>
+        <glyph unicode="g" horiz-adv-x="535" d="M125,-183C107,-174 92,-165 80,-155l35,60l10,0C132,-102 142,-109 157,-118C184,-133 210,-140 235,-140C278,-140 309,-130 330,-109C350,-88 360,-55 360,-10l0,30C350,14 339,9 327,5C302,-5 277,-10 250,-10C190,-10 142,12 105,57C68,101 50,165 50,250C50,306 58,354 75,393C91,432 113,461 140,481C167,500 197,510 230,510C271,510 307,498 340,475C356,462 368,451 375,440l5,0l10,60l70,0l0,-510C460,-71 441,-119 403,-155C364,-192 312,-210 245,-210C200,-210 160,-201 125,-183M333,70C345,73 354,77 360,80l0,295C351,386 341,396 330,405C305,425 280,435 255,435C224,435 199,420 180,390C160,360 150,313 150,250C150,184 161,136 182,106C203,75 230,60 265,60C288,60 310,63 333,70z"/>
+        <glyph unicode="l" horiz-adv-x="250" d="M75,0l0,670l30,30l70,0l0,-700z"/>
+        <glyph unicode="n" horiz-adv-x="545" d="M75,500l70,0l10,-60l5,0C167,451 179,462 195,475C228,498 264,510 305,510C355,510 396,494 428,463C459,431 475,390 475,340l0,-340l-100,0l0,340C375,368 366,391 349,409C331,426 308,435 280,435C255,435 230,425 205,405C194,396 184,386 175,375l0,-375l-100,0z"/>
+        <glyph unicode="o" horiz-adv-x="530" d="M50,250C50,335 69,400 107,444C145,488 198,510 265,510C332,510 384,488 423,444C461,400 480,335 480,250C480,165 461,100 423,56C384,12 332,-10 265,-10C198,-10 145,12 107,56C69,100 50,165 50,250M380,250C380,316 370,364 349,395C328,425 300,440 265,440C230,440 203,425 182,395C161,364 150,316 150,250C150,184 161,136 182,106C203,75 230,60 265,60C300,60 328,75 349,106C370,136 380,184 380,250z"/>
+        <glyph unicode="t" horiz-adv-x="400" d="M95,150l0,280l-75,0l0,60l130,130l45,0l0,-120l125,0l0,-70l-125,0l0,-280C195,121 202,98 215,83C228,68 247,60 270,60C290,60 310,67 329,80C338,86 346,93 355,100l10,0l35,-60C385,29 372,20 360,15C328,-2 295,-10 260,-10C210,-10 170,5 140,34C110,63 95,102 95,150z"/>
+        <glyph unicode="3" horiz-adv-x="500" d="M64,17C43,26 26,35 15,45l35,60l10,0C69,98 81,90 96,82C128,67 163,60 200,60C255,60 295,72 321,96C347,119 360,154 360,200C360,246 347,281 321,305C295,328 255,340 200,340l-105,0l0,70l225,220l-290,0l0,70l410,0l0,-70l-225,-220C296,410 357,392 398,355C439,318 460,266 460,200C460,133 439,81 398,45C357,8 294,-10 210,-10C151,-10 103,-1 64,17z"/>
+        <glyph unicode="(" horiz-adv-x="285" d="M55,280C55,367 71,451 104,531C137,610 184,678 245,735l40,-40C242,634 210,570 188,503C166,436 155,362 155,280C155,198 166,124 188,57C210,-10 242,-74 285,-135l-40,-40C184,-118 137,-50 104,30C71,109 55,193 55,280z"/>
+        <glyph unicode=")" horiz-adv-x="285" d="M0,-135C43,-74 75,-10 97,57C119,124 130,198 130,280C130,362 119,436 97,503C75,570 43,634 0,695l40,40C101,678 148,610 181,531C214,451 230,367 230,280C230,193 214,109 181,30C148,-50 101,-118 40,-175z"/>
+    </font>
+
+	<g id="BG" display="none">
+	<g id="Polar_Grid_Graph" display="inline">
+		<g id="POLAR">
+
+				<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="388.7" ry="383.5"/>
+
+				<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="323.9" ry="319.6"/>
+
+				<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="259.1" ry="255.7"/>
+
+				<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="194.3" ry="191.8"/>
+
+				<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="129.6" ry="127.8"/>
+			<ellipse fill="none" stroke="#666666" stroke-width="0.25" stroke-miterlimit="10" cx="391.6" cy="415.5" rx="64.8" ry="63.9"/>
+		</g>
+		<g id="BOLD">
+			<line id="_x34_" fill="none" stroke="#666666" stroke-miterlimit="10" x1="391.6" y1="415.5" x2="585.4" y2="83.5"/>
+			<line id="_x33_" fill="none" stroke="#666666" stroke-miterlimit="10" x1="391.6" y1="415.5" x2="690.4" y2="661.5"/>
+			<line id="_x32_" fill="none" stroke="#666666" stroke-miterlimit="10" x1="391.6" y1="415.5" x2="140.4" y2="708.5"/>
+			<line id="_x31_" fill="none" stroke="#666666" stroke-miterlimit="10" x1="391.6" y1="415.5" x2="147.4" y2="117.5"/>
+		</g>
+		<g id="BLUE">
+			<polyline fill="none" stroke="#0000FF" stroke-width="0.5" stroke-miterlimit="10" points="210.4,76.1 391.4,415.5 449.5,36.2
+							"/>
+			<polyline fill="none" stroke="#0000FF" stroke-width="0.5" stroke-miterlimit="10" points="521.4,53.5 391.4,415.5 289.4,45.5
+							"/>
+		</g>
+		<g id="RED">
+			<polyline fill="none" stroke="#C1272D" stroke-width="0.5" stroke-miterlimit="10" points="3.4,400.5 391.4,415.5 87.4,653.5
+				"/>
+			<polyline fill="none" stroke="#C1272D" stroke-width="0.5" stroke-miterlimit="10" points="101.4,159.5 391.4,415.5 28.4,279.5
+							"/>
+			<line fill="none" stroke="#C1272D" stroke-width="0.5" stroke-miterlimit="10" x1="391.4" y1="415.5" x2="22.4" y2="534.5"/>
+		</g>
+		<g id="GREEN">
+			<line fill="none" stroke="#39B54A" stroke-width="0.5" stroke-miterlimit="10" x1="202.4" y1="750.5" x2="391.4" y2="415.5"/>
+			<polyline fill="none" stroke="#39B54A" stroke-width="0.5" stroke-miterlimit="10" points="499.4,784.5 391.4,415.5 343.4,796.5
+							"/>
+			<line fill="none" stroke="#39B54A" stroke-width="0.5" stroke-miterlimit="10" x1="391.4" y1="415.5" x2="631.4" y2="717.5"/>
+		</g>
+		<g id="YELLOW">
+			<polyline fill="none" stroke="#F7931E" stroke-width="0.5" stroke-miterlimit="10" points="763.1,302.4 391.4,415.5 733.6,598
+							"/>
+			<polyline fill="none" stroke="#F7931E" stroke-width="0.5" stroke-miterlimit="10" points="780.2,458.5 391.4,415.5 706.1,190
+							"/>
+			<line fill="none" stroke="#F7931E" stroke-width="0.5" stroke-miterlimit="10" x1="636.4" y1="117.5" x2="391.4" y2="415.5"/>
+		</g>
+	</g>
 </g>
-<g id="Blue">
-    <g id="IMFP">
-        <polygon id="edge-5" data-name="edge" class="cls-5" points="552 247 603.84 353.86 596.62 357.89 543 252 552 247"/>
-        <circle id="IMFP_circle" class="cls-5" cx="546.65" cy="243.19" r="22.5"/>
-        <text class="cls-2" transform="translate(530.3 253.47) rotate(-14.57)"></text>
-    </g>
-    <g id="PoIM1">
-        <polygon id="edge-6" data-name="edge" class="cls-5" points="574 177 620 353 612 354 564 181 574 177"/>
-        <circle id="PoIM1_circle" class="cls-5" cx="566.31" cy="167.54" r="22.5"/>
-        <text class="cls-2" transform="translate(548.75 169.87) rotate(-14.57)"></text>
-    </g>
-    <g id="PoIM2">
-        <polygon id="edge-7" data-name="edge" class="cls-5" points="554 117 566 153 558 155 543.65 118.34 554 117"/>
-        <circle id="PoIM2_circle" class="cls-5" cx="547.3" cy="109.54" r="22.5"/>
-        <text class="cls-2" transform="translate(529.73 111.87) rotate(-14.57)"></text>
-    </g>
-    <g id="MPD1">
-        <polygon id="edge-8" data-name="edge" class="cls-5" points="666 227 646 350 638 348 657 225 666 227"/>
-        <circle id="MPD1_circle" class="cls-5" cx="661.1" cy="226.55" r="22.5"/>
-        <text class="cls-2" transform="translate(645.27 225.05) rotate(2.05)"></text>
-    </g>
-    <g id="MPD2">
-        <polygon id="edge-9" data-name="edge" class="cls-5" points="728 178 656 363 650 362 717 174 728 178"/>
-        <circle id="MPD2_circle" class="cls-5" cx="724.11" cy="175.54" r="22.5"/>
-        <text class="cls-2" transform="translate(709.27 173.05) rotate(2.05)"></text>
-    </g>
-    <g id="SILP">
-        <circle id="SILP_circle" class="cls-5" cx="624.11" cy="95.52" r="22.5"/>
-        <text class="cls-2" transform="translate(609.02 101.05) rotate(2.05)"></text>
-    </g>
+<g id="LOGO" display="none">
 </g>
-<g id="Red">
-    <g id="CN">
-        <polygon id="edge-10" data-name="edge" class="cls-6" points="537.73 495.11 581.54 459.27 576.49 453.13 533.61 488.32 537.73 495.11"/>
-        <circle id="CN_circle" class="cls-6" cx="531.29" cy="494.76" r="22.5"/>
-        <text class="cls-2" transform="matrix(1, 0.01, -0.01, 1, 521.62, 500.5)"></text>
-    </g>
-    <g id="ALG">
-        <polygon id="edge-11" data-name="edge" class="cls-6" points="389.91 498.16 443.57 480.15 441.03 472.62 388.47 490.35 389.91 498.16"/>
-        <circle id="ALG_circle" class="cls-6" cx="384.02" cy="495.56" r="22.5"/>
-        <text class="cls-2" transform="translate(374.52 504.9) rotate(-18.37)"></text>
-    </g>
-    <g id="DS">
-        <polygon id="edge-12" data-name="edge" class="cls-6" points="452.9 476.17 506.56 458.15 504.02 450.63 451.46 468.35 452.9 476.17"/>
-        <circle id="DS_circle" class="cls-6" cx="447.01" cy="473.56" r="22.5"/>
-        <text class="cls-2" transform="translate(441.46 481.59) rotate(-18.37)"></text>
-    </g>
-    <g id="PD">
-        <polygon id="edge-13" data-name="edge" class="cls-6" points="514 458.55 567.66 440.53 565.11 433.01 512.55 450.73 514 458.55"/>
-        <circle id="PD_circle" class="cls-6" cx="508.1" cy="455.94" r="22.5"/>
-        <text class="cls-2" transform="translate(502.13 464.11) rotate(-18.37)"></text>
-    </g>
-    <g id="DB">
-        <polygon id="edge-14" data-name="edge" class="cls-6" points="442.57 412.18 499.13 414.24 499.41 406.3 443.97 404.36 442.57 412.18"/>
-        <circle id="DB_circle" class="cls-6" cx="437.97" cy="407.66" r="22.5"/>
-        <text class="cls-2" transform="matrix(1, 0.04, -0.04, 1, 429.43, 413.2)"></text>
-    </g>
-    <g id="OS">
-        <polygon id="edge-15" data-name="edge" class="cls-6" points="507.44 415.94 564.03 416.85 564.14 408.9 508.68 408.09 507.44 415.94"/>
-        <circle id="OS_circle" class="cls-6" cx="502.75" cy="411.52" r="22.5"/>
-        <text class="cls-2" transform="matrix(1, 0.02, -0.02, 1, 494.73, 417.24)"></text>
-    </g>
-    <g id="COS">
-        <polygon id="edge-16" data-name="edge" class="cls-6" points="514.27 373.4 566.86 394.34 569.78 386.95 518.22 366.51 514.27 373.4"/>
-        <circle id="COS_circle" class="cls-6" cx="511.46" cy="367.6" r="22.5"/>
-        <text class="cls-8" transform="translate(499.12 374.31)"></text>
-    </g>
-    <g id="SPM">
-        <circle id="SPM_circle" class="cls-6" cx="437.5" cy="243.5" r="22.5"/>
-        <text class="cls-2" transform="translate(422.64 249.31)"></text>
-    </g>
-    <g id="SDM">
-        <polygon id="edge-17" data-name="edge" class="cls-6" points="488.33 292.89 531.57 329.41 536.69 323.33 494.26 287.6 488.33 292.89"/>
-        <circle id="SDM_circle" class="cls-6" cx="487.5" cy="286.5" r="22.5"/>
-        <text class="cls-2" transform="translate(472.49 292.31)"></text>
-    </g>
-    <g id="SA">
-        <polygon id="edge-18" data-name="edge" class="cls-6" points="536.33 335.89 579.57 372.41 584.69 366.33 542.26 330.6 536.33 335.89"/>
-        <circle id="SA_circle" class="cls-6" cx="535.5" cy="329.5" r="22.5"/>
-        <text class="cls-2" transform="translate(527.28 335.31)"></text>
-    </g>
-    <g id="IR">
-        <circle id="IR_circle" class="cls-6" cx="396.5" cy="321.5" r="22.5"/>
-        <text class="cls-2" transform="translate(389.93 327.31)"></text>
-    </g>
-    <g id="GD">
-        <circle id="GD_circle" class="cls-6" cx="365.5" cy="235.5" r="22.5"/>
-        <text class="cls-2" transform="translate(356.72 241.31)"></text>
-    </g>
-    <g id="3DP" data-name="3DP">
-        <circle id="_3DP_circle" data-name="3DP_circle" class="cls-6" cx="331.5" cy="297.5" r="22.5"/>
-        <text class="cls-2" transform="translate(318.59 303.31)"></text>
-    </g>
-    <g id="BDDA">
-        <circle id="BDDA_circle" class="cls-6" cx="315.5" cy="367.5" r="22.5"/>
-        <text class="cls-2" transform="translate(297.38 373.31)"></text>
-    </g>
-    <g id="3DCR" data-name="3DCR">
-        <circle id="_3DCR_circle" data-name="3DCR_circle" class="cls-6" cx="308.5" cy="445.5" r="22.5"/>
-        <text class="cls-2" transform="translate(291.28 451.31)"></text>
-    </g>
-    <g id="IS">
-        <circle id="IS_circle" class="cls-6" cx="424.5" cy="574.5" r="22.5"/>
-        <text class="cls-2" transform="translate(418.46 580.31)"></text>
-    </g>
-    <g id="ToC">
-        <circle id="ToC_circle" class="cls-6" cx="323.5" cy="517.5" r="22.5"/>
-        <text class="cls-10" transform="translate(311.91 523.31)"></text>
-    </g>
-    <g id="PL">
-        <circle id="PL_circle" class="cls-6" cx="479.5" cy="535.5" r="22.5"/>
-        <text class="cls-2" transform="translate(471.43 541.31)"></text>
-    </g>
-    <g id="IE">
-        <circle id="IE_circle" class="cls-6" cx="345.5" cy="572.5" r="22.5"/>
-        <text class="cls-2" transform="translate(339.42 578.31)"></text>
-    </g>
-    <g id="HCI">
-        <circle id="HCI_circle" class="cls-6" cx="381.5" cy="619.5" r="22.5"/>
-        <text class="cls-2" transform="translate(370.28 625.31)"></text>
-    </g>
-</g>
-<g id="Yellow">
-    <g id="FM">
-        <polygon id="edge-19" data-name="edge" class="cls-11" points="811.82 241.11 758.58 260.33 761.29 267.8 813.44 248.89 811.82 241.11"/>
-        <circle id="FM_circle" class="cls-11" cx="820.5" cy="238.5" r="22.5"/>
-        <text class="cls-2" transform="translate(807.63 241.52) rotate(9.64)"></text>
-        <polygon id="edge-20" data-name="edge" class="cls-11" points="810.72 243.7 796.73 298.54 804.43 300.49 818.07 246.72 810.72 243.7"/>
-    </g>
-    <g id="MIS">
-        <polygon id="edge-21" data-name="edge" class="cls-11" points="709.39 317.37 672.39 360.2 678.41 365.39 714.61 323.36 709.39 317.37"/>
-        <circle id="MIS_circle" class="cls-11" cx="715.79" cy="316.61" r="22.5"/>
-        <text class="cls-2" transform="translate(700.44 319.21) rotate(9.64)"></text>
-    </g>
-    <g id="Acct1">
-        <polygon id="edge-22" data-name="edge" class="cls-11" points="784.12 303.57 687 373 690 377 787.51 310.75 784.12 303.57"/>
-        <circle id="Acct1_circle" class="cls-11" cx="790.48" cy="304.58" r="22.5"/>
-        <text class="cls-2" transform="translate(774.33 303.24) rotate(-0.73)"></text>
-    </g>
-    <g id="Acct2">
-        <circle id="Acct2_circle" class="cls-11" cx="754.49" cy="267.57" r="22.5"/>
-        <text class="cls-2" transform="translate(738.34 266.22) rotate(-0.73)"></text>
-    </g>
-    <g id="Eco1">
-        <polygon id="edge-23" data-name="edge" class="cls-11" points="753.14 373.81 699.11 390.68 701.49 398.26 754.42 381.66 753.14 373.81"/>
-        <circle id="Eco1_circle" class="cls-11" cx="758.98" cy="376.55" r="22.5"/>
-        <text class="cls-2" transform="translate(747.35 373.67) rotate(2.94)"></text>
-    </g>
-    <g id="SM">
-        <polygon id="edge-24" data-name="edge" class="cls-11" points="880.14 387.71 761.83 422.18 763.55 429.04 881.28 395.57 880.14 387.71"/>
-        <circle id="SM_circle" class="cls-11" cx="885.93" cy="390.54" r="22.5"/>
-        <text class="cls-2" transform="translate(876.13 396.57) rotate(-2.73)"></text>
-    </g>
-    <g id="MtM">
-        <polygon id="edge-25" data-name="edge" class="cls-11" points="873.2 490.47 765.76 430.12 762.06 436.15 868.38 496.79 873.2 490.47"/>
-        <circle id="MtM_circle" class="cls-11" cx="875.23" cy="496.59" r="22.5"/>
-        <text class="cls-2" transform="translate(858.22 502.33)"></text>
-    </g>
-    <g id="OB">
-        <polygon id="edge-26" data-name="edge" class="cls-11" points="884.57 440.73 762 428 761 435 882.66 448.44 884.57 440.73"/>
-        <circle id="OB_circle" class="cls-11" cx="888.86" cy="445.54" r="22.5"/>
-        <text class="cls-2" transform="translate(879.68 451.44) rotate(-1)"></text>
-    </g>
-    <g id="Mng">
-        <polygon id="edge-27" data-name="edge" class="cls-11" points="755.57 422.73 699.26 416.98 698.47 424.88 753.66 430.44 755.57 422.73"/>
-        <circle id="Mng_circle" class="cls-11" cx="759.86" cy="427.54" r="22.5"/>
-        <text class="cls-2" transform="translate(744.72 433.54) rotate(-1)"></text>
-    </g>
-    <g id="OM">
-        <polygon id="edge-28" data-name="edge" class="cls-11" points="805.95 501.66 754.54 477.98 751.23 485.2 801.64 508.34 805.95 501.66"/>
-        <circle id="OM_circle" class="cls-11" cx="808.45" cy="507.6" r="22.5"/>
-        <text class="cls-2" transform="translate(797.02 514.07) rotate(-3.56)"></text>
-    </g>
-    <g id="OR">
-        <polygon id="edge-29" data-name="edge" class="cls-11" points="744.95 469.68 693.54 446 690.23 453.22 740.65 476.36 744.95 469.68"/>
-        <circle id="OR_circle" class="cls-11" cx="747.45" cy="475.62" r="22.5"/>
-        <text class="cls-2" transform="translate(738.01 481.96) rotate(-3.56)"></text>
-    </g>
-    <g id="FM-2" data-name="FM">
-        <circle id="FM_circle-2" data-name="FM_circle" class="cls-11" cx="946.5" cy="315.5" r="22.5"/>
-        <text class="cls-2" transform="matrix(1, -0.01, 0.01, 1, 931.26, 321.58)"></text>
-    </g>
-</g>
-<g id="Center">
-    <path class="cls-12" d="M582.23,423.71a50,50,0,0,1,18.49-47.39l-11-13.44a64.27,64.27,0,0,0-8.43,8.23,67.58,67.58,0,0,0,7.11,95.32l10.87-12.62A49.82,49.82,0,0,1,582.23,423.71Z"/>
-    <path class="cls-13" d="M639.63,465a49.91,49.91,0,0,1-40.35-11.19l-10.87,12.62a63.28,63.28,0,0,0,9.56,6.88,67.6,67.6,0,0,0,92.65-23.56L675,440.46A49.89,49.89,0,0,1,639.63,465Z"/>
-    <path class="cls-14" d="M656.44,352,650,369.15a50,50,0,0,1,25,71.31l15.63,9.29a64,64,0,0,0,5.11-10.61A67.58,67.58,0,0,0,656.44,352Z"/>
-    <path class="cls-15" d="M623.53,366.31A49.79,49.79,0,0,1,650,369.15L656.44,352c-23.25-8.81-47.46-4.86-66.71,10.88l11,13.44A49.73,49.73,0,0,1,623.53,366.31Z"/>
+<g id="Object">
+	<g id="Green">
+		<g id="MSLTP">
+			<polygon fill="#9ACACE" points="271.9,636 418.9,733 414.9,740 265.9,644 			"/>
+			<path fill="#9ACACE" d="M301.9,581l117,145c0,0-4,9-6,7s-117-149-117-149L301.9,581z"/>
+			<polygon fill="#9ACACE" points="454.9,600 418.9,733 412.9,733 441.9,598 			"/>
+			<polygon fill="#9ACACE" points="379.9,550 424.9,743 414.9,740 370.9,550 			"/>
+			<polygon fill="#9ACACE" points="520.9,575 428.9,736 418.9,733 510.9,572 			"/>
+			<circle id="MSLTP_x5F_circle" fill="#9ACACE" cx="419.4" cy="735.5" r="22.5"/>
+			<text id="course_34_" transform="matrix(0.9999 -1.566269e-02 1.566269e-02 0.9999 404.8404 733.2244)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MSL</tspan><tspan x="6.3" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">TP</tspan></text>
+		</g>
+		<g id="Ccl2">
+			<circle id="Ccl2_x5F_circle" fill="#9ACACE" cx="443.4" cy="600.5" r="22.5"/>
+			<text id="course_30_" transform="matrix(0.9999 -1.566269e-02 1.566269e-02 0.9999 433.4531 598.1522)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Ccl</tspan><tspan x="0.3" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(II)</tspan></text>
+		</g>
+		<g id="Ccl1">
+			<polygon id="edge_26_" fill="#9ACACE" points="378.7,544.7 384.9,474 378.9,472 370.9,543.6 			"/>
+			<circle id="Ccl1_x5F_circle" fill="#9ACACE" cx="374.4" cy="549.5" r="22.5"/>
+			<text id="course_29_" transform="matrix(0.9999 -1.566269e-02 1.566269e-02 0.9999 364.4531 547.1522)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Ccl</tspan><tspan x="2.8" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="Stat2">
+			<circle id="Stat2_x5F_circle" fill="#9ACACE" cx="265.4" cy="638.5" r="22.5"/>
+			<text id="course_31_" transform="matrix(0.9999 -1.566269e-02 1.566269e-02 0.9999 250.6158 636.228)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Stat</tspan><tspan x="5.1" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(II)</tspan></text>
+		</g>
+		<g id="Stat1">
+			<polygon id="edge_25_" fill="#9ACACE" points="302.3,581.1 362.9,471 358.9,468 295.5,576.8 			"/>
+			<circle id="Stat1_x5F_circle" fill="#9ACACE" cx="296.3" cy="583.6" r="22.5"/>
+			<text id="course_28_" transform="matrix(0.9996 2.987289e-02 -2.987289e-02 0.9996 281.732 581.0581)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Stat </tspan><tspan x="7.6" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="MM_1_">
+			<polygon id="edge_27_" fill="#9ACACE" points="513.1,563.5 432.9,466.8 428.6,469.4 506.7,568.2 			"/>
+			<circle id="MM_x5F_circle_1_" fill="#9ACACE" cx="513.4" cy="570" r="22.5"/>
+
+				<text id="course_32_" transform="matrix(0.9999 1.600062e-02 -1.600062e-02 0.9999 500.1757 575.1193)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MM</text>
+		</g>
+		<g id="DM">
+			<polygon id="edge_28_" fill="#9ACACE" points="434.2,536.5 409.4,469.9 403.1,470.7 426.6,538.9 			"/>
+			<circle id="DM_x5F_circle" fill="#9ACACE" cx="432.3" cy="542.6" r="22.5"/>
+
+				<text id="course_33_" transform="matrix(0.9991 -4.275507e-02 4.275507e-02 0.9991 421.3832 548.1674)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DM</text>
+		</g>
+	</g>
+	<g id="Blue">
+		<g id="IMFP">
+			<polygon id="edge" fill="#99ACBB" points="310.9,247 362.8,353.9 355.5,357.9 301.9,252 			"/>
+			<circle id="IMFP_x5F_circle" fill="#99ACBB" cx="305.6" cy="243.2" r="22.5"/>
+
+				<text id="course_10_" transform="matrix(0.9678 -0.2516 0.2516 0.9678 289.207 253.4719)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IMFP</text>
+		</g>
+		<g id="PoIM1">
+			<polygon id="edge_11_" fill="#99ACBB" points="332.9,177 378.9,353 370.9,354 322.9,181 			"/>
+			<circle id="PoIM1_x5F_circle" fill="#99ACBB" cx="325.2" cy="167.5" r="22.5"/>
+			<text id="course_11_" transform="matrix(0.9678 -0.2516 0.2516 0.9678 307.6568 169.8727)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PoIM</tspan><tspan x="10.6" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="PoIM2">
+			<polygon id="edge_12_" fill="#99ACBB" points="312.9,117 324.9,153 316.9,155 302.6,118.3 			"/>
+			<circle id="PoIM2_x5F_circle" fill="#99ACBB" cx="306.2" cy="109.5" r="22.5"/>
+			<text id="course_12_" transform="matrix(0.9678 -0.2516 0.2516 0.9678 288.6421 111.8712)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PoIM</tspan><tspan x="8.1" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(II)</tspan></text>
+		</g>
+		<g id="MPD1">
+			<polygon id="edge_13_" fill="#99ACBB" points="424.9,227 404.9,350 396.9,348 415.9,225 			"/>
+			<circle id="MPD1_x5F_circle" fill="#99ACBB" cx="420" cy="226.5" r="22.5"/>
+			<text id="course_13_" transform="matrix(0.9994 3.569945e-02 -3.569945e-02 0.9994 404.1844 225.0512)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MPD </tspan><tspan x="8.5" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="MPD2_2_">
+			<polygon id="edge_14_" fill="#99ACBB" points="486.9,178 414.9,363 408.9,362 475.9,174 			"/>
+			<circle id="MPD2_x5F_circle" fill="#99ACBB" cx="483" cy="175.5" r="22.5"/>
+			<text id="course_14_" transform="matrix(0.9994 3.569945e-02 -3.569945e-02 0.9994 468.1844 173.0512)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MPD </tspan><tspan x="6.1" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(II)</tspan></text>
+		</g>
+		<g id="SILP">
+			<circle id="SILP_x5F_circle" fill="#99ACBB" cx="383" cy="95.5" r="22.5"/>
+
+				<text id="course_15_" transform="matrix(0.9994 3.569945e-02 -3.569945e-02 0.9994 367.9307 101.0549)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SILP</text>
+		</g>
+	</g>
+	<g id="Red">
+		<g id="CN">
+			<polygon id="edge_10_" fill="#FF9999" points="296.6,495.1 340.4,459.3 335.4,453.1 292.5,488.3 			"/>
+			<circle id="CN_x5F_circle" fill="#FF9999" cx="290.2" cy="494.8" r="22.5"/>
+
+				<text id="course_9_" transform="matrix(1 7.428121e-03 -7.428121e-03 1 280.531 500.5015)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">CN</text>
+		</g>
+		<g id="ALG">
+			<polygon id="edge_9_" fill="#FF9999" points="148.8,498.2 202.5,480.2 199.9,472.6 147.4,490.4 			"/>
+			<circle id="ALG_x5F_circle" fill="#FF9999" cx="142.9" cy="495.6" r="22.5"/>
+
+				<text id="course_8_" transform="matrix(0.949 -0.3152 0.3152 0.949 133.2205 504.9724)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ALG</text>
+		</g>
+		<g id="DS">
+			<polygon id="edge_8_" fill="#FF9999" points="211.8,476.2 265.5,458.2 262.9,450.6 210.4,468.4 			"/>
+			<circle id="DS_x5F_circle" fill="#FF9999" cx="205.9" cy="473.6" r="22.5"/>
+
+				<text id="course_7_" transform="matrix(0.949 -0.3152 0.3152 0.949 200.375 481.591)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DS</text>
+		</g>
+		<g id="PD_1_">
+			<polygon id="edge_7_" fill="#FF9999" points="272.9,458.5 326.6,440.5 324,433 271.5,450.7 			"/>
+			<circle id="PD_x5F_circle_1_" fill="#FF9999" cx="267" cy="455.9" r="22.5"/>
+
+				<text id="course_6_" transform="matrix(0.949 -0.3152 0.3152 0.949 261.043 464.1138)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PD</text>
+		</g>
+		<g id="DB_1_">
+			<polygon id="edge_6_" fill="#FF9999" points="201.5,412.2 258,414.2 258.3,406.3 202.9,404.4 			"/>
+			<circle id="DB_x5F_circle_1_" fill="#FF9999" cx="196.9" cy="407.7" r="22.5"/>
+
+				<text id="course_5_" transform="matrix(0.9992 3.967613e-02 -3.967613e-02 0.9992 188.3359 413.2012)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DB</text>
+		</g>
+		<g id="OS">
+			<polygon id="edge_5_" fill="#FF9999" points="266.3,415.9 322.9,416.8 323.1,408.9 267.6,408.1 			"/>
+			<circle id="OS_x5F_circle" fill="#FF9999" cx="261.7" cy="411.5" r="22.5"/>
+
+				<text id="course_4_" transform="matrix(0.9998 1.919349e-02 -1.919349e-02 0.9998 253.6423 417.2397)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OS</text>
+		</g>
+		<g id="COS">
+			<polygon id="edge_4_" fill="#FF9999" points="273.2,373.4 325.8,394.3 328.7,387 277.1,366.5 			"/>
+			<circle id="COS_x5F_circle" fill="#FF9999" cx="270.4" cy="367.6" r="22.5"/>
+
+				<text id="course_3_" transform="matrix(1 0 0 1 257.7298 374.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">COS</text>
+		</g>
+		<g id="SPM">
+			<circle id="SPM_x5F_circle" fill="#FF9999" cx="196.4" cy="243.5" r="22.5"/>
+
+				<text id="course_2_" transform="matrix(1 0 0 1 181.554 249.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SPM</text>
+		</g>
+		<g id="SDM">
+			<polygon id="edge_2_" fill="#FF9999" points="247.2,292.9 290.5,329.4 295.6,323.3 253.2,287.6 			"/>
+			<circle id="SDM_x5F_circle" fill="#FF9999" cx="246.4" cy="286.5" r="22.5"/>
+
+				<text id="course_1_" transform="matrix(1 0 0 1 231.4046 292.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SDM</text>
+		</g>
+		<g id="SA">
+			<polygon id="edge_1_" fill="#FF9999" points="295.2,335.9 338.5,372.4 343.6,366.3 301.2,330.6 			"/>
+			<circle id="SA_x5F_circle" fill="#FF9999" cx="294.4" cy="329.5" r="22.5"/>
+
+				<text id="course" transform="matrix(1 0 0 1 286.1917 335.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SA</text>
+		</g>
+		<g id="IR">
+			<circle id="IR_x5F_circle" fill="#FF9999" cx="155.4" cy="321.5" r="22.5"/>
+
+				<text id="course_35_" transform="matrix(1 0 0 1 148.8421 327.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IR</text>
+		</g>
+		<g id="GD">
+			<circle id="GD_x5F_circle" fill="#FF9999" cx="124.4" cy="235.5" r="22.5"/>
+
+				<text id="course_36_" transform="matrix(1 0 0 1 115.6292 241.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">GD</text>
+		</g>
+		<g id="_x33_DP">
+			<circle id="_x33_DP_x5F_circle" fill="#FF9999" cx="90.4" cy="297.5" r="22.5"/>
+
+				<text id="course_37_" transform="matrix(1 0 0 1 77.5042 303.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">3DP</text>
+		</g>
+		<g id="BDBA">
+			<circle id="BDBA_x5F_circle" fill="#FF9999" cx="74.4" cy="367.5" r="22.5"/>
+
+				<text id="course_38_" transform="matrix(1 0 0 1 56.2171 373.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">BDBA</text>
+		</g>
+		<g id="_x33_DCR">
+			<circle id="_x33_DCR_x5F_circle" fill="#FF9999" cx="67.4" cy="445.5" r="22.5"/>
+
+				<text id="course_39_" transform="matrix(1 0 0 1 50.1917 451.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">3DCR</text>
+		</g>
+		<g id="IS">
+			<circle id="IS_x5F_circle" fill="#FF9999" cx="183.4" cy="574.5" r="22.5"/>
+
+				<text id="course_40_" transform="matrix(1 0 0 1 177.3665 580.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IS</text>
+		</g>
+		<g id="ToC">
+			<circle id="ToC_x5F_circle" fill="#FF9999" cx="82.4" cy="517.5" r="22.5"/>
+
+				<text id="course_41_" transform="matrix(1 0 0 1 70.4417 523.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ToC</text>
+		</g>
+		<g id="PL">
+			<circle id="PL_x5F_circle" fill="#FF9999" cx="238.4" cy="535.5" r="22.5"/>
+
+				<text id="course_42_" transform="matrix(1 0 0 1 230.3421 541.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PL</text>
+		</g>
+		<g id="IE">
+			<circle id="IE_x5F_circle" fill="#FF9999" cx="104.4" cy="572.5" r="22.5"/>
+
+				<text id="course_43_" transform="matrix(1 0 0 1 98.3294 578.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IE</text>
+		</g>
+		<g id="HCI">
+			<circle id="HCI_x5F_circle" fill="#FF9999" cx="140.4" cy="619.5" r="22.5"/>
+
+				<text id="course_44_" transform="matrix(1 0 0 1 129.1917 625.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">HCI</text>
+		</g>
+	</g>
+	<g id="Yellow">
+		<g id="FM">
+			<polygon id="edge_16_" fill="#F8DA9E" points="570.7,241.1 517.5,260.3 520.2,267.8 572.3,248.9 			"/>
+			<circle id="FM_x5F_circle" fill="#F8DA9E" cx="579.4" cy="238.5" r="22.5"/>
+
+				<text id="course_19_" transform="matrix(0.9859 0.1675 -0.1675 0.9859 566.5363 241.5181)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">FM</text>
+			<polygon id="edge_17_" fill="#F8DA9E" points="569.6,243.7 555.6,298.5 563.3,300.5 577,246.7 			"/>
+		</g>
+		<g id="MIS">
+			<polygon id="edge_3_" fill="#F8DA9E" points="468.3,317.4 431.3,360.2 437.3,365.4 473.5,323.4 			"/>
+			<circle id="MIS_x5F_circle" fill="#F8DA9E" cx="474.7" cy="316.6" r="22.5"/>
+
+				<text id="course_16_" transform="matrix(0.9859 0.1675 -0.1675 0.9859 459.3513 319.2076)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MIS</text>
+		</g>
+		<g id="Acct1">
+			<polygon id="edge_15_" fill="#F8DA9E" points="543,303.6 445.9,373 448.9,377 546.4,310.8 			"/>
+			<circle id="Acct1_x5F_circle" fill="#F8DA9E" cx="549.4" cy="304.6" r="22.5"/>
+			<text id="course_17_" transform="matrix(0.9999 -1.279673e-02 1.279673e-02 0.9999 533.2446 303.2374)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Acct </tspan><tspan x="8.1" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="Acct2">
+			<circle id="Acct2_x5F_circle" fill="#F8DA9E" cx="513.4" cy="267.6" r="22.5"/>
+			<text id="course_18_" transform="matrix(0.9999 -1.279673e-02 1.279673e-02 0.9999 497.2484 266.2226)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Acct </tspan><tspan x="5.6" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(II)</tspan></text>
+		</g>
+		<g id="Eco1">
+			<polygon id="edge_18_" fill="#F8DA9E" points="512,373.8 458,390.7 460.4,398.3 513.3,381.7 			"/>
+			<circle id="Eco1_x5F_circle" fill="#F8DA9E" cx="517.9" cy="376.5" r="22.5"/>
+			<text id="course_20_" transform="matrix(0.9987 5.127607e-02 -5.127607e-02 0.9987 506.2646 373.671)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Eco </tspan><tspan x="4.8" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">(I)</tspan></text>
+		</g>
+		<g id="SM">
+			<polygon id="edge_23_" fill="#F8DA9E" points="639,387.7 520.7,422.2 522.5,429 640.2,395.6 			"/>
+			<circle id="SM_x5F_circle" fill="#F8DA9E" cx="644.8" cy="390.5" r="22.5"/>
+
+				<text id="course_25_" transform="matrix(0.9989 -4.760430e-02 4.760430e-02 0.9989 635.0378 396.568)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SM</text>
+		</g>
+		<g id="MtM">
+			<polygon id="edge_24_" fill="#F8DA9E" points="632.1,490.5 524.7,430.1 521,436.2 627.3,496.8 			"/>
+			<circle id="MtM_x5F_circle" fill="#F8DA9E" cx="634.1" cy="496.6" r="22.5"/>
+
+				<text id="course_26_" transform="matrix(1 -2.194629e-05 2.194629e-05 1 617.1284 502.3309)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MtM</text>
+		</g>
+		<g id="OB">
+			<polygon id="edge_22_" fill="#F8DA9E" points="643.5,440.7 520.9,428 519.9,435 641.6,448.4 			"/>
+			<circle id="OB_x5F_circle" fill="#F8DA9E" cx="647.8" cy="445.5" r="22.5"/>
+
+				<text id="course_24_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 638.5879 451.4417)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OB</text>
+		</g>
+		<g id="Mng">
+			<polygon id="edge_19_" fill="#F8DA9E" points="514.5,422.7 458.2,417 457.4,424.9 512.6,430.4 			"/>
+			<circle id="Mng_x5F_circle" fill="#F8DA9E" cx="518.8" cy="427.5" r="22.5"/>
+
+				<text id="course_21_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 503.6313 433.5442)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Mng</text>
+		</g>
+		<g id="OM">
+			<polygon id="edge_21_" fill="#F8DA9E" points="564.9,501.7 513.4,478 510.1,485.2 560.6,508.3 			"/>
+			<circle id="OM_x5F_circle" fill="#F8DA9E" cx="567.4" cy="507.6" r="22.5"/>
+
+				<text id="course_23_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 555.9271 514.0656)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OM</text>
+		</g>
+		<g id="OR">
+			<polygon id="edge_20_" fill="#F8DA9E" points="503.9,469.7 452.5,446 449.1,453.2 499.6,476.4 			"/>
+			<circle id="OR_x5F_circle" fill="#F8DA9E" cx="506.4" cy="475.6" r="22.5"/>
+
+				<text id="course_22_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 496.9164 481.9635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OR</text>
+		</g>
+		<g id="FM_1_">
+			<circle id="FM_x5F_circle_1_" fill="#F8DA9E" cx="705.4" cy="315.5" r="22.5"/>
+
+				<text id="course_27_" transform="matrix(0.9999 -1.242842e-02 1.242842e-02 0.9999 690.1734 321.5838)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ISIM</text>
+		</g>
+	</g>
+	<g id="Center">
+		<path fill="#CC3333" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="10" d="M341.1,423.7c-3-18.6,4.6-36.5,18.5-47.4
+			l-11-13.4c-3.2,2.6-5.7,5.1-8.4,8.2c-24.4,28.3-21.2,71,7.1,95.3l10.9-12.6C349.4,446.4,343.1,435.9,341.1,423.7z"/>
+		<path fill="#008490" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="10" d="M398.5,465c-15,2.5-29.6-2.1-40.4-11.2
+			l-10.9,12.6c3.1,2.7,6,4.8,9.6,6.9c32.1,19.1,73.6,8.5,92.6-23.6l-15.6-9.3C426.7,453.1,414,462.5,398.5,465z"/>
+		<path fill="#FF9933" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="10" d="M415.4,352l-6.5,17.2c15.8,6.3,28,20.4,31,38.5
+			c1.9,11.8-0.4,23.3-5.9,32.9l15.6,9.3c2.1-3.6,3.6-6.7,5.1-10.6C467.9,404.2,450.3,365.2,415.4,352z"/>
+		<path fill="#006699" stroke="#FFFFFF" stroke-width="5" stroke-miterlimit="10" d="M382.4,366.3c9.2-1.5,18.3-0.4,26.4,2.8
+			l6.5-17.2c-23.3-8.8-47.5-4.9-66.7,10.9l11,13.4C366.1,371.3,373.8,367.7,382.4,366.3z"/>
+	</g>
 </g>
 </svg>
 `
