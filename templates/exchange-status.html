@@ -416,8 +416,8 @@
                 text_div.scrollTop = text_div.scrollHeight;
             }
             else{
+                $(this).next().hide();
                 $(this).next().addClass("hide_message");
-                $(this).next().slideOut(4000);
             }
         });
     }
