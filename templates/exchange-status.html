@@ -220,8 +220,8 @@
     <td colspan="8">
         <!-- normal input group with button -->
         <div class="input-group">
-            <input type="text" class="form-input" placeholder="{{ if $.En }}Type some message!{{ else }}寫些東西吧！{{end}}">
-            <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.id}}>Submit</button>
+            <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
+            <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.Id}}>Submit</button>
         </div>
     </td>
             {{ range $idx, $m := $r.Messages }}
