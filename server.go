@@ -75,11 +75,13 @@ func main() {
 	likeExchange := precheck(likeExchangeHandler)
 	statusExchange := precheck(statusExchangeHandler)
 	browseExchange := precheck(browseExchangeHandler)
+	messageExchange := precheck(messageExchangeHandler)
 	http.Handle("/exchange/", exchange)
 	http.Handle("/exchange/new/", newExchange)
 	http.Handle("/exchange/like/", likeExchange)
 	http.Handle("/exchange/status/", statusExchange)
 	http.Handle("/exchange/browse/", browseExchange)
+	http.Handle("/exchange/message/", messageExchange)
 
 	// ==================== Account ====================
 	account := precheck(accountHandler)

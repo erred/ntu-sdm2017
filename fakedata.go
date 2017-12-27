@@ -11,7 +11,7 @@ func fakeData() error {
 	// Create predifined users here
 	// userid , username, email
 	account := [][]string{
-		[]string{"0x000", "Winfred Royale", "x@example.com"},
+	// []string{"0x000", "Winfred Royale", "x@example.com"},
 	}
 	for _, a := range account {
 		_, err := DB.Exec("INSERT INTO user (user, name, email) VALUES (?, ?, ?)", a[0], a[1], a[2])
@@ -38,7 +38,7 @@ func fakeData() error {
 	// create trees owned by user here
 	// userid, treeid, state
 	tree := [][]string{
-		[]string{"0x000", "tree01", tree01state},
+	// []string{"0x000", "tree01", tree01state},
 	}
 	for _, t := range tree {
 		_, err := DB.Exec("INSERT INTO tree (user, treeid, state) VALUES (?, ?, ?)", t[0], t[1], t[2])
