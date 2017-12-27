@@ -384,7 +384,8 @@
         });
     }
     function set_message() {
-        $(".message_text_section").scrollTop = $(".message_text_section").scrollHeight;
+        var text_div = document.querySelector('.message_text_section');
+        text_div.scrollTop = text_div.scrollHeight;
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){
