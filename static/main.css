@@ -168,7 +168,7 @@ svg text{
     height: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-top:20px !important; 
+    padding-top:20px !important;
     padding-bottom:20px !important;
     border: 2.5px solid #70A372 !important;
     border-radius: 6px;
@@ -186,7 +186,9 @@ svg text{
     padding: 20px 15px 3px 15px;
     color: #FFFFFF;
 }
-
+.card .card-image{
+    height: 75%;
+}
 
 /* ================== exchange ================ */
 .liked_tree{
