@@ -427,7 +427,7 @@
         });
         $(".submit_input").on('keyup', function (e) {
             if (e.keyCode == 13) {
-                send_message();
+                send_message($(this));
             }
         });
     }
