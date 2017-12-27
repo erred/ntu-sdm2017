@@ -363,7 +363,7 @@
     function set_submit_message() {
         $(".submit_button").on("click",function(){
 
-            var message = $(this).siblings("input").value;
+            var message = $(this).siblings("input").val();
             fetch('/exchange/message/'+$(this).attr("data-id")+'/?' + $.param({m: message}), {
                 method : 'get',
                 credentials : 'include'
