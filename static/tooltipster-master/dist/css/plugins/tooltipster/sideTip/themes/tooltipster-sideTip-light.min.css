@@ -17,41 +17,40 @@
     margin-left: 0;
     margin-top: -9px;
     width: 9px;
-    background: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light .tooltipster-arrow-background {
     border: 9px solid transparent;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-bottom .tooltipster-arrow-background {
-    border-bottom-color: #ededed;
+    border-bottom-color: #C3E2C3;
     top: 1px;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-left .tooltipster-arrow-background {
-    border-left-color: #ededed;
+    border-left-color: #C3E2C3;
     left: -1px;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-right .tooltipster-arrow-background {
-    border-right-color: #ededed;
+    border-right-color: #C3E2C3;
     left: 1px;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-top .tooltipster-arrow-background {
-    border-top-color: #ededed;
+    border-top-color: #C3E2C3;
     top: -1px;
 }
 .tooltipster-sidetip.tooltipster-light .tooltipster-arrow-border {
     border: 9px solid transparent;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-bottom .tooltipster-arrow-border {
-    border-bottom-color: #ccc;
+    border-bottom-color: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-left .tooltipster-arrow-border {
-    border-left-color: #ccc;
+    border-left-color: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-right .tooltipster-arrow-border {
-    border-right-color: #ccc;
+    border-right-color: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-top .tooltipster-arrow-border {
-    border-top-color: #ccc;
+    border-top-color: #C3E2C3;
 }
 .tooltipster-sidetip.tooltipster-light.tooltipster-bottom .tooltipster-arrow-uncropped {
     top: -9px;
