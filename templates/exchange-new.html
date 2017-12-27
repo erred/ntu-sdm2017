@@ -245,8 +245,8 @@
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
             new_exchange_data["mytree_name"] = $(this).siblings(".card-title").text();
-            new_exchange_data["mytree_state"] = JSON.parse($(this).parent().attr("data-state"));
-            new_exchange_data["atree_state"] = JSON.parse($("#step3 .select_skill").attr("data-state"));
+            new_exchange_data["mytree_state"] = $(this).parent().attr("data-state");
+            new_exchange_data["atree_state"] = $("#step3 .select_skill").attr("data-state");
             $("#table_mytree").text(new_exchange_data["mytree_name"]);
 
             // Append svg tree to step 2
@@ -268,7 +268,7 @@
         //My skill
         $("#step2 svg circle").on("click", function(){
 
-            skill_tree = new_exchange_data["mytree_state"];
+            skill_tree = JSON.parse(new_exchange_data["mytree_state"]);
             $(this).addClass("selected_skill");
 
             // Add data to new_exchange_data
@@ -284,7 +284,7 @@
         //New skill
         $("#step3 svg circle").on("click", function(){
 
-            skill_tree = new_exchange_data["atree_state"];
+            skill_tree = JSON.parse(new_exchange_data["atree_state"]);
             $(this).addClass("selected_skill");
 
             // Add data to new_exchange_data
