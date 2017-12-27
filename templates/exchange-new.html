@@ -280,11 +280,9 @@
                 $(".step-item").eq(2).addClass("active");
 
                 //Scroll to step3
-                $("html, body").animate({
-                    scrollTop:$("#step3").offset().top
-                }, 500);
+                window.location.href = "#step3";
                 // window.location.href = "#step3";
-                // $('main').animate({
+                // $('html, body').animate({
                 //     scrollTop:$("#step3").offset().top
                 // }, 500);
             }
@@ -317,8 +315,8 @@
                 $(".step-item").eq(3).addClass("active");
 
                 //Scroll to step4
-                window.location.href("#step4");
-                // $('main').animate({
+                window.location.href = "#step4";
+                // $('html, body').animate({
                 //     scrollTop:$("#step4").offset().top
                 // }, 500);
             }
