@@ -222,7 +222,7 @@
             <table class="table">
 
 
-                <tr><td height="80" class="message_text_section">
+                <tr><td class="message_text_section">
                         {{ range $idx, $m := $r.Messages }}
                             {{if $m.SenderIsMe}}
                     <div class="my_message message_text">{{ $m.Text }}</div>
@@ -352,12 +352,14 @@
                 credentials : "include"
             });
 
-            {{ if not .ExchangeList.Inprogress }}
-            $("#table-inprogress tbody").empty();
-            {{end}}
+            location.reload();
 
-            $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
-            $(this).parent().empty();
+            // {{ if not .ExchangeList.Inprogress }}
+            // $("#table-inprogress tbody").empty();
+            // {{end}}
+            //
+            // $("#table-inprogress tbody").append("<tr>"+$(this).parent().html()+"</tr>");
+            // $(this).parent().empty();
         });
     }
     function set_done_exchange() {
@@ -369,18 +371,19 @@
                 credentials : "include"
             });
 
-            {{ if not .ExchangeList.Complete }}
-            $("#table-complete tbody").empty();
-            {{end}}
+            location.reload();
 
-            // $(this).siblings(".delete_exchange_button").detach();
-            $("#table-complete tbody").append("<tr>");
-            for (var i = 0; i < 6; i++) {
-                $("#table-complete tbody").append("<td>"+$(this).siblings().eq(i).html()+"</td>");
-            }
-            $("#table-complete tbody").append("</tr>");
-
-            $(this).parent().empty();
+            // {{ if not .ExchangeList.Complete }}
+            // $("#table-complete tbody").empty();
+            // {{end}}
+            //
+            // $("#table-complete tbody").append("<tr>");
+            // for (var i = 0; i < 6; i++) {
+            //     $("#table-complete tbody").append("<td>"+$(this).siblings().eq(i).html()+"</td>");
+            // }
+            // $("#table-complete tbody").append("</tr>");
+            //
+            // $(this).parent().empty();
         });
     }
     function set_message() {
