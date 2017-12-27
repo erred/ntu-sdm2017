@@ -140,7 +140,7 @@
         $(".new_exchange_mytree_button").on('click', function(event){
             event.preventDefault();
 
-            $('html, body').animate({
+            $('main').animate({
                 scrollTop:$($.attr(this,'href')).offset().top
             }, 500);
         });
@@ -280,7 +280,7 @@
                 $(".step-item").eq(2).addClass("active");
 
                 //Scroll to step3
-                $('html, body').animate({
+                $('main').animate({
                     scrollTop:$("#step3").offset().top
                 }, 500);
             }
@@ -313,7 +313,7 @@
                 $(".step-item").eq(3).addClass("active");
 
                 //Scroll to step4
-                $('html, body').animate({
+                $('main').animate({
                     scrollTop:$("#step4").offset().top
                 }, 500);
             }
