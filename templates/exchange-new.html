@@ -38,7 +38,8 @@
 
                             <div class="columns">
                             {{ range $idx, $it := .MyTrees }}
-<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
+
+<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}" data-state="{{ $.it.State }}">
     <div class="card-image">
         {{ $it.Svg }}
     </div>
@@ -71,7 +72,7 @@
                                 {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
                                  - {{ $.TargetName }}
                             </h4>
-                            <div class="select_skill">
+                            <div class="select_skill" data-state="{{ $.TargetTree.State }}">
                                 {{ $.TargetTree.Svg }}
                             </div>
 	                	</div>
@@ -128,7 +129,8 @@
     var new_exchange_data = {};
 
     $(document).ready(function(){
-        // set_tree_id();
+
+        set_tree_id();
         // set_scroll_animate();
         set_step_active();
         set_selected_exchange_data();
@@ -136,9 +138,59 @@
     });
 
     function set_tree_id() {
-
+        set_step1_tree_id();
+        set_step2_tree_id();
+        set_step3_tree_id();
     }
+    function set_step1_tree_id() {
+        $(".card").each(function(){
+            var id = "mytree_" + $(this).attr("data-tree_id");
 
+            //card svg
+            $(this).children(".card-image").find("svg").attr("id","card_"+id);
+            $(this).children(".card-image").find("circle").each(function(){
+                // console.log($(this).attr("id"));
+                if ($(this).attr("id") != 'undefined') {
+                    $(this).attr("id",$(this).attr("id")+"_"+id);
+                    $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
+                }
+            });
+
+            // set_node_color($(this).attr("data-state"),id,$(this).attr("data-tree_id"));
+        });
+    }
+    function set_step2_tree_id() {
+        $("#step2 .select_skill").each(function(){
+            var id = "mytree_select";
+
+            //card svg
+            $(this).find("svg").attr("id",id);
+            $(this).find("circle").each(function(){
+                if ($(this).attr("id") != 'undefined') {
+                    $(this).attr("id",$(this).attr("id")+"_"+id);
+                    $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
+                }
+            });
+
+            // set_node_color($(this).attr("data-state"),id,$(this).attr("data-tree_id"));
+        });
+    }
+    function set_step3_tree_id(){
+        $("#step3 .select_skill").each(function(){
+            var id = "targettree_select";
+
+            //card svg
+            $(this).find("svg").attr("id",id);
+            $(this).find("circle").each(function(){
+                if ($(this).attr("id") != 'undefined') {
+                    $(this).attr("id",$(this).attr("id")+"_"+id);
+                    $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
+                }
+            });
+
+            // set_node_color($(this).attr("data-state"),id,$(this).attr("data-tree_id"));
+        });
+    }
     function set_scroll_animate() {
 
         //set scroll animate
@@ -177,6 +229,7 @@
             $("#step2 .select_skill").empty();
             $("#step2 .select_skill").append($(this).parent().siblings(".card-image").html());
             $("#step2 h4").append($(this).siblings(".card-title").text());
+            set_step2_tree_id();
 
             //Active the step item
             $(".step-item").removeClass("active");
