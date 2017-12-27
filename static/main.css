@@ -163,6 +163,17 @@ svg text{
     pointer-events: none;
 }
 
+.tooltip_button{
+    width: 100px;
+    margin-top: -15px;
+    border: 1px solid #008490 !important;
+    border-radius: 30px;
+}
+.tooltip_button:hover{
+    color: #fff !important;
+    background-color: #008490;
+}
+
 
 /* ================== exchange ================ */
 .liked_tree{
