@@ -39,7 +39,7 @@
         </div>
         {{ template "footer" }}
         <div class="tooltip_templates">
-            <span id="tooltip_content" style="text-align:center;">
+            <span id="tooltip_content_{{skill_id}}" style="text-align:center;">
                 <div class="tooltip_div">
                     <h4>blablabla</h4>
                     <pre>description description description<br>description description description</pre>
@@ -86,7 +86,12 @@
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
             $("#"+skill_id+"_circle").addClass("tooltip");
-            $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content");
+            $("#"+skill_id+"_circle").attr("data-tooltip-content","#tooltip_content_"+skill_id);
+            {{ if $.En }}
+            $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["EName"]);
+            {{ else }}
+            $("#tooltip_content_"+skill_id).children().first().children().text(skill_tree[skill_id]["CName"]);
+            {{end}}
 
             // Add learned skills
             if (skill_tree[skill_id]["status"] == 1) {
