@@ -102,10 +102,10 @@ var tree02svg = `
 	<g id="Green">
 		<g id="MSLTP">
 			<polygon fill="#9ACACE" points="271.9,636 418.9,733 414.9,740 265.9,644 			"/>
-			<path fill="#9ACACE" d="M301.9,581l117,145c0,0-4,9-6,7s-117-149-117-149L301.9,581z"/>
 			<polygon fill="#9ACACE" points="454.9,600 418.9,733 412.9,733 441.9,598 			"/>
 			<polygon fill="#9ACACE" points="379.9,550 424.9,743 414.9,740 370.9,550 			"/>
 			<polygon fill="#9ACACE" points="520.9,575 428.9,736 418.9,733 510.9,572 			"/>
+            <polygon fill="#9ACACE" points="299.9,584 424.9,736 417.9,740 293.9,592 			"/>
 			<circle id="MSLTP_circle" fill="#9ACACE" cx="419.4" cy="735.5" r="22.5"/>
 			<text id="course_34_" transform="matrix(0.9999 -1.566269e-02 1.566269e-02 0.9999 404.8404 733.2244)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MSL</tspan><tspan x="6.3" y="18" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">TP</tspan></text>
 		</g>
@@ -179,49 +179,41 @@ var tree02svg = `
 		<g id="ALG">
 			<polygon id="edge_9_" fill="#FF9999" points="148.8,498.2 202.5,480.2 199.9,472.6 147.4,490.4 			"/>
 			<circle id="ALG_circle" fill="#FF9999" cx="142.9" cy="495.6" r="22.5"/>
-
-				<text id="course_8_" transform="matrix(0.949 -0.3152 0.3152 0.949 133.2205 504.9724)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ALG</text>
+            <text id="course_8_" transform="matrix(0.949 -0.3152 0.3152 0.949 133.2205 504.9724)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ALG</text>
 		</g>
 		<g id="DS">
 			<polygon id="edge_8_" fill="#FF9999" points="211.8,476.2 265.5,458.2 262.9,450.6 210.4,468.4 			"/>
 			<circle id="DS_circle" fill="#FF9999" cx="205.9" cy="473.6" r="22.5"/>
-
-				<text id="course_7_" transform="matrix(0.949 -0.3152 0.3152 0.949 200.375 481.591)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DS</text>
+	        <text id="course_7_" transform="matrix(0.949 -0.3152 0.3152 0.949 200.375 481.591)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DS</text>
 		</g>
 		<g id="PD">
 			<polygon id="edge_7_" fill="#FF9999" points="272.9,458.5 326.6,440.5 324,433 271.5,450.7 			"/>
 			<circle id="PD_circle" fill="#FF9999" cx="267" cy="455.9" r="22.5"/>
-
-				<text id="course_6_" transform="matrix(0.949 -0.3152 0.3152 0.949 261.043 464.1138)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PD</text>
+            <text id="course_6_" transform="matrix(0.949 -0.3152 0.3152 0.949 261.043 464.1138)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PD</text>
 		</g>
 		<g id="DB">
 			<polygon id="edge_6_" fill="#FF9999" points="201.5,412.2 258,414.2 258.3,406.3 202.9,404.4 			"/>
 			<circle id="DB_circle" fill="#FF9999" cx="196.9" cy="407.7" r="22.5"/>
-
-				<text id="course_5_" transform="matrix(0.9992 3.967613e-02 -3.967613e-02 0.9992 188.3359 413.2012)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DB</text>
+            <text id="course_5_" transform="matrix(0.9992 3.967613e-02 -3.967613e-02 0.9992 188.3359 413.2012)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DB</text>
 		</g>
 		<g id="OS">
 			<polygon id="edge_5_" fill="#FF9999" points="266.3,415.9 322.9,416.8 323.1,408.9 267.6,408.1 			"/>
 			<circle id="OS_circle" fill="#FF9999" cx="261.7" cy="411.5" r="22.5"/>
-
-				<text id="course_4_" transform="matrix(0.9998 1.919349e-02 -1.919349e-02 0.9998 253.6423 417.2397)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OS</text>
+            <text id="course_4_" transform="matrix(0.9998 1.919349e-02 -1.919349e-02 0.9998 253.6423 417.2397)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OS</text>
 		</g>
 		<g id="COS">
 			<polygon id="edge_4_" fill="#FF9999" points="273.2,373.4 325.8,394.3 328.7,387 277.1,366.5 			"/>
 			<circle id="COS_circle" fill="#FF9999" cx="270.4" cy="367.6" r="22.5"/>
-
-				<text id="course_3_" transform="matrix(1 0 0 1 257.7298 374.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">COS</text>
+            <text id="course_3_" transform="matrix(1 0 0 1 257.7298 374.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">COS</text>
 		</g>
 		<g id="SPM">
 			<circle id="SPM_circle" fill="#FF9999" cx="196.4" cy="243.5" r="22.5"/>
-
-				<text id="course_2_" transform="matrix(1 0 0 1 181.554 249.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SPM</text>
+            <text id="course_2_" transform="matrix(1 0 0 1 181.554 249.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SPM</text>
 		</g>
 		<g id="SDM">
 			<polygon id="edge_2_" fill="#FF9999" points="247.2,292.9 290.5,329.4 295.6,323.3 253.2,287.6 			"/>
 			<circle id="SDM_circle" fill="#FF9999" cx="246.4" cy="286.5" r="22.5"/>
-
-				<text id="course_1_" transform="matrix(1 0 0 1 231.4046 292.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SDM</text>
+            <text id="course_1_" transform="matrix(1 0 0 1 231.4046 292.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SDM</text>
 		</g>
 		<g id="SA">
 			<polygon id="edge_1_" fill="#FF9999" points="295.2,335.9 338.5,372.4 343.6,366.3 301.2,330.6 			"/>
@@ -242,52 +234,44 @@ var tree02svg = `
 		</g>
 		<g id="BDBA">
 			<circle id="BDBA_circle" fill="#FF9999" cx="74.4" cy="367.5" r="22.5"/>
-
-				<text id="course_38_" transform="matrix(1 0 0 1 56.2171 373.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">BDBA</text>
+            <text id="course_38_" transform="matrix(1 0 0 1 56.2171 373.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">BDBA</text>
 		</g>
 		<g id="3DCR">
 			<circle id="3DCR_circle" fill="#FF9999" cx="67.4" cy="445.5" r="22.5"/>
-
-				<text id="course_39_" transform="matrix(1 0 0 1 50.1917 451.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">3DCR</text>
+            <text id="course_39_" transform="matrix(1 0 0 1 50.1917 451.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">3DCR</text>
 		</g>
 		<g id="IS">
 			<circle id="IS_circle" fill="#FF9999" cx="183.4" cy="574.5" r="22.5"/>
-
-				<text id="course_40_" transform="matrix(1 0 0 1 177.3665 580.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IS</text>
+            <text id="course_40_" transform="matrix(1 0 0 1 177.3665 580.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IS</text>
 		</g>
 		<g id="ToC">
 			<circle id="ToC_circle" fill="#FF9999" cx="82.4" cy="517.5" r="22.5"/>
-
-				<text id="course_41_" transform="matrix(1 0 0 1 70.4417 523.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ToC</text>
+            <text id="course_41_" transform="matrix(1 0 0 1 70.4417 523.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ToC</text>
 		</g>
 		<g id="PL">
 			<circle id="PL_circle" fill="#FF9999" cx="238.4" cy="535.5" r="22.5"/>
-
-				<text id="course_42_" transform="matrix(1 0 0 1 230.3421 541.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PL</text>
+            <text id="course_42_" transform="matrix(1 0 0 1 230.3421 541.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">PL</text>
 		</g>
 		<g id="IE">
 			<circle id="IE_circle" fill="#FF9999" cx="104.4" cy="572.5" r="22.5"/>
-
-				<text id="course_43_" transform="matrix(1 0 0 1 98.3294 578.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IE</text>
+	        <text id="course_43_" transform="matrix(1 0 0 1 98.3294 578.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">IE</text>
 		</g>
 		<g id="HCI">
 			<circle id="HCI_circle" fill="#FF9999" cx="140.4" cy="619.5" r="22.5"/>
-
-				<text id="course_44_" transform="matrix(1 0 0 1 129.1917 625.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">HCI</text>
+            <text id="course_44_" transform="matrix(1 0 0 1 129.1917 625.3071)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">HCI</text>
 		</g>
 	</g>
 	<g id="Yellow">
 		<g id="FM">
 			<polygon id="edge_16_" fill="#F8DA9E" points="570.7,241.1 517.5,260.3 520.2,267.8 572.3,248.9 			"/>
+            <polygon id="edge_17_" fill="#F8DA9E" points="569.6,243.7 555.6,298.5 563.3,300.5 577,246.7 			"/>
 			<circle id="FM_circle" fill="#F8DA9E" cx="579.4" cy="238.5" r="22.5"/>
             <text id="course_19_" transform="matrix(0.9859 0.1675 -0.1675 0.9859 566.5363 241.5181)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">FM</text>
-			<polygon id="edge_17_" fill="#F8DA9E" points="569.6,243.7 555.6,298.5 563.3,300.5 577,246.7 			"/>
 		</g>
 		<g id="MIS">
 			<polygon id="edge_3_" fill="#F8DA9E" points="468.3,317.4 431.3,360.2 437.3,365.4 473.5,323.4 			"/>
 			<circle id="MIS_circle" fill="#F8DA9E" cx="474.7" cy="316.6" r="22.5"/>
-
-				<text id="course_16_" transform="matrix(0.9859 0.1675 -0.1675 0.9859 459.3513 319.2076)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MIS</text>
+            <text id="course_16_" transform="matrix(0.9859 0.1675 -0.1675 0.9859 459.3513 319.2076)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MIS</text>
 		</g>
 		<g id="Acct1">
 			<polygon id="edge_15_" fill="#F8DA9E" points="543,303.6 445.9,373 448.9,377 546.4,310.8 			"/>
@@ -306,38 +290,32 @@ var tree02svg = `
 		<g id="SM">
 			<polygon id="edge_23_" fill="#F8DA9E" points="639,387.7 520.7,422.2 522.5,429 640.2,395.6 			"/>
 			<circle id="SM_circle" fill="#F8DA9E" cx="644.8" cy="390.5" r="22.5"/>
-
-				<text id="course_25_" transform="matrix(0.9989 -4.760430e-02 4.760430e-02 0.9989 635.0378 396.568)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SM</text>
+            <text id="course_25_" transform="matrix(0.9989 -4.760430e-02 4.760430e-02 0.9989 635.0378 396.568)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">SM</text>
 		</g>
 		<g id="MtM">
 			<polygon id="edge_24_" fill="#F8DA9E" points="632.1,490.5 524.7,430.1 521,436.2 627.3,496.8 			"/>
 			<circle id="MtM_circle" fill="#F8DA9E" cx="634.1" cy="496.6" r="22.5"/>
-
-				<text id="course_26_" transform="matrix(1 -2.194629e-05 2.194629e-05 1 617.1284 502.3309)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MtM</text>
+	        <text id="course_26_" transform="matrix(1 -2.194629e-05 2.194629e-05 1 617.1284 502.3309)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">MtM</text>
 		</g>
 		<g id="OB">
 			<polygon id="edge_22_" fill="#F8DA9E" points="643.5,440.7 520.9,428 519.9,435 641.6,448.4 			"/>
 			<circle id="OB_circle" fill="#F8DA9E" cx="647.8" cy="445.5" r="22.5"/>
-
-				<text id="course_24_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 638.5879 451.4417)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OB</text>
+            <text id="course_24_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 638.5879 451.4417)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OB</text>
 		</g>
 		<g id="Mng">
 			<polygon id="edge_19_" fill="#F8DA9E" points="514.5,422.7 458.2,417 457.4,424.9 512.6,430.4 			"/>
 			<circle id="Mng_circle" fill="#F8DA9E" cx="518.8" cy="427.5" r="22.5"/>
-
-				<text id="course_21_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 503.6313 433.5442)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Mng</text>
+            <text id="course_21_" transform="matrix(0.9998 -1.747232e-02 1.747232e-02 0.9998 503.6313 433.5442)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">Mng</text>
 		</g>
 		<g id="OM">
 			<polygon id="edge_21_" fill="#F8DA9E" points="564.9,501.7 513.4,478 510.1,485.2 560.6,508.3 			"/>
 			<circle id="OM_circle" fill="#F8DA9E" cx="567.4" cy="507.6" r="22.5"/>
-
-				<text id="course_23_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 555.9271 514.0656)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OM</text>
+            <text id="course_23_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 555.9271 514.0656)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OM</text>
 		</g>
 		<g id="OR">
 			<polygon id="edge_20_" fill="#F8DA9E" points="503.9,469.7 452.5,446 449.1,453.2 499.6,476.4 			"/>
 			<circle id="OR_circle" fill="#F8DA9E" cx="506.4" cy="475.6" r="22.5"/>
-
-				<text id="course_22_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 496.9164 481.9635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OR</text>
+            <text id="course_22_" transform="matrix(0.9981 -6.208936e-02 6.208936e-02 0.9981 496.9164 481.9635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OR</text>
 		</g>
 		<g id="ISIM">
 			<circle id="ISIM_circle" fill="#F8DA9E" cx="705.4" cy="315.5" r="22.5"/>
