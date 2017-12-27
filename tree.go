@@ -52,6 +52,11 @@ func treeHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
+		if len(trees) == 0 {
+			http.Redirect(w, r, "/tree/new/", http.StatusFound)
+			return
+		}
+
 		data := PageMultipleTree{page, trees}
 		templates.ExecuteTemplate(w, "tree-all.html", data)
 

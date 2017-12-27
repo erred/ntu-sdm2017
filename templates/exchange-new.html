@@ -69,7 +69,7 @@
                                  {{ if $.Page.En }}Choose the skill you want!!!{{ else }}選擇你想學習的技能{{end}}
                             </h2>
                             <h4 class="step_subtitle">
-                                {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.CName }} {{end}}
+                                {{ if $.Page.En }} {{ $.TargetTree.Name }} {{ else }} {{ $.TargetTree.Cname }} {{end}}
                                  - {{ $.TargetName }}
                             </h4>
                             <div class="select_skill" data-tree_id="{{ $.TargetTree.Treeid }}" data-state="{{ $.TargetTree.State }}">
@@ -129,9 +129,7 @@
     var new_exchange_data = {};
 
     $(document).ready(function(){
-
         set_tree_id();
-        // set_scroll_animate();
         set_step_active();
         set_selected_exchange_data();
         set_send_exchange_message();
@@ -214,17 +212,6 @@
             }
         }
     }
-    function set_scroll_animate() {
-
-        //set scroll animate
-        $(".step-item a, .each_exchange_step a").on('click', function(event){
-            event.preventDefault();
-
-            $('html, body').animate({
-                scrollTop:$($.attr(this,'href')).offset().top
-            }, 500);
-        });
-    }
 
     function set_step_active() {
         $(".step-item").on("click",function(){
@@ -245,7 +232,7 @@
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
             new_exchange_data["mytree_name"] = $(this).siblings(".card-title").text();
-            new_exchange_data["mytree_state"] = $(this).parent().attr("data-state");
+            new_exchange_data["mytree_state"] = $(this).parent().parent().attr("data-state");
             new_exchange_data["atree_state"] = $("#step3 .select_skill").attr("data-state");
             $("#table_mytree").text(new_exchange_data["mytree_name"]);
 
@@ -300,7 +287,7 @@
             // Add data to new_exchange_data
             new_exchange_data["user"] = {{ $.Target }};
             new_exchange_data["atree"] = {{$.TargetTree.Treeid}};
-            new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.CName}} {{ end }};
+            new_exchange_data["atree_name"] = {{ if $.Page.En}} {{$.TargetTree.Name}} {{ else }} {{$.TargetTree.Cname}} {{ end }};
             new_exchange_data["askill"] = {{ if $.Page.En}} skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] {{ else }}  skill_tree[$(this).parent().attr("id").split("_")[0]]["CFullName"] {{end}};
             $("#table_user").text({{ $.TargetName }});
             $("#table_atree").text(new_exchange_data["atree_name"]);
