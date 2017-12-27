@@ -128,32 +128,32 @@
         skill_tree = JSON.parse(skill_tree_string);
         if (tree_type == "tree02") {
             console.log(skill_tree);
-            // for (var skill_id in skill_tree) {
-            //     // console.log(skill_id);
-            //     $("#"+skill_id+"_"+id+" text").empty();
-            //     $("#modal_"+skill_id+"_"+id+" text").empty();
-            //
-            //     // Add text
-            //     {{ if $.En }}
-            //     $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["EName"]);
-            //     $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["EName"]);
-            //     {{else}}
-            //     $("#modal_"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["CName"]);
-            //     $("#modal_"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["CName"]);
-            //     {{end}}
-            //
-            //     // Add learned skills
-            //     if (skill_tree[skill_id]["status"] == 1) {
-            //         var tree_id = $(this).attr("data-tree_id");
-            //         $("#"+skill_id+"_circle_"+id).addClass("learned_skill");
-            //         $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill");
-            //
-            //         $("#"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
-            //         $("#"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
-            //         $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
-            //         $("#modal_"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
-            //     }
-            // }
+            for (var skill_id in skill_tree) {
+                // console.log(skill_id);
+                $("#"+skill_id+"_"+id+" text").empty();
+                $("#modal_"+skill_id+"_"+id+" text").empty();
+
+                // Add text
+                {{ if $.En }}
+                $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["EName"]);
+                $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["EName"]);
+                {{else}}
+                $("#modal_"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["CName"]);
+                $("#modal_"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["CName"]);
+                {{end}}
+
+                // Add learned skills
+                if (skill_tree[skill_id]["status"] == 1) {
+                    var tree_id = $(this).attr("data-tree_id");
+                    $("#"+skill_id+"_circle_"+id).addClass("learned_skill");
+                    $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill");
+
+                    $("#"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#modal_"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                }
+            }
         }
     }
     function set_resize_tree() {
