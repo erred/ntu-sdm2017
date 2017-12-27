@@ -10,6 +10,7 @@ run server:
         creates or cleans database
     -h
         show help message
+
 ```
 
 ## Framework
