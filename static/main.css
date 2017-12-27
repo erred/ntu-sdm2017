@@ -300,6 +300,7 @@ thead td{
     width: 30%;
     padding-left: 30px;
     padding-right: 30px;
+    line-height: 30px;
 }
 .my_message{
     float: right;
