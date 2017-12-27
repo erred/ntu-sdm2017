@@ -454,7 +454,8 @@
                 method : 'get',
                 credentials : 'include'
             });
-            location.reload();
+            // location.reload();
+            $("#message_text_"+this_element.attr("data-id")).append('<div class="my_message message_text">'+message+'</div>');
         }
     }
 
