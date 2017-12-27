@@ -245,7 +245,7 @@
             // $(this).addClass("selected_new_exchange_mytree");
             new_exchange_data["mytree"] = $(this).parent().attr("data-tree_id");
             new_exchange_data["mytree_name"] = $(this).siblings(".card-title").text();
-            new_exchange_data["mytree_state"] = $(this).parent().attr("data-state");
+            new_exchange_data["mytree_state"] = $(this).parent().parent().attr("data-state");
             new_exchange_data["atree_state"] = $("#step3 .select_skill").attr("data-state");
             $("#table_mytree").text(new_exchange_data["mytree_name"]);
 
