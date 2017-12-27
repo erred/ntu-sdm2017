@@ -147,7 +147,9 @@
                     $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill");
 
                     $("#"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
                     $("#modal_"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#modal_"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);                    
                 }
             }
         }
