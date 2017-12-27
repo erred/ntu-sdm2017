@@ -235,7 +235,7 @@
                     <td colspan="8">
                         <!-- normal input group with button -->
                         <div class="input-group">
-                            <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
+                            <input type="text" class="form-input submit_input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
                             <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.Id}}>Submit</button>
                         </div>
                     </td>
@@ -423,19 +423,26 @@
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){
-
-            var message = $(this).siblings("input").val();
-            if (message.length > 30) {
-                alert({{ if $.Page.En }}"Your messages have to be less than 30 words!"{{ else }}"每則訊息不能超過30個字！"{{end}});
-            }
-            else{
-                fetch('/exchange/message/'+$(this).attr("data-id")+'/?' + $.param({m: message}), {
-                    method : 'get',
-                    credentials : 'include'
-                });
-                location.reload();
+            send_message();
+        });
+        $(".submit_input").on('keyup', function (e) {
+            if (e.keyCode == 13) {
+                send_message();
             }
         });
+    }
+    function send_message() {
+        var message = $(this).siblings("input").val();
+        if (message.length > 30) {
+            alert({{ if $.Page.En }}"Your messages have to be less than 30 words!"{{ else }}"每則訊息不能超過30個字！"{{end}});
+        }
+        else{
+            fetch('/exchange/message/'+$(this).attr("data-id")+'/?' + $.param({m: message}), {
+                method : 'get',
+                credentials : 'include'
+            });
+            location.reload();
+        }
     }
 
 </script>
