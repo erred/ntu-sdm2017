@@ -423,7 +423,7 @@
     }
     function set_submit_message() {
         $(".submit_button").on("click",function(){
-            send_message();
+            send_message($(this));
         });
         $(".submit_input").on('keyup', function (e) {
             if (e.keyCode == 13) {
@@ -431,13 +431,13 @@
             }
         });
     }
-    function send_message() {
-        var message = $(this).siblings("input").val();
+    function send_message(this_element) {
+        var message = this_element.siblings("input").val();
         if (message.length > 30) {
             alert({{ if $.Page.En }}"Your messages have to be less than 30 words!"{{ else }}"每則訊息不能超過30個字！"{{end}});
         }
         else{
-            fetch('/exchange/message/'+$(this).attr("data-id")+'/?' + $.param({m: message}), {
+            fetch('/exchange/message/'+this_element.attr("data-id")+'/?' + $.param({m: message}), {
                 method : 'get',
                 credentials : 'include'
             });
