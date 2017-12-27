@@ -201,44 +201,45 @@
                                     </tr>
                                     {{ else }}
                                     {{ range $idx, $r := .ExchangeList.Inprogress }}
-<tr class="inprogress_tr">
-    <td>{{ $r.U1.Name }}</td>
-    <td>{{ $r.U1.Tree }}</td>
-    <td>{{ $r.U1.Skill }}</td>
-    <td>{{ $r.U2.Name }}</td>
-    <td>{{ $r.U2.Tree }}</td>
-    <td>{{ $r.U2.Skill }}</td>
-    <!-- done -->
-    <td class="done_exchange_button" data-done_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
-    <!-- reject -->
-    <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
-    <td>
+<table class="table">
+    <tr class="inprogress_tr">
+        <td>{{ $r.U1.Name }}</td>
+        <td>{{ $r.U1.Tree }}</td>
+        <td>{{ $r.U1.Skill }}</td>
+        <td>{{ $r.U2.Name }}</td>
+        <td>{{ $r.U2.Tree }}</td>
+        <td>{{ $r.U2.Skill }}</td>
+        <!-- done -->
+        <td class="done_exchange_button" data-done_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
+        <!-- reject -->
+        <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+        <td>
 
-    </td>
-</tr>
-<tr class="message_td">
-    <td colspan="8">
-        <table  id="table-inprogress" class="table">
-            <tr>
-                <td colspan="8">
-                    <!-- normal input group with button -->
-                    <div class="input-group">
-                        <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
-                        <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.Id}}>Submit</button>
-                    </div>
-                </td>
-            </tr>
-                    {{ range $idx, $m := $r.Messages }}
-                        {{if $m.SenderIsMe}}
-            <tr><td colspan="3" class="my_message message_text">{{ $m.Text }}</td></tr>
-                        {{else}}
-            <tr><td colspan="3" class="recieved_message message_text">{{ $m.Text }}</td></tr>
-                        {{end}}
-                    {{ end }}
-        </table>
-    </td>
-
-</tr>
+        </td>
+    </tr>
+    <tr class="message_td">
+        <td colspan="8">
+            <table class="table">
+                <tr>
+                    <td colspan="8">
+                        <!-- normal input group with button -->
+                        <div class="input-group">
+                            <input type="text" class="form-input" placeholder={{ if $.En }}"Type some message!"{{ else }}"寫些東西吧！"{{end}}>
+                            <button class="btn btn-primary input-group-btn submit_button" data-id={{$r.Id}}>Submit</button>
+                        </div>
+                    </td>
+                </tr>
+                        {{ range $idx, $m := $r.Messages }}
+                            {{if $m.SenderIsMe}}
+                <tr><td colspan="3" class="my_message message_text">{{ $m.Text }}</td></tr>
+                            {{else}}
+                <tr><td colspan="3" class="recieved_message message_text">{{ $m.Text }}</td></tr>
+                            {{end}}
+                        {{ end }}
+            </table>
+        </td>
+    </tr>
+</table>
                                     {{ end }}
                                     {{ end }}
                                 </tbody>
