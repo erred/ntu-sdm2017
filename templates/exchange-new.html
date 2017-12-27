@@ -265,20 +265,30 @@
     }
     function set_selected_skills() {
 
+
         //My skill
         $("#step2 svg circle").on("click", function(){
 
-            skill_tree = JSON.parse(new_exchange_data["mytree_state"]);
-            $(this).addClass("selected_skill");
 
-            // Add data to new_exchange_data
-            new_exchange_data["myskill"] = {{ if $.Page.En}} skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] {{else}} skill_tree[$(this).parent().attr("id").split("_")[0]]["CFullName"] {{end}};
-            $("#table_myskill").text(new_exchange_data["myskill"]);
+            if ( $(this).hasClass("learned_skill") ){
+                skill_tree = JSON.parse(new_exchange_data["mytree_state"]);
+                $(this).addClass("selected_skill");
 
-            //Active the step item
-            $(".step-item").removeClass("active");
-            $(".step-item").eq(2).addClass("active");
-            window.location.href = "#step3";
+                // Add data to new_exchange_data
+                new_exchange_data["myskill"] = {{ if $.Page.En}} skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] {{else}} skill_tree[$(this).parent().attr("id").split("_")[0]]["CFullName"] {{end}};
+                $("#table_myskill").text(new_exchange_data["myskill"]);
+
+                //Active the step item
+                $(".step-item").removeClass("active");
+                $(".step-item").eq(2).addClass("active");
+                window.location.href = "#step3";
+            }
+            else {
+                alert({{ if $.Page.En }}"Please make sure you have learned this skill."{{ else }}"請確認你已習得該課程"{{end}});
+            }
+            
+
+            
         });
 
         //New skill
@@ -326,7 +336,7 @@
             else {
                 alert({{ if $.Page.En }}"Please make sure you have done steps above."{{ else }}"請確認上面步驟皆已完成"{{end}});
             }
-        })
+        });
     }
 
 
