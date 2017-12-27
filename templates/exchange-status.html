@@ -446,6 +446,9 @@
         if (message.length > 30) {
             alert({{ if $.Page.En }}"Your messages have to be less than 30 words!"{{ else }}"每則訊息不能超過30個字！"{{end}});
         }
+        else if (message.length == 0) {
+            alert({{ if $.Page.En }}"Type some message!"{{ else }}"寫點東西吧！"{{end}});
+        }
         else{
             fetch('/exchange/message/'+this_element.attr("data-id")+'/?' + $.param({m: message}), {
                 method : 'get',
