@@ -294,8 +294,8 @@ svg circle:focus{
 thead td{
     background-color:#e7e9ed;
 }
-#inprogress_section tr {
-  display: block
+#inprogress_section .inprogress_tr {
+  display: block;
 }
 #inprogress_section td .message_td{
     float: left;

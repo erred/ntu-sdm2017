@@ -201,7 +201,7 @@
                                     </tr>
                                     {{ else }}
                                     {{ range $idx, $r := .ExchangeList.Inprogress }}
-<tr>
+<tr class="inprogress_tr">
     <td>{{ $r.U1.Name }}</td>
     <td>{{ $r.U1.Tree }}</td>
     <td>{{ $r.U1.Skill }}</td>
