@@ -167,12 +167,14 @@ svg text{
     width: 150px;
     margin-top: 15px;
     margin-bottom: 15px;
-    padding-top:20px !important; 
-    padding-bottom:20px !important;
+/*    padding-top:20px !important; 
+    padding-bottom:20px !important;*/
     border: 2.5px solid #70A372 !important;
     border-radius: 6px;
     color: #70A372 !important;
-    vertical-align: center !important;
+    display:flex;
+    align-items: center;
+
 }
 .tooltip_button:hover{
     color: #fff !important;
@@ -181,7 +183,7 @@ svg text{
 .tooltip_div{
     background-color: #5B5B5B;
     margin: 0px 0px 0px 0px;
-    padding: 20px 15px 0px 15px;
+    padding: 20px 15px 3px 15px;
     color: #FFFFFF;
 }
 
