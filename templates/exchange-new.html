@@ -280,9 +280,9 @@
                 $(".step-item").eq(2).addClass("active");
 
                 //Scroll to step3
-                setTimeout(function(){
-                    window.location.href = "#step3";
-                },500);
+                $("html, body").animate({
+                    scrollTop:$("#step3").offset().top
+                }, 500);
                 // window.location.href = "#step3";
                 // $('main').animate({
                 //     scrollTop:$("#step3").offset().top
