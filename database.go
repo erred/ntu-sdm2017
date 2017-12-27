@@ -11,7 +11,7 @@ var DB, _ = sql.Open("sqlite3", "db.sqlite3")
 
 func initDb() error {
 
-	tables := []string{"user", "treeTemplate", "tree", "exchange", "likes"}
+	tables := []string{"user", "treeTemplate", "tree", "exchange", "likes", "messages"}
 	dropTable := `DROP TABLE IF EXISTS `
 	for _, t := range tables {
 		_, err := DB.Exec(dropTable + t)
@@ -76,7 +76,16 @@ func initDb() error {
 		treeid TEXT
 	)`
 
-	newTables := []string{createAccountTable, createTemplateTable, createTreeTable, createExchangeTable, createLikeTable}
+	createMessageTable := `
+	CREATE TABLE messages (
+		exid TEXT,
+		time TEXT,
+		sender TEXT,
+		message TEXT
+
+	)`
+
+	newTables := []string{createAccountTable, createTemplateTable, createTreeTable, createExchangeTable, createLikeTable, createMessageTable}
 	for _, t := range newTables {
 		_, err := DB.Exec(t)
 		if err != nil {

@@ -5,7 +5,9 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"sort"
 	"strings"
+	"time"
 )
 
 type PageExchange struct {
@@ -21,9 +23,10 @@ type ExchangeList struct {
 }
 
 type ExItem struct {
-	Id string
-	U1 ExUser
-	U2 ExUser
+	Id       string
+	U1       ExUser
+	U2       ExUser
+	Messages []Message
 }
 
 type ExUser struct {
@@ -35,6 +38,12 @@ type ExUser struct {
 	TreeZeroState template.JS
 	Skill         string
 	State         string
+}
+
+type Message struct {
+	Text       string
+	SenderIsMe bool
+	Time       time.Time
 }
 
 // ==================== Handlers ====================
@@ -92,6 +101,32 @@ func exchangeHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+// /exchange/message/exid/?m=message
+func messageExchangeHandler(w http.ResponseWriter, r *http.Request) {
+	paths := strings.Split(r.URL.Path, "/")
+	if len(paths) != 5 {
+		http.Redirect(w, r, "/exchange/status/", http.StatusFound)
+	}
+
+	user, err := getUser(r)
+	if errInternal(err, w) {
+		return
+	}
+
+	err = r.ParseForm()
+	if errInternal(err, w) {
+		return
+	}
+	message := r.FormValue("m")
+
+	err = saveMessage(paths[3], user, message)
+	if errInternal(err, w) {
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+}
+
 // ==================== Operations ====================
 func getExchangeData(user string) (ExchangeList, error) {
 	var exList ExchangeList
@@ -122,7 +157,13 @@ func getExchangeData(user string) (ExchangeList, error) {
 			return exList, err
 		}
 
-		it := ExItem{id, u1, u2}
+		messages, err := getMessages(id, user)
+		if err != nil {
+			log.Println("getExchangeData/getMessages failed")
+			return exList, err
+		}
+
+		it := ExItem{id, u1, u2, messages}
 		if user != string(u1.User) {
 			it.U1 = u2
 			it.U2 = u1
@@ -193,5 +234,52 @@ func exchangeDone(user string, id string) error {
 
 func exchangeDelete(user string, id string) error {
 	_, err := DB.Exec("DELETE FROM exchange WHERE exid=?", id)
+	return err
+}
+
+func getMessages(exid string, user string) ([]Message, error) {
+	var messages []Message
+
+	rows, err := DB.Query("SELECT time, sender, message FROM messages WHERE exid=?", exid)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return messages, nil
+		}
+		log.Println("getMessages/Query failed")
+		return messages, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var message Message
+		var sender string
+		var ttime int64
+		err = rows.Scan(&ttime, &sender, &message.Text)
+		if err != nil {
+			log.Panicln("getMessages/Scan failed")
+			return messages, err
+		}
+
+		message.Time = time.Unix(ttime, 0)
+
+		message.SenderIsMe = true
+		if sender != user {
+			message.SenderIsMe = false
+		}
+
+		messages = append(messages, message)
+	}
+	if err := rows.Err(); err != nil {
+		log.Println("getMessages/Next failed")
+		return messages, err
+	}
+
+	sort.Slice(messages, func(i, j int) bool { return messages[i].Time.Before(messages[j].Time) })
+
+	return messages, nil
+}
+
+func saveMessage(exid string, user string, message string) error {
+	_, err := DB.Exec("INSERT INTO messages VALUES (?, ?, ?, ?)", exid, time.Now().Unix(), user, message)
 	return err
 }
