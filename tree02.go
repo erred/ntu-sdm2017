@@ -379,7 +379,7 @@ var tree02state = `
 	"3DP":{"CFullName":"3D程式設計","CName":"3D程設","EFullName":"Introduction to 3D Programming","EName":"3DP","pre_course":[],"status":0,"color":"red"},
 	"IE":{"CFullName":"資訊經濟","CName":"資經","EFullName":"Information Economy","EName":"IE","pre_course":[],"status":0,"color":"red"},
 	"HCI":{"CFullName":"人機互動","CName":"人機","EFullName":"Human-Computer Interaction","EName":"HCI","pre_course":[],"status":0,"color":"red"},
-	"ALG":{"CFullName":"演算法","CName":"演算法","EFullName":"Algorithms ","EName":"ALG","pre_course":["DS"],"status":0,"color":"red"},
+	"ALG":{"CFullName":"演算法","CName":"演算法","EFullName":"Algorithms ","EName":"ALG","pre_course":["DS","PD"],"status":0,"color":"red"},
 	"Ccl1":{"CFullName":"微積分甲上","CName":"微甲上","EFullName":"Calculus (general Mathematics) (a)(1)","EName":"Ccl1","pre_course":[],"status":0,"color":"green"},
 	"Ccl2":{"CFullName":"微積分甲下","CName":"微甲下","EFullName":"Calculus (general Mathematics) (a)(2)","EName":"Ccl2","pre_course":["Ccl1"],"status":0,"color":"green"},
 	"Stat1":{"CFullName":"統計學一上","CName":"統計上","EFullName":"Statistics (I)(1)","EName":"Stat1","pre_course":[],"status":0,"color":"green"},
