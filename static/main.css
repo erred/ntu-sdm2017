@@ -185,6 +185,8 @@ svg text{
     margin: 0px 0px 0px 0px;
     padding: 20px 15px 3px 15px;
     color: #FFFFFF;
+}
+.tooltip_div p{
     font-weight: 50 !important;
 }
 
