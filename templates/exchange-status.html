@@ -461,8 +461,19 @@
         }
     }
     function set_reload_message() {
-        console.log("123123");
-        setTimeout(set_reload_message, 60000);
+
+
+        {{ range $idx, $r := .ExchangeList.Inprogress }}
+        console.log({{$r.Id}});
+fetch('/exchange/message/'+{{$r.Id}}+'/', {
+    method : 'get',
+    credentials : 'include'
+}).then(function(response){
+    console.log(response);
+});
+        {{end}}
+
+        setTimeout(set_reload_message, 10000);
     }
 
 </script>
