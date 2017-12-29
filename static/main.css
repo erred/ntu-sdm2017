@@ -198,7 +198,7 @@ svg text{
 }
 .tooltip_div p{
     font-weight: 100 !important;
-    text-align: left;
+    text-align: center;
     word-break: keep-all;
 }
 .card .card-image{
