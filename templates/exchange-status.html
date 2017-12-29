@@ -469,12 +469,12 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
     method : 'get',
     credentials : 'include'
 }).then(function(response){
-    console.log($.parseJSON(response));
+    console.log(response);
 });
         {{end}}
 
         // 60000: rerun function every 60s
-        setTimeout(set_reload_message, 60000);
+        // setTimeout(set_reload_message, 60000);
     }
 
 </script>
