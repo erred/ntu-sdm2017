@@ -22,11 +22,11 @@
 
                         <div class="columns">
                         {{ range $idx, $it := .Trees }}
-<div class="card column col-3 my_tree_card" data-tree_id="{{ $it.Treeid }}">
+<div class="card column col-3 my_tree_card" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}" data-state="{{ $it.TreeData.State }}">
     <div class="card-image">
         {{ $it.Svg }}
     </div>
-    <div class="card-header" data-tree_id="{{ $it.Treeid }}">
+    <div class="card-header" data-user_id="{{ $it.User }}" data-tree_id="{{ $it.TreeData.Treeid }}">
         <div class="card-title h5">
         {{ if $.Page.En }}{{ $it.Name }}{{ else }}{{ $it.Cname }}{{ end }}
         </div>
@@ -59,7 +59,7 @@
 <script>
 
     $(document).ready(function(){
-        // set_tree_id();
+        set_tree_id();
         // set_scroll_animate();
     });
 
@@ -73,6 +73,46 @@
                 scrollTop:$($.attr(this,'href')).offset().top
             }, 500);
         });
+    }
+    function set_tree_id() {
+        $(".card").each(function(){
+            var id = $(this).attr("data-user_id") + "_" + $(this).attr("data-tree_id");
+
+            //card svg
+            $(this).children(".card-image").find("svg").attr("id","card_"+id);
+            $(this).children(".card-image").find("circle").each(function(){
+                // console.log($(this).attr("id"));
+                if ($(this).attr("id") != 'undefined') {
+                    $(this).attr("id",$(this).attr("id")+"_"+id);
+                    $(this).parent().attr("id",$(this).parent().attr("id")+"_"+id);
+                }
+            });
+            set_node_color($(this).attr("data-state"),id,$(this).attr("data-tree_id"));
+        });
+    }
+    function set_node_color(skill_tree_string,id,tree_id){
+        skill_tree = JSON.parse(skill_tree_string);
+        if (tree_id == "tree02") {
+            console.log(skill_tree);
+            for (var skill_id in skill_tree) {
+                // console.log(skill_id);
+                $("#"+skill_id+"_"+id+" text").empty();
+
+                // Add text
+                {{ if $.En }}
+                $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["EName"]);
+                {{else}}
+                $("#"+skill_id+"_"+id+" text").text(skill_tree[skill_id]["CName"]);
+                {{end}}
+
+                // Add learned skills
+                if (skill_tree[skill_id]["status"] == 1) {
+                    $("#"+skill_id+"_circle_"+id).addClass("learned_skill");
+                    $("#"+skill_id+"_circle_"+id).addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                    $("#"+skill_id+"_circle_"+id).siblings("polygon").addClass("learned_skill_"+tree_id+"_"+skill_tree[skill_id]["color"]);
+                }
+            }
+        }
     }
 
 </script>
