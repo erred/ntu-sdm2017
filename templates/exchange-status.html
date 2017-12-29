@@ -491,7 +491,7 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
                 $("#message_text_{{$r.Id}}").append('<div class="recieved_message message_text">'+text+'</div>');
             }
         }
-        var text_div = document.getElementById($(message_text_{{$r.Id}});
+        var text_div = document.getElementById("message_text_{{$r.Id}}");
         text_div.scrollTop = text_div.scrollHeight;
     });
 });
