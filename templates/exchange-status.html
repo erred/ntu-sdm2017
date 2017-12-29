@@ -461,10 +461,9 @@
         }
     }
     function set_reload_message() {
-
+        console.log("reload");
 
         {{ range $idx, $r := .ExchangeList.Inprogress }}
-        console.log({{$r.Id}});
 fetch('/exchange/message/'+{{$r.Id}}+'/', {
     method : 'get',
     credentials : 'include'
@@ -497,7 +496,7 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
         {{end}}
 
         // 60000: rerun function every 60s
-        // setTimeout(set_reload_message, 60000);
+        setTimeout(set_reload_message, 10000);
     }
 
 </script>
