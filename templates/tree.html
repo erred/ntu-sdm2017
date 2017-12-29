@@ -74,7 +74,7 @@
             {{else}}
             $("#"+skill_id+" text").text(skill_tree[skill_id]["CName"]);
             {{end}}
-            
+            console.log(skill_tree);
             $(".tooltip_templates").append(
                 `<span class="tooltip_content" style="text-align:center;" id="tooltip_content_` + skill_id+`">
                 <div class="tooltip_div">
