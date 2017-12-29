@@ -343,6 +343,7 @@
         set_done_exchange();
         set_message();
         set_submit_message();
+        set_reload_message();
     });
 
     function set_cancel_exchange() {
@@ -398,8 +399,6 @@
         });
     }
     function set_message() {
-
-
 
         {{ if .ExchangeList.Inprogress }}
             {{ range $idx, $r := .ExchangeList.Inprogress }}
@@ -460,6 +459,10 @@
             var text_div = document.getElementById("message_text_"+this_element.attr("data-id"));
             text_div.scrollTop = text_div.scrollHeight;
         }
+    }
+    function set_reload_message() {
+        console.log("123123");
+        setTimeout(set_reload_message, 60000);
     }
 
 </script>
