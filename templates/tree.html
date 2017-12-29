@@ -78,7 +78,7 @@
             $(".tooltip_templates").append(
                 `<span class="tooltip_content" style="text-align:center;" id="tooltip_content_` + skill_id+`">
                 <div class="tooltip_div">
-                    <h4>`+ {{if $.En}}skill_tree[skill_id]["EName"]{{else}}skill_tree[skill_id]["CName"]{{end}}+`</h4>
+                    <h4>`+ {{if $.En}}skill_tree[skill_id]["EFullName"]{{else}}skill_tree[skill_id]["CFullName"]{{end}}+`</h4>
                     <div class="divider"></div>
                     <p>` + {{if $.En}}skill_tree[skill_id]["EDescription"] {{else}}skill_tree[skill_id]["CDescription"]{{end}}+ `</p>
                 </div> 
