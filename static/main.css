@@ -190,6 +190,7 @@ svg text{
     word-break: break-all;
     line-height: 1.25em;
     display:inline-block;
+    width: 100%;
 }
 .tooltip_div h4{
     white-space: nowrap !important;
