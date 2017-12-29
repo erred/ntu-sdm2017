@@ -187,7 +187,6 @@ svg text{
     padding: 20px 15px 3px 15px;
     color: #FFFFFF;
     border-radius: 3px;
-    word-break: break-all;
     line-height: 1.25em;
     display:inline-block;
     min-width: 350px;
@@ -200,6 +199,7 @@ svg text{
 .tooltip_div p{
     font-weight: 100 !important;
     text-align: left;
+    word-break: keep-all;
 }
 .card .card-image{
     height: 75%;
