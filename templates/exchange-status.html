@@ -475,7 +475,6 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
     })
     ).then(res => {
         messages_text = res.data;
-
             // if (
             //     !messages_text[i-1]["SenderIsMe"] &&
             //     messages_text[i-1]["Text"] == $("#message_text_{{$r.Id}} .recieved_message").length
@@ -485,7 +484,7 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
         $("#message_text_{{$r.Id}}").empty();
         for (var i = 0; i < messages_text.length; i++) {
             var sender_is_me = messages_text[i]["SenderIsMe"];
-            var text = messages_text[i]["tText"];
+            var text = messages_text[i]["Text"];
             if (sender_is_me) {
                 $("#message_text_{{$r.Id}}").append('<div class="my_message message_text">'+text+'</div>');
             }
