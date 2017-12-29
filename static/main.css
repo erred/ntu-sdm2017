@@ -198,8 +198,8 @@ svg text{
 }
 .tooltip_div p{
     font-weight: 100 !important;
-    text-align: center;
-    word-break: keep-all;
+    text-align: left;
+    word-break: normal;
 }
 .card .card-image{
     height: 75%;
