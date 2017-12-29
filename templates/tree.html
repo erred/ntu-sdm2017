@@ -79,7 +79,7 @@
                 `<span class="tooltip_content" style="text-align:center;" id="tooltip_content_` + skill_id+`">
                 <div class="tooltip_div">
                     <h4>`+ {{if $.En}}skill_tree[skill_id]["EName"]{{else}}skill_tree[skill_id]["CName"]{{end}}+`</h4>
-                    <pre>description description description<br>description description description</pre>
+                    <pre>` + {{if $.En}}skill_tree[skill_id]["EDescription"] {{else}}skill_tree[skill_id]["CDescription"]{{end}}+ `</pre>
                 </div> 
                 </span>`);
             $("#"+skill_id+"_circle").addClass("tooltip");
