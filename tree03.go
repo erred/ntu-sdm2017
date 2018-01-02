@@ -363,8 +363,8 @@ var tree03state = `
 	"ind":{"CFullName":"印尼語","CName":"印尼語","EFullName":"Indonesian","EName":"ind","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
 	"ami":{"CFullName":"阿美語","CName":"阿美語","EFullName":"Amis","EName":"ami","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
 	"vie":{"CFullName":"越南語","CName":"越語","EFullName":"Vietnamese","EName":"vie","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
-	"mnw":{"CFullName":"孟加拉語","CName":"孟語","EFullName":"Mon","Vietnamese":"mnw","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
-	"khm":{"CFullName":"高棉語","CName":"高棉語","EFullName":"Khmer","Vietnamese":"khm","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
+	"mnw":{"CFullName":"孟加拉語","CName":"孟語","EFullName":"Mon","EName":"mnw","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
+	"khm":{"CFullName":"高棉語","CName":"高棉語","EFullName":"Khmer","EName":"khm","pre_course":[],"status":0,"color":"green","CDescription":"","EDescription":""},
 
 	"tur":{"CFullName":"土耳其語","CName":"土耳其語","EFullName":"Turkish","EName":"tur","pre_course":[],"status":0,"color":"blue","CDescription":"","EDescription":""},
 	"mon":{"CFullName":"蒙古語","CName":"蒙古語","EFullName":"Mogolian","EName":"mon","pre_course":[],"status":0,"color":"blue","CDescription":"","EDescription":""},
