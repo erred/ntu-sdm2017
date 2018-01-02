@@ -29,7 +29,8 @@
                         <!-- </div> -->
                         <div class="columns">
                             {{ range $idx, $tree := .Trees }}
-                                {{ if not eq $tree.Treeid tree01 }}
+                                {{ if eq $tree.Treeid "tree01" }}
+                                {{else}}
 
 <div class="card column col-4">
     <div class="card-image">
