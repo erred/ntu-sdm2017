@@ -94,17 +94,17 @@ var tree04svg = `
 
 				<text id="course_7_" transform="matrix(1 5.140094e-03 -5.140094e-03 1 199.4004 348.9885)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">OSD</text>
 		</g>
-		<g id="DSA">
-			<rect id="edge_38_" x="273.9" y="410" fill="#AB9DBA" width="56" height="6"/>
-			<circle id="DSA_circle" fill="#AB9DBA" cx="267.5" cy="411.5" r="22.5"/>
-
-				<text id="course_38_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 258.1837 417.2016)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DSA</text>
-		</g>
 		<g id="ICP">
-			<polygon id="edge_1_" fill="#AB9DBA" points="244.9,465 265.9,422 259.9,420 239.9,461 			"/>
-			<circle id="ICP_circle" fill="#AB9DBA" cx="239.5" cy="464.5" r="22.5"/>
+			<rect id="edge_38_" x="273.9" y="410" fill="#AB9DBA" width="56" height="6"/>
+			<circle id="ICP_circle" fill="#AB9DBA" cx="267.5" cy="411.5" r="22.5"/>
 
-				<text id="course_1_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 228.1967 470.1635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ICP</text>
+				<text id="course_38_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 258.1837 417.2016)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ICP</text>
+		</g>
+		<g id="DSA">
+			<polygon id="edge_1_" fill="#AB9DBA" points="244.9,465 265.9,422 259.9,420 239.9,461 			"/>
+			<circle id="DSA_circle" fill="#AB9DBA" cx="239.5" cy="464.5" r="22.5"/>
+
+				<text id="course_1_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 228.1967 470.1635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DSA</text>
 		</g>
 		<g id="ICS">
 			<polygon id="edge_11_" fill="#AB9DBA" points="340,237.4 371.9,356 377.9,353 345.5,234.2 			"/>
