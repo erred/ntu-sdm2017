@@ -144,31 +144,24 @@ main {
 .learned_skill{
     fill: #f8b245 !important;
 }
-.learned_skill_tree02_yellow{
-    fill: #ff9933 !important;
-}
-.learned_skill_tree02_green{
-    fill: #008490 !important;
-}
-.learned_skill_tree02_blue{
-    fill: #006699 !important;
-}
-.learned_skill_tree02_red{
-    fill: #cc3333 !important;
-}
+.learned_skill_tree02_yellow,
 .learned_skill_tree03_yellow{
     fill: #ff9933 !important;
 }
+.learned_skill_tree02_green,
 .learned_skill_tree03_green{
     fill: #008490 !important;
 }
+.learned_skill_tree02_blue,
 .learned_skill_tree03_blue{
     fill: #006699 !important;
 }
+.learned_skill_tree02_red,
 .learned_skill_tree03_red{
     fill: #cc3333 !important;
 }
-.learned_skill_tree03_purple{
+.learned_skill_tree03_purple,
+.learned_skill_tree04_purple{
     fill: #52366b !important;
 }
 .learned_skill_tree03_light_green{
