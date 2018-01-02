@@ -293,12 +293,12 @@
 
         //New skill
         $("#step3 svg circle").on("click", function(){
+            skill_tree = JSON.parse(new_exchange_data["atree_state"]);
 
             if (
                 $(this).hasClass("learned_skill") &&
                 skill_tree[$(this).parent().attr("id").split("_")[0]]["EFullName"] != new_exchange_data["myskill"]
             ){
-                 skill_tree = JSON.parse(new_exchange_data["atree_state"]);
                 $(this).addClass("selected_skill");
 
                 // Add data to new_exchange_data
