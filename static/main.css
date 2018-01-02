@@ -156,6 +156,24 @@ main {
 .learned_skill_tree02_red{
     fill: #cc3333 !important;
 }
+.learned_skill_tree03_yellow{
+    fill: #ff9933 !important;
+}
+.learned_skill_tree03_green{
+    fill: #008490 !important;
+}
+.learned_skill_tree03_blue{
+    fill: #006699 !important;
+}
+.learned_skill_tree03_red{
+    fill: #cc3333 !important;
+}
+.learned_skill_tree03_purple{
+    fill: #52366b !important;
+}
+.learned_skill_tree03_light_green{
+    fill: #2cb76f !important;
+}
 circle{
     cursor: pointer;
 }
