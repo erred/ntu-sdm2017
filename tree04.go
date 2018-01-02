@@ -101,7 +101,7 @@ var tree04svg = `
 				<text id="course_1_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 228.1967 470.1635)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">DSA</text>
 		</g>
 		<g id="ICP">
-			<rect id="edge_38_" x="273.9" y="410" fill="#AB9DBA" width="56" height="6"/>
+			<polygon id="edge_38_" fill="#AB9DBA" points="336.1,409.2 263,407.2 265,415 335.9,415.6 			"/>
 			<circle id="ICP_circle" fill="#AB9DBA" cx="267.5" cy="411.5" r="22.5"/>
 
 				<text id="course_38_" transform="matrix(0.9998 1.919000e-02 -1.919000e-02 0.9998 258.1837 417.2016)" fill="#FFFFFF" font-family="'Scada-Regular'" font-size="15px">ICP</text>
