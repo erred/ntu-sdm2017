@@ -65,10 +65,10 @@
                                     {{ range $idx, $r := .ExchangeList.Requests }}
 <tr>
     <td>{{ $r.U1.Name }}</td>
-    <td>{{ $r.U1.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U1.TreeName }} {{else}} {{ $r.U1.TreeCname }} {{end}}</td>
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    <td>{{ $r.U2.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U2.TreeName }} {{else}} {{ $r.U2.TreeCname }} {{end}}</td>
     <td>{{ $r.U2.Skill }}</td>
     <!-- cancel -->
     <td class="delete_exchange_button" data-delete_id="{{ $r.Id }}"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -133,10 +133,10 @@
                                     {{ range $idx, $r := .ExchangeList.Pending }}
 <tr>
     <td>{{ $r.U1.Name }}</td>
-    <td>{{ $r.U1.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U1.TreeName }} {{else}} {{ $r.U1.TreeCname }} {{end}}</td>
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    <td>{{ $r.U2.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U2.TreeName }} {{else}} {{ $r.U2.TreeCname }} {{end}}</td>
     <td>{{ $r.U2.Skill }}</td>
     <!-- accept -->
     <td class="accept_exchange_button" data-accept_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -204,10 +204,10 @@
 <!-- <table class="table"> -->
     <tr class="inprogress_tr">
         <td>{{ $r.U1.Name }}</td>
-        <td>{{ $r.U1.Tree }}</td>
+        <td>{{ if .Page.En }} {{ $r.U1.TreeName }} {{else}} {{ $r.U1.TreeCname }} {{end}}</td>
         <td>{{ $r.U1.Skill }}</td>
         <td>{{ $r.U2.Name }}</td>
-        <td>{{ $r.U2.Tree }}</td>
+        <td>{{ if .Page.En }} {{ $r.U2.TreeName }} {{else}} {{ $r.U2.TreeCname }} {{end}}</td>
         <td>{{ $r.U2.Skill }}</td>
         <!-- done -->
         <td class="done_exchange_button" data-done_id="{{ $r.Id }}"><i class="fa fa-check" aria-hidden="true"></i></td>
@@ -300,10 +300,10 @@
                                     {{ range $idx, $r := .ExchangeList.Complete }}
 <tr class="complete_tr">
     <td>{{ $r.U1.Name }}</td>
-    <td>{{ $r.U1.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U1.TreeName }} {{else}} {{ $r.U1.TreeCname }} {{end}}</td>
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    <td>{{ $r.U2.Tree }}</td>
+    <td>{{ if .Page.En }} {{ $r.U2.TreeName }} {{else}} {{ $r.U2.TreeCname }} {{end}}</td>
     <td>{{ $r.U2.Skill }}</td>
 </tr>
 <tr class="message_td hide_message">
