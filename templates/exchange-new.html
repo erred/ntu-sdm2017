@@ -201,7 +201,7 @@
     }
     function set_node_color(skill_tree_string,id,tree_id){
         skill_tree = JSON.parse(skill_tree_string);
-        if (tree_id == "tree02") {
+        if (tree_id != "tree01") {
             for (var skill_id in skill_tree) {
                 $("#"+skill_id+"_"+id+" text").empty();
 
