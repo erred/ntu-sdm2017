@@ -65,14 +65,14 @@
                                     {{ range $idx, $r := .ExchangeList.Requests }}
 <tr>
     <td>{{ $r.U1.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U1.TreeName }}</td>
     {{else}}
     <td>{{ $r.U1.TreeCname }}</td>
     {{end}}
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U2.TreeName }}</td>
     {{else}}
     <td>{{ $r.U2.TreeCname }} </td>
@@ -141,14 +141,14 @@
                                     {{ range $idx, $r := .ExchangeList.Pending }}
 <tr>
     <td>{{ $r.U1.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U1.TreeName }}</td>
     {{else}}
     <td>{{ $r.U1.TreeCname }}</td>
     {{end}}
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U2.TreeName }}</td>
     {{else}}
     <td>{{ $r.U2.TreeCname }} </td>
@@ -220,14 +220,14 @@
 <!-- <table class="table"> -->
     <tr class="inprogress_tr">
         <td>{{ $r.U1.Name }}</td>
-        {{ if .Page.En }}
+        {{ if $.En }}
         <td> {{ $r.U1.TreeName }}</td>
         {{else}}
         <td>{{ $r.U1.TreeCname }}</td>
         {{end}}
         <td>{{ $r.U1.Skill }}</td>
         <td>{{ $r.U2.Name }}</td>
-        {{ if .Page.En }}
+        {{ if $.En }}
         <td> {{ $r.U2.TreeName }}</td>
         {{else}}
         <td>{{ $r.U2.TreeCname }} </td>
@@ -324,14 +324,14 @@
                                     {{ range $idx, $r := .ExchangeList.Complete }}
 <tr class="complete_tr">
     <td>{{ $r.U1.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U1.TreeName }}</td>
     {{else}}
     <td>{{ $r.U1.TreeCname }}</td>
     {{end}}
     <td>{{ $r.U1.Skill }}</td>
     <td>{{ $r.U2.Name }}</td>
-    {{ if .Page.En }}
+    {{ if $.En }}
     <td> {{ $r.U2.TreeName }}</td>
     {{else}}
     <td>{{ $r.U2.TreeCname }} </td>
