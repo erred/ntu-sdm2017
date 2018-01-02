@@ -461,7 +461,7 @@
         }
     }
     function set_reload_message() {
-        console.log("reload");
+        // console.log("reload");
 
         {{ range $idx, $r := .ExchangeList.Inprogress }}
 fetch('/exchange/message/'+{{$r.Id}}+'/', {
@@ -492,7 +492,7 @@ fetch('/exchange/message/'+{{$r.Id}}+'/', {
                 text_div.scrollTop = text_div.scrollHeight;
             }
             else{
-                console.log("same");
+                // console.log("same");
             }
     });
 });
